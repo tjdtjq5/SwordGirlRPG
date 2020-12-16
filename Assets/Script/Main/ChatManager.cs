@@ -7,7 +7,7 @@ using DG.Tweening;
 public class ChatManager : MonoBehaviour
 {
     public Button chatBtn;
-    public RectTransform scrollViewRectTransform; Vector2 openSizeDelta = new Vector2(938, 560); Vector2 closeSizeDelta = new Vector2(938, 50); 
+    public RectTransform scrollViewRectTransform; Vector2 openSizeDelta = new Vector2(938, 560); Vector2 closeSizeDelta = new Vector2(938, 50);
 
     private void Start()
     {
