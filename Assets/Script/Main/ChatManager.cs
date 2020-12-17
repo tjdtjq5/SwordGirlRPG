@@ -23,12 +23,12 @@ public class ChatManager : MonoBehaviour
     {
         chatBtn.onClick.RemoveAllListeners();
         chatBtn.onClick.AddListener(() => { ChatClose(); });
-        scrollViewRectTransform.DOSizeDelta(openSizeDelta, 0.5f);
+        scrollViewRectTransform.DOSizeDelta(openSizeDelta, 0.2f);
     }
     public void ChatClose()
     {
         chatBtn.onClick.RemoveAllListeners();
         chatBtn.onClick.AddListener(() => { ChatOpen(); });
-        scrollViewRectTransform.DOSizeDelta(closeSizeDelta, 0.5f);
+        scrollViewRectTransform.DOSizeDelta(closeSizeDelta, 0.2f);
     }
 }
