@@ -8,6 +8,9 @@ using UnityEngine;
 public class BackendLogin : MonoBehaviour
 {
     public Nickname nickname;
+    public UsePolish usePolish;
+    public Loading loading;
+
     private void Awake()
     {
         Backend.Initialize(() =>
@@ -47,6 +50,21 @@ public class BackendLogin : MonoBehaviour
                 else
                 {
                     Debug.Log("닉네임이 있다.");
+                    UserInfo.instance.nickName = nicknameJsonData.ToString();
+
+                    BackendGameInfo.instance.GetPrivateContents("UserInfo", "UsePolish", () => {
+                        bool isOn = bool.Parse(BackendGameInfo.instance.serverDataList[0]);
+                        if (isOn)
+                        {
+                            loading.LoadingOpen();
+                        }
+                        else
+                        {
+                            usePolish.UsePolishOpen();
+                        }
+                    }, () => {
+                        usePolish.UsePolishOpen();
+                    });
                 }
             });
         }
@@ -72,7 +90,24 @@ public class BackendLogin : MonoBehaviour
             else
             {
                 Debug.Log("닉네임이 있다.");
+                UserInfo.instance.nickName = nicknameJsonData.ToString();
+
+                BackendGameInfo.instance.GetPrivateContents("UserInfo", "UsePolish", () => {
+                    bool isOn = bool.Parse(BackendGameInfo.instance.serverDataList[0]);
+                    if (isOn)
+                    {
+                        loading.LoadingOpen();
+                    }
+                    else
+                    {
+                        usePolish.UsePolishOpen();
+                    }      
+                }, () => {
+                    usePolish.UsePolishOpen();
+                });
             }
         });
     }
+
+
 }

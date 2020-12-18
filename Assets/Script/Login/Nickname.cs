@@ -10,6 +10,7 @@ public class Nickname : MonoBehaviour
 {
     public GameObject nicknamePopup;
     public InputField nicknameInput;
+    public UsePolish usePolish;
 
     public void PopupOpen()
     {
@@ -53,8 +54,8 @@ public class Nickname : MonoBehaviour
         if (bro.IsSuccess())
         {
             nicknamePopup.SetActive(false);
-
-
+            UserInfo.instance.nickName = nicknameInput.text;
+            usePolish.UsePolishOpen();
         }
         switch (bro.GetStatusCode())
         {
@@ -65,5 +66,6 @@ public class Nickname : MonoBehaviour
                 Alram.instance.PopupOpen("중복된 닉네임이 존재합니다.", () => { Alram.instance.popup.SetActive(false); });
                 break;
         }
+        nicknameInput.text = "";
     }
 }
