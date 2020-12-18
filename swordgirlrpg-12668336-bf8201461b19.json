@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "swordgirlrpg-12668336",
+  "private_key_id": "bf8201461b198b154dc5702d57ad70ffe4413488",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCqf/eQbI3eZejJ\nS8ZX+8kpzJ0NoWCVjmOogEwaT79thWvv+H2XPlgHNoMjJ6ceEvmSmSpDmNy8vAuM\ns/m9RBGczd4sPODHDwE3U0G/6C8ovrPTJSqv86V4BKM2VFilp2scSotzcAY75SOq\ncOMnNjMfJpzjlxCnnLJ0/LeHVxa2WiPVWd8a0PP6Hk2vwCYnHh6tu/qhLMZc3KX1\nngwFQyqoWH7Tu/895tm2h8d8V51n0hxBBZo5ME5R+3HbY5ql+FNzFVjVYN29fBM7\nx8WuX+sVkzM/tKrDMZGmT3N2vDnOMV4+pUGVCjzcTL6BGfofFscFlmuOpya1NzkT\n6P1z0YilAgMBAAECggEAI0uwdT5ztAmGwj0kh0xBXZzVGmBA/VTnvpcoqf2+VC7d\npGTdovSuBng7d4ia6PfmoHmCrVG0yIFpJqyPU6YGu15G0wObSLoLd2eN4etv79Bi\nq6AzEQ+wPoM/Qlz9qPVakBXCfpg/QiDyXDNYYuKufJFiwx6fvQMMUnmKiML3mbIB\n/5vL9YjkSuXbjRpsDawEn1AVXsFT1c7u48tEH1sokpbd/0WrZCL5WFCMBzt9UP3l\nddQ+tTC6D5w4KNeAjxlyacwj9YdtnDKfszZBnPRXz2ypS0iMBBaoyt1t0BygquN0\nJoE3wP/avdU/DhEqxyOpYLLKEhXfuT0s8BbDhVxkVQKBgQDwyBo1Z8cPBXaIJ+Qq\nGDDUJ6AbNYtoGeWH9XTmag/NW5ItJk2GvDrkgIdgL830Mm57e1N59h6J4sFEhFpo\nngT/bdIHdz/0Zw7sIOXMSpWTjSSZx85VAz9KeQpyxRNZtFSi69qY654K9MLbOteV\ned/Qa62tsUd3BvR6rbEscr9lhwKBgQC1RrDUkG9lSjS8XGdeiRXkb0OBGIRHilVb\nMu9jtlkpObCDkLf972PPtlChHmR6YnuaNf4fGk2xB8ybeqE8n8+GADIOmG1shi4h\nlFOSHTN8du5oG3ZDsuBHaYixae3Yzsdonrb9/Biz/tLWs5pTu5EJH8PRmrp4Wo7v\nSOHCxjzrcwKBgQDILFM9mu0uW8hTIXbaWAogFmFQvY8MGJtuEG4DMKG6hCpeRr2l\nCc+cMA5btOJv5Y1cMwcPGcIBt/Yc1DulRdm50L8PXeBZe2Q4gpEI6ei4JlsLTcUH\ngA+aBk7dY2HW7ch/Ob0d7KQTT7C/OYgIyK19REe7Yuqa1bliVAw7e5oK+QKBgQCz\nebfd3NrNmDi6PWqCqIsqThaxnAprokR8NOPa/1ErhdiDiicAnaFep40Q2Dx3B0aF\nGevt82b0XVpwnWtB0J/wdgUZekTsa7UEvgw33/13v3CvVnEy+ckgKxaRQOWiAKhh\nprJaqNv0adlphQzI1i30sKR5xA3W1yIpOyl6ZDcwjQKBgGZSdmLn/9sWzvqwVUzZ\nveP0/pD5uZDPpDGg4jl/0EPXiuBT8Zue/cyWMmhXj0Xg4vDq0kdriFfYtc07U5OD\nFQgjzewKem6y+aeyoOqZwIJdETLh1UWGh64pOZnAk/EK7SbPHSakHjefCQ5EBXqC\n+5ne35A6+3vsWibdFAR4yEIH\n-----END PRIVATE KEY-----\n",
+  "client_email": "id-771@swordgirlrpg-12668336.iam.gserviceaccount.com",
+  "client_id": "108638311912978021752",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/id-771%40swordgirlrpg-12668336.iam.gserviceaccount.com"
+}
