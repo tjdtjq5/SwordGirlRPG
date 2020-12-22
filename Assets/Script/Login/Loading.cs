@@ -35,10 +35,19 @@ public class Loading : MonoBehaviour
             yield return waitTime;
         }
 
-        obj.SetActive(false);
+        LoadChart(() => {
+            obj.SetActive(false);
 
-        touchPannel.SetActive(true);
-        touchPannel.GetComponent<Button>().onClick.RemoveAllListeners();
-        touchPannel.GetComponent<Button>().onClick.AddListener(() => { SceneManager.LoadScene("Main"); });
+            touchPannel.SetActive(true);
+            touchPannel.GetComponent<Button>().onClick.RemoveAllListeners();
+            touchPannel.GetComponent<Button>().onClick.AddListener(() => { SceneManager.LoadScene("Main"); });
+        });
+    }
+
+    void LoadChart(System.Action callback)
+    {
+        CharacterEnhanceAbilityChart.instance.LoadChart(() => {
+            UserInfo.instance.Load(() => { callback(); });
+        });
     }
 }

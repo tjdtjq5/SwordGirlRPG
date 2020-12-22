@@ -41,3 +41,29 @@
     플,
     렉,
 }
+public enum AbilityType
+{
+    공격력,
+    공격력퍼센트,
+    체력,
+    체력퍼센트,
+    크리티컬퍼센트,
+    크리티컬데미지,
+    분노시간,
+    분노데미지,
+    결계석획득량,
+    스킬쿨타임,
+    루비2배획득확률,
+    사파이어2배획득확률,
+    힘의원천획득량,
+    파우스트공격력,
+    자동공격속도
+}
+public enum MoneyType
+{
+    gold,
+    sapphire,
+    witchStone,
+    ruby,
+    emerald
+}

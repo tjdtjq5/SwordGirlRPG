@@ -9,6 +9,7 @@ namespace Function
         //큰 수를 요약해서 보여줌 
         public static string ValueToString(string value)
         {
+            value = value.Trim();
             int su = 4; // 몇 단위로 수를 끊을 건지 
             int len = value.Length;
             if (len <= su)
@@ -67,6 +68,22 @@ namespace Function
             return BigInteger.Divide(intA, intB).ToString();
         }
 
+        public static int CompareValue(string A, string B)
+        {
+            BigInteger intA = BigInteger.Parse(A);
+            BigInteger intB = BigInteger.Parse(B);
+
+            if (intA < intB)
+            {
+                return -1;
+            }
+            if (intA > intB)
+            {
+                return 1;
+            }
+            return 0;
+        }
+
         // 방치형 RPG 계산 공식
         public static string Fomula01(int level, int defaultValue, int A, int B)
         {
@@ -108,7 +125,7 @@ namespace Function
             string pString = ((int)(percent * 100)).ToString();
             string preResult = Fomula03(level - 1, defaultValue, percent);
             string result = Add(preResult, (Divide(preResult, pString)));
-
+            
             return result;
         }
     }

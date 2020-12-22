@@ -2433,6 +2433,7 @@ GameObject:
   - component: {fileID: 504887241}
   - component: {fileID: 504887244}
   - component: {fileID: 504887243}
+  - component: {fileID: 504887245}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2479,6 +2480,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nickName: 
+  gold: 
+  ruby: 0
+  devilStone: 0
+  skelStone: 0
+  powerStone: 0
+  punishTiket: 0
+  abilityAtkLevel: 0
+  abilityAtkPercentLevel: 0
+  abilityHpLevel: 0
+  abilityHpPercentLevel: 0
+  abilityCriticalDamageLevel: 0
+  abilityAngerDamageLevel: 0
+  abilityFaustDamageLevel: 0
 --- !u!114 &504887244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2492,6 +2506,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serverDataList: []
+--- !u!114 &504887245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504887240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 492a174e53762874f9783cab09e557d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  field: 12035
+  characterEnhanceAbilityChartInfo:
+    AtkD: 0
+    AtkA: 0
+    AtkB: 0
+    AtkMD: 0
+    AtkMP: 0
+    AtkPercentN: 0
+    AtkPercentMD: 0
+    AtkPercentMP: 0
+    HpD: 0
+    HpA: 0
+    HpB: 0
+    HpMD: 0
+    HpMP: 0
+    HpPercentN: 0
+    HpPercentMD: 0
+    HpPercentMP: 0
+    CriticalDamageN: 0
+    CriticalDamageMD: 0
+    CriticalDamageMP: 0
+    AngerDamageN: 0
+    AngerDamageMD: 0
+    AngerDamageMP: 0
+    FaustDamageN: 0
+    FaustDamageMD: 0
+    FaustDamageMP: 0
 --- !u!1 &543599476
 GameObject:
   m_ObjectHideFlags: 0

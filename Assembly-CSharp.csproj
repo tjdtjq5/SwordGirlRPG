@@ -122,6 +122,7 @@
     <Compile Include="Assets\GooglePlayGames\Platforms\TokenClient.cs" />
     <Compile Include="Assets\GooglePlayGames\PluginVersion.cs" />
     <Compile Include="Assets\Script\BackendGameInfo.cs" />
+    <Compile Include="Assets\Script\CharacterEnhanceAbilityChart.cs" />
     <Compile Include="Assets\Script\Enum.cs" />
     <Compile Include="Assets\Script\Function.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
@@ -134,6 +135,9 @@
     <Compile Include="Assets\Script\Login\UsePolish.cs" />
     <Compile Include="Assets\Script\Login\VersionCheck.cs" />
     <Compile Include="Assets\Script\Main\ChatManager.cs" />
+    <Compile Include="Assets\Script\Main\MoneyManager.cs" />
+    <Compile Include="Assets\Script\Main\캐릭터강화\AbilityManager.cs" />
+    <Compile Include="Assets\Script\Main\캐릭터강화\CharacterEnhaceManager.cs" />
     <Compile Include="Assets\Script\UserInfo.cs" />
     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\MultiKeyDictionary.cs" />
     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\Reporter.cs" />
