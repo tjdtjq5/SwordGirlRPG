@@ -15,7 +15,11 @@ public class UserInfo : MonoBehaviour
     public void Load(System.Action callback)
     {
         LoadMoney(() => {
-            LoadAbility(() => { callback(); });
+            LoadAbility(() => {
+                LoadMasicMissile(() => {
+                    callback();
+                });
+            });
         });
     }
 
@@ -97,5 +101,96 @@ public class UserInfo : MonoBehaviour
             abilityFaustDamageLevel = int.Parse(BackendGameInfo.instance.serverDataList[6]);
             callback();
         },()=> { callback(); });
+    }
+
+    // 3. 마력검기
+    public List<UserMasicMissile> userMasicMissiles = new List<UserMasicMissile>();
+
+    public UserMasicMissile GetUserMasicMissileInfo(string missileName)
+    {
+        for (int i = 0; i < userMasicMissiles.Count; i++)
+        {
+            if (userMasicMissiles[i].Name == missileName)
+            {
+                return userMasicMissiles[i];
+            }
+        }
+        return null;
+    } // 유저의 특정 미사일 정보 
+    public void PushMasicMissile(string missileName, int num = 1)
+    {
+        if (GetUserMasicMissileInfo(missileName) != null) // 유저가 가지고 있다면 
+        {
+            GetUserMasicMissileInfo(missileName).Num += num;
+        }
+        else
+        {
+            userMasicMissiles.Add(new UserMasicMissile(missileName, 0));
+        }
+    } // 미사일 획득 
+    public void UpgradeMasicMissile(string missileName, int needNum)
+    {
+        if (GetUserMasicMissileInfo(missileName) != null)
+        {
+            GetUserMasicMissileInfo(missileName).Upgrade++;
+            GetUserMasicMissileInfo(missileName).Num -= needNum;
+        }
+        else
+        {
+            Debug.Log("해당 미사일을 유저가 가지고 있지 않습니다.");
+        }
+    } // 미사일 업그레이드
+    public void EqipMasicMissile(string missileName)
+    {
+        for (int i = 0; i < userMasicMissiles.Count; i++)
+        {
+            userMasicMissiles[i].isEqip = false;
+        }
+        GetUserMasicMissileInfo(missileName).isEqip = true;
+    }
+    public void SaveMasicMissile(System.Action callback)
+    {
+        Param param = new Param();
+        string data = "";
+        for (int i = 0; i < userMasicMissiles.Count; i++)
+        {
+            data = userMasicMissiles[i].Name + "/" + userMasicMissiles[i].Upgrade + "/" + userMasicMissiles[i].Num + "/" + userMasicMissiles[i].isEqip;
+            param.Add("MasicMissile", data);
+        }
+        BackendGameInfo.instance.PrivateTableUpdate("CharacterEnhance", param, () => { callback(); });
+    }
+    public void LoadMasicMissile(System.Action callback)
+    {
+        userMasicMissiles.Clear();
+        BackendGameInfo.instance.GetPrivateContents("CharacterEnhance", "MasicMissile", () => {
+            for (int i = 0; i < BackendGameInfo.instance.serverDataList.Count; i++)
+            {
+                string[] data = BackendGameInfo.instance.serverDataList[i].Split('/');
+                userMasicMissiles.Add(new UserMasicMissile(data[0], int.Parse(data[1]), int.Parse(data[2]), bool.Parse(data[3])));
+            }
+            callback();
+        }, () => { userMasicMissiles.Add(new UserMasicMissile("발사체01", 0,0,true)); callback(); });
+    }
+}
+public class UserMasicMissile
+{
+    public string Name;
+    public int Upgrade;
+    public int Num;
+    public bool isEqip;
+
+    public UserMasicMissile(string Name, int Num)
+    {
+        this.Name = Name;
+        this.Num = Num;
+        this.Upgrade = 0;
+        isEqip = false;
+    }
+    public UserMasicMissile(string Name, int Upgrade, int Num, bool isEqip)
+    {
+        this.Name = Name;
+        this.Upgrade = Upgrade;
+        this.Num = Num;
+        this.isEqip = isEqip;
     }
 }

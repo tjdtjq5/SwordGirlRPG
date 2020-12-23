@@ -47,7 +47,9 @@ public class Loading : MonoBehaviour
     void LoadChart(System.Action callback)
     {
         CharacterEnhanceAbilityChart.instance.LoadChart(() => {
-            UserInfo.instance.Load(() => { callback(); });
+            MasicMissileChart.instance.LoadChart(() => {
+                UserInfo.instance.Load(() => { callback(); });
+            });
         });
     }
 }

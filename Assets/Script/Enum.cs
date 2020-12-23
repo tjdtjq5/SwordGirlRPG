@@ -67,3 +67,12 @@ public enum MoneyType
     ruby,
     emerald
 }
+public enum GradeType
+{
+    없음,
+    별1개,
+    별2개,
+    별3개,
+    별4개,
+    별5개
+}

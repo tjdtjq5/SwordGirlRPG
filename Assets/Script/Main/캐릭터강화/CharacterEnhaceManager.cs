@@ -10,6 +10,7 @@ public class CharacterEnhaceManager : MonoBehaviour
     public GameObject popup;
     [Header("스크립트")]
     public AbilityManager abilityManager;
+    public MasicMissileManager masicMissileManager;
 
     [Header("Upper")]
     public float upperBtnDgSpeed;
@@ -131,6 +132,7 @@ public class CharacterEnhaceManager : MonoBehaviour
         focus.DOMoveX(masicMissileFocusPosition.position.x, upperBtnDgSpeed);
 
         masicMissilePannel.SetActive(true);
+        masicMissileManager.Init();
     }
     public void Soul()
     {

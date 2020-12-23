@@ -2434,6 +2434,7 @@ GameObject:
   - component: {fileID: 504887244}
   - component: {fileID: 504887243}
   - component: {fileID: 504887245}
+  - component: {fileID: 504887246}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2481,10 +2482,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nickName: 
   gold: 
+  sapphire: 0
+  witchStone: 0
   ruby: 0
-  devilStone: 0
-  skelStone: 0
-  powerStone: 0
+  emerald: 0
   punishTiket: 0
   abilityAtkLevel: 0
   abilityAtkPercentLevel: 0
@@ -2520,31 +2521,372 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   field: 12035
   characterEnhanceAbilityChartInfo:
-    AtkD: 0
-    AtkA: 0
-    AtkB: 0
-    AtkMD: 0
-    AtkMP: 0
-    AtkPercentN: 0
-    AtkPercentMD: 0
-    AtkPercentMP: 0
-    HpD: 0
-    HpA: 0
-    HpB: 0
-    HpMD: 0
-    HpMP: 0
-    HpPercentN: 0
-    HpPercentMD: 0
-    HpPercentMP: 0
-    CriticalDamageN: 0
-    CriticalDamageMD: 0
-    CriticalDamageMP: 0
-    AngerDamageN: 0
-    AngerDamageMD: 0
-    AngerDamageMP: 0
-    FaustDamageN: 0
-    FaustDamageMD: 0
-    FaustDamageMP: 0
+  - Atk: 
+    AtkM: 
+    AtkPercent: 0
+    AtkPercentM: 
+    Hp: 
+    HpM: 
+    HpPercent: 0
+    HpPercentM: 
+    CriticalDamage: 0
+    CriticalDamageM: 
+    AngerDamage: 0
+    AngerDamageM: 
+    FaustDamage: 0
+    FaustDamageM: 
+  - Atk: 
+    AtkM: 
+    AtkPercent: 0
+    AtkPercentM: 
+    Hp: 
+    HpM: 
+    HpPercent: 0
+    HpPercentM: 
+    CriticalDamage: 0
+    CriticalDamageM: 
+    AngerDamage: 0
+    AngerDamageM: 
+    FaustDamage: 0
+    FaustDamageM: 
+  - Atk: 
+    AtkM: 
+    AtkPercent: 0
+    AtkPercentM: 
+    Hp: 
+    HpM: 
+    HpPercent: 0
+    HpPercentM: 
+    CriticalDamage: 0
+    CriticalDamageM: 
+    AngerDamage: 0
+    AngerDamageM: 
+    FaustDamage: 0
+    FaustDamageM: 
+  - Atk: 
+    AtkM: 
+    AtkPercent: 0
+    AtkPercentM: 
+    Hp: 
+    HpM: 
+    HpPercent: 0
+    HpPercentM: 
+    CriticalDamage: 0
+    CriticalDamageM: 
+    AngerDamage: 0
+    AngerDamageM: 
+    FaustDamage: 0
+    FaustDamageM: 
+  - Atk: 
+    AtkM: 
+    AtkPercent: 0
+    AtkPercentM: 
+    Hp: 
+    HpM: 
+    HpPercent: 0
+    HpPercentM: 
+    CriticalDamage: 0
+    CriticalDamageM: 
+    AngerDamage: 0
+    AngerDamageM: 
+    FaustDamage: 0
+    FaustDamageM: 
+  - Atk: 
+    AtkM: 
+    AtkPercent: 0
+    AtkPercentM: 
+    Hp: 
+    HpM: 
+    HpPercent: 0
+    HpPercentM: 
+    CriticalDamage: 0
+    CriticalDamageM: 
+    AngerDamage: 0
+    AngerDamageM: 
+    FaustDamage: 0
+    FaustDamageM: 
+  - Atk: 
+    AtkM: 
+    AtkPercent: 0
+    AtkPercentM: 
+    Hp: 
+    HpM: 
+    HpPercent: 0
+    HpPercentM: 
+    CriticalDamage: 0
+    CriticalDamageM: 
+    AngerDamage: 0
+    AngerDamageM: 
+    FaustDamage: 0
+    FaustDamageM: 
+  - Atk: 
+    AtkM: 
+    AtkPercent: 0
+    AtkPercentM: 
+    Hp: 
+    HpM: 
+    HpPercent: 0
+    HpPercentM: 
+    CriticalDamage: 0
+    CriticalDamageM: 
+    AngerDamage: 0
+    AngerDamageM: 
+    FaustDamage: 0
+    FaustDamageM: 
+  - Atk: 
+    AtkM: 
+    AtkPercent: 0
+    AtkPercentM: 
+    Hp: 
+    HpM: 
+    HpPercent: 0
+    HpPercentM: 
+    CriticalDamage: 0
+    CriticalDamageM: 
+    AngerDamage: 0
+    AngerDamageM: 
+    FaustDamage: 0
+    FaustDamageM: 
+  - Atk: 
+    AtkM: 
+    AtkPercent: 0
+    AtkPercentM: 
+    Hp: 
+    HpM: 
+    HpPercent: 0
+    HpPercentM: 
+    CriticalDamage: 0
+    CriticalDamageM: 
+    AngerDamage: 0
+    AngerDamageM: 
+    FaustDamage: 0
+    FaustDamageM: 
+  - Atk: 
+    AtkM: 
+    AtkPercent: 0
+    AtkPercentM: 
+    Hp: 
+    HpM: 
+    HpPercent: 0
+    HpPercentM: 
+    CriticalDamage: 0
+    CriticalDamageM: 
+    AngerDamage: 0
+    AngerDamageM: 
+    FaustDamage: 0
+    FaustDamageM: 
+  - Atk: 
+    AtkM: 
+    AtkPercent: 0
+    AtkPercentM: 
+    Hp: 
+    HpM: 
+    HpPercent: 0
+    HpPercentM: 
+    CriticalDamage: 0
+    CriticalDamageM: 
+    AngerDamage: 0
+    AngerDamageM: 
+    FaustDamage: 0
+    FaustDamageM: 
+  - Atk: 
+    AtkM: 
+    AtkPercent: 0
+    AtkPercentM: 
+    Hp: 
+    HpM: 
+    HpPercent: 0
+    HpPercentM: 
+    CriticalDamage: 0
+    CriticalDamageM: 
+    AngerDamage: 0
+    AngerDamageM: 
+    FaustDamage: 0
+    FaustDamageM: 
+  - Atk: 
+    AtkM: 
+    AtkPercent: 0
+    AtkPercentM: 
+    Hp: 
+    HpM: 
+    HpPercent: 0
+    HpPercentM: 
+    CriticalDamage: 0
+    CriticalDamageM: 
+    AngerDamage: 0
+    AngerDamageM: 
+    FaustDamage: 0
+    FaustDamageM: 
+  - Atk: 
+    AtkM: 
+    AtkPercent: 0
+    AtkPercentM: 
+    Hp: 
+    HpM: 
+    HpPercent: 0
+    HpPercentM: 
+    CriticalDamage: 0
+    CriticalDamageM: 
+    AngerDamage: 0
+    AngerDamageM: 
+    FaustDamage: 0
+    FaustDamageM: 
+  - Atk: 
+    AtkM: 
+    AtkPercent: 0
+    AtkPercentM: 
+    Hp: 
+    HpM: 
+    HpPercent: 0
+    HpPercentM: 
+    CriticalDamage: 0
+    CriticalDamageM: 
+    AngerDamage: 0
+    AngerDamageM: 
+    FaustDamage: 0
+    FaustDamageM: 
+  - Atk: 
+    AtkM: 
+    AtkPercent: 0
+    AtkPercentM: 
+    Hp: 
+    HpM: 
+    HpPercent: 0
+    HpPercentM: 
+    CriticalDamage: 0
+    CriticalDamageM: 
+    AngerDamage: 0
+    AngerDamageM: 
+    FaustDamage: 0
+    FaustDamageM: 
+  - Atk: 
+    AtkM: 
+    AtkPercent: 0
+    AtkPercentM: 
+    Hp: 
+    HpM: 
+    HpPercent: 0
+    HpPercentM: 
+    CriticalDamage: 0
+    CriticalDamageM: 
+    AngerDamage: 0
+    AngerDamageM: 
+    FaustDamage: 0
+    FaustDamageM: 
+  - Atk: 
+    AtkM: 
+    AtkPercent: 0
+    AtkPercentM: 
+    Hp: 
+    HpM: 
+    HpPercent: 0
+    HpPercentM: 
+    CriticalDamage: 0
+    CriticalDamageM: 
+    AngerDamage: 0
+    AngerDamageM: 
+    FaustDamage: 0
+    FaustDamageM: 
+  - Atk: 
+    AtkM: 
+    AtkPercent: 0
+    AtkPercentM: 
+    Hp: 
+    HpM: 
+    HpPercent: 0
+    HpPercentM: 
+    CriticalDamage: 0
+    CriticalDamageM: 
+    AngerDamage: 0
+    AngerDamageM: 
+    FaustDamage: 0
+    FaustDamageM: 
+  - Atk: 
+    AtkM: 
+    AtkPercent: 0
+    AtkPercentM: 
+    Hp: 
+    HpM: 
+    HpPercent: 0
+    HpPercentM: 
+    CriticalDamage: 0
+    CriticalDamageM: 
+    AngerDamage: 0
+    AngerDamageM: 
+    FaustDamage: 0
+    FaustDamageM: 
+  - Atk: 
+    AtkM: 
+    AtkPercent: 0
+    AtkPercentM: 
+    Hp: 
+    HpM: 
+    HpPercent: 0
+    HpPercentM: 
+    CriticalDamage: 0
+    CriticalDamageM: 
+    AngerDamage: 0
+    AngerDamageM: 
+    FaustDamage: 0
+    FaustDamageM: 
+  - Atk: 
+    AtkM: 
+    AtkPercent: 0
+    AtkPercentM: 
+    Hp: 
+    HpM: 
+    HpPercent: 0
+    HpPercentM: 
+    CriticalDamage: 0
+    CriticalDamageM: 
+    AngerDamage: 0
+    AngerDamageM: 
+    FaustDamage: 0
+    FaustDamageM: 
+  - Atk: 
+    AtkM: 
+    AtkPercent: 0
+    AtkPercentM: 
+    Hp: 
+    HpM: 
+    HpPercent: 0
+    HpPercentM: 
+    CriticalDamage: 0
+    CriticalDamageM: 
+    AngerDamage: 0
+    AngerDamageM: 
+    FaustDamage: 0
+    FaustDamageM: 
+  - Atk: 
+    AtkM: 
+    AtkPercent: 0
+    AtkPercentM: 
+    Hp: 
+    HpM: 
+    HpPercent: 0
+    HpPercentM: 
+    CriticalDamage: 0
+    CriticalDamageM: 
+    AngerDamage: 0
+    AngerDamageM: 
+    FaustDamage: 0
+    FaustDamageM: 
+--- !u!114 &504887246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504887240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 508ed86dd5797ae4a9b3c965f1cf471f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  field: 12132
+  masicMissileSpriteAtlas: {fileID: 4343727234628468602, guid: 5f60c274f1d2efd4f961f59edfd7869c,
+    type: 2}
+  masicMissileChartInfos: []
 --- !u!1 &543599476
 GameObject:
   m_ObjectHideFlags: 0
