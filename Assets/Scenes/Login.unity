@@ -2435,6 +2435,8 @@ GameObject:
   - component: {fileID: 504887243}
   - component: {fileID: 504887245}
   - component: {fileID: 504887246}
+  - component: {fileID: 504887247}
+  - component: {fileID: 504887248}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2482,10 +2484,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nickName: 
   gold: 
-  sapphire: 0
-  witchStone: 0
-  ruby: 0
-  emerald: 0
+  crystal: 0
+  masicStone: 0
+  enhanceStone: 0
+  transStone: 0
   punishTiket: 0
   abilityAtkLevel: 0
   abilityAtkPercentLevel: 0
@@ -2883,10 +2885,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 508ed86dd5797ae4a9b3c965f1cf471f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  field: 12132
+  field: 12286
   masicMissileSpriteAtlas: {fileID: 4343727234628468602, guid: 5f60c274f1d2efd4f961f59edfd7869c,
     type: 2}
   masicMissileChartInfos: []
+--- !u!114 &504887247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504887240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5875b58be40f75644b5c0f3948b97be6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  field: 12287
+  gachaChartInfos:
+    GradeType01_Percent: 0
+    GradeType02_Percent: 0
+    GradeType03_Percent: 0
+    GradeType04_Percent: 0
+    GradeType05_Percent: 0
+    GradeType06_Percent: 0
+    MasicMissile_Crystal_Num: 0
+--- !u!114 &504887248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504887240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 169f60dba7c15da429d38752e99103fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  field: 12417
+  weaponeSpriteAtlas: {fileID: 4343727234628468602, guid: 16644af9124ba31489ebe08d3c576313,
+    type: 2}
+  weaponeChartInfos: []
 --- !u!1 &543599476
 GameObject:
   m_ObjectHideFlags: 0

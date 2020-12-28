@@ -14,7 +14,7 @@ public class MoneyManager : MonoBehaviour
     }
 
     public Transform gold;
-    public Transform sapphire;
+    public Transform crystal;
 
     [Header("스크립트")]
     public AbilityManager abilityManager;
@@ -22,7 +22,7 @@ public class MoneyManager : MonoBehaviour
     private void Start()
     {
         GoldInit();
-        SapphireInit();
+        CrystalInit();
     }
     void GoldInit()
     {
@@ -40,18 +40,18 @@ public class MoneyManager : MonoBehaviour
         GoldInit();
         abilityManager.CheckRedIcon();
     }
-    public void SapphireInit()
+    public void CrystalInit()
     {
-        sapphire.GetChild(0).Find("Text").GetComponent<Text>().text = UserInfo.instance.sapphire.ToString();
+        crystal.GetChild(0).Find("Text").GetComponent<Text>().text = UserInfo.instance.crystal.ToString();
     }
-    public void SapphireAdd(int money)
+    public void CrystalAdd(int money)
     {
-        UserInfo.instance.sapphire = UserInfo.instance.sapphire + money;
-        SapphireInit();
+        UserInfo.instance.crystal = UserInfo.instance.crystal + money;
+        CrystalInit();
     }
-    public void SapphireSub(int money)
+    public void CrystalSub(int money)
     {
-        UserInfo.instance.sapphire = UserInfo.instance.sapphire - money;
-        SapphireInit();
+        UserInfo.instance.crystal = UserInfo.instance.crystal - money;
+        CrystalInit();
     }
 }

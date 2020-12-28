@@ -62,10 +62,10 @@ public enum AbilityType
 public enum MoneyType
 {
     gold,
-    sapphire,
-    witchStone,
-    ruby,
-    emerald
+    crystal,
+    masicStone,
+    enhanceStone,
+    transStone
 }
 public enum GradeType
 {
@@ -74,5 +74,6 @@ public enum GradeType
     별2개,
     별3개,
     별4개,
-    별5개
+    별5개,
+    별6개
 }

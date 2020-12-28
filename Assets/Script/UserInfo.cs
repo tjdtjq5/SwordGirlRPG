@@ -17,7 +17,9 @@ public class UserInfo : MonoBehaviour
         LoadMoney(() => {
             LoadAbility(() => {
                 LoadMasicMissile(() => {
-                    callback();
+                    LoadWeapone(() => {
+                        callback();
+                    });
                 });
             });
         });
@@ -25,21 +27,21 @@ public class UserInfo : MonoBehaviour
 
     // === 유저 재화 === // 
     // 1.재화 
-    [HideInInspector] public string gold;
-    [HideInInspector] public int sapphire;
-    [HideInInspector] public int witchStone;
-    [HideInInspector] public int ruby;
-    [HideInInspector] public int emerald;
+    [HideInInspector] public string gold; // 골드 
+    [HideInInspector] public int crystal; // 크리스탈
+    [HideInInspector] public int masicStone; // 마력수정
+    [HideInInspector] public int enhanceStone; // 강화석
+    [HideInInspector] public int transStone; // 초월석
     // 2.토벌권
     [HideInInspector] public int punishTiket;
     public void SaveMoney(System.Action callback)
     {
         Param param = new Param();
         param.Add("gold", gold);
-        param.Add("sapphire", sapphire);
-        param.Add("witchStone", witchStone);
-        param.Add("ruby", ruby);
-        param.Add("emerald", emerald);
+        param.Add("crystal", crystal);
+        param.Add("masicStone", masicStone);
+        param.Add("enhanceStone", enhanceStone);
+        param.Add("transStone", transStone);
         param.Add("punishTiket", punishTiket);
         BackendGameInfo.instance.PrivateTableUpdate("Money", param, (() => { callback(); }));
     }
@@ -47,14 +49,14 @@ public class UserInfo : MonoBehaviour
     {
         BackendGameInfo.instance.GetPrivateContents("Money", "gold", () => {
             gold = BackendGameInfo.instance.serverDataList[0];
-            BackendGameInfo.instance.GetPrivateContents("Money", "sapphire", () => {
-                sapphire = int.Parse(BackendGameInfo.instance.serverDataList[0]);
-                BackendGameInfo.instance.GetPrivateContents("Money", "witchStone", () => {
-                    witchStone = int.Parse(BackendGameInfo.instance.serverDataList[0]);
-                    BackendGameInfo.instance.GetPrivateContents("Money", "ruby", () => {
-                        ruby = int.Parse(BackendGameInfo.instance.serverDataList[0]);
-                        BackendGameInfo.instance.GetPrivateContents("Money", "emerald", () => {
-                            emerald = int.Parse(BackendGameInfo.instance.serverDataList[0]);
+            BackendGameInfo.instance.GetPrivateContents("Money", "crystal", () => {
+                crystal = int.Parse(BackendGameInfo.instance.serverDataList[0]);
+                BackendGameInfo.instance.GetPrivateContents("Money", "masicStone", () => {
+                    masicStone = int.Parse(BackendGameInfo.instance.serverDataList[0]);
+                    BackendGameInfo.instance.GetPrivateContents("Money", "enhanceStone", () => {
+                        enhanceStone = int.Parse(BackendGameInfo.instance.serverDataList[0]);
+                        BackendGameInfo.instance.GetPrivateContents("Money", "transStone", () => {
+                            transStone = int.Parse(BackendGameInfo.instance.serverDataList[0]);
                             BackendGameInfo.instance.GetPrivateContents("Money", "punishTiket", () => {
                                 punishTiket = int.Parse(BackendGameInfo.instance.serverDataList[0]);
                                 callback();
@@ -63,7 +65,7 @@ public class UserInfo : MonoBehaviour
                     });
                 });
             },()=> {  });
-        },()=> { gold = "1000000"; ruby = 1000000; callback(); });
+        },()=> { gold = "1000000"; crystal = 1000000; callback(); });
     }
 
     // === 캐릭터 강화 === //
@@ -151,12 +153,12 @@ public class UserInfo : MonoBehaviour
     public void SaveMasicMissile(System.Action callback)
     {
         Param param = new Param();
-        string data = "";
+        List<string> data = new List<string>();
         for (int i = 0; i < userMasicMissiles.Count; i++)
         {
-            data = userMasicMissiles[i].Name + "/" + userMasicMissiles[i].Upgrade + "/" + userMasicMissiles[i].Num + "/" + userMasicMissiles[i].isEqip;
-            param.Add("MasicMissile", data);
+            data.Add(userMasicMissiles[i].Name + "/" + userMasicMissiles[i].Upgrade + "/" + userMasicMissiles[i].Num + "/" + userMasicMissiles[i].isEqip);
         }
+        param.Add("MasicMissile", data);
         BackendGameInfo.instance.PrivateTableUpdate("CharacterEnhance", param, () => { callback(); });
     }
     public void LoadMasicMissile(System.Action callback)
@@ -169,7 +171,83 @@ public class UserInfo : MonoBehaviour
                 userMasicMissiles.Add(new UserMasicMissile(data[0], int.Parse(data[1]), int.Parse(data[2]), bool.Parse(data[3])));
             }
             callback();
-        }, () => { userMasicMissiles.Add(new UserMasicMissile("발사체01", 0,0,true)); callback(); });
+        }, () => { userMasicMissiles.Add(new UserMasicMissile(MasicMissileChart.instance.masicMissileChartInfos[0].Name, 0,100,false)); callback(); });
+    }
+
+    // === 장비 === //
+    // 1. 무기 
+    public List<UserWeapone> userWeapones = new List<UserWeapone>();
+    public UserWeapone GetUserWeaponeInfo(string name)
+    {
+        for (int i = 0; i < userWeapones.Count; i++)
+        {
+            if (userWeapones[i].name == name)
+            {
+                return userWeapones[i];
+            }
+        }
+        return null;
+    } // 특정 무기 정보 
+    public void PushWeapone(string name)
+    {
+        for (int i = 0; i < userWeapones.Count; i++)
+        {
+            if (userWeapones[i].name == name)
+            {
+                userWeapones[i].num++;
+                return;
+            }
+        }
+        userWeapones.Add(new UserWeapone(name, 0, 1, false));
+    } // 무기 획득
+    public void UpgradeWeapone(string name, int needNum)
+    {
+        for (int i = 0; i < userWeapones.Count; i++)
+        {
+            if (userWeapones[i].name == name)
+            {
+                userWeapones[i].upgrade++;
+                userWeapones[i].num -= needNum;
+            }
+        }
+    } // 무기 업그레이드
+    public void EqipWeapone(string name)
+    {
+        for (int i = 0; i < userWeapones.Count; i++)
+        {
+            if (userWeapones[i].name == name)
+            {
+                userWeapones[i].isEqip = true;
+            }
+            else
+            {
+                userWeapones[i].isEqip = false;
+            }
+        }
+    } // 무기 장착
+    public void SaveWeapone(System.Action callback)
+    {
+        Param param = new Param();
+        List<string> data = new List<string>();
+        Debug.Log(userWeapones.Count);
+        for (int i = 0; i < userWeapones.Count; i++)
+        {
+            data.Add(userWeapones[i].name + "/" + userWeapones[i].upgrade + "/" + userWeapones[i].num + "/" + userWeapones[i].isEqip);
+        }
+        param.Add("Weapone", data);
+        BackendGameInfo.instance.PrivateTableUpdate("Eqip", param, () => { Debug.Log("bb"); callback(); });
+    }
+    public void LoadWeapone(System.Action callback)
+    {
+        userWeapones.Clear();
+        BackendGameInfo.instance.GetPrivateContents("Eqip", "Weapone", () => {
+            for (int i = 0; i < BackendGameInfo.instance.serverDataList.Count; i++)
+            {
+                string[] data = BackendGameInfo.instance.serverDataList[i].Split('/');
+                userWeapones.Add(new UserWeapone(data[0], int.Parse(data[1]), int.Parse(data[2]), bool.Parse(data[3])));
+            }
+            callback();
+        }, () => { PushWeapone(WeaponeChart.instance.weaponeChartInfos[0].Name);  callback(); });
     }
 }
 public class UserMasicMissile
@@ -191,6 +269,21 @@ public class UserMasicMissile
         this.Name = Name;
         this.Upgrade = Upgrade;
         this.Num = Num;
+        this.isEqip = isEqip;
+    }
+}
+public class UserWeapone
+{
+    public string name;
+    public int upgrade;
+    public int num;
+    public bool isEqip;
+
+    public UserWeapone(string name, int upgrade, int num, bool isEqip)
+    {
+        this.name = name;
+        this.upgrade = upgrade;
+        this.num = num;
         this.isEqip = isEqip;
     }
 }

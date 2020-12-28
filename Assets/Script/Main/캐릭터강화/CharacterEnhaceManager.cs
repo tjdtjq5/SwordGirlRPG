@@ -59,6 +59,7 @@ public class CharacterEnhaceManager : MonoBehaviour
         {
             physicalOutLineList[i].DOColor(nonSelectUpperTextOutLineColor, 0);
         }
+        physicalBtn.Find("RedIcon").gameObject.SetActive(abilityManager.CheckRedIcon());
 
         skillBtn.Find("Btn").GetChild(0).GetComponent<Text>().DOColor(nonSelectUpperTextColor, 0);
         skillBtn.Find("Btn").GetChild(0).GetComponent<Text>().fontSize = nonSelectUpperTextSize;
@@ -73,6 +74,7 @@ public class CharacterEnhaceManager : MonoBehaviour
         {
             masicMissileOutLineList[i].DOColor(nonSelectUpperTextOutLineColor, 0);
         }
+        masicMissileBtn.Find("RedIcon").gameObject.SetActive(masicMissileManager.CheckRedIcon());
 
         soulBtn.Find("Btn").GetChild(0).GetComponent<Text>().DOColor(nonSelectUpperTextColor, 0);
         soulBtn.Find("Btn").GetChild(0).GetComponent<Text>().fontSize = nonSelectUpperTextSize;
@@ -133,6 +135,7 @@ public class CharacterEnhaceManager : MonoBehaviour
 
         masicMissilePannel.SetActive(true);
         masicMissileManager.Init();
+
     }
     public void Soul()
     {

@@ -2,6 +2,7 @@
 using LitJson;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.U2D;
 
@@ -24,7 +25,20 @@ public class MasicMissileChart : MonoBehaviour
             }
         }
         return name;
+    } // 모든 초기 미사일 정보 
+    public List<string> MasicMissileType(GradeType gradeType) // 등급별 초기 미사일 정보
+    {
+        List<string> temp = new List<string>();
+        for (int i = 0; i < masicMissileChartInfos.Length; i++)
+        {
+            if (masicMissileChartInfos[i].GradeType == gradeType && !temp.Contains(masicMissileChartInfos[i].Name))
+            {
+                temp.Add(masicMissileChartInfos[i].Name);
+            }
+        }
+        return temp;
     }
+
     public List<MasicMissileChartInfo> GetMasicMissileInfo(string name)
     {
         List<MasicMissileChartInfo> masicMissileList = new List<MasicMissileChartInfo>();

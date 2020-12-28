@@ -48,7 +48,11 @@ public class Loading : MonoBehaviour
     {
         CharacterEnhanceAbilityChart.instance.LoadChart(() => {
             MasicMissileChart.instance.LoadChart(() => {
-                UserInfo.instance.Load(() => { callback(); });
+                GachaChart.instance.LoadChart(() => {
+                    WeaponeChart.instance.LoadChart(() => {
+                        UserInfo.instance.Load(() => { callback(); });
+                    });
+                });
             });
         });
     }
