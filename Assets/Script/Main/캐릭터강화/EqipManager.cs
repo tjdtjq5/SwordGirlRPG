@@ -57,6 +57,7 @@ public class EqipManager : MonoBehaviour
         {
             weaponeOutLineList[i].DOColor(nonSelectUpperTextOutLineColor, 0);
         }
+        weaponeManager.RedIconCheck();
 
         accBtn.Find("Btn").GetChild(0).GetComponent<Text>().DOColor(nonSelectUpperTextColor, 0);
         accBtn.Find("Btn").GetChild(0).GetComponent<Text>().fontSize = nonSelectUpperTextSize;

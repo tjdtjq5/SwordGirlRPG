@@ -26,6 +26,19 @@ public class WeaponeChart : MonoBehaviour
         return name;
     } // 모든 초기 무기정보
 
+    public List<string> WeaponeType(GradeType gradeType) // 등급별 초기 무기정보
+    {
+        List<string> temp = new List<string>();
+        for (int i = 0; i < weaponeChartInfos.Length; i++)
+        {
+            if (weaponeChartInfos[i].GradeType == gradeType && !temp.Contains(weaponeChartInfos[i].Name))
+            {
+                temp.Add(weaponeChartInfos[i].Name);
+            }
+        }
+        return temp;
+    }
+
     public List<WeaponeChartInfo> GetWeaponeChartInfo(string name)
     {
         List<WeaponeChartInfo> temp = new List<WeaponeChartInfo>();

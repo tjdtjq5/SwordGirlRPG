@@ -229,7 +229,6 @@ public class UserInfo : MonoBehaviour
     {
         Param param = new Param();
         List<string> data = new List<string>();
-        Debug.Log(userWeapones.Count);
         for (int i = 0; i < userWeapones.Count; i++)
         {
             data.Add(userWeapones[i].name + "/" + userWeapones[i].upgrade + "/" + userWeapones[i].num + "/" + userWeapones[i].isEqip);

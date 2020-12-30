@@ -26,7 +26,7 @@ public class GachaChart : MonoBehaviour
             gachaChartInfos.GradeType05_Percent = float.Parse(rowData["GradeType05_Percent"]["S"].ToString());
             gachaChartInfos.GradeType06_Percent = float.Parse(rowData["GradeType06_Percent"]["S"].ToString());
             gachaChartInfos.MasicMissile_Crystal_Num = int.Parse(rowData["MasicMissile_Crystal_Num"]["S"].ToString());
-
+            gachaChartInfos.Weapone_Crystal_Num = int.Parse(rowData["Weapone_Crystal_Num"]["S"].ToString());
             if (loadAction != null) loadAction();
         });
     }
@@ -41,4 +41,5 @@ public class GachaChartInfo
     public float GradeType05_Percent;
     public float GradeType06_Percent;
     public int MasicMissile_Crystal_Num;
+    public int Weapone_Crystal_Num;
 }

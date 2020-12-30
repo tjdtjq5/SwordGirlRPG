@@ -101,7 +101,6 @@ public class BackendGameInfo : MonoBehaviour
             BackendAsyncClass.BackendAsync(Backend.GameInfo.Update, table, serverDataList[0], param, (callback) =>
             {
                 string stateCode = callback.GetStatusCode();
-                Debug.Log(stateCode + " : " + callback.GetMessage());
                 switch (stateCode)
                 {
                     case "405": // param에 partition, gamer_id, inDate, updatedAt 네가지 필드가 있는 경우

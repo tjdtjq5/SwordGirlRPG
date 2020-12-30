@@ -22,9 +22,17 @@ public class WeaponeManager : MonoBehaviour
     [Header("아틀라스")]
     public SpriteAtlas gradeSpriteAtlas;
 
+    [Header("가챠 버튼 텍스트")]
+    public Text one_M_Num;
+    public Text eight_M_Num;
+
+    [Header("RedIcon")]
+    public GameObject redIconObj;
+
     void Start()
     {
         Instantiated();
+        GachaBtnUISetting();
     }
 
     void Instantiated() // 카드생성 
@@ -99,16 +107,26 @@ public class WeaponeManager : MonoBehaviour
                 acquisition.GetChild(ac).Find("능력치").GetComponent<Text>().color = Color.white;
 
                 acquisition.GetChild(ac).Find("강화").GetComponent<Button>().onClick.RemoveAllListeners();
-                acquisition.GetChild(ac).Find("강화").GetComponent<Button>().onClick.AddListener(() => {
-                    if (userWeapone.num >= weaponeChart.ConbinationNum)
-                    {
-                        UserInfo.instance.UpgradeWeapone(userWeapone.name, weaponeChart.ConbinationNum);
-                        UISetting();
-                        UserInfo.instance.SaveWeapone(() => { });
-                    }
-                });
+                if (WeaponeChart.instance.GetWeaponeChartInfo(userWeapone.name).Count > userWeapone.upgrade + 1) // 현재 maxUpgrade상태가 아니라면
+                {
+                    acquisition.GetChild(ac).Find("강화").GetComponent<Button>().onClick.AddListener(() => {
+                        if (userWeapone.num >= weaponeChart.ConbinationNum)
+                        {
+                            UserInfo.instance.UpgradeWeapone(userWeapone.name, weaponeChart.ConbinationNum);
+                            UISetting();
+                            UserInfo.instance.SaveWeapone(() => { });
+                        }
+                    });
+                    acquisition.GetChild(ac).Find("강화").Find("카드수").GetComponent<Text>().text = userWeapone.num + "/" + weaponeChart.ConbinationNum;
+                    acquisition.GetChild(ac).Find("강화").Find("RedIcon").gameObject.SetActive(userWeapone.num >= weaponeChart.ConbinationNum);
+                }
+                else
+                {
+                    acquisition.GetChild(ac).Find("강화").Find("RedIcon").gameObject.SetActive(false);
+                    acquisition.GetChild(ac).Find("강화").Find("카드수").GetComponent<Text>().text = userWeapone.num + "/MAX";
+                }
+              
                 acquisition.GetChild(ac).Find("강화").Find("fore").GetComponent<Image>().fillAmount = userWeapone.num / (float)weaponeChart.ConbinationNum;
-                acquisition.GetChild(ac).Find("강화").Find("카드수").GetComponent<Text>().text = userWeapone.num + "/" + weaponeChart.ConbinationNum;
 
                 acquisition.GetChild(ac).Find("Toggle").GetComponent<Toggle>().isOn = userWeapone.isEqip;
 
@@ -143,11 +161,40 @@ public class WeaponeManager : MonoBehaviour
                 un++;
             }
         }
+
+        RedIconCheck();
     }
 
     public void Open()
     {
         Init();
         UISetting();
+    }
+
+    void GachaBtnUISetting()
+    {
+        int money = GachaChart.instance.gachaChartInfos.Weapone_Crystal_Num;
+        one_M_Num.text = money.ToString();
+        eight_M_Num.text = (money * 8).ToString();
+    }
+
+    public bool RedIconCheck()
+    {
+        List<UserWeapone> userWeapones = UserInfo.instance.userWeapones;
+        for (int i = 0; i < userWeapones.Count; i++)
+        {
+            int num = userWeapones[i].num;
+            int combinationNum = WeaponeChart.instance.GetWeaponeChartInfo(userWeapones[i].name)[userWeapones[i].upgrade].ConbinationNum;
+            if (num >= combinationNum)
+            {
+                if (WeaponeChart.instance.GetWeaponeChartInfo(userWeapones[i].name).Count > userWeapones[i].upgrade + 1)
+                {
+                    redIconObj.SetActive(true);
+                    return true;
+                }
+            }
+        }
+        redIconObj.SetActive(false);
+        return false;
     }
 }

@@ -2901,7 +2901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5875b58be40f75644b5c0f3948b97be6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  field: 12287
+  field: 12531
   gachaChartInfos:
     GradeType01_Percent: 0
     GradeType02_Percent: 0
@@ -2910,6 +2910,7 @@ MonoBehaviour:
     GradeType05_Percent: 0
     GradeType06_Percent: 0
     MasicMissile_Crystal_Num: 0
+    Weapone_Crystal_Num: 0
 --- !u!114 &504887248
 MonoBehaviour:
   m_ObjectHideFlags: 0
