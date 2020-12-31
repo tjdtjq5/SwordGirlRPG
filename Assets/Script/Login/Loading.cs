@@ -50,7 +50,9 @@ public class Loading : MonoBehaviour
             MasicMissileChart.instance.LoadChart(() => {
                 GachaChart.instance.LoadChart(() => {
                     WeaponeChart.instance.LoadChart(() => {
-                        UserInfo.instance.Load(() => { callback(); });
+                        RelicChart.instance.LoadChart(() => {
+                            UserInfo.instance.Load(() => {  callback(); });
+                        });
                     });
                 });
             });

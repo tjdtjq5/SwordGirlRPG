@@ -10,6 +10,7 @@ public class EqipManager : MonoBehaviour
     public GameObject popup;
     [Header("스크립트")]
     public WeaponeManager weaponeManager;
+    public RelicManager relicManager;
 
     [Header("Upper")]
     public float upperBtnDgSpeed;
@@ -35,6 +36,7 @@ public class EqipManager : MonoBehaviour
     bool upperFlag = false;
     [Header("Middle")]
     public GameObject weaponeObj;
+    public GameObject relicObj;
 
     public void Open()
     {
@@ -81,6 +83,7 @@ public class EqipManager : MonoBehaviour
         }
 
         weaponeObj.SetActive(false);
+        relicObj.SetActive(false);
     }
 
     public void Weapone()
@@ -128,6 +131,9 @@ public class EqipManager : MonoBehaviour
             relicsOutLineList[i].DOColor(selectUpperTextOutLineColor, upperBtnDgSpeed);
         }
         focus.DOMoveX(relicsFocusPosition.position.x, upperBtnDgSpeed);
+
+        relicObj.SetActive(true);
+        relicManager.Open();
     }
     public void Cloth()
     {

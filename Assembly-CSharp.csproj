@@ -125,6 +125,7 @@
     <Compile Include="Assets\Script\Chart\CharacterEnhanceAbilityChart.cs" />
     <Compile Include="Assets\Script\Chart\GachaChart.cs" />
     <Compile Include="Assets\Script\Chart\MasicMissileChart.cs" />
+    <Compile Include="Assets\Script\Chart\RelicChart.cs" />
     <Compile Include="Assets\Script\Chart\WeaponeChart.cs" />
     <Compile Include="Assets\Script\Enum.cs" />
     <Compile Include="Assets\Script\Function.cs" />
@@ -144,6 +145,8 @@
     <Compile Include="Assets\Script\Main\캐릭터강화\EqipManager.cs" />
     <Compile Include="Assets\Script\Main\캐릭터강화\MasicMissileGachaResult.cs" />
     <Compile Include="Assets\Script\Main\캐릭터강화\MasicMissileManager.cs" />
+    <Compile Include="Assets\Script\Main\캐릭터강화\RelicManager.cs" />
+    <Compile Include="Assets\Script\Main\캐릭터강화\RelicStarEnhanceResult.cs" />
     <Compile Include="Assets\Script\Main\캐릭터강화\WeaponeGachaResult.cs" />
     <Compile Include="Assets\Script\Main\캐릭터강화\WeaponeManager.cs" />
     <Compile Include="Assets\Script\UserInfo.cs" />

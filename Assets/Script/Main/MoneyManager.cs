@@ -24,6 +24,7 @@ public class MoneyManager : MonoBehaviour
         GoldInit();
         CrystalInit();
     }
+    // 골드
     void GoldInit()
     {
         gold.GetChild(0).Find("Text").GetComponent<Text>().text = MyMath.ValueToString(UserInfo.instance.gold);
@@ -40,6 +41,7 @@ public class MoneyManager : MonoBehaviour
         GoldInit();
         abilityManager.CheckRedIcon();
     }
+    // 크리스탈
     public void CrystalInit()
     {
         crystal.GetChild(0).Find("Text").GetComponent<Text>().text = UserInfo.instance.crystal.ToString();
@@ -53,5 +55,33 @@ public class MoneyManager : MonoBehaviour
     {
         UserInfo.instance.crystal = UserInfo.instance.crystal - money;
         CrystalInit();
+    }
+
+    // 강화석 
+    public void EnhanceStoneAdd(int money)
+    {
+        UserInfo.instance.enhanceStone = UserInfo.instance.enhanceStone + money;
+    }
+    public void EnhanceStoneSub(int money)
+    {
+        UserInfo.instance.enhanceStone = UserInfo.instance.enhanceStone - money;
+    }
+    // 마력수정
+    public void MasicStoneAdd(int money)
+    {
+        UserInfo.instance.masicStone = UserInfo.instance.masicStone + money;
+    }
+    public void MasicStoneSub(int money)
+    {
+        UserInfo.instance.masicStone = UserInfo.instance.masicStone - money;
+    }
+    // 초월석
+    public void TransStoneAdd(int money)
+    {
+        UserInfo.instance.transStone = UserInfo.instance.transStone + money;
+    }
+    public void TransStoneSub(int money)
+    {
+        UserInfo.instance.transStone = UserInfo.instance.transStone - money;
     }
 }

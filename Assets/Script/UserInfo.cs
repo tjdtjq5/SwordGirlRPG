@@ -18,7 +18,9 @@ public class UserInfo : MonoBehaviour
             LoadAbility(() => {
                 LoadMasicMissile(() => {
                     LoadWeapone(() => {
-                        callback();
+                        LoadRelic(() => {
+                            callback();
+                        });
                     });
                 });
             });
@@ -234,7 +236,7 @@ public class UserInfo : MonoBehaviour
             data.Add(userWeapones[i].name + "/" + userWeapones[i].upgrade + "/" + userWeapones[i].num + "/" + userWeapones[i].isEqip);
         }
         param.Add("Weapone", data);
-        BackendGameInfo.instance.PrivateTableUpdate("Eqip", param, () => { Debug.Log("bb"); callback(); });
+        BackendGameInfo.instance.PrivateTableUpdate("Eqip", param, () => {  callback(); });
     }
     public void LoadWeapone(System.Action callback)
     {
@@ -247,6 +249,75 @@ public class UserInfo : MonoBehaviour
             }
             callback();
         }, () => { PushWeapone(WeaponeChart.instance.weaponeChartInfos[0].Name);  callback(); });
+    }
+    // 3. 유물
+    public List<UserRelic> userRelics = new List<UserRelic>();
+    public UserRelic GetUserRelicInfo(string name)
+    {
+        for (int i = 0; i < userRelics.Count; i++)
+        {
+            if (userRelics[i].name == name)
+            {
+                return userRelics[i];
+            }
+        }
+        return null;
+    } // 특정 유물 정보
+    public void PushRelic(string name)
+    {
+        for (int i = 0; i < userRelics.Count; i++)
+        {
+            if (userRelics[i].name == name)
+            {
+                userRelics[i].num++;
+                return;
+            }
+        }
+        userRelics.Add(new UserRelic(name, GradeType.별1개, 0, 1));
+    } // 유물 획득
+    public void UpgradeRelic(string name)
+    {
+        for (int i = 0; i < userRelics.Count; i++)
+        {
+            if (userRelics[i].name == name)
+            {
+                userRelics[i].upgrade++;
+            }
+        }
+    } // 유물 업그레이드
+    public void StarUpgradeRelic(string name, int needNum)
+    {
+        for (int i = 0; i < userRelics.Count; i++)
+        {
+            if (userRelics[i].name == name)
+            {
+                userRelics[i].gradeType = (GradeType)((int)userRelics[i].gradeType + 1);
+                userRelics[i].num -= needNum;
+            }
+        }
+    } // 유물 성급 업그레이드
+    public void SaveRelic(System.Action callback)
+    {
+        Param param = new Param();
+        List<string> data = new List<string>();
+        for (int i = 0; i < userRelics.Count; i++)
+        {
+            data.Add(userRelics[i].name + "/" + userRelics[i].gradeType + "/" + userRelics[i].upgrade + "/" + userRelics[i].num);
+        }
+        param.Add("Relic", data);
+        BackendGameInfo.instance.PrivateTableUpdate("Eqip", param, () => { callback(); });
+    }
+    public void LoadRelic(System.Action callback)
+    {
+        userRelics.Clear();
+        BackendGameInfo.instance.GetPrivateContents("Eqip", "Relic", () => {
+            for (int i = 0; i < BackendGameInfo.instance.serverDataList.Count; i++)
+            {
+                string[] data = BackendGameInfo.instance.serverDataList[i].Split('/');
+                userRelics.Add(new UserRelic(data[0], (GradeType)System.Enum.Parse(typeof(GradeType), data[1]), int.Parse(data[2]), int.Parse(data[3])));
+            }
+            callback();
+        }, () => { PushRelic(RelicChart.instance.relicChartInfos[0].Name); callback(); });
     }
 }
 public class UserMasicMissile
@@ -284,5 +355,20 @@ public class UserWeapone
         this.upgrade = upgrade;
         this.num = num;
         this.isEqip = isEqip;
+    }
+}
+public class UserRelic
+{
+    public string name;
+    public GradeType gradeType;
+    public int upgrade;
+    public int num;
+
+    public UserRelic(string name, GradeType gradeType, int upgrade, int num)
+    {
+        this.name = name;
+        this.gradeType = gradeType;
+        this.upgrade = upgrade;
+        this.num = num;
     }
 }
