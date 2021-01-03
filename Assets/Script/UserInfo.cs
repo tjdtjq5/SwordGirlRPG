@@ -19,7 +19,9 @@ public class UserInfo : MonoBehaviour
                 LoadMasicMissile(() => {
                     LoadWeapone(() => {
                         LoadRelic(() => {
-                            callback();
+                            LoadCloth(() => {
+                                callback();
+                            });
                         });
                     });
                 });
@@ -390,7 +392,7 @@ public class UserInfo : MonoBehaviour
                 userCloths.Add(new UserCloth(data[0], int.Parse(data[1]), int.Parse(data[2]), bool.Parse(data[3])));
             }
             callback();
-        }, () => { PushWeapone(ClothChart.instance.clothChartInfos[0].Name); callback(); });
+        }, () => { PushCloth(ClothChart.instance.clothChartInfos[0].Name); callback(); });
     }
 }
 public class UserMasicMissile

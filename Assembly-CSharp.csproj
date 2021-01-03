@@ -143,6 +143,7 @@
     <Compile Include="Assets\Script\Main\MoneyManager.cs" />
     <Compile Include="Assets\Script\Main\캐릭터강화\AbilityManager.cs" />
     <Compile Include="Assets\Script\Main\캐릭터강화\CharacterEnhaceManager.cs" />
+    <Compile Include="Assets\Script\Main\캐릭터강화\ClothGachaResult.cs" />
     <Compile Include="Assets\Script\Main\캐릭터강화\ClothManager.cs" />
     <Compile Include="Assets\Script\Main\캐릭터강화\EqipManager.cs" />
     <Compile Include="Assets\Script\Main\캐릭터강화\MasicMissileGachaResult.cs" />
@@ -158,6 +159,7 @@
     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\ReporterMessageReceiver.cs" />
     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\Test\Rotate.cs" />
     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\Test\TestReporter.cs" />
+    <None Include="Assets\Spine\version.txt" />
     <None Include="Assets\GooglePlayGames\Plugins\Android\GooglePlayGamesManifest.plugin\AndroidManifest.xml" />
     <Reference Include="UnityEngine">
       <HintPath>C:/UnityWorkspace/2019.4.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -794,6 +796,22 @@
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
       <Project>{49CE1F92-4D92-CEE6-1335-E9A3DAFB17A6}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
+    <ProjectReference Include="spine-unity-examples.csproj">
+      <Project>{02838B5C-6E56-91B2-B443-4724EECF48F8}</Project>
+      <Name>spine-unity-examples</Name>
+    </ProjectReference>
+    <ProjectReference Include="spine-unity.csproj">
+      <Project>{3630E9A1-44ED-3132-DDF4-0BD7AB7B41B1}</Project>
+      <Name>spine-unity</Name>
+    </ProjectReference>
+    <ProjectReference Include="spine-unity-examples-editor.csproj">
+      <Project>{E547C935-E000-9311-E951-DD7985BB9C5C}</Project>
+      <Name>spine-unity-examples-editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="spine-unity-editor.csproj">
+      <Project>{A120A32B-1D98-7755-E735-58E4ABBEDDCF}</Project>
+      <Name>spine-unity-editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
