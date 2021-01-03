@@ -2438,6 +2438,7 @@ GameObject:
   - component: {fileID: 504887247}
   - component: {fileID: 504887248}
   - component: {fileID: 504887249}
+  - component: {fileID: 504887250}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2944,6 +2945,24 @@ MonoBehaviour:
   relicSpriteAtlas: {fileID: 4343727234628468602, guid: 3924bd2389c254b4193c431cf20f4a4b,
     type: 2}
   relicChartInfos: []
+--- !u!114 &504887250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504887240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5c183e14bdaf3a48837d3ca9ce6d50b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  field: 12578
+  clothSpriteAtlas: {fileID: 4343727234628468602, guid: 18519f389d6b1e049ba6becb189fa04e,
+    type: 2}
+  clothIconSpriteAtlas: {fileID: 4343727234628468602, guid: e1a1b9501c714e649bcc8614d66d8df0,
+    type: 2}
+  clothChartInfos: []
 --- !u!1 &543599476
 GameObject:
   m_ObjectHideFlags: 0
@@ -5302,7 +5321,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1637031120
 RectTransform:
   m_ObjectHideFlags: 0

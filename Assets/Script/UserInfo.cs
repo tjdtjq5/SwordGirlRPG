@@ -319,6 +319,79 @@ public class UserInfo : MonoBehaviour
             callback();
         }, () => { PushRelic(RelicChart.instance.relicChartInfos[0].Name); callback(); });
     }
+    // 4. 복장
+    public List<UserCloth> userCloths = new List<UserCloth>();
+    public UserCloth GetUserClothInfo(string name)
+    {
+        for (int i = 0; i < userCloths.Count; i++)
+        {
+            if (userCloths[i].name == name)
+            {
+                return userCloths[i];
+            }
+        }
+        return null;
+    } // 특정 복장 정보
+    public void PushCloth(string name)
+    {
+        for (int i = 0; i < userCloths.Count; i++)
+        {
+            if (userCloths[i].name == name)
+            {
+                userCloths[i].num++;
+                return;
+            }
+        }
+        userCloths.Add(new UserCloth(name, 0, 1, false));
+    } // 복장 획득
+    public void UpgradeCloth(string name, int needNum)
+    {
+        for (int i = 0; i < userCloths.Count; i++)
+        {
+            if (userCloths[i].name == name)
+            {
+                userCloths[i].upgrade++;
+                userCloths[i].num -= needNum;
+            }
+        }
+    } // 복장 업그레이드
+    public void EqipCloth(string name)
+    {
+        for (int i = 0; i < userCloths.Count; i++)
+        {
+            if (userCloths[i].name == name)
+            {
+                userCloths[i].isEqip = true;
+            }
+            else
+            {
+                userCloths[i].isEqip = false;
+            }
+        }
+    } // 복장 장착
+    public void SaveCloth(System.Action callback)
+    {
+        Param param = new Param();
+        List<string> data = new List<string>();
+        for (int i = 0; i < userCloths.Count; i++)
+        {
+            data.Add(userCloths[i].name + "/" + userCloths[i].upgrade + "/" + userCloths[i].num + "/" + userCloths[i].isEqip);
+        }
+        param.Add("Cloth", data);
+        BackendGameInfo.instance.PrivateTableUpdate("Eqip", param, () => { callback(); });
+    }
+    public void LoadCloth(System.Action callback)
+    {
+        userCloths.Clear();
+        BackendGameInfo.instance.GetPrivateContents("Eqip", "Cloth", () => {
+            for (int i = 0; i < BackendGameInfo.instance.serverDataList.Count; i++)
+            {
+                string[] data = BackendGameInfo.instance.serverDataList[i].Split('/');
+                userCloths.Add(new UserCloth(data[0], int.Parse(data[1]), int.Parse(data[2]), bool.Parse(data[3])));
+            }
+            callback();
+        }, () => { PushWeapone(ClothChart.instance.clothChartInfos[0].Name); callback(); });
+    }
 }
 public class UserMasicMissile
 {
@@ -370,5 +443,20 @@ public class UserRelic
         this.gradeType = gradeType;
         this.upgrade = upgrade;
         this.num = num;
+    }
+}
+public class UserCloth
+{
+    public string name;
+    public int upgrade;
+    public int num;
+    public bool isEqip;
+
+    public UserCloth(string name, int upgrade, int num, bool isEqip)
+    {
+        this.name = name;
+        this.upgrade = upgrade;
+        this.num = num;
+        this.isEqip = isEqip;
     }
 }

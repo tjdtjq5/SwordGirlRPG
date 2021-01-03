@@ -51,7 +51,9 @@ public class Loading : MonoBehaviour
                 GachaChart.instance.LoadChart(() => {
                     WeaponeChart.instance.LoadChart(() => {
                         RelicChart.instance.LoadChart(() => {
-                            UserInfo.instance.Load(() => {  callback(); });
+                            ClothChart.instance.LoadChart(() => {
+                                UserInfo.instance.Load(() => { callback(); });
+                            });
                         });
                     });
                 });

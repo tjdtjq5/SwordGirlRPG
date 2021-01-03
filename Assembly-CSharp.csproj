@@ -123,6 +123,7 @@
     <Compile Include="Assets\GooglePlayGames\PluginVersion.cs" />
     <Compile Include="Assets\Script\BackendGameInfo.cs" />
     <Compile Include="Assets\Script\Chart\CharacterEnhanceAbilityChart.cs" />
+    <Compile Include="Assets\Script\Chart\ClothChart.cs" />
     <Compile Include="Assets\Script\Chart\GachaChart.cs" />
     <Compile Include="Assets\Script\Chart\MasicMissileChart.cs" />
     <Compile Include="Assets\Script\Chart\RelicChart.cs" />
@@ -142,6 +143,7 @@
     <Compile Include="Assets\Script\Main\MoneyManager.cs" />
     <Compile Include="Assets\Script\Main\캐릭터강화\AbilityManager.cs" />
     <Compile Include="Assets\Script\Main\캐릭터강화\CharacterEnhaceManager.cs" />
+    <Compile Include="Assets\Script\Main\캐릭터강화\ClothManager.cs" />
     <Compile Include="Assets\Script\Main\캐릭터강화\EqipManager.cs" />
     <Compile Include="Assets\Script\Main\캐릭터강화\MasicMissileGachaResult.cs" />
     <Compile Include="Assets\Script\Main\캐릭터강화\MasicMissileManager.cs" />
