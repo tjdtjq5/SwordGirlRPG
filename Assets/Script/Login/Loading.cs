@@ -52,7 +52,11 @@ public class Loading : MonoBehaviour
                     WeaponeChart.instance.LoadChart(() => {
                         RelicChart.instance.LoadChart(() => {
                             ClothChart.instance.LoadChart(() => {
-                                UserInfo.instance.Load(() => { callback(); });
+                                NomalMonsterChart.instance.LoadChart(() => {
+                                    BossMonsterChart.instance.LoadChart(() => {
+                                        UserInfo.instance.Load(() => { callback(); });
+                                    });
+                                });
                             });
                         });
                     });

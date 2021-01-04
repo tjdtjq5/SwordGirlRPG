@@ -122,10 +122,12 @@
     <Compile Include="Assets\GooglePlayGames\Platforms\TokenClient.cs" />
     <Compile Include="Assets\GooglePlayGames\PluginVersion.cs" />
     <Compile Include="Assets\Script\BackendGameInfo.cs" />
+    <Compile Include="Assets\Script\Chart\BossMonsterChart.cs" />
     <Compile Include="Assets\Script\Chart\CharacterEnhanceAbilityChart.cs" />
     <Compile Include="Assets\Script\Chart\ClothChart.cs" />
     <Compile Include="Assets\Script\Chart\GachaChart.cs" />
     <Compile Include="Assets\Script\Chart\MasicMissileChart.cs" />
+    <Compile Include="Assets\Script\Chart\NomalMonsterChart.cs" />
     <Compile Include="Assets\Script\Chart\RelicChart.cs" />
     <Compile Include="Assets\Script\Chart\WeaponeChart.cs" />
     <Compile Include="Assets\Script\Enum.cs" />
@@ -148,6 +150,7 @@
     <Compile Include="Assets\Script\Main\캐릭터강화\EqipManager.cs" />
     <Compile Include="Assets\Script\Main\캐릭터강화\MasicMissileGachaResult.cs" />
     <Compile Include="Assets\Script\Main\캐릭터강화\MasicMissileManager.cs" />
+    <Compile Include="Assets\Script\Main\캐릭터강화\MonsterUIManager.cs" />
     <Compile Include="Assets\Script\Main\캐릭터강화\RelicManager.cs" />
     <Compile Include="Assets\Script\Main\캐릭터강화\RelicStarEnhanceResult.cs" />
     <Compile Include="Assets\Script\Main\캐릭터강화\WeaponeGachaResult.cs" />
@@ -161,6 +164,8 @@
     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\Test\TestReporter.cs" />
     <None Include="Assets\Spine\version.txt" />
     <None Include="Assets\GooglePlayGames\Plugins\Android\GooglePlayGamesManifest.plugin\AndroidManifest.xml" />
+    <None Include="Assets\프리팹\캐릭터\hero.atlas.txt" />
+    <None Include="Assets\프리팹\마녀\witch.atlas.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:/UnityWorkspace/2019.4.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

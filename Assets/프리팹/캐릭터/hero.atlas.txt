@@ -1,0 +1,279 @@
+
+hero.png
+size: 529,531
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Blade
+  rotate: false
+  xy: 3, 6
+  size: 155, 45
+  orig: 155, 45
+  offset: 0, 0
+  index: -1
+armor/L_arm_1
+  rotate: false
+  xy: 384, 166
+  size: 44, 55
+  orig: 44, 55
+  offset: 0, 0
+  index: -1
+armor/L_arm_2
+  rotate: false
+  xy: 460, 11
+  size: 33, 40
+  orig: 33, 40
+  offset: 0, 0
+  index: -1
+armor/L_hand
+  rotate: false
+  xy: 229, 307
+  size: 31, 30
+  orig: 31, 30
+  offset: 0, 0
+  index: -1
+armor/L_leg_1
+  rotate: false
+  xy: 475, 168
+  size: 39, 55
+  orig: 39, 55
+  offset: 0, 0
+  index: -1
+armor/L_leg_2
+  rotate: false
+  xy: 458, 286
+  size: 40, 57
+  orig: 40, 57
+  offset: 0, 0
+  index: -1
+armor/R_arm_1
+  rotate: false
+  xy: 432, 226
+  size: 42, 52
+  orig: 42, 52
+  offset: 0, 0
+  index: -1
+armor/R_arm_2
+  rotate: false
+  xy: 477, 236
+  size: 38, 47
+  orig: 38, 47
+  offset: 0, 0
+  index: -1
+armor/R_hand
+  rotate: false
+  xy: 323, 311
+  size: 25, 26
+  orig: 25, 26
+  offset: 0, 0
+  index: -1
+armor/R_leg_1
+  rotate: false
+  xy: 489, 469
+  size: 37, 59
+  orig: 37, 59
+  offset: 0, 0
+  index: -1
+armor/R_leg_2
+  rotate: false
+  xy: 455, 54
+  size: 32, 49
+  orig: 32, 49
+  offset: 0, 0
+  index: -1
+armor/body_1
+  rotate: false
+  xy: 240, 6
+  size: 64, 67
+  orig: 64, 67
+  offset: 0, 0
+  index: -1
+armor/body_2
+  rotate: false
+  xy: 307, 6
+  size: 66, 73
+  orig: 66, 73
+  offset: 0, 0
+  index: -1
+armor/body_3
+  rotate: false
+  xy: 380, 346
+  size: 130, 78
+  orig: 130, 78
+  offset: 0, 0
+  index: -1
+armor/crown
+  rotate: false
+  xy: 410, 446
+  size: 76, 82
+  orig: 76, 82
+  offset: 0, 0
+  index: -1
+bikini/crown
+  rotate: false
+  xy: 410, 446
+  size: 76, 82
+  orig: 76, 82
+  offset: 0, 0
+  index: -1
+armor/face
+  rotate: false
+  xy: 229, 427
+  size: 178, 101
+  orig: 178, 101
+  offset: 0, 0
+  index: -1
+armor/head
+  rotate: false
+  xy: 3, 302
+  size: 223, 226
+  orig: 223, 226
+  offset: 0, 0
+  index: -1
+bikini/head
+  rotate: false
+  xy: 3, 302
+  size: 223, 226
+  orig: 223, 226
+  offset: 0, 0
+  index: -1
+armor/head_feeler
+  rotate: false
+  xy: 431, 166
+  size: 41, 55
+  orig: 41, 55
+  offset: 0, 0
+  index: -1
+bikini/head_feeler
+  rotate: false
+  xy: 431, 166
+  size: 41, 55
+  orig: 41, 55
+  offset: 0, 0
+  index: -1
+armor/head_tail
+  rotate: false
+  xy: 3, 54
+  size: 146, 245
+  orig: 146, 245
+  offset: 0, 0
+  index: -1
+armor/ribbon
+  rotate: false
+  xy: 288, 127
+  size: 93, 176
+  orig: 93, 176
+  offset: 0, 0
+  index: -1
+bikini/ribbon
+  rotate: false
+  xy: 288, 127
+  size: 93, 176
+  orig: 93, 176
+  offset: 0, 0
+  index: -1
+bikini/L_arm_1
+  rotate: false
+  xy: 384, 224
+  size: 45, 54
+  orig: 45, 54
+  offset: 0, 0
+  index: -1
+bikini/L_arm_2
+  rotate: false
+  xy: 380, 307
+  size: 28, 36
+  orig: 28, 36
+  offset: 0, 0
+  index: -1
+bikini/L_hand
+  rotate: false
+  xy: 263, 306
+  size: 27, 31
+  orig: 27, 31
+  offset: 0, 0
+  index: -1
+bikini/L_leg_1
+  rotate: false
+  xy: 411, 281
+  size: 44, 62
+  orig: 44, 62
+  offset: 0, 0
+  index: -1
+bikini/Lt_leg_2
+  rotate: false
+  xy: 460, 106
+  size: 38, 57
+  orig: 38, 57
+  offset: 0, 0
+  index: -1
+bikini/R_arm_1
+  rotate: false
+  xy: 414, 108
+  size: 43, 55
+  orig: 43, 55
+  offset: 0, 0
+  index: -1
+bikini/R_arm_2
+  rotate: false
+  xy: 421, 3
+  size: 36, 44
+  orig: 36, 44
+  offset: 0, 0
+  index: -1
+bikini/R_hand
+  rotate: false
+  xy: 293, 308
+  size: 27, 29
+  orig: 27, 29
+  offset: 0, 0
+  index: -1
+bikini/R_leg_1
+  rotate: false
+  xy: 376, 12
+  size: 42, 70
+  orig: 42, 70
+  offset: 0, 0
+  index: -1
+bikini/R_leg_2
+  rotate: false
+  xy: 421, 50
+  size: 31, 55
+  orig: 31, 55
+  offset: 0, 0
+  index: -1
+bikini/body_1
+  rotate: false
+  xy: 288, 82
+  size: 65, 42
+  orig: 65, 42
+  offset: 0, 0
+  index: -1
+bikini/body_2
+  rotate: false
+  xy: 356, 85
+  size: 55, 39
+  orig: 55, 39
+  offset: 0, 0
+  index: -1
+bikini/body_3
+  rotate: false
+  xy: 161, 10
+  size: 76, 63
+  orig: 76, 63
+  offset: 0, 0
+  index: -1
+bikini/face
+  rotate: false
+  xy: 229, 340
+  size: 148, 84
+  orig: 148, 84
+  offset: 0, 0
+  index: -1
+bikini/head_tail
+  rotate: false
+  xy: 152, 76
+  size: 133, 223
+  orig: 133, 223
+  offset: 0, 0
+  index: -1

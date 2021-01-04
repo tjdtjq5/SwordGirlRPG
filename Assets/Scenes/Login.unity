@@ -2439,6 +2439,8 @@ GameObject:
   - component: {fileID: 504887248}
   - component: {fileID: 504887249}
   - component: {fileID: 504887250}
+  - component: {fileID: 504887251}
+  - component: {fileID: 504887252}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2963,6 +2965,38 @@ MonoBehaviour:
   clothIconSpriteAtlas: {fileID: 4343727234628468602, guid: e1a1b9501c714e649bcc8614d66d8df0,
     type: 2}
   clothChartInfos: []
+--- !u!114 &504887251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504887240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23261f8b57d51f44eb00c55c9cf4142d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  field: 12604
+  nomalMonsterSpriteAtlas: {fileID: 4343727234628468602, guid: 05c9b60f12cfa394492b6ffe18cf7ae6,
+    type: 2}
+  nomalMonsterChartInfos: []
+--- !u!114 &504887252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504887240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf890ad8a1880b84ca1805bca66ba394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  field: 12605
+  bossMonsterSpriteAtlas: {fileID: 4343727234628468602, guid: 69c70d2e3c88856429ca6585e332b0b0,
+    type: 2}
+  bossMonsterChartInfos: []
 --- !u!1 &543599476
 GameObject:
   m_ObjectHideFlags: 0
@@ -4348,7 +4382,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1259003519
 RectTransform:
   m_ObjectHideFlags: 0
