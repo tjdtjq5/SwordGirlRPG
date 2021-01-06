@@ -2977,7 +2977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23261f8b57d51f44eb00c55c9cf4142d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  field: 12604
+  field: 12650
   nomalMonsterSpriteAtlas: {fileID: 4343727234628468602, guid: 05c9b60f12cfa394492b6ffe18cf7ae6,
     type: 2}
   nomalMonsterChartInfos: []
@@ -2993,7 +2993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf890ad8a1880b84ca1805bca66ba394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  field: 12605
+  field: 12651
   bossMonsterSpriteAtlas: {fileID: 4343727234628468602, guid: 69c70d2e3c88856429ca6585e332b0b0,
     type: 2}
   bossMonsterChartInfos: []
@@ -4382,7 +4382,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1259003519
 RectTransform:
   m_ObjectHideFlags: 0

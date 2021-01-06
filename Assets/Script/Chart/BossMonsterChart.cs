@@ -30,6 +30,7 @@ public class BossMonsterChart : MonoBehaviour
                 bossMonsterChartInfos[i].Atk = rowData["Atk"]["S"].ToString();
                 bossMonsterChartInfos[i].RewardCrystalNum = int.Parse(rowData["RewardCrystalNum"]["S"].ToString());
                 bossMonsterChartInfos[i].RewardEnhanceStoneNum = int.Parse(rowData["RewardEnhanceStoneNum"]["S"].ToString());
+                bossMonsterChartInfos[i].ConditionName = rowData["ConditionName"]["S"].ToString();
             }
 
             if (loadAction != null) loadAction();
@@ -45,4 +46,5 @@ public class BossMonsterChartInfo
     public string Atk;
     public int RewardCrystalNum;
     public int RewardEnhanceStoneNum;
+    public string ConditionName;
 }

@@ -151,8 +151,10 @@
     <Compile Include="Assets\Script\Main\캐릭터강화\MasicMissileGachaResult.cs" />
     <Compile Include="Assets\Script\Main\캐릭터강화\MasicMissileManager.cs" />
     <Compile Include="Assets\Script\Main\캐릭터강화\MonsterUIManager.cs" />
+    <Compile Include="Assets\Script\Main\캐릭터강화\NomalMonsterManager.cs" />
     <Compile Include="Assets\Script\Main\캐릭터강화\RelicManager.cs" />
     <Compile Include="Assets\Script\Main\캐릭터강화\RelicStarEnhanceResult.cs" />
+    <Compile Include="Assets\Script\Main\캐릭터강화\ShopManager.cs" />
     <Compile Include="Assets\Script\Main\캐릭터강화\WeaponeGachaResult.cs" />
     <Compile Include="Assets\Script\Main\캐릭터강화\WeaponeManager.cs" />
     <Compile Include="Assets\Script\UserInfo.cs" />

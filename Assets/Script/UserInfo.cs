@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using BackEnd;
+using System;
 
 public class UserInfo : MonoBehaviour
 {
@@ -20,7 +21,9 @@ public class UserInfo : MonoBehaviour
                     LoadWeapone(() => {
                         LoadRelic(() => {
                             LoadCloth(() => {
-                                callback();
+                                LoadUserNomalMonster(() => {
+                                    callback();
+                                });
                             });
                         });
                     });
@@ -394,6 +397,62 @@ public class UserInfo : MonoBehaviour
             callback();
         }, () => { PushCloth(ClothChart.instance.clothChartInfos[0].Name); callback(); });
     }
+
+    /// === 토벌 === ///
+    // 1. 노멀 몬스터 
+    public List<UserNomalMonster> userNomalMonsters = new List<UserNomalMonster>();
+    public void ClearNomalMonster(string name)
+    {
+        BackendReturnObject servertime = Backend.Utils.GetServerTime();
+        string time = servertime.GetReturnValuetoJSON()["utcTime"].ToString();
+        DateTime currentTime = DateTime.Parse(time);
+
+        for (int i = 0; i < userNomalMonsters.Count; i++)
+        {
+            if (userNomalMonsters[i].name == name)
+            {
+                userNomalMonsters[i].count++;
+             
+                userNomalMonsters[i].clearDateTime = currentTime;
+                return;
+            }
+        }
+        userNomalMonsters.Add(new UserNomalMonster(name, 1, currentTime));
+    } // 몬스터를 클리어시 정보 넣기 
+    public UserNomalMonster GetUserNomalMonsterInfo(string name)
+    {
+        for (int i = 0; i < userNomalMonsters.Count; i++)
+        {
+            if (userNomalMonsters[i].name == name)
+            {
+                return userNomalMonsters[i];
+            }
+        }
+        return null;
+    } // 유저 몬스터 정보 얻기 
+    public void SaveUserNomalMonster(System.Action callback)
+    {
+        Param param = new Param();
+        List<string> data = new List<string>();
+        for (int i = 0; i < userNomalMonsters.Count; i++)
+        {
+            data.Add(userNomalMonsters[i].name + "/" + userNomalMonsters[i].count + "/" + userNomalMonsters[i].clearDateTime);
+        }
+        param.Add("NomalMonster", data);
+        BackendGameInfo.instance.PrivateTableUpdate("Monster", param, () => { callback(); });
+    }
+    public void LoadUserNomalMonster(System.Action callback)
+    {
+        userNomalMonsters.Clear();
+        BackendGameInfo.instance.GetPrivateContents("Monster", "NomalMonster", () => {
+            for (int i = 0; i < BackendGameInfo.instance.serverDataList.Count; i++)
+            {
+                string[] data = BackendGameInfo.instance.serverDataList[i].Split('/');
+                userNomalMonsters.Add(new UserNomalMonster(data[0], int.Parse(data[1]), DateTime.Parse(data[2])));
+            }
+            callback();
+        }, () => { callback(); });
+    }
 }
 public class UserMasicMissile
 {
@@ -460,5 +519,18 @@ public class UserCloth
         this.upgrade = upgrade;
         this.num = num;
         this.isEqip = isEqip;
+    }
+}
+public class UserNomalMonster
+{
+    public string name;
+    public int count;
+    public DateTime clearDateTime;
+
+    public UserNomalMonster(string name, int count, DateTime dateTime)
+    {
+        this.name = name;
+        this.count = count;
+        this.clearDateTime = dateTime;
     }
 }

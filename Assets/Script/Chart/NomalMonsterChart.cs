@@ -30,6 +30,7 @@ public class NomalMonsterChart : MonoBehaviour
                 nomalMonsterChartInfos[i].Atk = rowData["Atk"]["S"].ToString();
                 nomalMonsterChartInfos[i].RewardCrystalNum = int.Parse(rowData["RewardCrystalNum"]["S"].ToString());
                 nomalMonsterChartInfos[i].RewardEnhanceStoneNum = int.Parse(rowData["RewardEnhanceStoneNum"]["S"].ToString());
+                nomalMonsterChartInfos[i].ConditionName = rowData["ConditionName"]["S"].ToString();
             }
 
             if (loadAction != null) loadAction();
@@ -45,4 +46,5 @@ public class NomalMonsterChartInfo
     public string Atk;
     public int RewardCrystalNum;
     public int RewardEnhanceStoneNum;
+    public string ConditionName;
 }
