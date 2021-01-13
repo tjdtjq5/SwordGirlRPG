@@ -54,7 +54,11 @@ public class Loading : MonoBehaviour
                             ClothChart.instance.LoadChart(() => {
                                 NomalMonsterChart.instance.LoadChart(() => {
                                     BossMonsterChart.instance.LoadChart(() => {
-                                        UserInfo.instance.Load(() => { callback(); });
+                                        DayByQuestChart.instance.LoadChart(() => {
+                                            WeekQuestChart.instance.LoadChart(() => {
+                                                UserInfo.instance.Load(() => { callback(); });
+                                            });
+                                        });
                                     });
                                 });
                             });

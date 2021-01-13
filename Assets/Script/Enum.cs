@@ -65,7 +65,8 @@ public enum MoneyType
     crystal,
     masicStone,
     enhanceStone,
-    transStone
+    transStone,
+    punishTiket
 }
 public enum GradeType
 {

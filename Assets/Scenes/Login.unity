@@ -2441,6 +2441,8 @@ GameObject:
   - component: {fileID: 504887250}
   - component: {fileID: 504887251}
   - component: {fileID: 504887252}
+  - component: {fileID: 504887253}
+  - component: {fileID: 504887254}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2997,6 +2999,34 @@ MonoBehaviour:
   bossMonsterSpriteAtlas: {fileID: 4343727234628468602, guid: 69c70d2e3c88856429ca6585e332b0b0,
     type: 2}
   bossMonsterChartInfos: []
+--- !u!114 &504887253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504887240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 395482c3f7b39cc4a80c6e643cea7fb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  field: 13155
+  dayByQuestChartInfos: []
+--- !u!114 &504887254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504887240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee01e658e722774d86300a1a891dc28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  field: 13156
+  weekQuestChartInfos: []
 --- !u!1 &543599476
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,7 +22,9 @@ public class UserInfo : MonoBehaviour
                         LoadRelic(() => {
                             LoadCloth(() => {
                                 LoadUserNomalMonster(() => {
-                                    callback();
+                                    LoadUserDayByQuest(() => {
+                                        callback();
+                                    });
                                 });
                             });
                         });
@@ -453,6 +455,312 @@ public class UserInfo : MonoBehaviour
             callback();
         }, () => { callback(); });
     }
+
+    /// === 퀘스트 === ///
+    // 1. 일일 퀘스트 
+    public List<UserDayByQuest> userDayByQuests = new List<UserDayByQuest>();
+    public int GetUserDayByQuestCount(int ID) // 해당 퀘스트의 클리어 횟수를 가져옴 
+    {
+        for (int i = 0; i < userDayByQuests.Count; i++)
+        {
+            if (userDayByQuests[i].ID == ID)
+            {
+                BackendReturnObject servertime = Backend.Utils.GetServerTime();
+                string time = servertime.GetReturnValuetoJSON()["utcTime"].ToString();
+                DateTime currentTime = DateTime.Parse(time);
+
+                if (userDayByQuests[i].time.Year == currentTime.Year && userDayByQuests[i].time.Month == currentTime.Month && userDayByQuests[i].time.Day == currentTime.Day)
+                {
+                    return userDayByQuests[i].count;
+                }
+                else
+                {
+                    userDayByQuests[i].time = currentTime;
+                    userDayByQuests[i].count = 0;
+                    return 0;
+                }
+            }
+        }
+        return 0;
+    }
+    public bool GetUserDayByQuestComplete(int ID) // 해당 퀘스트의 완료여부 가져옴
+    {
+        for (int i = 0; i < userDayByQuests.Count; i++)
+        {
+            if (userDayByQuests[i].ID == ID)
+            {
+                BackendReturnObject servertime = Backend.Utils.GetServerTime();
+                string time = servertime.GetReturnValuetoJSON()["utcTime"].ToString();
+                DateTime currentTime = DateTime.Parse(time);
+
+                if (userDayByQuests[i].time.Year == currentTime.Year && userDayByQuests[i].time.Month == currentTime.Month && userDayByQuests[i].time.Day == currentTime.Day)
+                {
+                    return userDayByQuests[i].complete;
+                }
+                else
+                {
+                    userDayByQuests[i].time = currentTime;
+                    userDayByQuests[i].complete = false;
+                    return false;
+                }
+            }
+        }
+        return false;
+    }  
+    public void PushUserDayByQuestCount(int ID) // 해당 퀘스트에 클리어횟수 추가 
+    {
+        BackendReturnObject servertime = Backend.Utils.GetServerTime();
+        string time = servertime.GetReturnValuetoJSON()["utcTime"].ToString();
+        DateTime currentTime = DateTime.Parse(time);
+
+        for (int i = 0; i < userDayByQuests.Count; i++)
+        {
+            if (userDayByQuests[i].ID == ID)
+            {
+                if (userDayByQuests[i].time.Year == currentTime.Year && userDayByQuests[i].time.Month == currentTime.Month && userDayByQuests[i].time.Day == currentTime.Day)
+                {
+                    userDayByQuests[i].count++;
+                }
+                else
+                {
+                    userDayByQuests[i].time = currentTime;
+                    userDayByQuests[i].count = 1;
+                }
+            }
+        }
+
+        userDayByQuests.Add(new UserDayByQuest(ID, currentTime, 1, false));
+    }
+    public void PushUserDayByQuestComplete(int ID) // 해당 퀘스트 완료시키기 
+    {
+        for (int i = 0; i < userDayByQuests.Count; i++)
+        {
+            if (userDayByQuests[i].ID == ID)
+            {
+                BackendReturnObject servertime = Backend.Utils.GetServerTime();
+                string time = servertime.GetReturnValuetoJSON()["utcTime"].ToString();
+                DateTime currentTime = DateTime.Parse(time);
+
+                userDayByQuests[i].time = currentTime;
+
+                userDayByQuests[i].complete = true;
+            }
+        }
+    }
+    public void SaveUserDayByQuest(System.Action callback)
+    {
+        Param param = new Param();
+        List<string> data = new List<string>();
+        for (int i = 0; i < userDayByQuests.Count; i++)
+        {
+            data.Add(userDayByQuests[i].ID + "/" + userDayByQuests[i].time + "/" + userDayByQuests[i].count + "/" + userDayByQuests[i].complete);
+        }
+        param.Add("Day", data);
+        BackendGameInfo.instance.PrivateTableUpdate("Quest", param, () => { callback(); });
+    }
+    public void LoadUserDayByQuest(System.Action callback)
+    {
+        userDayByQuests.Clear();
+        BackendGameInfo.instance.GetPrivateContents("Quest", "Day", () => {
+            for (int i = 0; i < BackendGameInfo.instance.serverDataList.Count; i++)
+            {
+                string[] data = BackendGameInfo.instance.serverDataList[i].Split('/');
+                userDayByQuests.Add(new UserDayByQuest(int.Parse(data[0]), DateTime.Parse(data[1]), int.Parse(data[2]), bool.Parse(data[3])));
+            }
+            callback();
+        }, () => { callback(); });
+    }
+    // 2. 주간 퀘스트
+    public UserWeekByQuest userWeekByQuest = new UserWeekByQuest();
+    public void PushUserWeekByQuestPoint(int point) // 주간퀘스트 포인트 적립
+    {
+        BackendReturnObject servertime = Backend.Utils.GetServerTime();
+        string time = servertime.GetReturnValuetoJSON()["utcTime"].ToString();
+        DateTime currentTime = DateTime.Parse(time);
+        TimeSpan subTimeTimeSpan = currentTime.Subtract(userWeekByQuest.time);
+        DateTime subTime = new DateTime(subTimeTimeSpan.Ticks);
+
+        bool flag = false;
+        switch (currentTime.DayOfWeek)
+        {
+            case DayOfWeek.Monday:
+                if (subTime.Day < 1) flag = true;
+                break;
+            case DayOfWeek.Tuesday:
+                if (subTime.Day < 2) flag = true;
+                break;
+            case DayOfWeek.Wednesday:
+                if (subTime.Day < 3) flag = true;
+                break;
+            case DayOfWeek.Thursday:
+                if (subTime.Day < 4) flag = true;
+                break;
+            case DayOfWeek.Friday:
+                if (subTime.Day < 5) flag = true;
+                break;
+            case DayOfWeek.Saturday:
+                if (subTime.Day < 6) flag = true;
+                break;
+            case DayOfWeek.Sunday:
+                if (subTime.Day < 7) flag = true;
+                break;
+        }
+
+        if (flag)
+        {
+            userWeekByQuest.point += point;
+        }
+        else
+        {
+            userWeekByQuest.time = currentTime;
+            userWeekByQuest.point = point;
+        }
+    }
+    public int GetUserWeekByQuestPoint() // 주간퀘스트 포인트 가져옴 
+    {
+        BackendReturnObject servertime = Backend.Utils.GetServerTime();
+        string time = servertime.GetReturnValuetoJSON()["utcTime"].ToString();
+        DateTime currentTime = DateTime.Parse(time);
+        TimeSpan subTimeTimeSpan = currentTime.Subtract(userWeekByQuest.time);
+        DateTime subTime = new DateTime(subTimeTimeSpan.Ticks);
+
+        bool flag = false;
+        switch (currentTime.DayOfWeek)
+        {
+            case DayOfWeek.Monday:
+                if (subTime.Day < 1) flag = true;
+                break;
+            case DayOfWeek.Tuesday:
+                if (subTime.Day < 2) flag = true;
+                break;
+            case DayOfWeek.Wednesday:
+                if (subTime.Day < 3) flag = true;
+                break;
+            case DayOfWeek.Thursday:
+                if (subTime.Day < 4) flag = true;
+                break;
+            case DayOfWeek.Friday:
+                if (subTime.Day < 5) flag = true;
+                break;
+            case DayOfWeek.Saturday:
+                if (subTime.Day < 6) flag = true;
+                break;
+            case DayOfWeek.Sunday:
+                if (subTime.Day < 7) flag = true;
+                break;
+        }
+
+        if (flag)
+        {
+            return userWeekByQuest.point;
+        }
+        else
+        {
+            userWeekByQuest.time = currentTime;
+            return 0;
+        }
+    }
+    public void PushUserWeekByQuestComplete(int ID) // 해당 주간 퀘스트 완료시키기
+    {
+        if (userWeekByQuest.complete.ContainsKey(ID))
+        {
+            userWeekByQuest.complete[ID] = true;
+        }
+        else
+        {
+            userWeekByQuest.complete.Add(ID, true);
+        }
+    }
+    public bool GetUserWeekByQuestComplete(int ID) // 해당 주간 퀘스트 완료정보 가져오기
+    {
+        BackendReturnObject servertime = Backend.Utils.GetServerTime();
+        string time = servertime.GetReturnValuetoJSON()["utcTime"].ToString();
+        DateTime currentTime = DateTime.Parse(time);
+        TimeSpan subTimeTimeSpan = currentTime.Subtract(userWeekByQuest.time);
+        DateTime subTime = new DateTime(subTimeTimeSpan.Ticks);
+
+        bool flag = false;
+        switch (currentTime.DayOfWeek)
+        {
+            case DayOfWeek.Monday:
+                if (subTime.Day < 1) flag = true;
+                break;
+            case DayOfWeek.Tuesday:
+                if (subTime.Day < 2) flag = true;
+                break;
+            case DayOfWeek.Wednesday:
+                if (subTime.Day < 3) flag = true;
+                break;
+            case DayOfWeek.Thursday:
+                if (subTime.Day < 4) flag = true;
+                break;
+            case DayOfWeek.Friday:
+                if (subTime.Day < 5) flag = true;
+                break;
+            case DayOfWeek.Saturday:
+                if (subTime.Day < 6) flag = true;
+                break;
+            case DayOfWeek.Sunday:
+                if (subTime.Day < 7) flag = true;
+                break;
+        }
+
+        if (flag)
+        {
+          
+        }
+        else
+        {
+            userWeekByQuest.time = currentTime;
+            userWeekByQuest.complete.Clear();
+        }
+
+        if (userWeekByQuest.complete.ContainsKey(ID))
+        {
+            return userWeekByQuest.complete[ID];
+        }
+        else
+        {
+            userWeekByQuest.complete.Add(ID, false);
+            return false;
+        }
+    }
+    public void SaveUserWeekByQuest(System.Action callback)
+    {
+        Param param = new Param();
+        string point = userWeekByQuest.point.ToString();
+        string complete = "";
+        string time = userWeekByQuest.time.ToString();
+
+        foreach (KeyValuePair<int, bool> dict in userWeekByQuest.complete)
+        {
+            complete += dict.Key + "," + dict.Value + "=";
+        }
+        complete = complete.Substring(0, complete.Length - 1);
+
+        string data = point + "/" + complete + "/" + time;
+
+        param.Add("Week", data);
+        BackendGameInfo.instance.PrivateTableUpdate("Quest", param, () => { callback(); });
+    }
+    public void LoadUserWeekByQuest(System.Action callback)
+    {
+        BackendGameInfo.instance.GetPrivateContents("Quest", "Week", () => {
+            string[] data = BackendGameInfo.instance.serverDataList[0].Split('/');
+            int point = int.Parse(data[0]);
+            DateTime time = DateTime.Parse(data[2]);
+            Dictionary<int, bool> complete = new Dictionary<int, bool>();
+            string[] data1List = data[1].Split('=');
+            for (int i = 0; i < data1List.Length; i++)
+            {
+                int key = int.Parse(data1List[i].Split(',')[0]);
+                bool value = bool.Parse(data1List[i].Split(',')[1]);
+                complete.Add(key, value);
+            }
+            userWeekByQuest = new UserWeekByQuest(point, complete, time);
+            callback();
+        }, () => { callback(); });
+    }
 }
 public class UserMasicMissile
 {
@@ -532,5 +840,39 @@ public class UserNomalMonster
         this.name = name;
         this.count = count;
         this.clearDateTime = dateTime;
+    }
+}
+public class UserDayByQuest
+{
+    public int ID;
+    public DateTime time;
+    public int count;
+    public bool complete;
+
+    public UserDayByQuest(int ID, DateTime time, int count, bool complete)
+    {
+        this.ID = ID;
+        this.time = time;
+        this.count = count;
+        this.complete = complete;
+    }
+}
+public class UserWeekByQuest
+{
+    public int point;
+    public Dictionary<int, bool> complete = new Dictionary<int, bool>();
+    public DateTime time = new DateTime();
+
+    public UserWeekByQuest()
+    {
+        point = 0;
+        complete.Clear();
+    }
+
+    public UserWeekByQuest(int point, Dictionary<int,bool> complete, DateTime time)
+    {
+        this.point = point;
+        this.complete = complete;
+        this.time = time;
     }
 }
