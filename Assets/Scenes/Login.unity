@@ -2432,6 +2432,7 @@ GameObject:
   - component: {fileID: 504887242}
   - component: {fileID: 504887241}
   - component: {fileID: 504887244}
+  - component: {fileID: 504887255}
   - component: {fileID: 504887243}
   - component: {fileID: 504887245}
   - component: {fileID: 504887246}
@@ -3027,6 +3028,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   field: 13156
   weekQuestChartInfos: []
+--- !u!114 &504887255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504887240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e16231962a09fad4f912089d277df550, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &543599476
 GameObject:
   m_ObjectHideFlags: 0

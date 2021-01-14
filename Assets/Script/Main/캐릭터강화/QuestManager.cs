@@ -23,7 +23,7 @@ public class QuestManager : MonoBehaviour
 
     private void Start()
     {
-        QuestBtn();
+        PassBtn();
     }
 
     public void Open()
@@ -45,6 +45,8 @@ public class QuestManager : MonoBehaviour
 
         float moveX = pass.Find("Position").position.x;
         focus.DOMoveX(moveX, upperBtnDgSpeed);
+
+        questPannel.GetComponent<PassManager>().Open();
     }
     public void QuestBtn()
     {

@@ -23,7 +23,9 @@ public class UserInfo : MonoBehaviour
                             LoadCloth(() => {
                                 LoadUserNomalMonster(() => {
                                     LoadUserDayByQuest(() => {
-                                        callback();
+                                        LoadUserWeekByQuest(() => {
+                                            callback();
+                                        });
                                     });
                                 });
                             });
@@ -465,9 +467,7 @@ public class UserInfo : MonoBehaviour
         {
             if (userDayByQuests[i].ID == ID)
             {
-                BackendReturnObject servertime = Backend.Utils.GetServerTime();
-                string time = servertime.GetReturnValuetoJSON()["utcTime"].ToString();
-                DateTime currentTime = DateTime.Parse(time);
+                DateTime currentTime = TimeManager.instance.currentTime;
 
                 if (userDayByQuests[i].time.Year == currentTime.Year && userDayByQuests[i].time.Month == currentTime.Month && userDayByQuests[i].time.Day == currentTime.Day)
                 {
@@ -489,9 +489,7 @@ public class UserInfo : MonoBehaviour
         {
             if (userDayByQuests[i].ID == ID)
             {
-                BackendReturnObject servertime = Backend.Utils.GetServerTime();
-                string time = servertime.GetReturnValuetoJSON()["utcTime"].ToString();
-                DateTime currentTime = DateTime.Parse(time);
+                DateTime currentTime = TimeManager.instance.currentTime;
 
                 if (userDayByQuests[i].time.Year == currentTime.Year && userDayByQuests[i].time.Month == currentTime.Month && userDayByQuests[i].time.Day == currentTime.Day)
                 {
@@ -509,9 +507,7 @@ public class UserInfo : MonoBehaviour
     }  
     public void PushUserDayByQuestCount(int ID) // 해당 퀘스트에 클리어횟수 추가 
     {
-        BackendReturnObject servertime = Backend.Utils.GetServerTime();
-        string time = servertime.GetReturnValuetoJSON()["utcTime"].ToString();
-        DateTime currentTime = DateTime.Parse(time);
+        DateTime currentTime = TimeManager.instance.currentTime;
 
         for (int i = 0; i < userDayByQuests.Count; i++)
         {
@@ -537,13 +533,14 @@ public class UserInfo : MonoBehaviour
         {
             if (userDayByQuests[i].ID == ID)
             {
-                BackendReturnObject servertime = Backend.Utils.GetServerTime();
-                string time = servertime.GetReturnValuetoJSON()["utcTime"].ToString();
-                DateTime currentTime = DateTime.Parse(time);
+                DateTime currentTime = TimeManager.instance.currentTime;
 
                 userDayByQuests[i].time = currentTime;
 
                 userDayByQuests[i].complete = true;
+
+                DayByQuestChartInfo dayByQuestChartInfo = DayByQuestChart.instance.dayByQuestChartInfos[ID];
+                PushUserWeekByQuestPoint(dayByQuestChartInfo.Point);
             }
         }
     }
@@ -574,9 +571,7 @@ public class UserInfo : MonoBehaviour
     public UserWeekByQuest userWeekByQuest = new UserWeekByQuest();
     public void PushUserWeekByQuestPoint(int point) // 주간퀘스트 포인트 적립
     {
-        BackendReturnObject servertime = Backend.Utils.GetServerTime();
-        string time = servertime.GetReturnValuetoJSON()["utcTime"].ToString();
-        DateTime currentTime = DateTime.Parse(time);
+        DateTime currentTime = TimeManager.instance.currentTime;
         TimeSpan subTimeTimeSpan = currentTime.Subtract(userWeekByQuest.time);
         DateTime subTime = new DateTime(subTimeTimeSpan.Ticks);
 
@@ -618,9 +613,7 @@ public class UserInfo : MonoBehaviour
     }
     public int GetUserWeekByQuestPoint() // 주간퀘스트 포인트 가져옴 
     {
-        BackendReturnObject servertime = Backend.Utils.GetServerTime();
-        string time = servertime.GetReturnValuetoJSON()["utcTime"].ToString();
-        DateTime currentTime = DateTime.Parse(time);
+        DateTime currentTime = TimeManager.instance.currentTime;
         TimeSpan subTimeTimeSpan = currentTime.Subtract(userWeekByQuest.time);
         DateTime subTime = new DateTime(subTimeTimeSpan.Ticks);
 
@@ -673,9 +666,7 @@ public class UserInfo : MonoBehaviour
     }
     public bool GetUserWeekByQuestComplete(int ID) // 해당 주간 퀘스트 완료정보 가져오기
     {
-        BackendReturnObject servertime = Backend.Utils.GetServerTime();
-        string time = servertime.GetReturnValuetoJSON()["utcTime"].ToString();
-        DateTime currentTime = DateTime.Parse(time);
+        DateTime currentTime = TimeManager.instance.currentTime;
         TimeSpan subTimeTimeSpan = currentTime.Subtract(userWeekByQuest.time);
         DateTime subTime = new DateTime(subTimeTimeSpan.Ticks);
 
@@ -736,13 +727,15 @@ public class UserInfo : MonoBehaviour
         {
             complete += dict.Key + "," + dict.Value + "=";
         }
-        complete = complete.Substring(0, complete.Length - 1);
+        if(userWeekByQuest.complete.Count > 0) complete = complete.Substring(0, complete.Length - 1);
 
         string data = point + "/" + complete + "/" + time;
 
         param.Add("Week", data);
         BackendGameInfo.instance.PrivateTableUpdate("Quest", param, () => { callback(); });
     }
+
+    [Obsolete]
     public void LoadUserWeekByQuest(System.Action callback)
     {
         BackendGameInfo.instance.GetPrivateContents("Quest", "Week", () => {
@@ -751,11 +744,14 @@ public class UserInfo : MonoBehaviour
             DateTime time = DateTime.Parse(data[2]);
             Dictionary<int, bool> complete = new Dictionary<int, bool>();
             string[] data1List = data[1].Split('=');
-            for (int i = 0; i < data1List.Length; i++)
+            if (data1List.Length > 1)
             {
-                int key = int.Parse(data1List[i].Split(',')[0]);
-                bool value = bool.Parse(data1List[i].Split(',')[1]);
-                complete.Add(key, value);
+                for (int i = 0; i < data1List.Length; i++)
+                {
+                    int key = int.Parse(data1List[i].Split(',')[0]);
+                    bool value = bool.Parse(data1List[i].Split(',')[1]);
+                    complete.Add(key, value);
+                }
             }
             userWeekByQuest = new UserWeekByQuest(point, complete, time);
             callback();

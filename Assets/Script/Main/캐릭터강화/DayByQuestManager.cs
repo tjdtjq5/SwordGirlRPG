@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿using BackEnd;
+using DG.Tweening;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D;
@@ -19,10 +22,21 @@ public class DayByQuestManager : MonoBehaviour
     public NomalMonsterManager nomalMonsterManager;
     public ItemGetManager ItemGetManager;
 
+    [Header("주간")]
+    public Text weekPointText;
+    public Transform myWeekPoint;
+    public Text remainTimeText;
+    public Button allRewardBtn;
+
     [ContextMenu("테스트")]
-    public void Test()
+    public void Test01()
     {
+        UserInfo.instance.PushUserDayByQuestCount(0);
         UserInfo.instance.PushUserDayByQuestCount(1);
+        UserInfo.instance.PushUserDayByQuestCount(2);
+        UserInfo.instance.PushUserDayByQuestCount(3);
+        UserInfo.instance.PushUserDayByQuestCount(4);
+        UserInfo.instance.PushUserDayByQuestCount(5);
         UISetting();
     }
 
@@ -34,6 +48,7 @@ public class DayByQuestManager : MonoBehaviour
         }
         dayByQuestPannel.SetActive(true);
         UISetting();
+        WeekUISetting();
     }
     public void UISetting()
     {
@@ -172,7 +187,7 @@ public class DayByQuestManager : MonoBehaviour
 
             j++;
         }
-    }
+    } // 일간 퀘스트 ui 셋팅 
 
     public void OnClickMove(int ID) // 바로가기
     {
@@ -199,11 +214,102 @@ public class DayByQuestManager : MonoBehaviour
         }
         questManager.Close();
     }
-    public void OnClickReward(int dayQuestID ,MoneyType[] moneyTypes, int[] count) // 보상받기
+    public void OnClickReward(int dayQuestID ,MoneyType[] moneyTypes, int[] count) // 일일퀘 보상받기
     {
         UserInfo.instance.PushUserDayByQuestComplete(dayQuestID);
         UISetting();
+        WeekUISetting();
 
-        UserInfo.instance.SaveUserDayByQuest(() => { ItemGetManager.Open(moneyTypes, count); });
+        UserInfo.instance.SaveUserWeekByQuest(() => {
+            UserInfo.instance.SaveUserDayByQuest(() => { ItemGetManager.Open(moneyTypes, count); });
+        });
+    }
+
+    public void WeekUISetting() // 주간 퀘스트 ui 셋팅
+    {
+        WeekQuestChartInfo weekQuestCharts00 = WeekQuestChart.instance.weekQuestChartInfos[0];
+        WeekQuestChartInfo weekQuestCharts01 = WeekQuestChart.instance.weekQuestChartInfos[1];
+        WeekQuestChartInfo weekQuestCharts02 = WeekQuestChart.instance.weekQuestChartInfos[2];
+
+        int userPoint = UserInfo.instance.GetUserWeekByQuestPoint();
+        weekPointText.text = "전체 활약도 " + userPoint + "/" + weekQuestCharts02.Point;
+
+        float fillAmont = userPoint / (float)weekQuestCharts02.Point;
+        myWeekPoint.Find("활약도수치").GetChild(0).GetComponent<Text>().text = userPoint.ToString();
+        myWeekPoint.Find("fore").GetComponent<Image>().fillAmount = fillAmont;
+
+        float minX = myWeekPoint.Find("min").position.x;
+        float maxX = myWeekPoint.Find("max").position.x;
+        myWeekPoint.Find("switchCon").DOMoveX(minX + ((maxX - minX) * fillAmont),0);
+
+        myWeekPoint.Find("1").GetChild(0).GetComponent<Text>().text = weekQuestCharts00.Point.ToString();
+        myWeekPoint.Find("1").GetComponent<Button>().onClick.RemoveAllListeners();
+        myWeekPoint.Find("1").GetComponent<Button>().onClick.AddListener(() => {
+            bool isComplete = UserInfo.instance.GetUserWeekByQuestComplete(0);
+            if (!isComplete && weekQuestCharts00.Point <= userPoint)
+            {
+                OnClickWeekReward(0, weekQuestCharts00.RewardList.ToArray(), weekQuestCharts00.RewardCountList.ToArray());
+            }
+        });
+        myWeekPoint.Find("2").GetChild(0).GetComponent<Text>().text = weekQuestCharts01.Point.ToString();
+        myWeekPoint.Find("2").GetComponent<Button>().onClick.RemoveAllListeners();
+        myWeekPoint.Find("2").GetComponent<Button>().onClick.AddListener(() => {
+            bool isComplete = UserInfo.instance.GetUserWeekByQuestComplete(1);
+            if (!isComplete && weekQuestCharts01.Point <= userPoint)
+            {
+                OnClickWeekReward(1, weekQuestCharts01.RewardList.ToArray(), weekQuestCharts01.RewardCountList.ToArray());
+            }
+        });
+        myWeekPoint.Find("3").GetChild(0).GetComponent<Text>().text = weekQuestCharts02.Point.ToString();
+        myWeekPoint.Find("3").GetComponent<Button>().onClick.RemoveAllListeners();
+        myWeekPoint.Find("3").GetComponent<Button>().onClick.AddListener(() => {
+            bool isComplete = UserInfo.instance.GetUserWeekByQuestComplete(2);
+            if (!isComplete && weekQuestCharts02.Point <= userPoint)
+            {
+                OnClickWeekReward(2, weekQuestCharts02.RewardList.ToArray(), weekQuestCharts02.RewardCountList.ToArray());
+            }
+        });
+
+        DateTime currentTime = TimeManager.instance.currentTime;
+
+        int d = 0;
+        switch (currentTime.DayOfWeek)
+        {
+            case DayOfWeek.Monday:
+                d = 7;
+                break;
+            case DayOfWeek.Tuesday:
+                d = 6;
+                break;
+            case DayOfWeek.Wednesday:
+                d = 5;
+                break;
+            case DayOfWeek.Thursday:
+                d = 4;
+                break;
+            case DayOfWeek.Friday:
+                d = 3;
+                break;
+            case DayOfWeek.Saturday:
+                d = 2;
+                break;
+            case DayOfWeek.Sunday:
+                d = 1;
+                break;
+        }
+
+        DateTime nextWeekTime = new DateTime(currentTime.Year, currentTime.Month, currentTime.Day + d, 0, 0, 0);
+        TimeSpan remainTimeSpan = nextWeekTime.Subtract(currentTime);
+
+        remainTimeText.text = "남은시간 " + remainTimeSpan.Days + "일 " + remainTimeSpan.Hours + "시 " + remainTimeSpan.Minutes + "분";
+    }
+
+    public void OnClickWeekReward(int questID, MoneyType[] moneyTypes, int[] count)
+    {
+        WeekUISetting();
+        UserInfo.instance.PushUserWeekByQuestComplete(questID);
+        UserInfo.instance.SaveUserWeekByQuest(() => {
+            ItemGetManager.Open(moneyTypes, count);
+        });
     }
 }

@@ -59,7 +59,7 @@ public class WeekQuestChart : MonoBehaviour
                 weekQuestChartInfos[i].RewardList.Clear();
                 for (int j = 0; j < rewardData.Length; j++)
                 {
-                    weekQuestChartInfos[i].RewardList.Add(int.Parse(rewardData[i]));
+                    weekQuestChartInfos[i].RewardList.Add((MoneyType)int.Parse(rewardData[i]));
                 }
 
                 string[] rewardCountData = rowData["RewardCountList"]["S"].ToString().Split('-');
@@ -78,6 +78,6 @@ public class WeekQuestChart : MonoBehaviour
 public class WeekQuestChartInfo
 {
     public int Point;
-    public List<int> RewardList = new List<int>();
+    public List<MoneyType> RewardList = new List<MoneyType>();
     public List<int> RewardCountList = new List<int>();
 }
