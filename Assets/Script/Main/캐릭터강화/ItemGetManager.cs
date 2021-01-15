@@ -68,6 +68,48 @@ public class ItemGetManager : MonoBehaviour
         UserInfo.instance.SaveMoney(() => { });
     }
 
+    public void Open(MoneyType moneyTypes, int count)
+    {
+        blackPannel.SetActive(true);
+        itemPannel.SetActive(true);
+
+        for (int i = 0; i < itemList.childCount; i++) // 초기화 
+        {
+            itemList.GetChild(i).gameObject.SetActive(false);
+        }
+
+        itemList.GetChild(0).gameObject.SetActive(true);
+
+        Transform item = itemList.GetChild(0);
+        item.Find("Icon").GetComponent<Image>().sprite = moneyTypeSpriteAtlas.GetSprite(moneyTypes.ToString());
+        item.Find("Icon").GetComponent<Image>().SetNativeSize();
+        item.Find("Count").GetComponent<Text>().text = count.ToString();
+
+        switch (moneyTypes)
+        {
+            case MoneyType.gold:
+                MoneyManager.instance.GoldAdd(count.ToString());
+                break;
+            case MoneyType.crystal:
+                MoneyManager.instance.CrystalAdd(count);
+                break;
+            case MoneyType.masicStone:
+                MoneyManager.instance.MasicStoneAdd(count);
+                break;
+            case MoneyType.enhanceStone:
+                MoneyManager.instance.EnhanceStoneAdd(count);
+                break;
+            case MoneyType.transStone:
+                MoneyManager.instance.TransStoneAdd(count);
+                break;
+            case MoneyType.punishTiket:
+                UserInfo.instance.punishTiket += count;
+                break;
+        }
+
+        UserInfo.instance.SaveMoney(() => { });
+    }
+
     public void Close()
     {
         blackPannel.SetActive(false);

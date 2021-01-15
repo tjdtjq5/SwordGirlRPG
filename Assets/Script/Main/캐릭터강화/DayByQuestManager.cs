@@ -220,8 +220,10 @@ public class DayByQuestManager : MonoBehaviour
         UISetting();
         WeekUISetting();
 
-        UserInfo.instance.SaveUserWeekByQuest(() => {
-            UserInfo.instance.SaveUserDayByQuest(() => { ItemGetManager.Open(moneyTypes, count); });
+        UserInfo.instance.SaveUserPass(() => {
+            UserInfo.instance.SaveUserWeekByQuest(() => {
+                UserInfo.instance.SaveUserDayByQuest(() => { ItemGetManager.Open(moneyTypes, count); });
+            });
         });
     }
 

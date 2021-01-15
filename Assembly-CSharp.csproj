@@ -129,6 +129,7 @@
     <Compile Include="Assets\Script\Chart\GachaChart.cs" />
     <Compile Include="Assets\Script\Chart\MasicMissileChart.cs" />
     <Compile Include="Assets\Script\Chart\NomalMonsterChart.cs" />
+    <Compile Include="Assets\Script\Chart\PassChart.cs" />
     <Compile Include="Assets\Script\Chart\RelicChart.cs" />
     <Compile Include="Assets\Script\Chart\WeaponeChart.cs" />
     <Compile Include="Assets\Script\Chart\WeekQuestChart.cs" />

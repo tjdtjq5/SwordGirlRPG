@@ -56,7 +56,11 @@ public class Loading : MonoBehaviour
                                     BossMonsterChart.instance.LoadChart(() => {
                                         DayByQuestChart.instance.LoadChart(() => {
                                             WeekQuestChart.instance.LoadChart(() => {
-                                                UserInfo.instance.Load(() => { callback(); });
+                                                UserInfo.instance.Load(() => {
+                                                    PassChart.instance.LoadChart(() => {
+                                                        callback();
+                                                    });
+                                                });
                                             });
                                         });
                                     });

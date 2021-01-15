@@ -13,35 +13,6 @@ public class WeekQuestChart : MonoBehaviour
     private void Awake() { instance = this; }
     public WeekQuestChartInfo[] weekQuestChartInfos;
 
-    [ContextMenu("세이브")]
-    public void Test1()
-    {
-        int point = 5;
-        Dictionary<int, bool> com = new Dictionary<int, bool>();
-        com.Add(0, false);
-        com.Add(1, true);
-        com.Add(2, false);
-        BackendReturnObject servertime = Backend.Utils.GetServerTime();
-        string time = servertime.GetReturnValuetoJSON()["utcTime"].ToString();
-        DateTime currentTime = DateTime.Parse(time);
-
-        UserInfo.instance.userWeekByQuest = new UserWeekByQuest(point, com, currentTime);
-
-        UserInfo.instance.SaveUserWeekByQuest(() => { });
-    }
-    [ContextMenu("로드")]
-    public void Test2()
-    {
-        UserInfo.instance.LoadUserWeekByQuest(() => {
-            int point = UserInfo.instance.GetUserWeekByQuestPoint();
-            Debug.Log("포인트  :  " + point);
-            Debug.Log("com0  :  " + UserInfo.instance.GetUserWeekByQuestComplete(0));
-            Debug.Log("com1  :  " + UserInfo.instance.GetUserWeekByQuestComplete(1));
-            Debug.Log("com2  :  " + UserInfo.instance.GetUserWeekByQuestComplete(2));
-            Debug.Log("Time  :  " + UserInfo.instance.userWeekByQuest.time);
-        });
-    }
-
     [System.Obsolete]
     public void LoadChart(System.Action loadAction)
     {

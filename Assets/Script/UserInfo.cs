@@ -24,7 +24,9 @@ public class UserInfo : MonoBehaviour
                                 LoadUserNomalMonster(() => {
                                     LoadUserDayByQuest(() => {
                                         LoadUserWeekByQuest(() => {
-                                            callback();
+                                            LoadUserPass(() => {
+                                                callback();
+                                            });
                                         });
                                     });
                                 });
@@ -475,7 +477,6 @@ public class UserInfo : MonoBehaviour
                 }
                 else
                 {
-                    userDayByQuests[i].time = currentTime;
                     userDayByQuests[i].count = 0;
                     return 0;
                 }
@@ -516,11 +517,13 @@ public class UserInfo : MonoBehaviour
                 if (userDayByQuests[i].time.Year == currentTime.Year && userDayByQuests[i].time.Month == currentTime.Month && userDayByQuests[i].time.Day == currentTime.Day)
                 {
                     userDayByQuests[i].count++;
+                    return;
                 }
                 else
                 {
                     userDayByQuests[i].time = currentTime;
                     userDayByQuests[i].count = 1;
+                    return;
                 }
             }
         }
@@ -540,7 +543,8 @@ public class UserInfo : MonoBehaviour
                 userDayByQuests[i].complete = true;
 
                 DayByQuestChartInfo dayByQuestChartInfo = DayByQuestChart.instance.dayByQuestChartInfos[ID];
-                PushUserWeekByQuestPoint(dayByQuestChartInfo.Point);
+                PushUserWeekByQuestPoint(dayByQuestChartInfo.Point); // 주간퀘 포인트 적립
+                PushUserPassPoint(dayByQuestChartInfo.Point); // 패스 포인트 적립
             }
         }
     }
@@ -649,7 +653,6 @@ public class UserInfo : MonoBehaviour
         }
         else
         {
-            userWeekByQuest.time = currentTime;
             return 0;
         }
     }
@@ -702,7 +705,6 @@ public class UserInfo : MonoBehaviour
         }
         else
         {
-            userWeekByQuest.time = currentTime;
             userWeekByQuest.complete.Clear();
         }
 
@@ -734,8 +736,6 @@ public class UserInfo : MonoBehaviour
         param.Add("Week", data);
         BackendGameInfo.instance.PrivateTableUpdate("Quest", param, () => { callback(); });
     }
-
-    [Obsolete]
     public void LoadUserWeekByQuest(System.Action callback)
     {
         BackendGameInfo.instance.GetPrivateContents("Quest", "Week", () => {
@@ -754,6 +754,162 @@ public class UserInfo : MonoBehaviour
                 }
             }
             userWeekByQuest = new UserWeekByQuest(point, complete, time);
+            callback();
+        }, () => { callback(); });
+    }
+    // 3. 패스
+    public UserPass userPass = new UserPass();
+    public void PushUserPassPoint(int point)
+    {
+        DateTime currentTime = TimeManager.instance.currentTime;
+        DateTime passTime = userPass.time;
+        if (currentTime.Year == passTime.Year && currentTime.Month == passTime.Month)
+        {
+            userPass.point += point;
+        }
+        else
+        {
+            userPass.time = currentTime;
+            userPass.point = point;
+        }
+    } // 패스 포인트 적립
+    public int GetUserPassPoint()
+    {
+        DateTime currentTime = TimeManager.instance.currentTime;
+        DateTime passTime = userPass.time;
+        if (currentTime.Year == passTime.Year && currentTime.Month == passTime.Month)
+        {
+            return userPass.point;
+        }
+        else
+        {
+            return 0;
+        }
+    } // 패스 포인트 가져오기
+    public void PushUserPassNomalComplete(int ID) // 해당 ID의 패스 노말 완료 
+    {
+        if (userPass.nomalComplete.ContainsKey(ID))
+        {
+            userPass.nomalComplete[ID] = true;
+        }
+        else
+        {
+            userPass.nomalComplete.Add(ID, true);
+        }
+    }
+    public void PushUserPassPassComplete(int ID) // 해당 ID의 패스 패스 완료
+    {
+        if (userPass.passComplete.ContainsKey(ID))
+        {
+            userPass.passComplete[ID] = true;
+        }
+        else
+        {
+            userPass.passComplete.Add(ID, true);
+        }
+    }
+    public bool GetUserPassNomalComplete(int ID) // 해당 패스 노멀완료정보 가져오기
+    {
+        DateTime currentTime = TimeManager.instance.currentTime;
+        DateTime passTime = userPass.time;
+        if (currentTime.Year == passTime.Year && currentTime.Month == passTime.Month)
+        {
+            
+        }
+        else
+        {
+            userPass.nomalComplete.Clear();
+        }
+
+        if (userPass.nomalComplete.ContainsKey(ID))
+        {
+            return userPass.nomalComplete[ID];
+        }
+        else
+        {
+            userPass.nomalComplete.Add(ID, false);
+            return false;
+        }
+    }
+    public bool GetUserPassPassComplete(int ID) // 해당 패스 패스완료정보 가져오기
+    {
+        DateTime currentTime = TimeManager.instance.currentTime;
+        DateTime passTime = userPass.time;
+        if (currentTime.Year == passTime.Year && currentTime.Month == passTime.Month)
+        {
+
+        }
+        else
+        {
+            userPass.passComplete.Clear();
+        }
+
+        if (userPass.passComplete.ContainsKey(ID))
+        {
+            return userPass.passComplete[ID];
+        }
+        else
+        {
+            userPass.passComplete.Add(ID, false);
+            return false;
+        }
+    }
+    public void SaveUserPass(System.Action callback)
+    {
+        Param param = new Param();
+        string point = userPass.point.ToString();
+        string nomalComplete = "";
+        string passComplete = "";
+        string time = userPass.time.ToString();
+
+        foreach (KeyValuePair<int, bool> dict in userPass.nomalComplete)
+        {
+            nomalComplete += dict.Key + "," + dict.Value + "=";
+        }
+        if (userPass.nomalComplete.Count > 0) nomalComplete = nomalComplete.Substring(0, nomalComplete.Length - 1);
+        foreach (KeyValuePair<int, bool> dict in userPass.passComplete)
+        {
+            passComplete += dict.Key + "," + dict.Value + "=";
+        }
+        if (userPass.passComplete.Count > 0) passComplete = passComplete.Substring(0, passComplete.Length - 1);
+
+        string data = point + "/" + nomalComplete + "/" + passComplete + "/" + time;
+
+        param.Add("Pass", data);
+        BackendGameInfo.instance.PrivateTableUpdate("Quest", param, () => { callback(); });
+    }
+    public void LoadUserPass(System.Action callback)
+    {
+        BackendGameInfo.instance.GetPrivateContents("Quest", "Pass", () => {
+            string[] data = BackendGameInfo.instance.serverDataList[0].Split('/');
+            int point = int.Parse(data[0]);
+            DateTime time = DateTime.Parse(data[3]);
+
+            Dictionary<int, bool> nomalComplete = new Dictionary<int, bool>();
+            string[] data1List = data[1].Split('=');
+            if (data1List.Length > 1)
+            {
+                for (int i = 0; i < data1List.Length; i++)
+                {
+                    int key = int.Parse(data1List[i].Split(',')[0]);
+                    bool value = bool.Parse(data1List[i].Split(',')[1]);
+                    nomalComplete.Add(key, value);
+                }
+            }
+
+            Dictionary<int, bool> passComplete = new Dictionary<int, bool>();
+            string[] data2List = data[2].Split('=');
+            if (data2List.Length > 1)
+            {
+                for (int i = 0; i < data2List.Length; i++)
+                {
+                    int key = int.Parse(data2List[i].Split(',')[0]);
+                    bool value = bool.Parse(data2List[i].Split(',')[1]);
+                    passComplete.Add(key, value);
+                }
+            }
+
+            userPass = new UserPass(point, nomalComplete, passComplete, time);
             callback();
         }, () => { callback(); });
     }
@@ -869,6 +1025,28 @@ public class UserWeekByQuest
     {
         this.point = point;
         this.complete = complete;
+        this.time = time;
+    }
+}
+public class UserPass
+{
+    public int point;
+    public Dictionary<int, bool> nomalComplete = new Dictionary<int, bool>();
+    public Dictionary<int, bool> passComplete = new Dictionary<int, bool>();
+    public DateTime time = new DateTime();
+
+    public UserPass()
+    {
+        point = 0;
+        nomalComplete.Clear();
+        passComplete.Clear();
+    }
+
+    public UserPass(int point, Dictionary<int, bool> nomalComplete, Dictionary<int, bool> passComplete, DateTime time)
+    {
+        this.point = point;
+        this.nomalComplete = nomalComplete;
+        this.passComplete = passComplete;
         this.time = time;
     }
 }
