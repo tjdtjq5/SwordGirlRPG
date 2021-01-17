@@ -122,6 +122,10 @@
     <Compile Include="Assets\GooglePlayGames\Platforms\TokenClient.cs" />
     <Compile Include="Assets\GooglePlayGames\PluginVersion.cs" />
     <Compile Include="Assets\Script\BackendGameInfo.cs" />
+    <Compile Include="Assets\Script\Character\CoinTree.cs" />
+    <Compile Include="Assets\Script\Character\Enemy.cs" />
+    <Compile Include="Assets\Script\Character\MasicMissileController.cs" />
+    <Compile Include="Assets\Script\Character\PlayerController.cs" />
     <Compile Include="Assets\Script\Chart\BossMonsterChart.cs" />
     <Compile Include="Assets\Script\Chart\CharacterEnhanceAbilityChart.cs" />
     <Compile Include="Assets\Script\Chart\ClothChart.cs" />
