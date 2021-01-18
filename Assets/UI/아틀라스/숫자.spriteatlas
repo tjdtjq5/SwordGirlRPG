@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: "\uC22B\uC790"
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 75d67081a6bbde14aa250dac52e16808, type: 3}
+    totalSpriteSurfaceArea: 365442
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 8d0dad00a141321469288322725f6a47, type: 3}
+  - {fileID: 21300000, guid: ee810860b68da3941a7329d2fa1f8114, type: 3}
+  - {fileID: 21300000, guid: 93dc9d909979fac439087940c0972a25, type: 3}
+  - {fileID: 21300000, guid: 5df42da1d2d4c2a41b7bd87a54726c3a, type: 3}
+  - {fileID: 21300000, guid: c5d75cd1d24521642b6f71505680da85, type: 3}
+  - {fileID: 21300000, guid: 2bbcfc32e5d2f8c4799c5f84ad2d9fa7, type: 3}
+  - {fileID: 21300000, guid: 5847845250f28a8479dbdfe48727dac6, type: 3}
+  - {fileID: 21300000, guid: eeeb5482beb56ef459921d25113bd751, type: 3}
+  - {fileID: 21300000, guid: e7e88df22ed42f445bc6ecee8ddbf3e3, type: 3}
+  - {fileID: 21300000, guid: 3566be53c1ff125428d9f080b4025041, type: 3}
+  - {fileID: 21300000, guid: 8c4433d39b53cd74ba87c1cf86a7f6be, type: 3}
+  - {fileID: 21300000, guid: f21125a42822e8b448cd15421771c5fe, type: 3}
+  - {fileID: 21300000, guid: bb2ff8b518a40e446b586217bcad4ad5, type: 3}
+  - {fileID: 21300000, guid: 9e0d02e5761b7b94e97fc10534020183, type: 3}
+  - {fileID: 21300000, guid: 0c7bdd66b0c6a5844ab370518dc6395b, type: 3}
+  - {fileID: 21300000, guid: 759e369675ef16d48aa5ad10af3a0541, type: 3}
+  - {fileID: 21300000, guid: 1f7cf0e610f0c134eab4b50baf894d8d, type: 3}
+  - {fileID: 21300000, guid: 26b78437d292a9e42b711cf11ea375b0, type: 3}
+  - {fileID: 21300000, guid: a50f73e7ab0d5094daa9446f151dc520, type: 3}
+  - {fileID: 21300000, guid: b0231af7c64069b4ea36546584356621, type: 3}
+  - {fileID: 21300000, guid: 19c5e4683599c694f80b839b329145ba, type: 3}
+  - {fileID: 21300000, guid: d2d972d813d0cde41a1503150a3ef71d, type: 3}
+  - {fileID: 21300000, guid: dd008c6962dbbca49bcf9794ac82cf56, type: 3}
+  - {fileID: 21300000, guid: 6bb69de93fc89b042a696860d09e300b, type: 3}
+  - {fileID: 21300000, guid: 112c5cf94f8081142aa8ffa06218ab24, type: 3}
+  - {fileID: 21300000, guid: 5449380aab2e17748b01580953078fcd, type: 3}
+  - {fileID: 21300000, guid: f3160d0a4721dd644b7cee343d08f648, type: 3}
+  - {fileID: 21300000, guid: 6a7351fbbfa884b44b50bf0db82b2fec, type: 3}
+  - {fileID: 21300000, guid: 733a0a9c4c646f342bf9513cce7b5465, type: 3}
+  - {fileID: 21300000, guid: 088a1eec81ac87c4b8d152b2f6b8a124, type: 3}
+  - {fileID: 21300000, guid: 366f0e3d054da3e4081bd31b988c01b3, type: 3}
+  - {fileID: 21300000, guid: fab31f3dc7b70c74c8982f02f25bd126, type: 3}
+  - {fileID: 21300000, guid: 74ed2f8d1f357a14794f59d4184c4ab8, type: 3}
+  - {fileID: 21300000, guid: d6c6cecd67df2864fb95317bc1600c51, type: 3}
+  - {fileID: 21300000, guid: 8a29775ebd90f484897562d0012ac8d8, type: 3}
+  - {fileID: 21300000, guid: 50778eee2505b104f91b6180523deed5, type: 3}
+  - {fileID: 21300000, guid: f247ed2f44030674fb8f39cc8e95098f, type: 3}
+  - {fileID: 21300000, guid: 13b2d9af2fc980042b0d5481a617d69d, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - 7
+  - Ao
+  - Aw
+  - Ac
+  - Au
+  - Ab
+  - Ay
+  - An
+  - Aq
+  - 5
+  - +
+  - Ae
+  - 6
+  - Aa
+  - Ax
+  - 8
+  - As
+  - cri
+  - 0
+  - Aj
+  - 2
+  - Av
+  - Ar
+  - At
+  - Al
+  - Ap
+  - 1
+  - Ah
+  - 9
+  - Ak
+  - Ad
+  - 4
+  - Az
+  - 3
+  - Ag
+  - Am
+  - Af
+  - Ai
+  m_Tag: "\uC22B\uC790"
+  m_IsVariant: 0

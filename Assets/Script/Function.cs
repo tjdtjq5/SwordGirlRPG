@@ -12,6 +12,7 @@ namespace Function
         //큰 수를 요약해서 보여줌 
         public static string ValueToString(string value)
         {
+            /*
             value = value.Trim();
             int su = 4; // 몇 단위로 수를 끊을 건지 
             int len = value.Length;
@@ -39,7 +40,28 @@ namespace Function
                 value = value.Substring(0, remainLenth + su);
                 value = value.Insert(remainLenth, countType.ToString());
                 return value;
+            }*/
+
+            string countTypeString = ((CountType)(value.Length / 2)).ToString();
+
+            if (value.Length <= 2) return value + countTypeString;
+
+            string a = "";
+            string b = "";
+
+            switch (value.Length % 2)
+            {
+                case 0:
+                    a = value.Substring(0, 2);
+                    b = value.Substring(2, 2);
+                    break;
+                case 1:
+                    a = value.Substring(0, 1);
+                    b = value.Substring(1, 2);
+                    break;
             }
+
+            return a + "." + b + countTypeString;
         }
 
         public static string Add(string A, string B)
@@ -63,6 +85,14 @@ namespace Function
 
             return BigInteger.Multiply(intA, intB).ToString();
         }
+        public static string Multiple(string A, float B)
+        {
+            BigInteger intA = BigInteger.Parse(A);
+            BigInteger intB = new BigInteger(B);
+
+            return BigInteger.Multiply(intA, intB).ToString();
+        }
+
         public static string Divide(string A, string B)
         {
             BigInteger intA = BigInteger.Parse(A);

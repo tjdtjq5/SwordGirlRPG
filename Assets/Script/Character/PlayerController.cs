@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using Function;
 using Spine.Unity;
 using Spine.Unity.Examples;
 using System.Collections;
@@ -146,7 +147,7 @@ public class PlayerController : MonoBehaviour
         skeletonAnimation.AnimationState.AddAnimation(0, "idle_1", true,0);
 
         GameObject masicMissile = Instantiate(masicMissilePrepab, masicMissileTransform.position, Quaternion.identity, trash);
-        masicMissile.GetComponent<MasicMissileController>().Shot(target, "10");
+        masicMissile.GetComponent<MasicMissileController>().Shot(target, "99999");
         StartCoroutine(AttackFlagCoroutine());
     }
      
@@ -204,7 +205,7 @@ public class PlayerController : MonoBehaviour
         skeletonAnimation.AnimationState.SetAnimation(0, "attack_anger_" + r, false);
         skeletonAnimation.AnimationState.AddAnimation(0, "idle_2", true, 0);
         Debug.Log(skeletonAnimation.AnimationName);
-        target.GetComponent<Enemy>().Hit("10");
+        target.GetComponent<Enemy>().Hit("99999");
     }
     void Auto_C_Attack(bool flag) // 근거리 자동공격 
     {

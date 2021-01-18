@@ -3,7 +3,11 @@ guid: c0c8db956b4eca34082df3d156e3c70b
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - nomalDamagePrepab: {fileID: 1642648510556661582, guid: d8177db799d009a4a9518dee7ef326c8,
+      type: 3}
+  - criticalDamagePrepab: {fileID: 6766637721667468231, guid: 779a3331efe43ba4f9585db383d5a118,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

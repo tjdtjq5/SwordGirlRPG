@@ -137,6 +137,7 @@
     <Compile Include="Assets\Script\Chart\RelicChart.cs" />
     <Compile Include="Assets\Script\Chart\WeaponeChart.cs" />
     <Compile Include="Assets\Script\Chart\WeekQuestChart.cs" />
+    <Compile Include="Assets\Script\Effect\DamageEffect.cs" />
     <Compile Include="Assets\Script\Enum.cs" />
     <Compile Include="Assets\Script\Function.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
