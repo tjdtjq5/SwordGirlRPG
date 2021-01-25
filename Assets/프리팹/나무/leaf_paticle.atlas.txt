@@ -1,0 +1,118 @@
+
+leaf_paticle.png
+size: 2048,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+coin_1
+  rotate: true
+  xy: 916, 40
+  size: 48, 251
+  orig: 256, 256
+  offset: 104, 2
+  index: -1
+coin_2
+  rotate: true
+  xy: 1628, 146
+  size: 108, 254
+  orig: 256, 256
+  offset: 74, 1
+  index: -1
+coin_3
+  rotate: true
+  xy: 916, 90
+  size: 164, 253
+  orig: 256, 256
+  offset: 46, 2
+  index: -1
+coin_4
+  rotate: false
+  xy: 476, 2
+  size: 218, 252
+  orig: 256, 256
+  offset: 19, 2
+  index: -1
+coin_5
+  rotate: false
+  xy: 2, 3
+  size: 235, 251
+  orig: 256, 256
+  offset: 11, 3
+  index: -1
+coin_6
+  rotate: false
+  xy: 239, 3
+  size: 235, 251
+  orig: 256, 256
+  offset: 10, 3
+  index: -1
+coin_7
+  rotate: false
+  xy: 696, 2
+  size: 218, 252
+  orig: 256, 256
+  offset: 19, 2
+  index: -1
+coin_8
+  rotate: true
+  xy: 1171, 90
+  size: 164, 253
+  orig: 256, 256
+  offset: 46, 2
+  index: -1
+coin_9
+  rotate: true
+  xy: 1628, 36
+  size: 108, 254
+  orig: 256, 256
+  offset: 74, 1
+  index: -1
+eff-2-7
+  rotate: false
+  xy: 1169, 4
+  size: 88, 84
+  orig: 88, 84
+  offset: 0, 0
+  index: -1
+eff-3333
+  rotate: false
+  xy: 1426, 54
+  size: 200, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+hiteff
+  rotate: true
+  xy: 1884, 132
+  size: 122, 126
+  orig: 139, 142
+  offset: 8, 8
+  index: -1
+leaf_paticle_1
+  rotate: false
+  xy: 967, 17
+  size: 38, 21
+  orig: 39, 21
+  offset: 0, 0
+  index: -1
+leaf_paticle_2
+  rotate: false
+  xy: 916, 6
+  size: 48, 12
+  orig: 48, 12
+  offset: 0, 0
+  index: -1
+leaf_paticle_3
+  rotate: false
+  xy: 916, 20
+  size: 49, 18
+  orig: 49, 18
+  offset: 0, 0
+  index: -1
+leaf_paticle_4
+  rotate: false
+  xy: 1007, 17
+  size: 38, 21
+  orig: 39, 21
+  offset: 0, 0
+  index: -1

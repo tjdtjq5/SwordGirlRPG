@@ -25,7 +25,9 @@ public class UserInfo : MonoBehaviour
                                     LoadUserDayByQuest(() => {
                                         LoadUserWeekByQuest(() => {
                                             LoadUserPass(() => {
-                                                callback();
+                                                LoadCoinTree(() => {
+                                                    callback();
+                                                });
                                             });
                                         });
                                     });
@@ -913,6 +915,32 @@ public class UserInfo : MonoBehaviour
             callback();
         }, () => { callback(); });
     }
+
+    /// 코인트리
+    public int coinTreeLevel;
+    public void CoinTreeLevelUp()
+    {
+        int maxLevel = CoinTreeChart.instance.MaxLevel();
+        coinTreeLevel++;
+        if (coinTreeLevel >= maxLevel)
+        {
+            coinTreeLevel = maxLevel;
+        }
+    }
+    public void SaveCoinTree(System.Action callback)
+    {
+        Param param = new Param();
+        param.Add("Level", coinTreeLevel);
+        BackendGameInfo.instance.PrivateTableUpdate("CoinTree", param, () => { callback(); });
+    }
+    public void LoadCoinTree(System.Action callback)
+    {
+        BackendGameInfo.instance.GetPrivateContents("CoinTree", "Level", () => {
+            coinTreeLevel = int.Parse(BackendGameInfo.instance.serverDataList[0]);
+            callback();
+        }, () => { callback(); });
+    }
+
 }
 public class UserMasicMissile
 {

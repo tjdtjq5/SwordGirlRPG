@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class MasicMissileController : MonoBehaviour
 {
-    Transform target;
     string damage;
     bool shotFlag;
 
-    float speed = 0.1f;
+    float speed = 18f;
 
-    public void Shot(Transform target, string damage)
+
+    public void Shot(string damage)
     {
-        this.target = target;
         this.damage = damage;
         shotFlag = true;
+
+        float r = Random.Range(-3, 10);
+        this.transform.rotation = Quaternion.Euler(0, 0, r);
     }
 
     void Destroy()
@@ -27,12 +29,17 @@ public class MasicMissileController : MonoBehaviour
     {
         if (shotFlag)
         {
-            this.transform.position = Vector2.MoveTowards(this.transform.position, target.position, speed);
-            if (Vector2.Distance(this.transform.position, target.position) < 0.05f)
-            {
-                target.GetComponent<Enemy>().Hit(damage);
-                Destroy();
-            }
+            float fMove = Time.fixedDeltaTime * speed;
+            transform.Translate(Vector2.right * fMove);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Enemy")
+        {
+            collision.transform.GetComponent<Enemy>().Hit(damage);
+            Destroy();
         }
     }
 }

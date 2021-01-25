@@ -58,7 +58,9 @@ public class Loading : MonoBehaviour
                                             WeekQuestChart.instance.LoadChart(() => {
                                                 UserInfo.instance.Load(() => {
                                                     PassChart.instance.LoadChart(() => {
-                                                        callback();
+                                                        CoinTreeChart.instance.LoadChart(() => {
+                                                            callback();
+                                                        });
                                                     });
                                                 });
                                             });

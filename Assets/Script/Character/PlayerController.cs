@@ -147,7 +147,7 @@ public class PlayerController : MonoBehaviour
         skeletonAnimation.AnimationState.AddAnimation(0, "idle_1", true,0);
 
         GameObject masicMissile = Instantiate(masicMissilePrepab, masicMissileTransform.position, Quaternion.identity, trash);
-        masicMissile.GetComponent<MasicMissileController>().Shot(target, "99999");
+        masicMissile.GetComponent<MasicMissileController>().Shot("99999");
         StartCoroutine(AttackFlagCoroutine());
     }
      

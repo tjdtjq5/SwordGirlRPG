@@ -101,6 +101,15 @@ namespace Function
             return BigInteger.Divide(intA, intB).ToString();
         }
 
+        public static float Amount(string small, string big)
+        {
+            BigInteger intA = BigInteger.Parse(small) * 100;
+            BigInteger intB = BigInteger.Parse(big);
+
+            int intAmount = int.Parse(BigInteger.Divide(intA, intB).ToString());
+            return intAmount / (float)100;
+        }
+
         public static int CompareValue(string A, string B)
         {
             BigInteger intA = BigInteger.Parse(A);

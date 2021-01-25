@@ -2445,6 +2445,7 @@ GameObject:
   - component: {fileID: 504887253}
   - component: {fileID: 504887254}
   - component: {fileID: 504887256}
+  - component: {fileID: 504887257}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2504,6 +2505,7 @@ MonoBehaviour:
   abilityCriticalDamageLevel: 0
   abilityAngerDamageLevel: 0
   abilityFaustDamageLevel: 0
+  coinTreeLevel: 0
 --- !u!114 &504887244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3055,6 +3057,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   field: 13339
   passChartInfos: []
+--- !u!114 &504887257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504887240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7d5a7312c8c5cb45b4ae7778f4c7584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  field: 13720
 --- !u!1 &543599476
 GameObject:
   m_ObjectHideFlags: 0
@@ -4440,7 +4455,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1259003519
 RectTransform:
   m_ObjectHideFlags: 0

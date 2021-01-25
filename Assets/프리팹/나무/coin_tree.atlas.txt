@@ -1,0 +1,223 @@
+
+coin_tree.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+coin_1
+  rotate: true
+  xy: 2, 14
+  size: 48, 251
+  orig: 256, 256
+  offset: 104, 2
+  index: -1
+coin_2
+  rotate: false
+  xy: 790, 766
+  size: 108, 254
+  orig: 256, 256
+  offset: 74, 1
+  index: -1
+coin_3
+  rotate: false
+  xy: 801, 301
+  size: 164, 253
+  orig: 256, 256
+  offset: 46, 2
+  index: -1
+coin_4
+  rotate: false
+  xy: 1010, 768
+  size: 218, 252
+  orig: 256, 256
+  offset: 19, 2
+  index: -1
+coin_5
+  rotate: false
+  xy: 1230, 769
+  size: 235, 251
+  orig: 256, 256
+  offset: 11, 3
+  index: -1
+coin_6
+  rotate: false
+  xy: 1056, 57
+  size: 235, 251
+  orig: 256, 256
+  offset: 10, 3
+  index: -1
+coin_7
+  rotate: false
+  xy: 967, 310
+  size: 218, 252
+  orig: 256, 256
+  offset: 19, 2
+  index: -1
+coin_8
+  rotate: true
+  xy: 801, 135
+  size: 164, 253
+  orig: 256, 256
+  offset: 46, 2
+  index: -1
+coin_9
+  rotate: false
+  xy: 900, 766
+  size: 108, 254
+  orig: 256, 256
+  offset: 74, 1
+  index: -1
+eff_1
+  rotate: false
+  xy: 954, 564
+  size: 200, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+eff_2
+  rotate: false
+  xy: 519, 2
+  size: 122, 126
+  orig: 139, 142
+  offset: 8, 8
+  index: -1
+l_stem
+  rotate: false
+  xy: 1156, 580
+  size: 162, 186
+  orig: 169, 195
+  offset: 7, 2
+  index: -1
+l_stem_gold
+  rotate: false
+  xy: 1187, 392
+  size: 162, 186
+  orig: 169, 195
+  offset: 7, 2
+  index: -1
+leaf_1
+  rotate: true
+  xy: 568, 135
+  size: 412, 231
+  orig: 467, 401
+  offset: 55, 149
+  index: -1
+leaf_1_gold
+  rotate: true
+  xy: 557, 608
+  size: 412, 231
+  orig: 467, 401
+  offset: 55, 149
+  index: -1
+leaf_2
+  rotate: true
+  xy: 325, 603
+  size: 417, 230
+  orig: 467, 401
+  offset: 50, 149
+  index: -1
+leaf_2_gold
+  rotate: true
+  xy: 336, 130
+  size: 417, 230
+  orig: 467, 401
+  offset: 50, 149
+  index: -1
+r_stem
+  rotate: true
+  xy: 790, 629
+  size: 135, 162
+  orig: 144, 169
+  offset: 4, 3
+  index: -1
+r_stem_gold
+  rotate: false
+  xy: 1320, 605
+  size: 135, 162
+  orig: 144, 169
+  offset: 4, 3
+  index: -1
+shadow
+  rotate: false
+  xy: 255, 21
+  size: 262, 41
+  orig: 274, 49
+  offset: 6, 4
+  index: -1
+stem
+  rotate: false
+  xy: 2, 537
+  size: 321, 483
+  orig: 332, 493
+  offset: 6, 4
+  index: -1
+stem_gold
+  rotate: false
+  xy: 2, 64
+  size: 332, 471
+  orig: 332, 493
+  offset: 0, 10
+  index: -1
+vine_1
+  rotate: false
+  xy: 643, 11
+  size: 346, 122
+  orig: 348, 124
+  offset: 1, 1
+  index: -1
+vine_2
+  rotate: true
+  xy: 647, 556
+  size: 23, 157
+  orig: 23, 157
+  offset: 0, 0
+  index: -1
+vine_3
+  rotate: true
+  xy: 325, 576
+  size: 25, 159
+  orig: 25, 159
+  offset: 0, 0
+  index: -1
+vine_4
+  rotate: true
+  xy: 325, 549
+  size: 25, 159
+  orig: 25, 159
+  offset: 0, 0
+  index: -1
+vine_5
+  rotate: true
+  xy: 336, 103
+  size: 25, 159
+  orig: 25, 159
+  offset: 0, 0
+  index: -1
+vine_6
+  rotate: true
+  xy: 336, 76
+  size: 25, 159
+  orig: 25, 159
+  offset: 0, 0
+  index: -1
+vine_7
+  rotate: true
+  xy: 486, 576
+  size: 25, 159
+  orig: 25, 159
+  offset: 0, 0
+  index: -1
+vine_8
+  rotate: true
+  xy: 486, 549
+  size: 25, 159
+  orig: 25, 159
+  offset: 0, 0
+  index: -1
+vine_9
+  rotate: true
+  xy: 647, 581
+  size: 25, 159
+  orig: 25, 159
+  offset: 0, 0
+  index: -1

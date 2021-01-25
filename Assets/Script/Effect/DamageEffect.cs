@@ -11,6 +11,10 @@ public class DamageEffect : MonoBehaviour
     public Transform content;
     public void DamageUI_Setting(string text)
     {
+        this.transform.DOScale(new Vector2(0.007f, 0.007f), 0).OnComplete(()=> {
+            this.transform.DOScale(new Vector2(0.01f, 0.01f), 0.6f);
+        });
+
         string countTypeString = text.Substring(text.Length - 2, 2);
         text = text.Substring(0, text.Length - 2);
         for (int i = 0; i < content.childCount; i++)
