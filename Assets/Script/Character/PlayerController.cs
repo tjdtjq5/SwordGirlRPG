@@ -26,13 +26,13 @@ public class PlayerController : MonoBehaviour
     int angerPoint = 100;
     int maxAngerPoint = 100;
     int chargeAngerPoint = 10;
-    int angerDuration = 10;
+    float angerDuration = 10;
     public Image foreAnger;
     bool angerFlag = false;
 
     // 공격
     public Button touchBtn;
-    float attackSpeed = 0.3f;
+    float attackSpeed = 6f;
     WaitForSeconds attackSpeedWaitTime;
     IEnumerator auto_M_Attack_Coroutine;
     IEnumerator auto_C_Attack_Coroutine;
@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         attackFlagWaitTime = new WaitForSeconds(attackSpeedCycle);
-        attackSpeedWaitTime = new WaitForSeconds(attackSpeed);
+        
 
         skeletonGhost.enabled = false;
         Auto_M_Attack(true);
@@ -71,6 +71,18 @@ public class PlayerController : MonoBehaviour
         AngerUISetting();
     }
 
+    public string Atk()
+    {
+        string atk = UserInfo.instance.GetAtk();
+        float atkPercent = UserInfo.instance.GetAtkPercent();
+        float angerDamage = UserInfo.instance.GetAngerDamage();
+
+        string total = MyMath.Multiple(atk, atkPercent);
+        if(angerFlag) total = MyMath.Multiple(total, angerDamage);
+
+        return total;
+    }
+
     public void AngerState()
     {
         if (angerPoint < maxAngerPoint || angerFlag)
@@ -82,7 +94,10 @@ public class PlayerController : MonoBehaviour
         ChangeAttack_M_To_C();
         skeletonGhost.enabled = true;
 
-        foreAnger.DOFillAmount(0, angerDuration).OnComplete(()=> {
+        // 유저의 분노시간과 디폴트 분노시간을 더한 값
+        float angerTime = UserInfo.instance.GetAngerTime();
+
+        foreAnger.DOFillAmount(0, (angerDuration + angerTime)).OnComplete(()=> {
             angerFlag = false;
             angerPoint = 0;
             AngerUISetting();
@@ -94,7 +109,7 @@ public class PlayerController : MonoBehaviour
     public Transform GetTarget() // 가장 가까운 적 한기 찾기 없으면 null 반환
     {
         Vector2 playerPosition = this.transform.position;
-        float radius = 10;
+        float radius = 15;
         RaycastHit2D[] hit = Physics2D.CircleCastAll(playerPosition, radius, Vector2.zero);
 
         List<Transform> enemyTransform = new List<Transform>();
@@ -143,11 +158,12 @@ public class PlayerController : MonoBehaviour
         }
 
         int r = Random.Range(1, 4);
+
         skeletonAnimation.AnimationState.SetAnimation(0, "attack_nomal_" + r, false);
         skeletonAnimation.AnimationState.AddAnimation(0, "idle_1", true,0);
 
         GameObject masicMissile = Instantiate(masicMissilePrepab, masicMissileTransform.position, Quaternion.identity, trash);
-        masicMissile.GetComponent<MasicMissileController>().Shot("99999");
+        masicMissile.GetComponent<MasicMissileController>().Shot(Atk());
         StartCoroutine(AttackFlagCoroutine());
     }
      
@@ -170,6 +186,9 @@ public class PlayerController : MonoBehaviour
     {
         while (true)
         {
+            float userAutoSpeed = UserInfo.instance.GetAutoAtkSpeed() / 100 * attackSpeed;
+            float autoSpeed = attackSpeed - userAutoSpeed;
+            attackSpeedWaitTime = new WaitForSeconds(autoSpeed);
             yield return attackSpeedWaitTime;
 
             M_Attack();
@@ -193,7 +212,6 @@ public class PlayerController : MonoBehaviour
             Auto_C_Attack(false);
             TargetDash(target, () => {
                 if (!angerFlag) return; // 분노상태가 아닐경우는 리턴
-
                 skeletonAnimation.AnimationState.AddAnimation(0, "idle_2", true, 0);
                 touchBtn.onClick.AddListener(() => { C_Attack(); });
                 Auto_C_Attack(true);
@@ -204,8 +222,7 @@ public class PlayerController : MonoBehaviour
         int r = Random.Range(1, 6);
         skeletonAnimation.AnimationState.SetAnimation(0, "attack_anger_" + r, false);
         skeletonAnimation.AnimationState.AddAnimation(0, "idle_2", true, 0);
-        Debug.Log(skeletonAnimation.AnimationName);
-        target.GetComponent<Enemy>().Hit("99999");
+        target.GetComponent<Enemy>().Hit(Atk());
     }
     void Auto_C_Attack(bool flag) // 근거리 자동공격 
     {
@@ -225,6 +242,9 @@ public class PlayerController : MonoBehaviour
     {
         while (true)
         {
+            float userAutoSpeed = UserInfo.instance.GetAutoAtkSpeed() / 100 * attackSpeed;
+            float autoSpeed = attackSpeed - userAutoSpeed;
+            attackSpeedWaitTime = new WaitForSeconds(autoSpeed);
             yield return attackSpeedWaitTime;
 
             C_Attack();
@@ -237,7 +257,6 @@ public class PlayerController : MonoBehaviour
         {
             character.rotation = Quaternion.Euler(0, 180, 0);
         }
-
         skeletonAnimation.AnimationState.SetAnimation(0, "dash", false);
         character.DOMoveX(target.position.x, 0.5f).SetEase(Ease.OutQuad).OnComplete(() => {
             character.rotation = Quaternion.Euler(0, 0, 0);

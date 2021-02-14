@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class WeaponeManager : MonoBehaviour
 {
+    /// <summary>
+    ///  공격력% , 공격속도, 크리티컬 %
+    /// </summary>
     public GameObject card;
 
     public Transform content;

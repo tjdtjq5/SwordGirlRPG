@@ -8,7 +8,6 @@ public class CoinTree : Enemy
 {
     public SkeletonAnimation skeletonAnimation;
 
-
     bool isEvolution2 = false;
     bool isEvolution3 = false;
     bool isEvolution4 = false;
@@ -16,6 +15,7 @@ public class CoinTree : Enemy
     IEnumerator initialCoroutine;
 
     public GameObject effectPrepab;
+    public Transform[] coinTransformList;
 
     public void Start()
     {
@@ -83,21 +83,12 @@ public class CoinTree : Enemy
             }
         }
 
-        if (hpAmount < 0.75f)
-        {
-            GameObject effect = Instantiate(effectPrepab, new Vector2(this.transform.position.x, this.transform.position.y + 2), Quaternion.identity, this.transform);
-            effect.GetComponent<CoinTreeEffect>().Setting("dead1");
-        }
-        else if (hpAmount < 0.5f)
-        {
-            GameObject effect = Instantiate(effectPrepab, new Vector2(this.transform.position.x, this.transform.position.y + 2), Quaternion.identity, this.transform);
-            effect.GetComponent<CoinTreeEffect>().Setting("dead2");
-        }
-        else if (hpAmount < 0.25f)
-        {
-            GameObject effect = Instantiate(effectPrepab, new Vector2(this.transform.position.x, this.transform.position.y + 2), Quaternion.identity, this.transform);
-            effect.GetComponent<CoinTreeEffect>().Setting("dead3");
-        }
+        int r = Random.Range(0, coinTransformList.Length - 1);
+        int r2 = Random.Range(1, 4);
+        string effectName = "dead" + r2;
+
+        GameObject effect = Instantiate(effectPrepab, coinTransformList[r].position, Quaternion.identity, this.transform);
+        effect.GetComponent<CoinTreeEffect>().Setting(effectName);
     }
 
     public override void Dead()

@@ -21,6 +21,17 @@ public class BackendLogin : MonoBehaviour
                 // example
                 // 버전체크 -> 업데이트
                 Debug.Log("뒤끝 초기화 성공");
+
+                char[] googleHash = Backend.Utils.GetGoogleHash().ToCharArray();
+
+                for (int i = 0; i < googleHash.Length; i++)
+                {
+                    if (googleHash[i] == 'I')
+                    {
+                        Debug.Log("대문자 i");
+                    }
+                    Debug.Log(googleHash[i]);
+                }
             }
             // 초기화 실패한 경우 실행
             else
@@ -71,6 +82,7 @@ public class BackendLogin : MonoBehaviour
         else
         {
             Debug.Log("뒤끝 구글방식 로그인 실패");
+            Debug.Log(bro.GetMessage() + " :  "  + bro.GetErrorCode());
         }
     }
 
@@ -78,7 +90,9 @@ public class BackendLogin : MonoBehaviour
     {
         if (!Backend.IsInitialized) return;
 
-        Backend.BMember.CustomLogin("id", "password");
+        BackendReturnObject bro = Backend.BMember.CustomLogin("id", "password");
+
+        Debug.Log(bro.GetErrorCode() + "  :  " + bro.GetMessage());
 
         BackendAsyncClass.BackendAsync(Backend.BMember.GetUserInfo, (getUserInfoCallback) => {
             JsonData nicknameJsonData = getUserInfoCallback.GetReturnValuetoJSON()["row"]["nickname"];
@@ -108,6 +122,4 @@ public class BackendLogin : MonoBehaviour
             }
         });
     }
-
-
 }

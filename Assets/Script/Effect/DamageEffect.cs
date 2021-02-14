@@ -11,14 +11,13 @@ public class DamageEffect : MonoBehaviour
     public Transform content;
     public void DamageUI_Setting(string text)
     {
-        this.transform.DOScale(new Vector2(0.007f, 0.007f), 0).OnComplete(()=> {
-            this.transform.DOScale(new Vector2(0.01f, 0.01f), 0.6f);
-        });
 
         string countTypeString = text.Substring(text.Length - 2, 2);
         text = text.Substring(0, text.Length - 2);
         for (int i = 0; i < content.childCount; i++)
         {
+            content.GetChild(i).GetComponent<Image>().DOFade(0, 1);
+
             if (i < text.Length)
             {
                 content.GetChild(i).gameObject.SetActive(true);
@@ -35,10 +34,8 @@ public class DamageEffect : MonoBehaviour
         content.GetChild(content.childCount - 1).GetComponent<Image>().sprite = damageSpriteAtlas.GetSprite(countTypeString.ToString());
         content.GetChild(content.childCount - 1).GetComponent<Image>().SetNativeSize();
 
-        float currentY = this.transform.position.y;
-        this.transform.DOMoveY(currentY + 1.8f, 1.2f).SetEase(Ease.Unset).OnComplete(()=> {
-            Destroy(this.gameObject);
-        });
+        transform.DOPunchScale(Vector3.one * 0.003f, 0.3f);
+        transform.DOMove(transform.position + Vector3.up * 2.5f, 1.0f).OnComplete(() => { Destroy(gameObject); });
     }
     
 }

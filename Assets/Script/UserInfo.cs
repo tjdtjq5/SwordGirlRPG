@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using BackEnd;
 using System;
+using Function;
 
 public class UserInfo : MonoBehaviour
 {
@@ -39,6 +40,464 @@ public class UserInfo : MonoBehaviour
             });
         });
     }
+
+    [ContextMenu("테스트")]
+    public void Test()
+    {
+        Debug.Log("공격력 : " + GetAtk());
+        Debug.Log("공격력퍼센트 : " + GetAtkPercent());
+        Debug.Log("체력 : " + GetHp());
+        Debug.Log("체력퍼센트 : " + GetHpPercent());
+        Debug.Log("크리티컬 : " + GetCriticalPercent());
+        Debug.Log("크뎀 : " + GetCriticalDamagePercent());
+        Debug.Log("분노시간 : " + GetAngerTime());
+        Debug.Log("분노데미지 : " + GetAngerDamage());
+        Debug.Log("골드 : " + GetGoldPercent());
+        Debug.Log("스킬쿨타임 : " + GetSkillColltime());
+        Debug.Log("마력석 : " + GetMasicStonePercent());
+        Debug.Log("강화석 : " + GetEnhanceStonePercent());
+        Debug.Log("분노데미지 : " + GetTransStonePercent());
+        Debug.Log("보스공격력 : " + GetBossAtkPercent());
+        Debug.Log("공격속도 : " + GetAutoAtkSpeed());
+    }
+    [ContextMenu("테스트2")]
+    public void Test2()
+    {
+        string damage = MyMath.Multiple("99999", 1.5F);
+        Debug.Log(damage);
+    }
+
+    /// === 능력치 === ///
+    public string GetAtk()
+    {
+        string total = "";
+        // 신체능력 
+        string abilityAtk = CharacterEnhanceAbilityChart.instance.characterEnhanceAbilityChartInfo[abilityAtkLevel].Atk;
+        // 유물 
+        string relic = "0";
+        for (int i = 0; i < userRelics.Count; i++)
+        {
+            RelicChartInfo relicChartInfo = RelicChart.instance.GetRelicChartInfo(userRelics[i].name)[(int)userRelics[i].gradeType - 1];
+            if (relicChartInfo.EnhanceAbilityType == AbilityType.공격력)
+            {
+                string enhanceAbilityIncrease = ((userRelics[i].upgrade + 1) * relicChartInfo.EnhanceAbilityIncrease).ToString();
+                relic += MyMath.Add(relic, enhanceAbilityIncrease);
+            }
+            if (relicChartInfo.StarEnhanceAbilityType == AbilityType.공격력)
+            {
+                string starEnhanceAbilityIncrease =  (relicChartInfo.StarEnhanceAbilityIncrease).ToString();
+                relic += MyMath.Add(relic, starEnhanceAbilityIncrease);
+            }
+        }
+
+        total = MyMath.Add(abilityAtk, relic);
+        return total;
+    }
+    public float GetAtkPercent()
+    {
+        float total = 0;
+        // 신체능력 
+        float abilityAtkPercent = CharacterEnhanceAbilityChart.instance.characterEnhanceAbilityChartInfo[abilityAtkPercentLevel].AtkPercent;
+        // 마력검기 
+        float masicMissile = 0;
+        UserMasicMissile userMasicMissile = GetEqipMasicMissile();
+        if (userMasicMissile != null)
+        {
+            MasicMissileChartInfo masicMissileInfo = MasicMissileChart.instance.GetMasicMissileInfo(userMasicMissile.Name)[userMasicMissile.Upgrade];
+            masicMissile = masicMissileInfo.AbilityNum;
+        }
+        // 무기 
+        UserWeapone userWeapone = GetEqipWeapone();
+        float weaponeAtkPercent = 0;
+        if (userWeapone != null)
+        {
+            WeaponeChartInfo weaponeChart = WeaponeChart.instance.GetWeaponeChartInfo(userWeapone.name)[userWeapone.upgrade];
+            weaponeAtkPercent = weaponeChart.AtkPercent;
+        }
+        // 유물 
+        float relic = 0;
+        for (int i = 0; i < userRelics.Count; i++)
+        {
+            RelicChartInfo relicChartInfo = RelicChart.instance.GetRelicChartInfo(userRelics[i].name)[(int)userRelics[i].gradeType - 1];
+            if (relicChartInfo.EnhanceAbilityType == AbilityType.공격력퍼센트)
+            {
+                float enhanceAbilityIncrease = ((userRelics[i].upgrade + 1) * relicChartInfo.EnhanceAbilityIncrease);
+                relic += enhanceAbilityIncrease;
+            }
+            if (relicChartInfo.StarEnhanceAbilityType == AbilityType.공격력퍼센트)
+            {
+                float starEnhanceAbilityIncrease = relicChartInfo.StarEnhanceAbilityIncrease;
+                relic += starEnhanceAbilityIncrease;
+            }
+        }
+        total += abilityAtkPercent;
+        total += masicMissile;
+        total += weaponeAtkPercent;
+        total += relic;
+
+        return total;
+    }
+    public string GetHp()
+    {
+        string total = "";
+        // 신체능력 
+        string abilityHp = CharacterEnhanceAbilityChart.instance.characterEnhanceAbilityChartInfo[abilityHpLevel].Hp;
+        // 유물 
+        string relic = "0";
+        for (int i = 0; i < userRelics.Count; i++)
+        {
+            RelicChartInfo relicChartInfo = RelicChart.instance.GetRelicChartInfo(userRelics[i].name)[(int)userRelics[i].gradeType - 1];
+            if (relicChartInfo.EnhanceAbilityType == AbilityType.체력)
+            {
+                string enhanceAbilityIncrease = ((userRelics[i].upgrade + 1) * relicChartInfo.EnhanceAbilityIncrease).ToString();
+                relic += MyMath.Add(relic, enhanceAbilityIncrease);
+            }
+            if (relicChartInfo.StarEnhanceAbilityType == AbilityType.체력)
+            {
+                string starEnhanceAbilityIncrease = (relicChartInfo.StarEnhanceAbilityIncrease).ToString();
+                relic += MyMath.Add(relic, starEnhanceAbilityIncrease);
+            }
+        }
+        total = MyMath.Add(abilityHp, relic);
+        return total;
+    }
+    public float GetHpPercent()
+    {
+        float total = 0;
+        // 신체능력 
+        float abilityHpPercent = CharacterEnhanceAbilityChart.instance.characterEnhanceAbilityChartInfo[abilityHpPercentLevel].HpPercent;
+        // 유물 
+        float relic = 0;
+        for (int i = 0; i < userRelics.Count; i++)
+        {
+            RelicChartInfo relicChartInfo = RelicChart.instance.GetRelicChartInfo(userRelics[i].name)[(int)userRelics[i].gradeType - 1];
+            if (relicChartInfo.EnhanceAbilityType == AbilityType.체력퍼센트)
+            {
+                float enhanceAbilityIncrease = ((userRelics[i].upgrade + 1) * relicChartInfo.EnhanceAbilityIncrease);
+                relic += enhanceAbilityIncrease;
+            }
+            if (relicChartInfo.StarEnhanceAbilityType == AbilityType.체력퍼센트)
+            {
+                float starEnhanceAbilityIncrease = relicChartInfo.StarEnhanceAbilityIncrease;
+                relic += starEnhanceAbilityIncrease;
+            }
+        }
+        // 복장
+        UserCloth userCloth = GetEqipCloth();
+        float cloth = 0;
+        if (userCloth != null)
+        {
+            ClothChartInfo clothChartInfo = ClothChart.instance.GetClothChartInfo(userCloth.name)[userCloth.upgrade];
+            cloth += clothChartInfo.HpPercent;
+        }
+
+        total += abilityHpPercent;
+        total += relic;
+        total += cloth;
+
+        return total;
+    }
+    public float GetCriticalPercent()
+    {
+        float total = 0;
+
+        // 무기 
+        UserWeapone userWeapone = GetEqipWeapone();
+        float weaponeCriticalPercent = 0;
+        if (userWeapone != null)
+        {
+            WeaponeChartInfo weaponeChart = WeaponeChart.instance.GetWeaponeChartInfo(userWeapone.name)[userWeapone.upgrade];
+            weaponeCriticalPercent = weaponeChart.CriticalPercent;
+        }
+        // 유물 
+        float relic = 0;
+        for (int i = 0; i < userRelics.Count; i++)
+        {
+            RelicChartInfo relicChartInfo = RelicChart.instance.GetRelicChartInfo(userRelics[i].name)[(int)userRelics[i].gradeType - 1];
+            if (relicChartInfo.EnhanceAbilityType == AbilityType.크리티컬퍼센트)
+            {
+                float enhanceAbilityIncrease = ((userRelics[i].upgrade + 1) * relicChartInfo.EnhanceAbilityIncrease);
+                relic += enhanceAbilityIncrease;
+            }
+            if (relicChartInfo.StarEnhanceAbilityType == AbilityType.크리티컬퍼센트)
+            {
+                float starEnhanceAbilityIncrease = relicChartInfo.StarEnhanceAbilityIncrease;
+                relic += starEnhanceAbilityIncrease;
+            }
+        }
+
+        total += weaponeCriticalPercent;
+        total += relic;
+
+        return total;
+    }
+    public float GetCriticalDamagePercent()
+    {
+        float total = 0;
+
+        // 신체능력 
+        float abilityCriticalDamagePercent = CharacterEnhanceAbilityChart.instance.characterEnhanceAbilityChartInfo[abilityCriticalDamageLevel].CriticalDamage;
+        // 유물 
+        float relic = 0;
+        for (int i = 0; i < userRelics.Count; i++)
+        {
+            RelicChartInfo relicChartInfo = RelicChart.instance.GetRelicChartInfo(userRelics[i].name)[(int)userRelics[i].gradeType - 1];
+            if (relicChartInfo.EnhanceAbilityType == AbilityType.크리티컬데미지)
+            {
+                float enhanceAbilityIncrease = ((userRelics[i].upgrade + 1) * relicChartInfo.EnhanceAbilityIncrease);
+                relic += enhanceAbilityIncrease;
+            }
+            if (relicChartInfo.StarEnhanceAbilityType == AbilityType.크리티컬데미지)
+            {
+                float starEnhanceAbilityIncrease = relicChartInfo.StarEnhanceAbilityIncrease;
+                relic += starEnhanceAbilityIncrease;
+            }
+        }
+
+        total += abilityCriticalDamagePercent;
+        total += relic;
+
+        return total;
+    }
+    public float GetAngerTime()
+    {
+        float total = 0;
+        // 유물 
+        float relic = 0;
+        for (int i = 0; i < userRelics.Count; i++)
+        {
+            RelicChartInfo relicChartInfo = RelicChart.instance.GetRelicChartInfo(userRelics[i].name)[(int)userRelics[i].gradeType - 1];
+            if (relicChartInfo.EnhanceAbilityType == AbilityType.분노시간)
+            {
+                float enhanceAbilityIncrease = ((userRelics[i].upgrade + 1) * relicChartInfo.EnhanceAbilityIncrease);
+                relic += enhanceAbilityIncrease;
+            }
+            if (relicChartInfo.StarEnhanceAbilityType == AbilityType.분노시간)
+            {
+                float starEnhanceAbilityIncrease = relicChartInfo.StarEnhanceAbilityIncrease;
+                relic += starEnhanceAbilityIncrease;
+            }
+        }
+
+        total += relic;
+
+        return total;
+
+    }
+    public float GetAngerDamage()
+    {
+        float total = 0;
+        // 신체능력 
+        float abilityAngerDamage = CharacterEnhanceAbilityChart.instance.characterEnhanceAbilityChartInfo[abilityAngerDamageLevel].AngerDamage;
+        // 유물
+        float relic = 0;
+        for (int i = 0; i < userRelics.Count; i++)
+        {
+            RelicChartInfo relicChartInfo = RelicChart.instance.GetRelicChartInfo(userRelics[i].name)[(int)userRelics[i].gradeType - 1];
+            if (relicChartInfo.EnhanceAbilityType == AbilityType.분노데미지)
+            {
+                float enhanceAbilityIncrease = ((userRelics[i].upgrade + 1) * relicChartInfo.EnhanceAbilityIncrease);
+                relic += enhanceAbilityIncrease;
+            }
+            if (relicChartInfo.StarEnhanceAbilityType == AbilityType.분노데미지)
+            {
+                float starEnhanceAbilityIncrease = relicChartInfo.StarEnhanceAbilityIncrease;
+                relic += starEnhanceAbilityIncrease;
+            }
+        }
+
+        total += abilityAngerDamage;
+        total += relic;
+
+        return total;
+    }
+    public float GetGoldPercent()
+    {
+        float total = 0;
+        // 유물
+        float relic = 0;
+        for (int i = 0; i < userRelics.Count; i++)
+        {
+            RelicChartInfo relicChartInfo = RelicChart.instance.GetRelicChartInfo(userRelics[i].name)[(int)userRelics[i].gradeType - 1];
+            if (relicChartInfo.EnhanceAbilityType == AbilityType.골드추가획득량)
+            {
+                float enhanceAbilityIncrease = ((userRelics[i].upgrade + 1) * relicChartInfo.EnhanceAbilityIncrease);
+                relic += enhanceAbilityIncrease;
+            }
+            if (relicChartInfo.StarEnhanceAbilityType == AbilityType.골드추가획득량)
+            {
+                float starEnhanceAbilityIncrease = relicChartInfo.StarEnhanceAbilityIncrease;
+                relic += starEnhanceAbilityIncrease;
+            }
+        }
+
+        total += relic;
+
+
+        return total;
+    }
+    public float GetSkillColltime()
+    {
+        float total = 0;
+        // 유물
+        float relic = 0;
+        for (int i = 0; i < userRelics.Count; i++)
+        {
+            RelicChartInfo relicChartInfo = RelicChart.instance.GetRelicChartInfo(userRelics[i].name)[(int)userRelics[i].gradeType - 1];
+            if (relicChartInfo.EnhanceAbilityType == AbilityType.스킬쿨타임)
+            {
+                float enhanceAbilityIncrease = ((userRelics[i].upgrade + 1) * relicChartInfo.EnhanceAbilityIncrease);
+                relic += enhanceAbilityIncrease;
+            }
+            if (relicChartInfo.StarEnhanceAbilityType == AbilityType.스킬쿨타임)
+            {
+                float starEnhanceAbilityIncrease = relicChartInfo.StarEnhanceAbilityIncrease;
+                relic += starEnhanceAbilityIncrease;
+            }
+        }
+
+        total += relic;
+
+        return total;
+    }
+    public float GetMasicStonePercent()
+    {
+        float total = 0;
+        // 유물
+        float relic = 0;
+        for (int i = 0; i < userRelics.Count; i++)
+        {
+            RelicChartInfo relicChartInfo = RelicChart.instance.GetRelicChartInfo(userRelics[i].name)[(int)userRelics[i].gradeType - 1];
+            if (relicChartInfo.EnhanceAbilityType == AbilityType.마력수정추가획득량)
+            {
+                float enhanceAbilityIncrease = ((userRelics[i].upgrade + 1) * relicChartInfo.EnhanceAbilityIncrease);
+                relic += enhanceAbilityIncrease;
+            }
+            if (relicChartInfo.StarEnhanceAbilityType == AbilityType.마력수정추가획득량)
+            {
+                float starEnhanceAbilityIncrease = relicChartInfo.StarEnhanceAbilityIncrease;
+                relic += starEnhanceAbilityIncrease;
+            }
+        }
+
+        total += relic;
+
+        return total;
+
+    }
+    public float GetEnhanceStonePercent()
+    {
+        float total = 0;
+        // 유물
+        float relic = 0;
+        for (int i = 0; i < userRelics.Count; i++)
+        {
+            RelicChartInfo relicChartInfo = RelicChart.instance.GetRelicChartInfo(userRelics[i].name)[(int)userRelics[i].gradeType - 1];
+            if (relicChartInfo.EnhanceAbilityType == AbilityType.마력수정추가획득량)
+            {
+                float enhanceAbilityIncrease = ((userRelics[i].upgrade + 1) * relicChartInfo.EnhanceAbilityIncrease);
+                relic += enhanceAbilityIncrease;
+            }
+            if (relicChartInfo.StarEnhanceAbilityType == AbilityType.마력수정추가획득량)
+            {
+                float starEnhanceAbilityIncrease = relicChartInfo.StarEnhanceAbilityIncrease;
+                relic += starEnhanceAbilityIncrease;
+            }
+        }
+
+        total += relic;
+
+        return total;
+    }
+    public float GetTransStonePercent()
+    {
+        float total = 0;
+        // 유물
+        float relic = 0;
+        for (int i = 0; i < userRelics.Count; i++)
+        {
+            RelicChartInfo relicChartInfo = RelicChart.instance.GetRelicChartInfo(userRelics[i].name)[(int)userRelics[i].gradeType - 1];
+            if (relicChartInfo.EnhanceAbilityType == AbilityType.초월석추가획득량)
+            {
+                float enhanceAbilityIncrease = ((userRelics[i].upgrade + 1) * relicChartInfo.EnhanceAbilityIncrease);
+                relic += enhanceAbilityIncrease;
+            }
+            if (relicChartInfo.StarEnhanceAbilityType == AbilityType.초월석추가획득량)
+            {
+                float starEnhanceAbilityIncrease = relicChartInfo.StarEnhanceAbilityIncrease;
+                relic += starEnhanceAbilityIncrease;
+            }
+        }
+
+        total += relic;
+
+        return total;
+    }
+    public float GetBossAtkPercent()
+    {
+        float total = 0;
+        // 유물
+        float relic = 0;
+        for (int i = 0; i < userRelics.Count; i++)
+        {
+            RelicChartInfo relicChartInfo = RelicChart.instance.GetRelicChartInfo(userRelics[i].name)[(int)userRelics[i].gradeType - 1];
+            if (relicChartInfo.EnhanceAbilityType == AbilityType.보스공격력)
+            {
+                float enhanceAbilityIncrease = ((userRelics[i].upgrade + 1) * relicChartInfo.EnhanceAbilityIncrease);
+                relic += enhanceAbilityIncrease;
+            }
+            if (relicChartInfo.StarEnhanceAbilityType == AbilityType.보스공격력)
+            {
+                float starEnhanceAbilityIncrease = relicChartInfo.StarEnhanceAbilityIncrease;
+                relic += starEnhanceAbilityIncrease;
+            }
+        }
+        // 신체능력 
+        float abilityBossAtkPercent = CharacterEnhanceAbilityChart.instance.characterEnhanceAbilityChartInfo[abilityFaustDamageLevel].FaustDamage;
+
+        total += abilityBossAtkPercent;
+        total += relic;
+
+        return total;
+    }
+    public float GetAutoAtkSpeed()
+    {
+        float total = 0;
+
+        // 무기 
+        UserWeapone userWeapone = GetEqipWeapone();
+        float weaponeAtkSpeed = 0;
+        if (userWeapone != null)
+        {
+            WeaponeChartInfo weaponeChart = WeaponeChart.instance.GetWeaponeChartInfo(userWeapone.name)[userWeapone.upgrade];
+            weaponeAtkSpeed = weaponeChart.AtkSpeed;
+        }
+        // 유물
+        float relic = 0;
+        for (int i = 0; i < userRelics.Count; i++)
+        {
+            RelicChartInfo relicChartInfo = RelicChart.instance.GetRelicChartInfo(userRelics[i].name)[(int)userRelics[i].gradeType - 1];
+            if (relicChartInfo.EnhanceAbilityType == AbilityType.자동공격속도)
+            {
+                float enhanceAbilityIncrease = ((userRelics[i].upgrade + 1) * relicChartInfo.EnhanceAbilityIncrease);
+                relic += enhanceAbilityIncrease;
+            }
+            if (relicChartInfo.StarEnhanceAbilityType == AbilityType.자동공격속도)
+            {
+                float starEnhanceAbilityIncrease = relicChartInfo.StarEnhanceAbilityIncrease;
+                relic += starEnhanceAbilityIncrease;
+            }
+        }
+
+        total += weaponeAtkSpeed;
+        total += relic;
+
+        // 최대수치
+        if (total > 90) total = 90;
+
+        return total;
+    }
+
 
     // === 유저 재화 === // 
     // 1.재화 
@@ -165,6 +624,17 @@ public class UserInfo : MonoBehaviour
         }
         GetUserMasicMissileInfo(missileName).isEqip = true;
     }
+    public UserMasicMissile GetEqipMasicMissile()
+    {
+        for (int i = 0; i < userMasicMissiles.Count; i++)
+        {
+            if (userMasicMissiles[i].isEqip == true)
+            {
+                return userMasicMissiles[i];
+            }
+        }
+        return null;
+    }
     public void SaveMasicMissile(System.Action callback)
     {
         Param param = new Param();
@@ -240,6 +710,17 @@ public class UserInfo : MonoBehaviour
             }
         }
     } // 무기 장착
+    public UserWeapone GetEqipWeapone()
+    {
+        for (int i = 0; i < userWeapones.Count; i++)
+        {
+            if (userWeapones[i].isEqip == true)
+            {
+                return userWeapones[i];
+            }
+        }
+        return null;
+    }
     public void SaveWeapone(System.Action callback)
     {
         Param param = new Param();
@@ -382,6 +863,17 @@ public class UserInfo : MonoBehaviour
             }
         }
     } // 복장 장착
+    public UserCloth GetEqipCloth()
+    {
+        for (int i = 0; i < userCloths.Count; i++)
+        {
+            if (userCloths[i].isEqip == true)
+            {
+                return userCloths[i];
+            }
+        }
+        return null;
+    }
     public void SaveCloth(System.Action callback)
     {
         Param param = new Param();

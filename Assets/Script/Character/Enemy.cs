@@ -15,16 +15,18 @@ public class Enemy : MonoBehaviour
         PlayerController.instance.AngerAdd();
 
         GameObject damagePrepab = null;
-        int r = Random.Range(0, 2);
-        switch (r)
+        float critialPercent = UserInfo.instance.GetCriticalPercent();
+      
+        float r = Random.Range(0, critialPercent);
+        if (r < critialPercent)
         {
-            case 0:
-                damagePrepab = nomalDamagePrepab;
-                break;
-            case 1:
-                damagePrepab = criticalDamagePrepab;
-                damage = MyMath.Multiple(damage, 1.5F);
-                break;
+            damagePrepab = criticalDamagePrepab;
+            float criticalDamage = UserInfo.instance.GetCriticalDamagePercent();
+            damage = MyMath.Multiple(damage, criticalDamage);
+        }
+        else
+        {
+            damagePrepab = nomalDamagePrepab;
         }
 
         Vector2 position = new Vector2(this.transform.position.x, this.transform.position.y + hitBoxPosY);

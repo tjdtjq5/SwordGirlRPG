@@ -7,6 +7,10 @@ using UnityEngine.UI;
 
 public class MasicMissileManager : MonoBehaviour
 {
+    /// <summary>
+    ///  공격력 %
+    /// </summary>
+
     public Transform acquisition;
     public Transform unAcqusition;
     public float hight;

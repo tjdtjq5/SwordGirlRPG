@@ -31,12 +31,50 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: ec107e6c5c74ba941a5ca9913aca15cb, type: 3}
-    totalSpriteSurfaceArea: 67890
+    totalSpriteSurfaceArea: 5000000
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 21300000, guid: 345f6399102232741b1b03eac756a2ba, type: 3}
+  - {fileID: 21300000, guid: e2dcb0f08cdaab54a8c08b615a08f831, type: 3}
+  - {fileID: 21300000, guid: 171f63c1fce69bb428d0b4579be02de1, type: 3}
+  - {fileID: 21300000, guid: d14ad4f28e1253a44ad693a295f86851, type: 3}
+  - {fileID: 21300000, guid: 54d44e13c47176441ad6c230f881b438, type: 3}
+  - {fileID: 21300000, guid: 5e3d5d5346f376f45a3c4fb90ed09182, type: 3}
+  - {fileID: 21300000, guid: c5397df372b618d489d62cf047863d4b, type: 3}
+  - {fileID: 21300000, guid: c44c0ac493b089b4ea645c4e16718050, type: 3}
+  - {fileID: 21300000, guid: 6396da05e98b57943905570bbbc1c9cb, type: 3}
+  - {fileID: 21300000, guid: aaf9e0763a9623e438112975a9392a4c, type: 3}
+  - {fileID: 21300000, guid: c1ef4d1936e41ad4eb6b4590645f5dc3, type: 3}
+  - {fileID: 21300000, guid: 0e5801da04ec32f4c80b7bd5e53f9640, type: 3}
+  - {fileID: 21300000, guid: bce2dfdaa60d9b7408c8e41e056e0d52, type: 3}
+  - {fileID: 21300000, guid: 1148035b450e027428e0f0573ae5ca94, type: 3}
+  - {fileID: 21300000, guid: 0bf4b89b00ec747419837936333c6a84, type: 3}
+  - {fileID: 21300000, guid: ae1d097c0c05c99448f1c22a075c22e2, type: 3}
+  - {fileID: 21300000, guid: fe015e6d5ba124f4eaaee612226f619a, type: 3}
+  - {fileID: 21300000, guid: 66c85f1e167b9f24faaa7f71f1a026a5, type: 3}
+  - {fileID: 21300000, guid: 90e19e8fbf4625b45b528a6cdab69221, type: 3}
+  - {fileID: 21300000, guid: 1754f2bff2c05084890e93b43b864e63, type: 3}
+  - {fileID: 21300000, guid: 9ec905ff8c2b12843b5ce6c7a931c464, type: 3}
   m_PackedSpriteNamesToIndex:
-  - cloth_blind1
+  - "\uC758\uC0C1_\uBE44\uC2A4\uD06C\uB3CC_pre"
+  - "\uC758\uC0C1_\uADC0\uC871\uB9C8\uB3C4\uC0AC_pre"
+  - "\uC758\uC0C1_\uB808\uB4DC\uCE74\uB2C8\uBC1C_pre"
+  - "\uC758\uC0C1_\uB0E5\uB0E5\uD380\uCE58_pre"
+  - "\uC758\uC0C1_\uB0A0\uAC1C\uAC11\uC637_pre"
+  - "\uC758\uC0C1_\uD574\uC801\uC655_pre"
+  - "\uC758\uC0C1_\uD551\uD06C\uAD50\uBCF5_pre"
+  - "\uC758\uC0C1_\uC544\uC774\uB3CC_pre"
+  - "\uC758\uC0C1_\uC6E8\uB529\uB4DC\uB808\uC2A4_pre"
+  - "\uC758\uC0C1_\uB538\uAE30\uBC00\uD06C_pre"
+  - "\uC758\uC0C1_\uADC0\uC871\uC601\uC560_pre"
+  - "\uC758\uC0C1_\uC138\uC77C\uB7EC\uAC78_pre"
+  - "\uC758\uC0C1_\uB85C\uC584\uAE30\uC0AC_pre"
+  - "\uC758\uC0C1_\uCD08\uB85D\uC694\uC815_pre"
+  - "\uC758\uC0C1_\uC774\uC0C1\uD55C\uC568\uB9AC\uC2A4_pre"
+  - "\uC758\uC0C1_\uD669\uAE08\uAE30\uC0AC_pre"
+  - "\uC758\uC0C1_\uC232\uC758\uC815\uB839_pre"
+  - "\uC758\uC0C1_\uC804\uD22C\uC758\uBCD1_pre"
+  - "\uC758\uC0C1_\uD0DC\uC591\uAE30\uC0AC_pre"
+  - "\uC758\uC0C1_\uB9C8\uBC95\uC18C\uB140_pre"
   m_Tag: "\uBCF5\uC7A5"
   m_IsVariant: 0

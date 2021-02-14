@@ -88,9 +88,10 @@ namespace Function
         public static string Multiple(string A, float B)
         {
             BigInteger intA = BigInteger.Parse(A);
+            B = B * 100;
             BigInteger intB = new BigInteger(B);
 
-            return BigInteger.Multiply(intA, intB).ToString();
+            return (BigInteger.Multiply(intA, intB)/ 100).ToString();
         }
 
         public static string Divide(string A, string B)

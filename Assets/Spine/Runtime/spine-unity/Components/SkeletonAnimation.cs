@@ -117,7 +117,9 @@ namespace Spine.Unity {
 				} else {
 					var animationObject = skeletonDataAsset.GetSkeletonData(false).FindAnimation(value);
 					if (animationObject != null)
+					{
 						state.SetAnimation(0, animationObject, loop);
+					}
 				}
 			}
 		}

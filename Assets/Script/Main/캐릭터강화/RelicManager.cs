@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class RelicManager : MonoBehaviour
 {
+    /// <summary>
+    ///  모든 타입 
+    /// </summary>
+    
     public GameObject card;
     public Transform content;
     public Text totalAbilityText;
