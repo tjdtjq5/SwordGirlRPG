@@ -95,7 +95,7 @@ public class UserInfo : MonoBehaviour
     }
     public float GetAtkPercent()
     {
-        float total = 0;
+        float total = 1;
         // 신체능력 
         float abilityAtkPercent = CharacterEnhanceAbilityChart.instance.characterEnhanceAbilityChartInfo[abilityAtkPercentLevel].AtkPercent;
         // 마력검기 
@@ -163,7 +163,7 @@ public class UserInfo : MonoBehaviour
     }
     public float GetHpPercent()
     {
-        float total = 0;
+        float total = 1;
         // 신체능력 
         float abilityHpPercent = CharacterEnhanceAbilityChart.instance.characterEnhanceAbilityChartInfo[abilityHpPercentLevel].HpPercent;
         // 유물 
@@ -233,7 +233,7 @@ public class UserInfo : MonoBehaviour
     }
     public float GetCriticalDamagePercent()
     {
-        float total = 0;
+        float total = 1;
 
         // 신체능력 
         float abilityCriticalDamagePercent = CharacterEnhanceAbilityChart.instance.characterEnhanceAbilityChartInfo[abilityCriticalDamageLevel].CriticalDamage;

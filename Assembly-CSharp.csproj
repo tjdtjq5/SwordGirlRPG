@@ -127,10 +127,12 @@
     <Compile Include="Assets\Script\Character\Enemy.cs" />
     <Compile Include="Assets\Script\Character\MasicMissileController.cs" />
     <Compile Include="Assets\Script\Character\PlayerController.cs" />
+    <Compile Include="Assets\Script\Character\Violet.cs" />
     <Compile Include="Assets\Script\Chart\BossMonsterChart.cs" />
     <Compile Include="Assets\Script\Chart\CharacterEnhanceAbilityChart.cs" />
     <Compile Include="Assets\Script\Chart\ClothChart.cs" />
     <Compile Include="Assets\Script\Chart\CoinTreeChart.cs" />
+    <Compile Include="Assets\Script\Chart\CombatPowerChart.cs" />
     <Compile Include="Assets\Script\Chart\DayByQuestChart.cs" />
     <Compile Include="Assets\Script\Chart\GachaChart.cs" />
     <Compile Include="Assets\Script\Chart\MasicMissileChart.cs" />
@@ -153,6 +155,11 @@
     <Compile Include="Assets\Script\Login\VersionCheck.cs" />
     <Compile Include="Assets\Script\Main\ChatManager.cs" />
     <Compile Include="Assets\Script\Main\MoneyManager.cs" />
+    <Compile Include="Assets\Script\Main\Profile.cs" />
+    <Compile Include="Assets\Script\Main\던전입장\DungeonManager.cs" />
+    <Compile Include="Assets\Script\Main\스크린이펙트\FadeInOut.cs" />
+    <Compile Include="Assets\Script\Main\스크린이펙트\Intro.cs" />
+    <Compile Include="Assets\Script\Main\스크린이펙트\StartEffect.cs" />
     <Compile Include="Assets\Script\Main\캐릭터강화\AbilityManager.cs" />
     <Compile Include="Assets\Script\Main\캐릭터강화\CharacterEnhaceManager.cs" />
     <Compile Include="Assets\Script\Main\캐릭터강화\ClothGachaResult.cs" />
@@ -184,7 +191,7 @@
     <None Include="Assets\프리팹\캐릭터\hero.atlas.txt" />
     <None Include="Assets\프리팹\나무\coin_tree.atlas.txt" />
     <None Include="Assets\프리팹\나무\leaf_paticle.atlas.txt" />
-    <None Include="Assets\프리팹\마녀\witch.atlas.txt" />
+    <None Include="Assets\프리팹\바이올렛\witch.atlas.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:/UnityWorkspace/2019.4.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

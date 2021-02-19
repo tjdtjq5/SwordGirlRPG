@@ -257,6 +257,7 @@ MonoBehaviour:
   damageSpriteAtlas: {fileID: 4343727234628468602, guid: 2fa9718e0ee5ee748baccf9b0967d845,
     type: 2}
   content: {fileID: 1958801566516011783}
+  criImg: {fileID: 1958801567422034365}
 --- !u!1 &6766637721797918524
 GameObject:
   m_ObjectHideFlags: 0

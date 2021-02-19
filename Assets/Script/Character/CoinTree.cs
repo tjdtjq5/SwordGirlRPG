@@ -53,9 +53,9 @@ public class CoinTree : Enemy
     }
 
 
-    public override void Hit(string damage)
+    public override void Hit(string damage, bool isCritical)
     {
-        base.Hit(damage);
+        base.Hit(damage, isCritical);
 
         float hpAmount = MyMath.Amount(hp, maxHp);
 

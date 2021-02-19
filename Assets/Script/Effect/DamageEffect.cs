@@ -9,8 +9,16 @@ public class DamageEffect : MonoBehaviour
 {
     public SpriteAtlas damageSpriteAtlas;
     public Transform content;
+    public Image criImg;
+
     public void DamageUI_Setting(string text)
     {
+        if (criImg != null)
+        {
+            criImg.DOFade(1, .3f).OnComplete(()=> { criImg.DOFade(0, 0.2f); }) ;
+          
+            criImg.transform.DOPunchScale(Vector3.one * 0.3f, 0.3f);
+        }
 
         string countTypeString = text.Substring(text.Length - 2, 2);
         text = text.Substring(0, text.Length - 2);

@@ -14,6 +14,9 @@ public class ClothManager : MonoBehaviour
     public Sprite aBgBackSprite;
     public Sprite bBgBackSprite;
 
+    [Header("플레이어")]
+    public PlayerController playerController;
+
     public void Open()
     {
         Initialized();
@@ -63,6 +66,9 @@ public class ClothManager : MonoBehaviour
                     UserInfo.instance.EqipCloth(name);
                     UserInfo.instance.SaveCloth(() => { });
                     UISetting();
+
+                    playerController.Hp_Initialized();
+                    playerController.Hp_UI_Setting();
                 }
             });
             card.Find("Middle").Find("Icon").GetComponent<Image>().sprite = clothChartInfo.Image;
@@ -79,9 +85,13 @@ public class ClothManager : MonoBehaviour
             card.Find("강화").Find("강화버튼").GetComponent<Button>().onClick.AddListener(() => {
                 if (num >= clothChartInfo.CombinationNum && upgrade < ClothChart.instance.GetClothChartInfo(name).Count - 1)
                 {
+
                     UserInfo.instance.UpgradeCloth(name, clothChartInfo.CombinationNum);
                     UserInfo.instance.SaveCloth(() => { });
                     UISetting();
+
+                    playerController.Hp_Initialized();
+                    playerController.Hp_UI_Setting();
                 }
             });
         }

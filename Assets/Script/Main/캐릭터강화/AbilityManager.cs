@@ -34,6 +34,9 @@ public class AbilityManager : MonoBehaviour
     public Transform maxSwitchCon;
     public GameObject redIcon;
 
+    [Header("플레이어")]
+    public PlayerController playerController;
+
     public void Show()
     {
         Init();
@@ -209,6 +212,9 @@ public class AbilityManager : MonoBehaviour
                 UserInfo.instance.SaveAbility(() => {
                     UserInfo.instance.SaveMoney(() => { });
                 });
+
+                playerController.Hp_Initialized();
+                playerController.Hp_UI_Setting();
             }
         });
     }
@@ -263,6 +269,9 @@ public class AbilityManager : MonoBehaviour
                 UserInfo.instance.SaveAbility(() => {
                     UserInfo.instance.SaveMoney(() => { });
                 });
+
+                playerController.Hp_Initialized();
+                playerController.Hp_UI_Setting();
             }
         });
     }

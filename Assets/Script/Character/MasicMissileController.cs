@@ -5,14 +5,16 @@ using UnityEngine;
 public class MasicMissileController : MonoBehaviour
 {
     string damage;
+    bool isCritical;
     bool shotFlag;
 
     float speed = 18f;
 
 
-    public void Shot(string damage)
+    public void Shot(string damage, bool isCritical)
     {
         this.damage = damage;
+        this.isCritical = isCritical;
         shotFlag = true;
 
         float r = Random.Range(-3, 10);
@@ -33,12 +35,11 @@ public class MasicMissileController : MonoBehaviour
             transform.Translate(Vector2.right * fMove);
         }
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform.tag == "Enemy")
         {
-            collision.transform.GetComponent<Enemy>().Hit(damage);
+            collision.transform.GetComponent<Enemy>().Hit(damage, isCritical);
             Destroy();
         }
     }

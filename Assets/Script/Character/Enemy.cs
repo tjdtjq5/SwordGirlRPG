@@ -5,28 +5,26 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public string maxHp;
-    public string hp;
+    public string maxHp = "0";
+    public string hp = "0";
     public GameObject nomalDamagePrepab;
     public GameObject criticalDamagePrepab;
     public float hitBoxPosY;
-    public virtual void Hit(string damage)
+
+    public virtual void Hit(string damage, bool isCritical)
     {
         PlayerController.instance.AngerAdd();
 
         GameObject damagePrepab = null;
-        float critialPercent = UserInfo.instance.GetCriticalPercent();
-      
-        float r = Random.Range(0, critialPercent);
-        if (r < critialPercent)
+
+        switch (isCritical)
         {
-            damagePrepab = criticalDamagePrepab;
-            float criticalDamage = UserInfo.instance.GetCriticalDamagePercent();
-            damage = MyMath.Multiple(damage, criticalDamage);
-        }
-        else
-        {
-            damagePrepab = nomalDamagePrepab;
+            case true:
+                damagePrepab = criticalDamagePrepab;
+                break;
+            case false:
+                damagePrepab = nomalDamagePrepab;
+                break;
         }
 
         Vector2 position = new Vector2(this.transform.position.x, this.transform.position.y + hitBoxPosY);
