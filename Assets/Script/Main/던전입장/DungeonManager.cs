@@ -24,6 +24,8 @@ public class DungeonManager : MonoBehaviour
     [ContextMenu("Test")]
     public void Test()
     {
+        theCam.DOOrthoSize(5f, 0);
+        theCam.transform.position = new Vector3(0, 0, -10);
         VioletPlay();
     }
     public void VioletPlay() // 바이올렛 시작 
@@ -35,30 +37,31 @@ public class DungeonManager : MonoBehaviour
 
             // 코인트리 제거
             coinTree.SetActive(false);
-
+            theCam.transform.position = new Vector3(2.2f, 1, -10);
             // 배경 변경
             forest_BG.gameObject.SetActive(false);
             violet_BG.gameObject.SetActive(true);
 
-            StartCoroutine(SetViolet(() => {
-                startEffect.StartPlay(() => {
-                    playerController.Play();
-                });
-            }));
+            theCam.DOOrthoSize(6.5f, 0.5f);
+            intro.IntroPlay(() => {
+                StartCoroutine(SetViolet(() => {
+                    startEffect.StartPlay(() => {
+                        playerController.Play();
+                    });
+                }));
+            });
+       
         });
     }
 
     IEnumerator SetViolet(System.Action callback)
     {
-        theCam.DOOrthoSize(3.5f, 0.5f);
-        theCam.transform.DOMoveX(5.02f, 0.5f);
-
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.5f);
 
         violet.SetActive(true);
         violet.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "move", true);
         violet.transform.position = new Vector2(15, -2.91f);
-        violet.transform.DOMoveX(5.44f, 1.5f);
+        violet.transform.DOMoveX(8.5f, 1.5f);
 
         yield return new WaitForSeconds(1.5f);
 
@@ -67,9 +70,6 @@ public class DungeonManager : MonoBehaviour
         yield return new WaitForSeconds(0.8f);
 
         violet.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "wait", true);
-
-        theCam.DOOrthoSize(5, 0.5f);
-        theCam.transform.DOMoveX(0, 0.5f);
 
         yield return new WaitForSeconds(0.5f);
 

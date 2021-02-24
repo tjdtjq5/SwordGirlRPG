@@ -14,6 +14,8 @@ public class EqipManager : MonoBehaviour
     public ClothManager clothManager;
 
     [Header("Upper")]
+    public Sprite select_Upper_Btn;
+    public Sprite none_Upper_Btn;
     public float upperBtnDgSpeed;
     public Color selectUpperTextColor;
     public Color nonSelectUpperTextColor;
@@ -55,6 +57,7 @@ public class EqipManager : MonoBehaviour
 
     void UpperInit()
     {
+        weaponeBtn.Find("Btn").GetComponent<Image>().sprite = none_Upper_Btn;
         weaponeBtn.Find("Btn").GetChild(0).GetComponent<Text>().DOColor(nonSelectUpperTextColor, 0);
         weaponeBtn.Find("Btn").GetChild(0).GetComponent<Text>().fontSize = nonSelectUpperTextSize;
         for (int i = 0; i < weaponeOutLineList.Length; i++)
@@ -63,6 +66,7 @@ public class EqipManager : MonoBehaviour
         }
         weaponeManager.RedIconCheck();
 
+        accBtn.Find("Btn").GetComponent<Image>().sprite = none_Upper_Btn;
         accBtn.Find("Btn").GetChild(0).GetComponent<Text>().DOColor(nonSelectUpperTextColor, 0);
         accBtn.Find("Btn").GetChild(0).GetComponent<Text>().fontSize = nonSelectUpperTextSize;
         for (int i = 0; i < accOutLineList.Length; i++)
@@ -70,6 +74,7 @@ public class EqipManager : MonoBehaviour
             accOutLineList[i].DOColor(nonSelectUpperTextOutLineColor, 0);
         }
 
+        relicsBtn.Find("Btn").GetComponent<Image>().sprite = none_Upper_Btn;
         relicsBtn.Find("Btn").GetChild(0).GetComponent<Text>().DOColor(nonSelectUpperTextColor, 0);
         relicsBtn.Find("Btn").GetChild(0).GetComponent<Text>().fontSize = nonSelectUpperTextSize;
         for (int i = 0; i < relicsOutLineList.Length; i++)
@@ -77,6 +82,7 @@ public class EqipManager : MonoBehaviour
             relicsOutLineList[i].DOColor(nonSelectUpperTextOutLineColor, 0);
         }
 
+        clothBtn.Find("Btn").GetComponent<Image>().sprite = none_Upper_Btn;
         clothBtn.Find("Btn").GetChild(0).GetComponent<Text>().DOColor(nonSelectUpperTextColor, 0);
         clothBtn.Find("Btn").GetChild(0).GetComponent<Text>().fontSize = nonSelectUpperTextSize;
         for (int i = 0; i < clothOutLineList.Length; i++)
@@ -95,6 +101,7 @@ public class EqipManager : MonoBehaviour
         StartCoroutine(UpperFlagCoroutine());
 
         UpperInit();
+        weaponeBtn.Find("Btn").GetComponent<Image>().sprite = select_Upper_Btn;
         weaponeBtn.Find("Btn").GetChild(0).GetComponent<Text>().DOColor(selectUpperTextColor, upperBtnDgSpeed);
         weaponeBtn.Find("Btn").GetChild(0).GetComponent<Text>().fontSize = selectUpperTextSize;
         for (int i = 0; i < weaponeOutLineList.Length; i++)
@@ -102,7 +109,7 @@ public class EqipManager : MonoBehaviour
             weaponeOutLineList[i].DOColor(selectUpperTextOutLineColor, upperBtnDgSpeed);
         }
 
-        focus.DOMoveX(weaponeFocusPosition.position.x, upperBtnDgSpeed);
+        focus.DOMoveX(weaponeFocusPosition.position.x, 0);
 
         weaponeObj.SetActive(true);
         weaponeManager.Open();
@@ -113,13 +120,14 @@ public class EqipManager : MonoBehaviour
         StartCoroutine(UpperFlagCoroutine());
 
         UpperInit();
+        accBtn.Find("Btn").GetComponent<Image>().sprite = select_Upper_Btn;
         accBtn.Find("Btn").GetChild(0).GetComponent<Text>().DOColor(selectUpperTextColor, upperBtnDgSpeed);
         accBtn.Find("Btn").GetChild(0).GetComponent<Text>().fontSize = selectUpperTextSize;
         for (int i = 0; i < accOutLineList.Length; i++)
         {
             accOutLineList[i].DOColor(selectUpperTextOutLineColor, upperBtnDgSpeed);
         }
-        focus.DOMoveX(accFocusPosition.position.x, upperBtnDgSpeed);
+        focus.DOMoveX(accFocusPosition.position.x, 0);
     }
     public void Relics()
     {
@@ -127,13 +135,14 @@ public class EqipManager : MonoBehaviour
         StartCoroutine(UpperFlagCoroutine());
 
         UpperInit();
+        relicsBtn.Find("Btn").GetComponent<Image>().sprite = select_Upper_Btn;
         relicsBtn.Find("Btn").GetChild(0).GetComponent<Text>().DOColor(selectUpperTextColor, upperBtnDgSpeed);
         relicsBtn.Find("Btn").GetChild(0).GetComponent<Text>().fontSize = selectUpperTextSize;
         for (int i = 0; i < relicsOutLineList.Length; i++)
         {
             relicsOutLineList[i].DOColor(selectUpperTextOutLineColor, upperBtnDgSpeed);
         }
-        focus.DOMoveX(relicsFocusPosition.position.x, upperBtnDgSpeed);
+        focus.DOMoveX(relicsFocusPosition.position.x, 0);
 
         relicObj.SetActive(true);
         relicManager.Open();
@@ -144,13 +153,14 @@ public class EqipManager : MonoBehaviour
         StartCoroutine(UpperFlagCoroutine());
 
         UpperInit();
+        clothBtn.Find("Btn").GetComponent<Image>().sprite = select_Upper_Btn;
         clothBtn.Find("Btn").GetChild(0).GetComponent<Text>().DOColor(selectUpperTextColor, upperBtnDgSpeed);
         clothBtn.Find("Btn").GetChild(0).GetComponent<Text>().fontSize = selectUpperTextSize;
         for (int i = 0; i < clothOutLineList.Length; i++)
         {
             clothOutLineList[i].DOColor(selectUpperTextOutLineColor, upperBtnDgSpeed);
         }
-        focus.DOMoveX(clothFocusPosition.position.x, upperBtnDgSpeed);
+        focus.DOMoveX(clothFocusPosition.position.x, 0);
         clothObj.SetActive(true);
         clothManager.Open();
     }

@@ -17,9 +17,13 @@ public class ClothManager : MonoBehaviour
     [Header("플레이어")]
     public PlayerController playerController;
 
-    public void Open()
+    private void Start()
     {
         Initialized();
+    }
+
+    public void Open()
+    {
         UISetting();
     }
     void Initialized() // 카드 생성 

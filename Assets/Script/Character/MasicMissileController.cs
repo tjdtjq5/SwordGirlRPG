@@ -10,15 +10,14 @@ public class MasicMissileController : MonoBehaviour
 
     float speed = 18f;
 
-
+    float r;
     public void Shot(string damage, bool isCritical)
     {
         this.damage = damage;
         this.isCritical = isCritical;
         shotFlag = true;
 
-        float r = Random.Range(-3, 10);
-        this.transform.rotation = Quaternion.Euler(0, 0, r);
+        r = Random.Range(-0.05f, 0.1f);
     }
 
     void Destroy()
@@ -33,8 +32,11 @@ public class MasicMissileController : MonoBehaviour
         {
             float fMove = Time.fixedDeltaTime * speed;
             transform.Translate(Vector2.right * fMove);
+            // transform.Translate(new Vector3(0,r,1) * fMove);
+            // transform.transform.position = new Vector3(transform.transform.position.x, transform.transform.position.y, 0);
         }
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform.tag == "Enemy")

@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using BackEnd.Tcp;
+using DG.Tweening;
 using Function;
 using Spine.Unity;
 using Spine.Unity.Examples;
@@ -29,8 +30,19 @@ public class PlayerController : MonoBehaviour
     int chargeAngerPoint = 10;
     float angerDuration = 10;
     public Image foreAnger;
+    public Sprite none_Anger_Sprite;
+    public Sprite max_Anger_Sprite_01;
+    public Sprite max_Anger_Sprite_02;
+    public GameObject max_Text_Obj;
+    IEnumerator gageMaxEffectCoroutine;
+    bool gageMaxEffectFlag = false;
     bool angerFlag = false;
     IEnumerator fillAmountCoroutine;
+    public Camera theCam;
+    float originCamSize;
+    float angerCamEffectSize = 0.01f;
+    IEnumerator camEffectCoroutine;
+    bool camEffectFlag;
 
     // 공격
     public Button touchBtn;
@@ -59,6 +71,9 @@ public class PlayerController : MonoBehaviour
     // 멈춤기능 
     bool dontPlayFlag = false;
 
+    // 대쉬 
+    bool isDash = false;
+
     private void Start()
     {
         attackFlagWaitTime = new WaitForSeconds(attackSpeedCycle);
@@ -72,6 +87,49 @@ public class PlayerController : MonoBehaviour
     void AngerUISetting()
     {
         foreAnger.fillAmount = angerPoint / (float)maxAngerPoint;
+
+        if (foreAnger.fillAmount == 1)
+        {
+            if (!gageMaxEffectFlag)
+            {
+                GageMaxEffectPlay();
+            }
+        }
+        else
+        {
+         
+            GageMaxEffectStop();
+        }
+    }
+
+    void GageMaxEffectPlay()
+    {
+        gageMaxEffectFlag = true;
+
+        if (gageMaxEffectCoroutine != null) StopCoroutine(gageMaxEffectCoroutine);
+        gageMaxEffectCoroutine = GageMaxEffectCoroutine();
+        StartCoroutine(gageMaxEffectCoroutine);
+    }
+    void GageMaxEffectStop()
+    {
+        gageMaxEffectFlag = false;
+
+        max_Text_Obj.SetActive(false);
+        foreAnger.sprite = none_Anger_Sprite;
+        if (gageMaxEffectCoroutine != null) StopCoroutine(gageMaxEffectCoroutine);
+    }
+    IEnumerator GageMaxEffectCoroutine()
+    {
+        WaitForSeconds waitTime = new WaitForSeconds(0.15f);
+        max_Text_Obj.SetActive(true);
+
+        while (true)
+        {
+            foreAnger.sprite = max_Anger_Sprite_01;
+            yield return waitTime;
+            foreAnger.sprite = max_Anger_Sprite_02;
+            yield return waitTime;
+        }
     }
     public void AngerAdd()
     {
@@ -106,27 +164,18 @@ public class PlayerController : MonoBehaviour
         ChangeAttack_M_To_C();
         skeletonGhost.enabled = true;
 
+
         // 유저의 분노시간과 디폴트 분노시간을 더한 값
         float angerTime = UserInfo.instance.GetAngerTime();
 
         if (fillAmountCoroutine != null) StopCoroutine(fillAmountCoroutine);
         fillAmountCoroutine = FillAmountCoroutine(angerDuration + angerTime, () => {
-            angerFlag = false;
             angerPoint = 0;
-            AngerUISetting();
-            skeletonGhost.enabled = false;
-            ChangeAttack_C_To_M();
+
+            StopAngerState();
         });
         StartCoroutine(fillAmountCoroutine);
 
-        /*
-        foreAnger.DOFillAmount(0, (angerDuration + angerTime)).OnComplete(()=> {
-            angerFlag = false;
-            angerPoint = 0;
-            AngerUISetting();
-            skeletonGhost.enabled = false;
-            ChangeAttack_C_To_M();
-        });*/
     }
 
     IEnumerator FillAmountCoroutine(float time ,System.Action callback)
@@ -147,6 +196,40 @@ public class PlayerController : MonoBehaviour
         }
 
         callback();
+    }
+
+    void AngerCamEffectPlay()
+    {
+        if (camEffectFlag) return;
+
+        originCamSize = theCam.orthographicSize;
+        if (camEffectCoroutine != null) StopCoroutine(camEffectCoroutine);
+        camEffectCoroutine = CamEffectCoroutine();
+        StartCoroutine(camEffectCoroutine);
+    }
+
+    IEnumerator CamEffectCoroutine()
+    {
+        camEffectFlag = true;
+
+        float smallSize = originCamSize - (originCamSize * angerCamEffectSize);
+        float m = 0.1f;
+        float p = 0.1f;
+
+        WaitForSeconds waitTime = new WaitForSeconds(0.01f);
+        while (theCam.orthographicSize > smallSize)
+        {
+            theCam.orthographicSize -= m;
+            yield return waitTime;
+        }
+        while (theCam.orthographicSize <= originCamSize)
+        {
+            theCam.orthographicSize += p;
+            yield return waitTime;
+        }
+        theCam.orthographicSize = originCamSize;
+
+        camEffectFlag = false;
     }
 
     void StopAngerState()
@@ -219,7 +302,7 @@ public class PlayerController : MonoBehaviour
 
         animator.SetTrigger("attack_nomal_" + aniR);
 
-        GameObject masicMissile = Instantiate(masicMissilePrepab, masicMissileTransform.position, Quaternion.identity, trash);
+        GameObject masicMissile = Instantiate(masicMissilePrepab, masicMissileTransform.position, Quaternion.Euler(0,0,0), trash);
 
         string damage = Atk();
         float critialPercent = UserInfo.instance.GetCriticalPercent();
@@ -287,6 +370,7 @@ public class PlayerController : MonoBehaviour
             TargetDash(target, () => {
                 if (!angerFlag) return; // 분노상태가 아닐경우는 리턴
                 Auto_C_Attack(true);
+                
             });
             return;
         }
@@ -306,6 +390,7 @@ public class PlayerController : MonoBehaviour
             target.GetComponent<Enemy>().Hit(damage, false);
         }
 
+        AngerCamEffectPlay();
     }
     void Auto_C_Attack(bool flag) // 근거리 자동공격 
     {
@@ -338,6 +423,8 @@ public class PlayerController : MonoBehaviour
 
     void TargetDash(Transform target ,System.Action callback) // 타겟을 향해 대쉬 
     {
+        isDash = true;
+
         if (target.GetComponent<BoxCollider2D>())
         {
             targetDistance = target.GetComponent<BoxCollider2D>().size.x / 2;
@@ -354,6 +441,8 @@ public class PlayerController : MonoBehaviour
         }
         animator.SetTrigger("dash");
         character.DOMoveX(target.position.x - targetDistance, 0.5f).SetEase(Ease.OutQuad).OnComplete(() => {
+            isDash = false;
+
             character.rotation = Quaternion.Euler(0, 0, 0);
             callback();
         });
@@ -432,12 +521,12 @@ public class PlayerController : MonoBehaviour
         Auto_M_Attack(true);
         touchBtn.onClick.RemoveAllListeners();
         touchBtn.onClick.AddListener(() => { M_Attack(); });
-
-       
     }
     
     public void Hit(string damage, bool isCritical)
     {
+        if (isDash) return; // 대쉬중일때는 무적상태 
+
         // 데미지 이펙트 프리팹 
         GameObject damagePrepab = null;
         float prepabY = 1.3F;

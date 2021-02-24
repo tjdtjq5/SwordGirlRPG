@@ -63,6 +63,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Effect\Epic Toon FX\Demo\Scripts\ETFXButtonScript.cs" />
+    <Compile Include="Assets\Effect\Epic Toon FX\Demo\Scripts\ETFXFireProjectile.cs" />
+    <Compile Include="Assets\Effect\Epic Toon FX\Demo\Scripts\ETFXLoopScript.cs" />
+    <Compile Include="Assets\Effect\Epic Toon FX\Demo\Scripts\ETFXMouseOrbit.cs" />
+    <Compile Include="Assets\Effect\Epic Toon FX\Demo\Scripts\ETFXProjectileScript.cs" />
+    <Compile Include="Assets\Effect\Epic Toon FX\Demo\Scripts\ETFXSceneManager.cs" />
+    <Compile Include="Assets\Effect\Epic Toon FX\Demo\Scripts\ETFXTarget.cs" />
+    <Compile Include="Assets\Effect\Epic Toon FX\Demo\Scripts\VFX Library\PEButtonScript.cs" />
+    <Compile Include="Assets\Effect\Epic Toon FX\Demo\Scripts\VFX Library\ParticleEffectsLibrary.cs" />
+    <Compile Include="Assets\Effect\Epic Toon FX\Demo\Scripts\VFX Library\UICanvasManager.cs" />
+    <Compile Include="Assets\Effect\Epic Toon FX\Scripts\ETFXLightFade.cs" />
+    <Compile Include="Assets\Effect\Epic Toon FX\Scripts\ETFXPitchRandomizer.cs" />
+    <Compile Include="Assets\Effect\Epic Toon FX\Scripts\ETFXRotation.cs" />
+    <Compile Include="Assets\Effect\Hovl Studio\Epic toon VFX\Demo scene\DemoToonVFX.cs" />
+    <Compile Include="Assets\Effect\Hovl Studio\Toon Projectiles 2\Demo scene\DemoShooting.cs" />
+    <Compile Include="Assets\Effect\Hovl Studio\Toon Projectiles 2\Scripts\AutoDestroyPS.cs" />
+    <Compile Include="Assets\Effect\Hovl Studio\Toon Projectiles 2\Scripts\ProjectileMover.cs" />
     <Compile Include="Assets\GPGSIds.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\Achievement.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\CommonStatusCodes.cs" />
@@ -142,6 +159,7 @@
     <Compile Include="Assets\Script\Chart\WeaponeChart.cs" />
     <Compile Include="Assets\Script\Chart\WeekQuestChart.cs" />
     <Compile Include="Assets\Script\Effect\DamageEffect.cs" />
+    <Compile Include="Assets\Script\Effect\HitEffect.cs" />
     <Compile Include="Assets\Script\Enum.cs" />
     <Compile Include="Assets\Script\Function.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
@@ -186,12 +204,31 @@
     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\ReporterMessageReceiver.cs" />
     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\Test\Rotate.cs" />
     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\Test\TestReporter.cs" />
+    <None Include="Assets\Effect\Hovl Studio\Epic toon VFX\Demo scene\Readme.txt" />
+    <None Include="Assets\Effect\Epic Toon FX\Prefabs\Environment\Environment FX.txt" />
     <None Include="Assets\Spine\version.txt" />
+    <None Include="Assets\Effect\Epic Toon FX\Prefabs\Combat\Combat FX.txt" />
     <None Include="Assets\GooglePlayGames\Plugins\Android\GooglePlayGamesManifest.plugin\AndroidManifest.xml" />
     <None Include="Assets\프리팹\캐릭터\hero.atlas.txt" />
+    <None Include="Assets\Effect\Hovl Studio\Epic toon VFX\Shaders\Lit_CenterGlow.shader" />
+    <None Include="Assets\Effect\Hovl Studio\Toon Projectiles 2\Demo scene\Readme.txt" />
+    <None Include="Assets\Effect\Hovl Studio\Epic toon VFX\Shaders\SmoothSmoke.shader" />
+    <None Include="Assets\Effect\Hovl Studio\Toon Projectiles 2\Shaders\DissolveNoise.shader" />
+    <None Include="Assets\Effect\effect_main\spine\hero.atlas.txt" />
+    <None Include="Assets\Effect\Hovl Studio\Epic toon VFX\Shaders\Ice.shader" />
+    <None Include="Assets\Effect\Hovl Studio\Toon Projectiles 2\Shaders\Distortion.shader" />
+    <None Include="Assets\Effect\Hovl Studio\Toon Projectiles 2\Shaders\Blend_TwoSides.shader" />
+    <None Include="Assets\Effect\Hovl Studio\Toon Projectiles 2\Shaders\Blend_CenterGlow.shader" />
+    <None Include="Assets\Effect\Hovl Studio\Epic toon VFX\Shaders\Blend_Normals.shader" />
+    <None Include="Assets\Effect\Epic Toon FX\Prefabs\Interactive\Interactive FX.txt" />
     <None Include="Assets\프리팹\나무\coin_tree.atlas.txt" />
     <None Include="Assets\프리팹\나무\leaf_paticle.atlas.txt" />
+    <None Include="Assets\Effect\Hovl Studio\Toon Projectiles 2\Demo scene\HDRP and URP(LWRP).txt" />
+    <None Include="Assets\Effect\Hovl Studio\Epic toon VFX\Demo scene\HDRP and URP(LWRP).txt" />
+    <None Include="Assets\Effect\Hovl Studio\Epic toon VFX\Shaders\AddTrail.shader" />
+    <None Include="Assets\Effect\Hovl Studio\Epic toon VFX\Demo scene\Demo scene hero\Character.txt" />
     <None Include="Assets\프리팹\바이올렛\witch.atlas.txt" />
+    <None Include="Assets\Effect\Hovl Studio\Toon Projectiles 2\Shaders\Add_CenterGlow.shader" />
     <Reference Include="UnityEngine">
       <HintPath>C:/UnityWorkspace/2019.4.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
