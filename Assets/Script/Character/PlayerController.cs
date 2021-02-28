@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
     // 애니메이션
     public Animator animator;
     public SkeletonGhost skeletonGhost;
+    public Transform dash_ani;
 
     [Header("마력검기")]
     public GameObject masicMissilePrepab;
@@ -438,7 +439,18 @@ public class PlayerController : MonoBehaviour
         {
             character.rotation = Quaternion.Euler(0, 180, 0);
             targetDistance *= -1;
+
+            dash_ani.rotation = Quaternion.Euler(0, 180, 0);
+            dash_ani.position = new Vector2(character.position.x + 0.5f, dash_ani.position.y);
+            dash_ani.GetComponent<Animator>().SetTrigger("dash");
         }
+        else
+        {
+            dash_ani.rotation = Quaternion.Euler(0, 0, 0);
+            dash_ani.position = new Vector2(character.position.x - 0.5f, dash_ani.position.y);
+            dash_ani.GetComponent<Animator>().SetTrigger("dash");
+        }
+
         animator.SetTrigger("dash");
         character.DOMoveX(target.position.x - targetDistance, 0.5f).SetEase(Ease.OutQuad).OnComplete(() => {
             isDash = false;

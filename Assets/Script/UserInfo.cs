@@ -27,7 +27,9 @@ public class UserInfo : MonoBehaviour
                                         LoadUserWeekByQuest(() => {
                                             LoadUserPass(() => {
                                                 LoadCoinTree(() => {
-                                                    callback();
+                                                    LoadUserViolet(() => {
+                                                        callback();
+                                                    });
                                                 });
                                             });
                                         });
@@ -1430,9 +1432,70 @@ public class UserInfo : MonoBehaviour
         BackendGameInfo.instance.GetPrivateContents("CoinTree", "Level", () => {
             coinTreeLevel = int.Parse(BackendGameInfo.instance.serverDataList[0]);
             callback();
-        }, () => { callback(); });
+        }, () => {
+            coinTreeLevel = 1;
+            callback(); });
     }
 
+    // 바이올렛 남은 카운트 
+    public UserViolet userViolet = null;
+    public int GetVioletRemainCount()
+    {
+        DateTime currentTime = TimeManager.instance.currentTime;
+        int maxCount = 3;
+        if(userViolet == null) // 아무런 정보가 없을경우 풀충 
+        {
+            userViolet = new UserViolet(currentTime, maxCount);
+        }
+
+        // 년 월 일 이 같다면 남은 카운트 리턴
+        if (userViolet.dateTime.Year == currentTime.Year && userViolet.dateTime.Month == currentTime.Month && userViolet.dateTime.Day == currentTime.Day)
+        {
+            return userViolet.violetRemainCount;
+        }
+        else // 같지 않다면 풀충하고 풀 카운트 리턴 
+        {
+            userViolet = new UserViolet(currentTime, maxCount);
+            return maxCount;
+        }
+    }    // 바이올렛 카운트 가져오기
+    public void PullVioletRemainCount() // 바이올렛 카운트 소비하기 
+    {
+        DateTime currentTime = TimeManager.instance.currentTime;
+        userViolet.violetRemainCount--;
+        userViolet.dateTime = currentTime;
+    }
+    public void PushVioletRemainCount() // 바이올렛 카운트 충전하기 
+    {
+        DateTime currentTime = TimeManager.instance.currentTime;
+        userViolet.violetRemainCount++;
+        userViolet.dateTime = currentTime;
+    }
+    public void SaveUserViolet(System.Action callback)
+    {
+        if (userViolet == null)
+        {
+            callback();
+            return;
+        }
+
+        Param param = new Param();
+        string data = userViolet.dateTime + "=" + userViolet.violetRemainCount;
+        param.Add("RemainCount", data);
+        BackendGameInfo.instance.PrivateTableUpdate("Violet", param, () => { callback(); });
+    }
+    public void LoadUserViolet(System.Action callback)
+    {
+        BackendGameInfo.instance.GetPrivateContents("Violet", "RemainCount", () => {
+            string[] dataList = BackendGameInfo.instance.serverDataList[0].Split('=');
+            DateTime dateTime = DateTime.Parse(dataList[0]);
+            int remainCount = int.Parse(dataList[1]);
+            userViolet = new UserViolet(dateTime, remainCount);
+            callback();
+        }, () => {
+            callback();
+        });
+    }
 }
 public class UserMasicMissile
 {
@@ -1568,5 +1631,16 @@ public class UserPass
         this.nomalComplete = nomalComplete;
         this.passComplete = passComplete;
         this.time = time;
+    }
+}
+public class UserViolet
+{
+    public DateTime dateTime;
+    public int violetRemainCount; // 일일 입장횟수 남은 카운트 
+
+    public UserViolet(DateTime dateTime, int violetRemainCount)
+    {
+        this.dateTime = dateTime;
+        this.violetRemainCount = violetRemainCount;
     }
 }

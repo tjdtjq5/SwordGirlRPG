@@ -2934,7 +2934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169f60dba7c15da429d38752e99103fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  field: 14562
+  field: 15329
   weaponeSpriteAtlas: {fileID: 4343727234628468602, guid: 16644af9124ba31489ebe08d3c576313,
     type: 2}
   weaponeChartInfos: []

@@ -42,6 +42,12 @@ namespace Function
                 return value;
             }*/
 
+            /// 8자리 이하는 그냥 보내주기 
+
+            if (value.Length < 9) return value;
+
+            /// 
+
             string countTypeString = ((CountType)(value.Length / 2)).ToString();
 
             if (value.Length <= 2) return value + countTypeString;

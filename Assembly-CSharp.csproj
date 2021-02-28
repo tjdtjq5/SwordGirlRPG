@@ -160,6 +160,7 @@
     <Compile Include="Assets\Script\Chart\WeekQuestChart.cs" />
     <Compile Include="Assets\Script\Effect\DamageEffect.cs" />
     <Compile Include="Assets\Script\Effect\HitEffect.cs" />
+    <Compile Include="Assets\Script\Effect\SwitchConVertical.cs" />
     <Compile Include="Assets\Script\Enum.cs" />
     <Compile Include="Assets\Script\Function.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
@@ -175,6 +176,7 @@
     <Compile Include="Assets\Script\Main\MoneyManager.cs" />
     <Compile Include="Assets\Script\Main\Profile.cs" />
     <Compile Include="Assets\Script\Main\던전입장\DungeonManager.cs" />
+    <Compile Include="Assets\Script\Main\던전입장\VioletUI.cs" />
     <Compile Include="Assets\Script\Main\스크린이펙트\FadeInOut.cs" />
     <Compile Include="Assets\Script\Main\스크린이펙트\Intro.cs" />
     <Compile Include="Assets\Script\Main\스크린이펙트\StartEffect.cs" />
