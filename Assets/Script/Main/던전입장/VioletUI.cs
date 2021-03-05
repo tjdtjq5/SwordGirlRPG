@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using Function;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +13,9 @@ public class VioletUI : MonoBehaviour
     public GameObject rule;
     public Scrollbar scrollbar_rule;
     int maxCount = 3;
+    // 규칙 ui
+    public Text leftText; // 데미지 
+    public Text rightText; // 마법석
 
     [Header("스크립트")]
     public DungeonManager dungeonManager;
@@ -34,8 +39,15 @@ public class VioletUI : MonoBehaviour
 
     public void VioletPlay()
     {
+        int remainCount = UserInfo.instance.GetVioletRemainCount();
+        if(remainCount < 1) // 남은 도전권이 없을 경우 
+        {
+            OkAlram.instance.Open("남은 도전권이 없습니다\n내일 다시 도전 해주세요");
+            return;
+        }
+ 
         UserInfo.instance.PullVioletRemainCount();
-        Debug.Log(UserInfo.instance.GetVioletRemainCount());
+
         UserInfo.instance.SaveUserViolet(() => {
             dungeonManager.VioletPlay();
             Close();
@@ -46,7 +58,18 @@ public class VioletUI : MonoBehaviour
     public void RuleOpen()
     {
         rule.gameObject.SetActive(true);
-        scrollbar_rule.value = 0;
+        scrollbar_rule.value = 1;
+
+        VioletRewardChartInfo[] violetRewardChartInfos = VioletRewardChart.instance.violetRewardChartInfo;
+        string damageText = "";
+        string masicStoneText = "";
+        for (int i = 0; i < violetRewardChartInfos.Length; i++)
+        {
+            damageText += "데미지 " + MyMath.ValueToString(violetRewardChartInfos[i].TotalDamage) + "\n";
+            masicStoneText += violetRewardChartInfos[i].MasicStoneCount + "\n";
+        }
+        leftText.text = damageText;
+        rightText.text = masicStoneText;
     }
     public void RuleClose()
     {

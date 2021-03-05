@@ -1,4 +1,5 @@
-﻿using Function;
+﻿using DG.Tweening;
+using Function;
 using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,6 +7,8 @@ using UnityEngine;
 
 public class Violet : Enemy
 {
+    bool playFlag = false;
+
     // 능력치 
     string atk;
     float atkPercent;
@@ -30,8 +33,13 @@ public class Violet : Enemy
     // 플레이어
     public PlayerController playerController;
 
+    [Header("스크립트")]
+    public VioletResult violetResult;
+
     public void Play()
     {
+        playFlag = true;
+
         // 능력치 초기화 
         Init();
 
@@ -40,6 +48,13 @@ public class Violet : Enemy
 
         // 공격 코르틴 시작 
         AttackPlay();
+    }
+
+    public void Stop()
+    {
+        playFlag = false;
+
+        AttackStop();
     }
 
     void Init() // 능력치 초기화 
@@ -109,8 +124,10 @@ public class Violet : Enemy
 
             // 데미지 
             float r = Random.Range(0, 100);
-            float atkMultiple = atkCount * atkPercent;
+            float atkMultiple = (atkCount + 1) * atkPercent;
             string damage = MyMath.Multiple(atk, atkMultiple);
+
+            yield return new WaitForSeconds(0.5f);
 
             if (criticalPercent < r) // 노말 
             {
@@ -129,6 +146,8 @@ public class Violet : Enemy
 
     public override void Hit(string damage, bool isCritical)
     {
+        if (!playFlag) return;
+
         base.Hit(damage, isCritical);
 
         hitDamage = MyMath.Add(hitDamage, damage);
@@ -136,5 +155,14 @@ public class Violet : Enemy
     public override void Dead()
     {
         base.Dead();
+    }
+
+    public void GameEnd()
+    {
+        // 바이올렛과 플레이어의 움직임을 멈춤 
+        Stop();
+        playerController.DontPlay();
+
+        violetResult.Open(hitDamage);
     }
 }

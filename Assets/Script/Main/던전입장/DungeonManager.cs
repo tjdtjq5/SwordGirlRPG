@@ -20,18 +20,26 @@ public class DungeonManager : MonoBehaviour
     public GameObject violet_BG;
     [Header("카메라")]
     public Camera theCam;
+    [Header("스크립트")]
+    public Deliveryfairy deliveryfairy;
 
     [ContextMenu("Test")]
     public void Test()
     {
         theCam.DOOrthoSize(5f, 0);
-        theCam.transform.position = new Vector3(0, 0, -10);
+        theCam.transform.position = new Vector3(0, 0, -15);
         VioletPlay();
     }
     public void VioletPlay() // 바이올렛 시작 
     {
+        deliveryfairy.Stop();
+
+        playerController.Hp_Initialized();
+        playerController.Hp_UI_Setting();
         playerController.DontPlay();
-      
+        playerController.deadDelegate = violet.GetComponent<Violet>().GameEnd;
+
+        violet.transform.position = new Vector2(15, -2.91f);
 
         fadeInOut.ScreenFadeInOut(() => {
 
@@ -60,7 +68,6 @@ public class DungeonManager : MonoBehaviour
 
         violet.SetActive(true);
         violet.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "move", true);
-        violet.transform.position = new Vector2(15, -2.91f);
         violet.transform.DOMoveX(8.5f, 1.5f);
 
         yield return new WaitForSeconds(1.5f);
@@ -76,5 +83,28 @@ public class DungeonManager : MonoBehaviour
         violet.GetComponent<Violet>().Play();
 
         callback();
+    }
+
+    public void SetLobby(System.Action callback)
+    {
+        fadeInOut.ScreenFadeInOut(() =>
+        {
+            callback();
+
+            // 코인트리 생성 , 몬스터 제거 
+            coinTree.SetActive(true);
+            violet.SetActive(false);
+
+            // 배경 변경
+            forest_BG.gameObject.SetActive(true);
+            violet_BG.gameObject.SetActive(false);
+
+            // 카메라이동 
+            theCam.DOOrthoSize(5f, 0);
+            theCam.transform.position = new Vector3(0, 0, -10);
+
+            // 택배요정 재시작 
+            deliveryfairy.Init();
+        });
     }
 }

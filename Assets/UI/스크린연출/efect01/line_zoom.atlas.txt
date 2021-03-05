@@ -1,0 +1,13 @@
+
+line_zoom.png
+size: 1024,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+line1
+  rotate: false
+  xy: 2, 2
+  size: 738, 33
+  orig: 788, 153
+  offset: 50, 58
+  index: -1

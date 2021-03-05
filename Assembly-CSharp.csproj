@@ -141,6 +141,7 @@
     <Compile Include="Assets\Script\BackendGameInfo.cs" />
     <Compile Include="Assets\Script\Character\CoinTree.cs" />
     <Compile Include="Assets\Script\Character\CoinTreeEffect.cs" />
+    <Compile Include="Assets\Script\Character\Deliveryfairy.cs" />
     <Compile Include="Assets\Script\Character\Enemy.cs" />
     <Compile Include="Assets\Script\Character\MasicMissileController.cs" />
     <Compile Include="Assets\Script\Character\PlayerController.cs" />
@@ -156,6 +157,7 @@
     <Compile Include="Assets\Script\Chart\NomalMonsterChart.cs" />
     <Compile Include="Assets\Script\Chart\PassChart.cs" />
     <Compile Include="Assets\Script\Chart\RelicChart.cs" />
+    <Compile Include="Assets\Script\Chart\VioletRewardChart.cs" />
     <Compile Include="Assets\Script\Chart\WeaponeChart.cs" />
     <Compile Include="Assets\Script\Chart\WeekQuestChart.cs" />
     <Compile Include="Assets\Script\Effect\DamageEffect.cs" />
@@ -200,6 +202,9 @@
     <Compile Include="Assets\Script\Main\캐릭터강화\WeaponeManager.cs" />
     <Compile Include="Assets\Script\TimeManager.cs" />
     <Compile Include="Assets\Script\UserInfo.cs" />
+    <Compile Include="Assets\Script\결과\VioletResult.cs" />
+    <Compile Include="Assets\Script\기능\Ranking.cs" />
+    <Compile Include="Assets\Script\알람\OkAlram.cs" />
     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\MultiKeyDictionary.cs" />
     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\Reporter.cs" />
     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\ReporterGUI.cs" />
@@ -211,12 +216,14 @@
     <None Include="Assets\Spine\version.txt" />
     <None Include="Assets\Effect\Epic Toon FX\Prefabs\Combat\Combat FX.txt" />
     <None Include="Assets\GooglePlayGames\Plugins\Android\GooglePlayGamesManifest.plugin\AndroidManifest.xml" />
+    <None Include="Assets\UI\스크린연출\efect01\line_zoom.atlas.txt" />
     <None Include="Assets\프리팹\캐릭터\hero.atlas.txt" />
     <None Include="Assets\Effect\Hovl Studio\Epic toon VFX\Shaders\Lit_CenterGlow.shader" />
     <None Include="Assets\Effect\Hovl Studio\Toon Projectiles 2\Demo scene\Readme.txt" />
     <None Include="Assets\Effect\Hovl Studio\Epic toon VFX\Shaders\SmoothSmoke.shader" />
     <None Include="Assets\Effect\Hovl Studio\Toon Projectiles 2\Shaders\DissolveNoise.shader" />
     <None Include="Assets\Effect\effect_main\spine\hero.atlas.txt" />
+    <None Include="Assets\프리팹\택배요정\fairy.atlas.txt" />
     <None Include="Assets\Effect\Hovl Studio\Epic toon VFX\Shaders\Ice.shader" />
     <None Include="Assets\Effect\Hovl Studio\Toon Projectiles 2\Shaders\Distortion.shader" />
     <None Include="Assets\Effect\Hovl Studio\Toon Projectiles 2\Shaders\Blend_TwoSides.shader" />
@@ -230,6 +237,7 @@
     <None Include="Assets\Effect\Hovl Studio\Epic toon VFX\Shaders\AddTrail.shader" />
     <None Include="Assets\Effect\Hovl Studio\Epic toon VFX\Demo scene\Demo scene hero\Character.txt" />
     <None Include="Assets\프리팹\바이올렛\witch.atlas.txt" />
+    <None Include="Assets\Effect\별\star1.atlas.txt" />
     <None Include="Assets\Effect\Hovl Studio\Toon Projectiles 2\Shaders\Add_CenterGlow.shader" />
     <Reference Include="UnityEngine">
       <HintPath>C:/UnityWorkspace/2019.4.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

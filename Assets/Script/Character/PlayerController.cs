@@ -3,6 +3,7 @@ using DG.Tweening;
 using Function;
 using Spine.Unity;
 using Spine.Unity.Examples;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -55,6 +56,7 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     public SkeletonGhost skeletonGhost;
     public Transform dash_ani;
+    public GameObject lineEffect;
 
     [Header("마력검기")]
     public GameObject masicMissilePrepab;
@@ -74,6 +76,10 @@ public class PlayerController : MonoBehaviour
 
     // 대쉬 
     bool isDash = false;
+
+    // 델리게이트 
+    public delegate void DeadDelegate();
+    public DeadDelegate deadDelegate;
 
     private void Start()
     {
@@ -172,7 +178,6 @@ public class PlayerController : MonoBehaviour
         if (fillAmountCoroutine != null) StopCoroutine(fillAmountCoroutine);
         fillAmountCoroutine = FillAmountCoroutine(angerDuration + angerTime, () => {
             angerPoint = 0;
-
             StopAngerState();
         });
         StartCoroutine(fillAmountCoroutine);
@@ -299,7 +304,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        int aniR = Random.Range(1, 4);
+        int aniR = UnityEngine.Random.Range(1, 4);
 
         animator.SetTrigger("attack_nomal_" + aniR);
 
@@ -309,7 +314,7 @@ public class PlayerController : MonoBehaviour
         float critialPercent = UserInfo.instance.GetCriticalPercent();
       
 
-        float r = Random.Range(0, 100);
+        float r = UnityEngine.Random.Range(0, 100);
         if (r < critialPercent) // 크리티컬 
         {
             float criticalDamage = UserInfo.instance.GetCriticalDamagePercent();
@@ -371,14 +376,13 @@ public class PlayerController : MonoBehaviour
             TargetDash(target, () => {
                 if (!angerFlag) return; // 분노상태가 아닐경우는 리턴
                 Auto_C_Attack(true);
-                
             });
             return;
         }
 
         string damage = Atk();
         float critialPercent = UserInfo.instance.GetCriticalPercent();
-        float r = Random.Range(0, 100);
+        float r = UnityEngine.Random.Range(0, 100);
         if (r < critialPercent) // 크리티컬 
         {
             float criticalDamage = UserInfo.instance.GetCriticalDamagePercent();
@@ -398,11 +402,14 @@ public class PlayerController : MonoBehaviour
         switch (flag)
         {
             case true:
+                animator.SetTrigger("attack_anger");
+                lineEffect.gameObject.SetActive(true);
                 if (auto_C_Attack_Coroutine != null) StopCoroutine(auto_C_Attack_Coroutine);
                 auto_C_Attack_Coroutine = Auto_C_Attack_Coroutine();
                 StartCoroutine(auto_C_Attack_Coroutine);
                 break;
             case false:
+                lineEffect.gameObject.SetActive(false);
                 if (auto_C_Attack_Coroutine != null) StopCoroutine(auto_C_Attack_Coroutine);
                 break;
         }
@@ -478,7 +485,6 @@ public class PlayerController : MonoBehaviour
         Auto_M_Attack(false);
 
         TargetDash(target, () => {
-            animator.SetTrigger("attack_anger");
 
             Auto_C_Attack(true);
         });
@@ -556,12 +562,22 @@ public class PlayerController : MonoBehaviour
         damagePrepab.GetComponent<DamageEffect>().DamageUI_Setting(MyMath.ValueToString(damage));
 
         // 체력 깍이게 하기 
+        currentHp = MyMath.Sub(currentHp, damage);
+        Hp_UI_Setting();
 
+        // 죽었다면 
+        if (MyMath.CompareValue(currentHp , "0") < 1)
+        {
+            if (deadDelegate != null)
+            {
+                deadDelegate();
+            }
+        }
     }
 
     [ContextMenu("test")]
     void Test()
     {
-        animator.SetTrigger("idle");
+        Debug.Log(MyMath.Sub("0", "-5"));
     }
 }

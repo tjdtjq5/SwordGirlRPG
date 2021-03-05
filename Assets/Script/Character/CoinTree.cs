@@ -58,6 +58,14 @@ public class CoinTree : Enemy
     {
         levelUpTouchStateFlag = true;
 
+        if (!isEvolution4)
+        {
+            HpGage_Setting();
+            skeletonAnimation.AnimationState.SetAnimation(0, "4_evolution", false);
+            skeletonAnimation.AnimationState.AddAnimation(0, "4_wait", true, 0);
+            isEvolution4 = true;
+        }
+
         levelUp_Btn.onClick.AddListener(() => {
             if (levelTouchStateCoroutine != null) StopCoroutine(levelTouchStateCoroutine);
             levelTouchStateCoroutine = LevelTouchStateCoroutine();
@@ -100,7 +108,7 @@ public class CoinTree : Enemy
 
     void HpGage_Setting() // hp gage UI 셋팅 
     {
-        if (MyMath.CompareValue(hp, "0") == -1) return;
+        if (MyMath.CompareValue(hp, "0") == -1) hp = "0";
 
         float fillAmount = 1 - MyMath.Amount(hp, maxHp);
         hpGage_fore.fillAmount = fillAmount;

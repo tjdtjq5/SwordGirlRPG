@@ -60,7 +60,9 @@ public class Loading : MonoBehaviour
                                                     PassChart.instance.LoadChart(() => {
                                                         CoinTreeChart.instance.LoadChart(() => {
                                                             CombatPowerChart.instance.LoadChart(() => {
-                                                                callback();
+                                                                VioletRewardChart.instance.LoadChart(() => {
+                                                                    callback();
+                                                                });
                                                             });
                                                         });
                                                     });
