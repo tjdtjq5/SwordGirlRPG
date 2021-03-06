@@ -92,8 +92,6 @@ public class BackendLogin : MonoBehaviour
 
         BackendReturnObject bro = Backend.BMember.CustomLogin("id", "password");
 
-        Debug.Log(bro.GetErrorCode() + "  :  " + bro.GetMessage());
-
         BackendAsyncClass.BackendAsync(Backend.BMember.GetUserInfo, (getUserInfoCallback) => {
             JsonData nicknameJsonData = getUserInfoCallback.GetReturnValuetoJSON()["row"]["nickname"];
             if (nicknameJsonData == null)

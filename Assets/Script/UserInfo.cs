@@ -4,6 +4,7 @@ using UnityEngine;
 using BackEnd;
 using System;
 using Function;
+using LitJson;
 
 public class UserInfo : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class UserInfo : MonoBehaviour
                 LoadMasicMissile(() => {
                     LoadWeapone(() => {
                         LoadRelic(() => {
-                            LoadCloth(() => {
+                            LoadPublicUserInfo(() => {
                                 LoadUserNomalMonster(() => {
                                     LoadUserDayByQuest(() => {
                                         LoadUserWeekByQuest(() => {
@@ -500,6 +501,89 @@ public class UserInfo : MonoBehaviour
         return total;
     }
 
+    // === 유저 공용 정보 === // 
+    public UserPublicInfo userPublicInfo = null;
+    public void SavePublicUserInfo(System.Action callback)
+    {
+        if (userPublicInfo == null)
+        {
+            callback();
+            return;
+        }
+
+        Param param = new Param();
+
+        // 복장
+        List<string> clothData = new List<string>();
+        for (int i = 0; i < userCloths.Count; i++)
+        {
+            clothData.Add(userCloths[i].name + "/" + userCloths[i].upgrade + "/" + userCloths[i].num + "/" + userCloths[i].isEqip);
+        }
+        param.Add("Cloth", clothData);
+
+        BackendGameInfo.instance.PublicTableUpdate("PublicUserInfo", param, () => { callback(); });
+    }
+    public void LoadPublicUserInfo(System.Action callback)
+    {
+        string nickname = "";
+        userCloths.Clear();
+
+        BackendAsyncClass.BackendAsync(Backend.GameInfo.GetMyPublicContents, "PublicUserInfo", (backendCallback) => {
+
+            switch (backendCallback.GetStatusCode())
+            {
+                case "200": // 성공 
+                    break;
+                case "404": // 존재하지 않는 tableName인 경우 
+                    Debug.Log("존재하지 않는 tableName인 경우 ");
+                    break;
+                case "400": // private table 아닌 tableName을 입력한 경우 또는 limit이 100이상인 경우
+                    Debug.Log("public table 아닌 tableName 을 입력한 경우 또는 limit이 100이상인 경우");
+                    break;
+                case "412": // 비활성화 된 tableName인 경우 
+                    Debug.Log("비활성화 된 tableName인 경우 ");
+                    break;
+                default:
+                    break;
+            }
+            if (backendCallback.GetReturnValuetoJSON()[0].Count == 0) // 테이블에 해당 유저의 정보가 아무것도 없는 경우
+            {
+                string clothName = ClothChart.instance.clothChartInfos[0].Name;
+                PushCloth(clothName);
+                EqipCloth(clothName);
+
+                userPublicInfo = new UserPublicInfo(nickname, userCloths);
+                SavePublicUserInfo(() => { callback(); });
+            }
+            else
+            {
+                for (int i = 0; i < backendCallback.GetReturnValuetoJSON()[0].Count; i++)
+                {
+                    JsonData jsonData = backendCallback.GetReturnValuetoJSON()[0][i];
+
+                    // 닉네임
+                    if (jsonData.Keys.Contains("nickname"))
+                    {
+                        nickname = jsonData["nickname"][0].ToString();
+                    }
+
+                    // 복장
+                    if (jsonData.Keys.Contains("Cloth"))
+                    {
+                        JsonData keyData = jsonData["Cloth"][0];
+                        for (int j = 0; j < keyData.Count; j++)
+                        {
+                            string[] data = keyData[j][0].ToString().Split('/');
+                            userCloths.Add(new UserCloth(data[0], int.Parse(data[1]), int.Parse(data[2]), bool.Parse(data[3])));
+                        }
+                    }
+                }
+
+                userPublicInfo = new UserPublicInfo(nickname, userCloths);
+                callback();
+            }
+        });
+    }
 
     // === 유저 재화 === // 
     // 1.재화 
@@ -523,25 +607,85 @@ public class UserInfo : MonoBehaviour
     }
     public void LoadMoney(System.Action callback)
     {
-        BackendGameInfo.instance.GetPrivateContents("Money", "gold", () => {
-            gold = BackendGameInfo.instance.serverDataList[0];
-            BackendGameInfo.instance.GetPrivateContents("Money", "crystal", () => {
-                crystal = int.Parse(BackendGameInfo.instance.serverDataList[0]);
-                BackendGameInfo.instance.GetPrivateContents("Money", "masicStone", () => {
-                    masicStone = int.Parse(BackendGameInfo.instance.serverDataList[0]);
-                    BackendGameInfo.instance.GetPrivateContents("Money", "enhanceStone", () => {
-                        enhanceStone = int.Parse(BackendGameInfo.instance.serverDataList[0]);
-                        BackendGameInfo.instance.GetPrivateContents("Money", "transStone", () => {
-                            transStone = int.Parse(BackendGameInfo.instance.serverDataList[0]);
-                            BackendGameInfo.instance.GetPrivateContents("Money", "punishTiket", () => {
-                                punishTiket = int.Parse(BackendGameInfo.instance.serverDataList[0]);
-                                callback();
-                            });
-                        });
-                    });
-                });
-            },()=> {  });
-        },()=> { gold = "1000000"; crystal = 1000000; callback(); });
+        BackendAsyncClass.BackendAsync(Backend.GameInfo.GetPrivateContents, "Money", (backendCallback) => {
+
+            string stateCode = backendCallback.GetStatusCode();
+            switch (stateCode)
+            {
+                case "200": // 성공 
+                    break;
+                case "404": // 존재하지 않는 tableName인 경우 
+                    Debug.Log("존재하지 않는 tableName인 경우 ");
+                    break;
+                case "400": // private table 아닌 tableName을 입력한 경우 또는 limit이 100이상인 경우
+                    Debug.Log("private table 아닌 tableName을 입력한 경우 또는 limit이 100이상인 경우");
+                    break;
+                case "412": // 비활성화 된 tableName인 경우 
+                    Debug.Log("비활성화 된 tableName인 경우 ");
+                    break;
+                default:
+                    break;
+            }
+            if (backendCallback.GetReturnValuetoJSON()[0].Count == 0) // 테이블에 해당 유저의 정보가 아무것도 없는 경우
+            {
+                gold = "1000000";
+                crystal = 100000;
+            }
+            else
+            {
+                JsonData jsonData = backendCallback.GetReturnValuetoJSON()[0][0];
+                if (jsonData.Keys.Contains("gold"))
+                {
+                    gold = jsonData["gold"][0].ToString();
+                }
+                else
+                {
+                    gold = "0";
+                }
+                if (jsonData.Keys.Contains("crystal"))
+                {
+                    crystal = int.Parse(jsonData["crystal"][0].ToString());
+                }
+                else
+                {
+                    crystal = 0;
+                }
+                if (jsonData.Keys.Contains("masicStone"))
+                {
+                    masicStone = int.Parse(jsonData["masicStone"][0].ToString());
+                }
+                else
+                {
+                    masicStone = 0;
+                }
+                if (jsonData.Keys.Contains("enhanceStone"))
+                {
+                    enhanceStone = int.Parse(jsonData["enhanceStone"][0].ToString());
+                }
+                else
+                {
+                    enhanceStone = 0;
+                }
+                if (jsonData.Keys.Contains("transStone"))
+                {
+                    transStone = int.Parse(jsonData["transStone"][0].ToString());
+                }
+                else
+                {
+                    transStone = 0;
+                }
+                if (jsonData.Keys.Contains("punishTiket"))
+                {
+                    punishTiket = int.Parse(jsonData["punishTiket"][0].ToString());
+                }
+                else
+                {
+                    punishTiket = 0;
+                }
+            }
+
+            callback();
+        });
     }
 
     // === 캐릭터 강화 === //
@@ -885,20 +1029,9 @@ public class UserInfo : MonoBehaviour
             data.Add(userCloths[i].name + "/" + userCloths[i].upgrade + "/" + userCloths[i].num + "/" + userCloths[i].isEqip);
         }
         param.Add("Cloth", data);
-        BackendGameInfo.instance.PrivateTableUpdate("Eqip", param, () => { callback(); });
+        BackendGameInfo.instance.PublicTableUpdate("PublicUserInfo", param, () => { callback(); });
     }
-    public void LoadCloth(System.Action callback)
-    {
-        userCloths.Clear();
-        BackendGameInfo.instance.GetPrivateContents("Eqip", "Cloth", () => {
-            for (int i = 0; i < BackendGameInfo.instance.serverDataList.Count; i++)
-            {
-                string[] data = BackendGameInfo.instance.serverDataList[i].Split('/');
-                userCloths.Add(new UserCloth(data[0], int.Parse(data[1]), int.Parse(data[2]), bool.Parse(data[3])));
-            }
-            callback();
-        }, () => { PushCloth(ClothChart.instance.clothChartInfos[0].Name); callback(); });
-    }
+  
 
     /// === 토벌 === ///
     // 1. 노멀 몬스터 
@@ -1495,6 +1628,17 @@ public class UserInfo : MonoBehaviour
         }, () => {
             callback();
         });
+    }
+}
+public class UserPublicInfo
+{
+    public string nickname;
+    public List<UserCloth> userCloths = new List<UserCloth>(); 
+
+    public UserPublicInfo(string nickname, List<UserCloth> userCloths)
+    {
+        this.nickname = nickname;
+        this.userCloths = userCloths;
     }
 }
 public class UserMasicMissile
