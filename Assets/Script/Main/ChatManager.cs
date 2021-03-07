@@ -212,7 +212,7 @@ public class ChatManager : MonoBehaviour
             // 참여자 목록 출력
             for (int i = 0; i < participants.Count; i++)
             {
-                Debug.Log("닉네임 : " + participants[i].NickName);
+               // Debug.Log("닉네임 : " + participants[i].NickName);
             }
         };
     }

@@ -29,6 +29,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Spine {
 	public class Skeleton {
@@ -490,7 +491,9 @@ namespace Spine {
 			if (newSkin == skin) return;
 			if (newSkin != null) {
 				if (skin != null)
+				{
 					newSkin.AttachAll(this, skin);
+				}
 				else {
 					ExposedList<Slot> slots = this.slots;
 					for (int i = 0, n = slots.Count; i < n; i++) {

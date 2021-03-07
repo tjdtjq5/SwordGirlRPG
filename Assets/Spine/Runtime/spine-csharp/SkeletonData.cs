@@ -150,6 +150,14 @@ namespace Spine {
 			return null;
 		}
 
+		public Skin FindSkin2(string skinName)
+		{
+			if (skinName == null) throw new ArgumentNullException("skinName", "skinName cannot be null.");
+			foreach (Skin skin in skins)
+				if (skin.name.Contains(skinName)) return skin;
+			return null;
+		}
+
 		// --- Events.
 
 		/// <returns>May be null.</returns>

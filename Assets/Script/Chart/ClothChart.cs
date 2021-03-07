@@ -65,6 +65,7 @@ public class ClothChart : MonoBehaviour
                 clothChartInfos[i].Name = rowData["Name"]["S"].ToString();
                 clothChartInfos[i].Image = clothSpriteAtlas.GetSprite(rowData["Image"]["S"].ToString());
                 clothChartInfos[i].Icon = clothIconSpriteAtlas.GetSprite(rowData["Icon"]["S"].ToString());
+                clothChartInfos[i].SkinName = rowData["SkinName"]["S"].ToString();
                 clothChartInfos[i].Grade = (GradeType)(int.Parse(rowData["Grade"]["S"].ToString()));
                 clothChartInfos[i].HpPercent = int.Parse(rowData["HpPercent"]["S"].ToString());
                 clothChartInfos[i].CombinationNum = int.Parse(rowData["CombinationNum"]["S"].ToString());
@@ -80,6 +81,7 @@ public class ClothChartInfo
     public string Name;
     public Sprite Image;
     public Sprite Icon;
+    public string SkinName;
     public GradeType Grade;
     public int HpPercent;
     public int CombinationNum;

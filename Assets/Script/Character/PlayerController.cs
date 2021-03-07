@@ -1,12 +1,14 @@
 ﻿using BackEnd.Tcp;
 using DG.Tweening;
 using Function;
+using Spine;
 using Spine.Unity;
 using Spine.Unity.Examples;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
@@ -57,6 +59,10 @@ public class PlayerController : MonoBehaviour
     public SkeletonGhost skeletonGhost;
     public Transform dash_ani;
     public GameObject lineEffect;
+    IEnumerator faceCoroutine;
+
+    // 스킨
+    public SkeletonMecanim skeletonMecanim;
 
     [Header("마력검기")]
     public GameObject masicMissilePrepab;
@@ -89,6 +95,8 @@ public class PlayerController : MonoBehaviour
         Hp_UI_Setting();
 
         Play();
+
+        SkinChange();
     }
 
     void AngerUISetting()
@@ -328,6 +336,8 @@ public class PlayerController : MonoBehaviour
         }
 
         StartCoroutine(AttackFlagCoroutine());
+
+        FaceAttackAni(0.3f);
     }
      
     void Auto_M_Attack(bool flag) // 원거리 자동 공격
@@ -396,6 +406,8 @@ public class PlayerController : MonoBehaviour
         }
 
         AngerCamEffectPlay();
+
+        FaceAttackAni(0.2f);
     }
     void Auto_C_Attack(bool flag) // 근거리 자동공격 
     {
@@ -427,7 +439,6 @@ public class PlayerController : MonoBehaviour
             C_Attack();
         }
     }
-
 
     void TargetDash(Transform target ,System.Action callback) // 타겟을 향해 대쉬 
     {
@@ -521,6 +532,57 @@ public class PlayerController : MonoBehaviour
         profile.Hp_UI_Setting(currentHp, maxHp);
     }
 
+    void FaceAttackAni(float time)
+    {
+        if (faceCoroutine != null) StopCoroutine(faceCoroutine);
+        faceCoroutine = FaceCoroutine(time);
+        StartCoroutine(faceCoroutine);
+    }
+
+    // 얼굴 애니
+    IEnumerator FaceCoroutine(float time)
+    {
+        animator.SetTrigger("face_attack");
+        yield return new WaitForSeconds(time);
+        animator.SetTrigger("face_flash");
+    }
+
+    // 스킨 변경 
+    public void SkinChange()
+    {
+        string eqipClothName = UserInfo.instance.GetEqipCloth().name;
+        string eqipWeaponeName = UserInfo.instance.GetEqipWeapone().name;
+
+        string clothSkinName = ClothChart.instance.GetClothChartInfo(eqipClothName)[0].SkinName;
+        string weaponeSkinName = WeaponeChart.instance.GetWeaponeChartInfo(eqipWeaponeName)[0].SkinName;
+
+        skeletonMecanim.skeleton.Skin = null;
+        skeletonMecanim.Skeleton.SetSlotsToSetupPose();
+        skeletonMecanim.LateUpdate();
+
+        Skin combined = new Skin("combined");
+
+        List<string> SkinList = new List<string>();
+        SkinList.Add(clothSkinName);
+        SkinList.Add(weaponeSkinName);
+
+        foreach (var skinName in SkinList)
+        {
+            Skin skin = skeletonMecanim.skeleton.Data.FindSkin2(skinName);
+
+            if (skin != null)
+            {
+                combined.AddSkin(skin);
+            }
+        }
+
+        skeletonMecanim.skeleton.Skin = null;
+        skeletonMecanim.skeleton.SetSkin(combined);
+        skeletonMecanim.Skeleton.SetSlotsToSetupPose();
+        skeletonMecanim.LateUpdate();
+      
+    }
+
     // 행동 멈춤 
     public void DontPlay()
     {
@@ -578,6 +640,6 @@ public class PlayerController : MonoBehaviour
     [ContextMenu("test")]
     void Test()
     {
-        Debug.Log(MyMath.Sub("0", "-5"));
+        SkinChange();
     }
 }

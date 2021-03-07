@@ -204,6 +204,7 @@
     <Compile Include="Assets\Script\UserInfo.cs" />
     <Compile Include="Assets\Script\결과\VioletResult.cs" />
     <Compile Include="Assets\Script\기능\Ranking.cs" />
+    <Compile Include="Assets\Script\기능\RankingUI.cs" />
     <Compile Include="Assets\Script\알람\OkAlram.cs" />
     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\MultiKeyDictionary.cs" />
     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\Reporter.cs" />

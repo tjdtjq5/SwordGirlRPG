@@ -63,6 +63,7 @@ public class ClothManager : MonoBehaviour
 
             card.Find("이름레벨").GetComponent<Text>().text = name + " Lv. " + upgrade;
 
+            // 장착
             card.Find("Middle").GetComponent<Button>().onClick.RemoveAllListeners();
             card.Find("Middle").GetComponent<Button>().onClick.AddListener(() => {
                 if (!isEqip)
@@ -70,6 +71,7 @@ public class ClothManager : MonoBehaviour
                     UserInfo.instance.EqipCloth(name);
                     UserInfo.instance.SaveCloth(() => { });
                     UISetting();
+                    playerController.SkinChange();
 
                     playerController.Hp_Initialized();
                     playerController.Hp_UI_Setting();

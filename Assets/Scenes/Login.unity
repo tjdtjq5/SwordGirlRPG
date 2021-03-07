@@ -2935,7 +2935,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169f60dba7c15da429d38752e99103fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  field: 15329
+  field: 15889
   weaponeSpriteAtlas: {fileID: 4343727234628468602, guid: 16644af9124ba31489ebe08d3c576313,
     type: 2}
   weaponeChartInfos: []
@@ -2967,7 +2967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5c183e14bdaf3a48837d3ca9ce6d50b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  field: 14563
+  field: 15888
   clothSpriteAtlas: {fileID: 4343727234628468602, guid: 18519f389d6b1e049ba6becb189fa04e,
     type: 2}
   clothIconSpriteAtlas: {fileID: 4343727234628468602, guid: e1a1b9501c714e649bcc8614d66d8df0,

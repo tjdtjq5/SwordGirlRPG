@@ -15,6 +15,7 @@ public class WeaponeManager : MonoBehaviour
     public Transform acquisition;
     public Transform unAcqusition;
     public Transform line;
+    public PlayerController playerController;
 
     [Header("빽 이미지")]
     public Sprite aBtnBackSprite;
@@ -95,6 +96,7 @@ public class WeaponeManager : MonoBehaviour
                 acquisition.GetChild(ac).Find("장착버튼").GetComponent<Button>().onClick.AddListener(() => {
                     UserInfo.instance.EqipWeapone(userWeapone.name);
                     UISetting();
+                    playerController.SkinChange();
                     UserInfo.instance.SaveWeapone(() => {  });
                 });
 

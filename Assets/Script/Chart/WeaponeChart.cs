@@ -66,6 +66,7 @@ public class WeaponeChart : MonoBehaviour
                 JsonData rowData = jsonData[i];
                 weaponeChartInfos[i].Name = rowData["Name"]["S"].ToString();
                 weaponeChartInfos[i].Image = weaponeSpriteAtlas.GetSprite(rowData["Image"]["S"].ToString());
+                weaponeChartInfos[i].SkinName = rowData["SkinName"]["S"].ToString();
                 weaponeChartInfos[i].GradeType = (GradeType)(int.Parse(rowData["GradeType"]["S"].ToString()));
                 weaponeChartInfos[i].AtkPercent = float.Parse(rowData["AtkPercent"]["S"].ToString());
                 weaponeChartInfos[i].AtkSpeed = float.Parse(rowData["AtkSpeed"]["S"].ToString());
@@ -82,6 +83,7 @@ public class WeaponeChartInfo
 {
     public string Name;
     public Sprite Image;
+    public string SkinName;
     public GradeType GradeType;
     public float AtkPercent;
     public float AtkSpeed;

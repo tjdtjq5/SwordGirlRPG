@@ -53,6 +53,14 @@ namespace Spine {
 			this.name = name;
 		}
 
+		public void AddFromSkin(Skin other)
+		{
+		    foreach (var a in other.attachments)
+		    {
+		        attachments[a.Key] = a.Value;
+		    }
+		}
+
 		/// <summary>Adds an attachment to the skin for the specified slot index and name.
 		/// If the name already exists for the slot, the previous value is replaced.</summary>
 		public void SetAttachment (int slotIndex, string name, Attachment attachment) {
