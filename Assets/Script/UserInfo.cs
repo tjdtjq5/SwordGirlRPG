@@ -888,7 +888,12 @@ public class UserInfo : MonoBehaviour
                 userWeapones.Add(new UserWeapone(data[0], int.Parse(data[1]), int.Parse(data[2]), bool.Parse(data[3])));
             }
             callback();
-        }, () => { PushWeapone(WeaponeChart.instance.weaponeChartInfos[0].Name);  callback(); });
+        }, () => {
+            string defaultWeapon = WeaponeChart.instance.weaponeChartInfos[0].Name;
+            PushWeapone(defaultWeapon);
+            EqipWeapone(defaultWeapon);
+            callback(); 
+        });
     }
     // 3. 유물
     public List<UserRelic> userRelics = new List<UserRelic>();

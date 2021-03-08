@@ -11,6 +11,9 @@ public class BackendLogin : MonoBehaviour
     public UsePolish usePolish;
     public Loading loading;
 
+    public string ID;
+    public string password;
+
     private void Awake()
     {
         Backend.Initialize(() =>
@@ -90,7 +93,29 @@ public class BackendLogin : MonoBehaviour
     {
         if (!Backend.IsInitialized) return;
 
-        BackendReturnObject bro = Backend.BMember.CustomLogin("id", "password");
+        BackendReturnObject singUpBro = Backend.BMember.CustomSignUp(ID, password);
+        if (singUpBro.IsSuccess())
+        {
+            Debug.Log("회원가입에 성공했습니다");
+        }
+        else
+        {
+            switch (singUpBro.GetStatusCode())
+            {
+                case "409":
+                    Debug.Log("이미 중복된 아이디가 있는 경우");
+                    break;
+                case "403":
+                    Debug.Log("출시설정이 테스트 인데 AU가 10을 초과한 경우");
+                    return;
+                default:
+                    Debug.Log("알수없는 오류");
+                    return;
+            }
+        }
+
+        BackendReturnObject bro = Backend.BMember.CustomLogin(ID, password);
+
 
         BackendAsyncClass.BackendAsync(Backend.BMember.GetUserInfo, (getUserInfoCallback) => {
             JsonData nicknameJsonData = getUserInfoCallback.GetReturnValuetoJSON()["row"]["nickname"];

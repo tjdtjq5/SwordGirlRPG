@@ -214,6 +214,7 @@
     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\Test\TestReporter.cs" />
     <None Include="Assets\Effect\Hovl Studio\Epic toon VFX\Demo scene\Readme.txt" />
     <None Include="Assets\Effect\Epic Toon FX\Prefabs\Environment\Environment FX.txt" />
+    <None Include="Assets\프리팹\마력검기\tan.atlas.txt" />
     <None Include="Assets\Spine\version.txt" />
     <None Include="Assets\Effect\Epic Toon FX\Prefabs\Combat\Combat FX.txt" />
     <None Include="Assets\GooglePlayGames\Plugins\Android\GooglePlayGamesManifest.plugin\AndroidManifest.xml" />

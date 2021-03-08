@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class Ranking : MonoBehaviour
 {
+    public RankingInfo myRankingInfo;
     public List<RankingInfo> rankingInfoList = new List<RankingInfo>();
     string violetRankingUUID = "9dd4bff0-7df4-11eb-86bb-21788bad5d71";
 
@@ -114,6 +115,30 @@ public class Ranking : MonoBehaviour
             }
 
             if (sucess != null) sucess();
+        });
+    }
+    public void GetMyVioletRanking(System.Action sucess)
+    {
+        myRankingInfo = null;
+
+        BackendAsyncClass.BackendAsync(Backend.RTRank.GetMyRTRank, violetRankingUUID, (rankingByUuidCallback) => {
+
+            switch (rankingByUuidCallback.GetStatusCode())
+            {
+                case "404":
+                    Debug.Log("게이머가 랭킹에 없는 경우");
+                    return;
+            }
+            JsonData jsonData = rankingByUuidCallback.GetReturnValuetoJSON()["rows"];
+
+            string nickname = jsonData[0]["nickname"].ToString();
+            int intScore = int.Parse(jsonData[0]["score"]["N"].ToString());
+            string stringScore = ScoreToDamage(intScore);
+            int rank = int.Parse(jsonData[0]["rank"]["N"].ToString());
+
+            myRankingInfo = new RankingInfo(nickname, rank, stringScore);
+
+            sucess();
         });
     }
 }

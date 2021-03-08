@@ -31,11 +31,16 @@ public class RankingUI : MonoBehaviour
     public Sprite no2;
     public Sprite no3;
 
+    [Header("내 랭킹 UI")]
+    public Text myRankingText;
+    public Text myScoreText;
+
     [Header("페이지")]
     public Button right;
     public Button left;
     public Text page_text;
     int page;
+    RankingInfo myRankingInfo = null;
     List<RankingInfo> rankingInfoList = new List<RankingInfo>();
 
     [Header("스크립트")]
@@ -89,12 +94,6 @@ public class RankingUI : MonoBehaviour
     // 카드
     void CardInit()
     {
-        page = 1;
-        page_text.text = "";
-        right.onClick.RemoveAllListeners();
-        left.onClick.RemoveAllListeners();
-        rankingInfoList.Clear();
-
         int len = content.childCount;
 
         for (int i = 0; i < len; i++)
@@ -115,8 +114,21 @@ public class RankingUI : MonoBehaviour
     }
     void VioletCard()
     {
+        rankingInfoList.Clear();
+        myRankingInfo = null;
+
+        page = 1;
+        page_text.text = "";
+
+        myRankingText.text = "";
+        myScoreText.text = "";
+
+        right.onClick.RemoveAllListeners();
+        left.onClick.RemoveAllListeners();
+
         CardInit();
 
+        // 바이올렛 랭킹 100 명 가져오기
         ranking.GetVioletRanking(100, 0, () => {
             rankingInfoList = ranking.rankingInfoList;
 
@@ -136,14 +148,23 @@ public class RankingUI : MonoBehaviour
             });
 
             left.onClick.AddListener(() => {
-
                 if (page > 1)
                 {
                     page--;
                     Page();
                 }
-
             });
+        });
+
+        // 내 랭킹 정보 가져오기
+        ranking.GetMyVioletRanking(() => {
+            myRankingInfo = ranking.myRankingInfo;
+
+            if (myRankingInfo != null)
+            {
+                myRankingText.text = myRankingInfo.rank.ToString() + "위";
+                myScoreText.text = MyMath.ValueToString(myRankingInfo.stringScore);
+            }
         });
     }
     void PumpkinCard()
@@ -152,13 +173,15 @@ public class RankingUI : MonoBehaviour
     }
     void Page()
     {
-        int len = content.childCount;
-        int rankingInfoCount = rankingInfoList.Count;
-        int maxPage = rankingInfoCount / len;
+        CardInit();
+
+        int len = content.childCount;  // 2
+        int rankingInfoCount = rankingInfoList.Count; // 3
+        int maxPage = rankingInfoCount / len + 1;  // 2
         page_text.text = page  + "/" + maxPage;
 
-        int min = len * (page - 1); // 0 , 10 , 20
-        int max = min + len - 1; // 9 , 19 , 29
+        int min = len * (page - 1); // 0 , 2 , 4
+        int max = min + len; // 2 , 4 , 6
         if(rankingInfoCount < max) { max = rankingInfoCount; }
 
         int count = 0; 

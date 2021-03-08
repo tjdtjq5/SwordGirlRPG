@@ -92,8 +92,7 @@ public class VersionCheck : MonoBehaviour
     void VersionCallbackAction()
     {
         isSamePlayStoreVersion = true;
-        backendLogin.TestAuth();
-        /*
+ 
         if (Application.platform == RuntimePlatform.Android)
         {
             Debug.Log("안드로이드 플랫폼");
@@ -103,6 +102,6 @@ public class VersionCheck : MonoBehaviour
         {
             Debug.Log("안드로이드 플랫폼이 아님 ");
             backendLogin.TestAuth();
-        }*/
+        }
     }
 }

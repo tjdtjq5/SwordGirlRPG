@@ -1,4 +1,5 @@
-﻿using Function;
+﻿using DG.Tweening;
+using Function;
 using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
@@ -24,6 +25,7 @@ public class CoinTree : Enemy
     public Image hpGage_fore;
     public Text levelText;
     public Button levelUp_Btn;
+    public Image timeGage_fore;
 
     public void Start()
     {
@@ -91,9 +93,10 @@ public class CoinTree : Enemy
 
     IEnumerator InitialCoroutine()
     {
-        yield return null;
+        WaitForSeconds waitTime = new WaitForSeconds(9.5f);
+        WaitForSeconds waitTime2 = new WaitForSeconds(0.5f);
 
-        WaitForSeconds waitTime = new WaitForSeconds(10);
+        timeGage_fore.fillAmount = 0;
 
         while (true)
         {
@@ -102,7 +105,12 @@ public class CoinTree : Enemy
                 SettingCoinTreeHp();
                 skeletonAnimation.AnimationState.SetAnimation(0, "1_wait", true);
             }
+
+            timeGage_fore.DOFillAmount(1, 9.5f).SetEase(Ease.Linear);
+
             yield return waitTime;
+            timeGage_fore.DOFillAmount(0, 0.5f).SetEase(Ease.Linear);
+            yield return waitTime2;
         }
     }
 

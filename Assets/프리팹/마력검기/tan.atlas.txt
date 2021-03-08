@@ -1,0 +1,48 @@
+
+tan.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+lighteff_1
+  rotate: true
+  xy: 327, 205
+  size: 122, 126
+  orig: 139, 142
+  offset: 8, 8
+  index: -1
+paticle_1
+  rotate: false
+  xy: 2, 311
+  size: 17, 16
+  orig: 20, 20
+  offset: 3, 2
+  index: -1
+spark_1
+  rotate: true
+  xy: 21, 276
+  size: 51, 54
+  orig: 56, 58
+  offset: 2, 2
+  index: -1
+tan_1
+  rotate: false
+  xy: 77, 208
+  size: 123, 119
+  orig: 311, 288
+  offset: 93, 80
+  index: -1
+tan_2
+  rotate: false
+  xy: 202, 208
+  size: 123, 119
+  orig: 311, 288
+  offset: 89, 80
+  index: -1
+tan_3
+  rotate: true
+  xy: 2, 2
+  size: 201, 483
+  orig: 249, 531
+  offset: 33, 20
+  index: -1

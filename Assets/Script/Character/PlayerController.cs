@@ -327,12 +327,12 @@ public class PlayerController : MonoBehaviour
         {
             float criticalDamage = UserInfo.instance.GetCriticalDamagePercent();
             damage = MyMath.Multiple(damage, criticalDamage);
-            masicMissile.GetComponent<MasicMissileController>().Shot(damage, true);
+            masicMissile.GetComponent<MasicMissileController>().Shot(damage, true, target);
 
         }
         else  // 노말 
         {
-            masicMissile.GetComponent<MasicMissileController>().Shot(damage, false);
+            masicMissile.GetComponent<MasicMissileController>().Shot(damage, false, target);
         }
 
         StartCoroutine(AttackFlagCoroutine());
