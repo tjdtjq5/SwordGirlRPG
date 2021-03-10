@@ -23,13 +23,13 @@ public class QuestManager : MonoBehaviour
 
     private void Start()
     {
-        PassBtn();
     }
 
     public void Open()
     {
         blackPannel.SetActive(true);
         questPannel.SetActive(true);
+        QuestBtn();
     }
     public void Close()
     {
@@ -44,7 +44,7 @@ public class QuestManager : MonoBehaviour
         extraQuest.Find("Btn").GetComponent<Image>().sprite = bUpperBtnSprite;
 
         float moveX = pass.Find("Position").position.x;
-        focus.DOMoveX(moveX, upperBtnDgSpeed);
+        focus.DOMoveX(moveX, 0);
 
         questPannel.GetComponent<PassManager>().Open();
     }
@@ -55,7 +55,7 @@ public class QuestManager : MonoBehaviour
         extraQuest.Find("Btn").GetComponent<Image>().sprite = bUpperBtnSprite;
 
         float moveX = quest.Find("Position").position.x;
-        focus.DOMoveX(moveX, upperBtnDgSpeed);
+        focus.DOMoveX(moveX, 0);
 
         questPannel.GetComponent<DayByQuestManager>().Open();
     }
@@ -66,6 +66,6 @@ public class QuestManager : MonoBehaviour
         extraQuest.Find("Btn").GetComponent<Image>().sprite = aUpperBtnSprite;
 
         float moveX = extraQuest.Find("Position").position.x;
-        focus.DOMoveX(moveX, upperBtnDgSpeed);
+        focus.DOMoveX(moveX, 0);
     }
 }

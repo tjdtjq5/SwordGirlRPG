@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     float angerPoint = 0; // 시작시 분노상태
     int maxAngerPoint = 100;
     int chargeAngerPoint = 10;
-    float angerDuration = 10;
+    float angerDuration = 5;
     public Image foreAnger;
     public Sprite none_Anger_Sprite;
     public Sprite max_Anger_Sprite_01;
@@ -42,10 +42,10 @@ public class PlayerController : MonoBehaviour
     bool angerFlag = false;
     IEnumerator fillAmountCoroutine;
     public Camera theCam;
-    float originCamSize;
-    float angerCamEffectSize = 0.01f;
-    IEnumerator camEffectCoroutine;
+    Vector3 originCamPos;
     bool camEffectFlag;
+    public Image whitePannel;
+    public GameObject angerHitObj;
 
     // 공격
     public Button touchBtn;
@@ -60,6 +60,7 @@ public class PlayerController : MonoBehaviour
     public Transform dash_ani;
     public GameObject lineEffect;
     IEnumerator faceCoroutine;
+    public ParticleSystem dustParticle;
 
     // 스킨
     public SkeletonMecanim skeletonMecanim;
@@ -112,7 +113,10 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-         
+            max_Text_Obj.SetActive(false);
+        }
+        if (foreAnger.fillAmount == 0)
+        {
             GageMaxEffectStop();
         }
     }
@@ -204,8 +208,19 @@ public class PlayerController : MonoBehaviour
 
         while (foreAnger.fillAmount > 0)
         {
+            float a = angerPoint;
             angerPoint -= x;
             AngerUISetting();
+            float b = angerPoint;
+
+            if ((int)(a / 5) != (int)(b / 5) && foreAnger.fillAmount < 0.95f)
+            {
+                float rx = UnityEngine.Random.Range(1.5f, 3f);
+                float ry = UnityEngine.Random.Range(1f, 2.5f);
+                Vector2 rPos = new Vector2(character.position.x + rx, character.position.y + ry);
+                Instantiate(angerHitObj, rPos, Quaternion.identity, trash);
+            }
+       
             yield return waitTime;
         }
 
@@ -216,34 +231,16 @@ public class PlayerController : MonoBehaviour
     {
         if (camEffectFlag) return;
 
-        originCamSize = theCam.orthographicSize;
-        if (camEffectCoroutine != null) StopCoroutine(camEffectCoroutine);
-        camEffectCoroutine = CamEffectCoroutine();
-        StartCoroutine(camEffectCoroutine);
-    }
-
-    IEnumerator CamEffectCoroutine()
-    {
+        originCamPos = theCam.transform.position;
         camEffectFlag = true;
 
-        float smallSize = originCamSize - (originCamSize * angerCamEffectSize);
-        float m = 0.1f;
-        float p = 0.1f;
 
-        WaitForSeconds waitTime = new WaitForSeconds(0.01f);
-        while (theCam.orthographicSize > smallSize)
-        {
-            theCam.orthographicSize -= m;
-            yield return waitTime;
-        }
-        while (theCam.orthographicSize <= originCamSize)
-        {
-            theCam.orthographicSize += p;
-            yield return waitTime;
-        }
-        theCam.orthographicSize = originCamSize;
 
-        camEffectFlag = false;
+        theCam.DOShakePosition(0.05f , 0.5f , 10, 50, false).OnComplete(()=> {
+            theCam.transform.DOMove(originCamPos, 0.02f).OnComplete(()=> {
+                camEffectFlag = false;
+            });
+        });
     }
 
     void StopAngerState()
@@ -338,6 +335,8 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(AttackFlagCoroutine());
 
         FaceAttackAni(0.3f);
+
+      //  dustParticle.Play();
     }
      
     void Auto_M_Attack(bool flag) // 원거리 자동 공격
@@ -363,7 +362,6 @@ public class PlayerController : MonoBehaviour
             float autoSpeed = attackSpeed - userAutoSpeed;
             attackSpeedWaitTime = new WaitForSeconds(autoSpeed);
             yield return attackSpeedWaitTime;
-
             M_Attack();
         }
     } 
@@ -407,7 +405,7 @@ public class PlayerController : MonoBehaviour
 
         AngerCamEffectPlay();
 
-        FaceAttackAni(0.2f);
+       // dustParticle.Play();
     }
     void Auto_C_Attack(bool flag) // 근거리 자동공격 
     {
@@ -460,7 +458,7 @@ public class PlayerController : MonoBehaviour
 
             dash_ani.rotation = Quaternion.Euler(0, 180, 0);
             dash_ani.position = new Vector2(character.position.x + 0.5f, dash_ani.position.y);
-            dash_ani.GetComponent<Animator>().SetTrigger("dash");
+            dash_ani.GetComponent<Animator>().SetTrigger("end");
         }
         else
         {
@@ -495,8 +493,9 @@ public class PlayerController : MonoBehaviour
         touchBtn.onClick.RemoveAllListeners();
         Auto_M_Attack(false);
 
-        TargetDash(target, () => {
+        whitePannel.DOFade(0.7f, 0.07f).OnComplete(() => { whitePannel.DOFade(0, 0.07f); });
 
+        TargetDash(target, () => {
             Auto_C_Attack(true);
         });
     }
@@ -504,6 +503,9 @@ public class PlayerController : MonoBehaviour
     {
         touchBtn.onClick.RemoveAllListeners();
         Auto_C_Attack(false);
+
+        whitePannel.DOFade(0.7f, 0.07f).OnComplete(() => { whitePannel.DOFade(0, 0.07f); });
+
 
         TargetDash(this.transform, () => {
             animator.SetTrigger("idle");
@@ -556,9 +558,6 @@ public class PlayerController : MonoBehaviour
         string clothSkinName = ClothChart.instance.GetClothChartInfo(eqipClothName)[0].SkinName;
         string weaponeSkinName = WeaponeChart.instance.GetWeaponeChartInfo(eqipWeaponeName)[0].SkinName;
 
-        skeletonMecanim.skeleton.Skin = null;
-        skeletonMecanim.Skeleton.SetSlotsToSetupPose();
-        skeletonMecanim.LateUpdate();
 
         Skin combined = new Skin("combined");
 
@@ -605,6 +604,7 @@ public class PlayerController : MonoBehaviour
     
     public void Hit(string damage, bool isCritical)
     {
+        return;
         if (isDash) return; // 대쉬중일때는 무적상태 
 
         // 데미지 이펙트 프리팹 

@@ -17,7 +17,7 @@ public class Deliveryfairy : MonoBehaviour
     IEnumerator playCoroutine;
     IEnumerator moveCoroutine;
     IEnumerator touchCoroutine;
-    Vector2 initPosition = new Vector2(15, 0);
+    Vector2 initPosition = new Vector2(30, 0);
     Vector2 endPosition = new Vector2(-15, 0);
 
     bool touchFlag = false;
@@ -30,15 +30,11 @@ public class Deliveryfairy : MonoBehaviour
 
     public void Init()
     {
+        Stop();
+
         touchFlag = false;
         fairy.position = initPosition;
 
-      
-
-        ani.ClearState();
-        ani.AnimationState.ClearTracks();
-
-        Stop();
         Play();
     }
     public void Play()
@@ -54,11 +50,14 @@ public class Deliveryfairy : MonoBehaviour
     }
     void Move()
     {
+
         if (moveCoroutine != null) StopCoroutine(moveCoroutine);
         moveCoroutine = MoveCoroutine();
         StartCoroutine(moveCoroutine);
 
         ani.AnimationState.SetAnimation(0, "move", true);
+
+        fairy.gameObject.SetActive(true);
     }
     IEnumerator MoveCoroutine()
     {
@@ -75,6 +74,7 @@ public class Deliveryfairy : MonoBehaviour
 
     public void Stop()
     {
+        fairy.gameObject.SetActive(false);
         if (playCoroutine != null) StopCoroutine(playCoroutine);
         if (moveCoroutine != null) StopCoroutine(moveCoroutine);
         fairy.position = initPosition;
@@ -95,7 +95,7 @@ public class Deliveryfairy : MonoBehaviour
     }
     IEnumerator TouchCoroutine()
     {
-        yield return new WaitForSeconds(1.6f);
+        yield return new WaitForSeconds(1.45f);
 
         Init();
     }

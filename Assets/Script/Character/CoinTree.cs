@@ -27,12 +27,14 @@ public class CoinTree : Enemy
     public Button levelUp_Btn;
     public Image timeGage_fore;
 
-    public void Start()
+    public void OnEnable()
     {
         initialCoroutine = InitialCoroutine();
         StartCoroutine(initialCoroutine);
 
         LevelText_Setting();
+
+        levelUp_Btn.gameObject.SetActive(false);
     }
 
     public void SettingCoinTreeHp() // 체력 풀피로 셋팅 
@@ -53,8 +55,7 @@ public class CoinTree : Enemy
         LevelText_Setting();
         UserInfo.instance.SaveCoinTree(() => { });
 
-        levelUp_Btn.onClick.RemoveAllListeners();
-        levelUpTouchStateFlag = false;
+        
     }
     void LevelTouchState()
     {
@@ -68,6 +69,7 @@ public class CoinTree : Enemy
             isEvolution4 = true;
         }
 
+        levelUp_Btn.gameObject.SetActive(true);
         levelUp_Btn.onClick.AddListener(() => {
             if (levelTouchStateCoroutine != null) StopCoroutine(levelTouchStateCoroutine);
             levelTouchStateCoroutine = LevelTouchStateCoroutine();
@@ -82,6 +84,10 @@ public class CoinTree : Enemy
             skeletonAnimation.AnimationState.SetAnimation(0, "5_degeneration", false);
             skeletonAnimation.AnimationState.AddAnimation(0, "1_wait", true, 0);
         }
+
+        levelUp_Btn.gameObject.SetActive(false);
+        levelUp_Btn.onClick.RemoveAllListeners();
+        levelUpTouchStateFlag = false;
 
         yield return new WaitForSeconds(1.5f);
 

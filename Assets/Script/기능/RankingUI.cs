@@ -177,7 +177,7 @@ public class RankingUI : MonoBehaviour
 
         int len = content.childCount;  // 2
         int rankingInfoCount = rankingInfoList.Count; // 3
-        int maxPage = rankingInfoCount / len + 1;  // 2
+        int maxPage = rankingInfoCount / len;  // 2
         page_text.text = page  + "/" + maxPage;
 
         int min = len * (page - 1); // 0 , 2 , 4

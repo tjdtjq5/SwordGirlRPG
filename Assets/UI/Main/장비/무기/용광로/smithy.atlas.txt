@@ -1,0 +1,104 @@
+
+smithy.png
+size: 2048,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+backimg_1
+  rotate: true
+  xy: 2, 73
+  size: 437, 523
+  orig: 439, 526
+  offset: 1, 1
+  index: -1
+hiteff
+  rotate: false
+  xy: 982, 3
+  size: 122, 126
+  orig: 139, 142
+  offset: 8, 8
+  index: -1
+object_1
+  rotate: false
+  xy: 2, 2
+  size: 500, 69
+  orig: 502, 71
+  offset: 1, 1
+  index: -1
+object_2
+  rotate: true
+  xy: 527, 131
+  size: 379, 356
+  orig: 381, 358
+  offset: 1, 1
+  index: -1
+object_2_light
+  rotate: false
+  xy: 1178, 209
+  size: 239, 136
+  orig: 247, 142
+  offset: 4, 3
+  index: -1
+object_2_light2
+  rotate: true
+  xy: 885, 131
+  size: 379, 291
+  orig: 381, 358
+  offset: 1, 1
+  index: -1
+smoke_1
+  rotate: true
+  xy: 1262, 143
+  size: 64, 61
+  orig: 66, 63
+  offset: 1, 1
+  index: -1
+smoke_2
+  rotate: true
+  xy: 1239, 12
+  size: 121, 111
+  orig: 123, 113
+  offset: 1, 1
+  index: -1
+smoke_3
+  rotate: false
+  xy: 1352, 59
+  size: 136, 148
+  orig: 138, 150
+  offset: 1, 1
+  index: -1
+smoke_4
+  rotate: false
+  xy: 504, 3
+  size: 73, 68
+  orig: 75, 71
+  offset: 1, 2
+  index: -1
+smoke_5
+  rotate: false
+  xy: 1178, 135
+  size: 82, 72
+  orig: 85, 74
+  offset: 1, 1
+  index: -1
+smoke_6
+  rotate: true
+  xy: 1106, 22
+  size: 107, 131
+  orig: 109, 133
+  offset: 1, 1
+  index: -1
+sword
+  rotate: false
+  xy: 1178, 347
+  size: 392, 163
+  orig: 394, 165
+  offset: 1, 1
+  index: -1
+sword_light
+  rotate: false
+  xy: 579, 2
+  size: 401, 127
+  orig: 406, 133
+  offset: 2, 3
+  index: -1

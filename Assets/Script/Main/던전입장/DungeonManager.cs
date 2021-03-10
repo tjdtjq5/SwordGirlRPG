@@ -68,7 +68,7 @@ public class DungeonManager : MonoBehaviour
 
         violet.SetActive(true);
         violet.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0, "move", true);
-        violet.transform.DOMoveX(8.5f, 1.5f);
+        violet.transform.DOMoveX(9.5f, 1.5f);
 
         yield return new WaitForSeconds(1.5f);
 

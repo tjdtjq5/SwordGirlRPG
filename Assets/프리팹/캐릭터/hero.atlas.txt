@@ -1,5493 +1,5724 @@
 
 hero.png
-size: 2033,1524
+size: 2001,1794
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 alice/L_arm_1
   rotate: false
-  xy: 1922, 308
+  xy: 928, 506
   size: 45, 56
   orig: 45, 56
   offset: 0, 0
   index: -1
 alice/L_arm_2
   rotate: false
-  xy: 1612, 316
+  xy: 1314, 206
   size: 37, 38
   orig: 37, 38
   offset: 0, 0
   index: -1
 alice/L_hand
   rotate: false
-  xy: 1968, 467
+  xy: 1960, 130
   size: 27, 29
   orig: 27, 29
   offset: 0, 0
   index: -1
 alice/L_leg_1
   rotate: false
-  xy: 1517, 448
+  xy: 961, 268
   size: 44, 67
   orig: 44, 67
   offset: 0, 0
   index: -1
 alice/L_leg_2
   rotate: false
-  xy: 1060, 391
+  xy: 1718, 524
   size: 38, 58
   orig: 38, 58
   offset: 0, 0
   index: -1
 alice/R_arm_1
   rotate: false
-  xy: 1473, 255
+  xy: 1670, 414
   size: 41, 49
   orig: 41, 49
   offset: 0, 0
   index: -1
 alice/R_arm_2
   rotate: false
-  xy: 1879, 161
+  xy: 1756, 45
   size: 36, 49
   orig: 36, 49
   offset: 0, 0
   index: -1
 alice/R_hand
   rotate: false
-  xy: 1963, 60
+  xy: 1897, 39
   size: 30, 31
   orig: 30, 31
   offset: 0, 0
   index: -1
 alice/R_leg_1
   rotate: false
-  xy: 939, 73
+  xy: 1004, 389
   size: 43, 64
   orig: 43, 64
   offset: 0, 0
   index: -1
 alice/R_leg_2
   rotate: false
-  xy: 1199, 326
+  xy: 1328, 144
   size: 32, 59
   orig: 32, 59
   offset: 0, 0
   index: -1
 alice/body_1
   rotate: false
-  xy: 1730, 411
+  xy: 1428, 362
   size: 68, 49
   orig: 68, 49
   offset: 0, 0
   index: -1
 alice/body_2
   rotate: false
-  xy: 1258, 168
+  xy: 1948, 456
   size: 50, 21
   orig: 50, 21
   offset: 0, 0
   index: -1
 alice/body_2_ribbon
   rotate: false
-  xy: 497, 134
+  xy: 1821, 1049
   size: 86, 95
   orig: 86, 95
   offset: 0, 0
   index: -1
 alice/body_3
   rotate: false
-  xy: 1541, 710
+  xy: 820, 1049
   size: 122, 73
   orig: 122, 73
   offset: 0, 0
   index: -1
 alice/eyeblow_1
   rotate: false
-  xy: 533, 1202
+  xy: 1350, 5
   size: 55, 12
   orig: 55, 12
   offset: 0, 0
   index: -1
 armor/eyeblow_1
   rotate: false
-  xy: 533, 1202
+  xy: 1350, 5
   size: 55, 12
   orig: 55, 12
   offset: 0, 0
   index: -1
 bikini/eyeblow_1
   rotate: false
-  xy: 533, 1202
+  xy: 1350, 5
   size: 55, 12
   orig: 55, 12
   offset: 0, 0
   index: -1
 cat/eyeblow_1
   rotate: false
-  xy: 533, 1202
+  xy: 1350, 5
   size: 55, 12
   orig: 55, 12
   offset: 0, 0
   index: -1
 doll/eyeblow_1
   rotate: false
-  xy: 533, 1202
+  xy: 1350, 5
   size: 55, 12
   orig: 55, 12
   offset: 0, 0
   index: -1
 dress_B/eyeblow_1
   rotate: false
-  xy: 533, 1202
+  xy: 1350, 5
   size: 55, 12
   orig: 55, 12
   offset: 0, 0
   index: -1
 dress_R/eyeblow_1
   rotate: false
-  xy: 533, 1202
+  xy: 1350, 5
   size: 55, 12
   orig: 55, 12
   offset: 0, 0
   index: -1
 elf/eyeblow_1
   rotate: false
-  xy: 533, 1202
+  xy: 1350, 5
   size: 55, 12
   orig: 55, 12
   offset: 0, 0
   index: -1
 fairy/eyeblow_1
   rotate: false
-  xy: 533, 1202
+  xy: 1350, 5
   size: 55, 12
   orig: 55, 12
   offset: 0, 0
   index: -1
 idol/eyeblow_1
   rotate: false
-  xy: 533, 1202
+  xy: 1350, 5
   size: 55, 12
   orig: 55, 12
   offset: 0, 0
   index: -1
 knight_gold/eyeblow_1
   rotate: false
-  xy: 533, 1202
+  xy: 1350, 5
   size: 55, 12
   orig: 55, 12
   offset: 0, 0
   index: -1
 knight_holy/eyeblow_1
   rotate: false
-  xy: 533, 1202
+  xy: 1350, 5
   size: 55, 12
   orig: 55, 12
   offset: 0, 0
   index: -1
 knight_nomal/eyeblow_1
   rotate: false
-  xy: 533, 1202
+  xy: 1350, 5
   size: 55, 12
   orig: 55, 12
   offset: 0, 0
   index: -1
 knight_royal/eyeblow_1
   rotate: false
-  xy: 533, 1202
+  xy: 1350, 5
   size: 55, 12
   orig: 55, 12
   offset: 0, 0
   index: -1
 knight_sun/eyeblow_1
   rotate: false
-  xy: 533, 1202
+  xy: 1350, 5
   size: 55, 12
   orig: 55, 12
   offset: 0, 0
   index: -1
 magic/eyeblow_1
   rotate: false
-  xy: 533, 1202
+  xy: 1350, 5
   size: 55, 12
   orig: 55, 12
   offset: 0, 0
   index: -1
 marine/eyeblow_1
   rotate: false
-  xy: 533, 1202
+  xy: 1350, 5
   size: 55, 12
   orig: 55, 12
   offset: 0, 0
   index: -1
 nobility/eyeblow_1
   rotate: false
-  xy: 533, 1202
+  xy: 1350, 5
   size: 55, 12
   orig: 55, 12
   offset: 0, 0
   index: -1
 pirate/eyeblow_1
   rotate: false
-  xy: 533, 1202
+  xy: 1350, 5
   size: 55, 12
   orig: 55, 12
   offset: 0, 0
   index: -1
 strawberry/eyeblow_1
   rotate: false
-  xy: 533, 1202
+  xy: 1350, 5
   size: 55, 12
   orig: 55, 12
   offset: 0, 0
   index: -1
 uniform/eyeblow_1
   rotate: false
-  xy: 533, 1202
+  xy: 1350, 5
   size: 55, 12
   orig: 55, 12
   offset: 0, 0
   index: -1
 wedding/eyeblow_1
   rotate: false
-  xy: 533, 1202
+  xy: 1350, 5
   size: 55, 12
   orig: 55, 12
   offset: 0, 0
   index: -1
 alice/eyeblow_1_1
   rotate: false
-  xy: 1973, 840
+  xy: 1608, 519
   size: 57, 19
   orig: 57, 19
   offset: 0, 0
   index: -1
 armor/eyeblow_1_1
   rotate: false
-  xy: 1973, 840
+  xy: 1608, 519
   size: 57, 19
   orig: 57, 19
   offset: 0, 0
   index: -1
 bikini/eyeblow_1_1
   rotate: false
-  xy: 1973, 840
+  xy: 1608, 519
   size: 57, 19
   orig: 57, 19
   offset: 0, 0
   index: -1
 cat/eyeblow_1_1
   rotate: false
-  xy: 1973, 840
+  xy: 1608, 519
   size: 57, 19
   orig: 57, 19
   offset: 0, 0
   index: -1
 doll/eyeblow_1_1
   rotate: false
-  xy: 1973, 840
+  xy: 1608, 519
   size: 57, 19
   orig: 57, 19
   offset: 0, 0
   index: -1
 dress_B/eyeblow_1_1
   rotate: false
-  xy: 1973, 840
+  xy: 1608, 519
   size: 57, 19
   orig: 57, 19
   offset: 0, 0
   index: -1
 dress_R/eyeblow_1_1
   rotate: false
-  xy: 1973, 840
+  xy: 1608, 519
   size: 57, 19
   orig: 57, 19
   offset: 0, 0
   index: -1
 elf/eyeblow_1_1
   rotate: false
-  xy: 1973, 840
+  xy: 1608, 519
   size: 57, 19
   orig: 57, 19
   offset: 0, 0
   index: -1
 fairy/eyeblow_1_1
   rotate: false
-  xy: 1973, 840
+  xy: 1608, 519
   size: 57, 19
   orig: 57, 19
   offset: 0, 0
   index: -1
 idol/eyeblow_1_1
   rotate: false
-  xy: 1973, 840
+  xy: 1608, 519
   size: 57, 19
   orig: 57, 19
   offset: 0, 0
   index: -1
 knight_gold/eyeblow_1_1
   rotate: false
-  xy: 1973, 840
+  xy: 1608, 519
   size: 57, 19
   orig: 57, 19
   offset: 0, 0
   index: -1
 knight_holy/eyeblow_1_1
   rotate: false
-  xy: 1973, 840
+  xy: 1608, 519
   size: 57, 19
   orig: 57, 19
   offset: 0, 0
   index: -1
 knight_nomal/eyeblow_1_1
   rotate: false
-  xy: 1973, 840
+  xy: 1608, 519
   size: 57, 19
   orig: 57, 19
   offset: 0, 0
   index: -1
 knight_royal/eyeblow_1_1
   rotate: false
-  xy: 1973, 840
+  xy: 1608, 519
   size: 57, 19
   orig: 57, 19
   offset: 0, 0
   index: -1
 knight_sun/eyeblow_1_1
   rotate: false
-  xy: 1973, 840
+  xy: 1608, 519
   size: 57, 19
   orig: 57, 19
   offset: 0, 0
   index: -1
 magic/eyeblow_1_1
   rotate: false
-  xy: 1973, 840
+  xy: 1608, 519
   size: 57, 19
   orig: 57, 19
   offset: 0, 0
   index: -1
 marine/eyeblow_1_1
   rotate: false
-  xy: 1973, 840
+  xy: 1608, 519
   size: 57, 19
   orig: 57, 19
   offset: 0, 0
   index: -1
 nobility/eyeblow_1_1
   rotate: false
-  xy: 1973, 840
+  xy: 1608, 519
   size: 57, 19
   orig: 57, 19
   offset: 0, 0
   index: -1
 pirate/eyeblow_1_1
   rotate: false
-  xy: 1973, 840
+  xy: 1608, 519
   size: 57, 19
   orig: 57, 19
   offset: 0, 0
   index: -1
 strawberry/eyeblow_1_1
   rotate: false
-  xy: 1973, 840
+  xy: 1608, 519
   size: 57, 19
   orig: 57, 19
   offset: 0, 0
   index: -1
 uniform/eyeblow_1_1
   rotate: false
-  xy: 1973, 840
+  xy: 1608, 519
   size: 57, 19
   orig: 57, 19
   offset: 0, 0
   index: -1
 wedding/eyeblow_1_1
   rotate: false
-  xy: 1973, 840
+  xy: 1608, 519
   size: 57, 19
   orig: 57, 19
   offset: 0, 0
   index: -1
 alice/eyeblow_2
   rotate: false
-  xy: 1850, 798
+  xy: 1743, 341
   size: 47, 12
   orig: 47, 12
   offset: 0, 0
   index: -1
 armor/eyeblow_2
   rotate: false
-  xy: 1850, 798
+  xy: 1743, 341
   size: 47, 12
   orig: 47, 12
   offset: 0, 0
   index: -1
 bikini/eyeblow_2
   rotate: false
-  xy: 1850, 798
+  xy: 1743, 341
   size: 47, 12
   orig: 47, 12
   offset: 0, 0
   index: -1
 cat/eyeblow_2
   rotate: false
-  xy: 1850, 798
+  xy: 1743, 341
   size: 47, 12
   orig: 47, 12
   offset: 0, 0
   index: -1
 doll/eyeblow_2
   rotate: false
-  xy: 1850, 798
+  xy: 1743, 341
   size: 47, 12
   orig: 47, 12
   offset: 0, 0
   index: -1
 dress_B/eyeblow_2
   rotate: false
-  xy: 1850, 798
+  xy: 1743, 341
   size: 47, 12
   orig: 47, 12
   offset: 0, 0
   index: -1
 dress_R/eyeblow_2
   rotate: false
-  xy: 1850, 798
+  xy: 1743, 341
   size: 47, 12
   orig: 47, 12
   offset: 0, 0
   index: -1
 elf/eyeblow_2
   rotate: false
-  xy: 1850, 798
+  xy: 1743, 341
   size: 47, 12
   orig: 47, 12
   offset: 0, 0
   index: -1
 fairy/eyeblow_2
   rotate: false
-  xy: 1850, 798
+  xy: 1743, 341
   size: 47, 12
   orig: 47, 12
   offset: 0, 0
   index: -1
 idol/eyeblow_2
   rotate: false
-  xy: 1850, 798
+  xy: 1743, 341
   size: 47, 12
   orig: 47, 12
   offset: 0, 0
   index: -1
 knight_gold/eyeblow_2
   rotate: false
-  xy: 1850, 798
+  xy: 1743, 341
   size: 47, 12
   orig: 47, 12
   offset: 0, 0
   index: -1
 knight_holy/eyeblow_2
   rotate: false
-  xy: 1850, 798
+  xy: 1743, 341
   size: 47, 12
   orig: 47, 12
   offset: 0, 0
   index: -1
 knight_nomal/eyeblow_2
   rotate: false
-  xy: 1850, 798
+  xy: 1743, 341
   size: 47, 12
   orig: 47, 12
   offset: 0, 0
   index: -1
 knight_royal/eyeblow_2
   rotate: false
-  xy: 1850, 798
+  xy: 1743, 341
   size: 47, 12
   orig: 47, 12
   offset: 0, 0
   index: -1
 knight_sun/eyeblow_2
   rotate: false
-  xy: 1850, 798
+  xy: 1743, 341
   size: 47, 12
   orig: 47, 12
   offset: 0, 0
   index: -1
 magic/eyeblow_2
   rotate: false
-  xy: 1850, 798
+  xy: 1743, 341
   size: 47, 12
   orig: 47, 12
   offset: 0, 0
   index: -1
 marine/eyeblow_2
   rotate: false
-  xy: 1850, 798
+  xy: 1743, 341
   size: 47, 12
   orig: 47, 12
   offset: 0, 0
   index: -1
 nobility/eyeblow_2
   rotate: false
-  xy: 1850, 798
+  xy: 1743, 341
   size: 47, 12
   orig: 47, 12
   offset: 0, 0
   index: -1
 pirate/eyeblow_2
   rotate: false
-  xy: 1850, 798
+  xy: 1743, 341
   size: 47, 12
   orig: 47, 12
   offset: 0, 0
   index: -1
 strawberry/eyeblow_2
   rotate: false
-  xy: 1850, 798
+  xy: 1743, 341
   size: 47, 12
   orig: 47, 12
   offset: 0, 0
   index: -1
 uniform/eyeblow_2
   rotate: false
-  xy: 1850, 798
+  xy: 1743, 341
   size: 47, 12
   orig: 47, 12
   offset: 0, 0
   index: -1
 wedding/eyeblow_2
   rotate: false
-  xy: 1850, 798
+  xy: 1743, 341
   size: 47, 12
   orig: 47, 12
   offset: 0, 0
   index: -1
 alice/eyeblow_2_1
   rotate: false
-  xy: 1354, 56
+  xy: 1641, 197
   size: 47, 17
   orig: 47, 17
   offset: 0, 0
   index: -1
 armor/eyeblow_2_1
   rotate: false
-  xy: 1354, 56
+  xy: 1641, 197
   size: 47, 17
   orig: 47, 17
   offset: 0, 0
   index: -1
 bikini/eyeblow_2_1
   rotate: false
-  xy: 1354, 56
+  xy: 1641, 197
   size: 47, 17
   orig: 47, 17
   offset: 0, 0
   index: -1
 cat/eyeblow_2_1
   rotate: false
-  xy: 1354, 56
+  xy: 1641, 197
   size: 47, 17
   orig: 47, 17
   offset: 0, 0
   index: -1
 doll/eyeblow_2_1
   rotate: false
-  xy: 1354, 56
+  xy: 1641, 197
   size: 47, 17
   orig: 47, 17
   offset: 0, 0
   index: -1
 dress_B/eyeblow_2_1
   rotate: false
-  xy: 1354, 56
+  xy: 1641, 197
   size: 47, 17
   orig: 47, 17
   offset: 0, 0
   index: -1
 dress_R/eyeblow_2_1
   rotate: false
-  xy: 1354, 56
+  xy: 1641, 197
   size: 47, 17
   orig: 47, 17
   offset: 0, 0
   index: -1
 elf/eyeblow_2_1
   rotate: false
-  xy: 1354, 56
+  xy: 1641, 197
   size: 47, 17
   orig: 47, 17
   offset: 0, 0
   index: -1
 fairy/eyeblow_2_1
   rotate: false
-  xy: 1354, 56
+  xy: 1641, 197
   size: 47, 17
   orig: 47, 17
   offset: 0, 0
   index: -1
 idol/eyeblow_2_1
   rotate: false
-  xy: 1354, 56
+  xy: 1641, 197
   size: 47, 17
   orig: 47, 17
   offset: 0, 0
   index: -1
 knight_gold/eyeblow_2_1
   rotate: false
-  xy: 1354, 56
+  xy: 1641, 197
   size: 47, 17
   orig: 47, 17
   offset: 0, 0
   index: -1
 knight_holy/eyeblow_2_1
   rotate: false
-  xy: 1354, 56
+  xy: 1641, 197
   size: 47, 17
   orig: 47, 17
   offset: 0, 0
   index: -1
 knight_nomal/eyeblow_2_1
   rotate: false
-  xy: 1354, 56
+  xy: 1641, 197
   size: 47, 17
   orig: 47, 17
   offset: 0, 0
   index: -1
 knight_royal/eyeblow_2_1
   rotate: false
-  xy: 1354, 56
+  xy: 1641, 197
   size: 47, 17
   orig: 47, 17
   offset: 0, 0
   index: -1
 knight_sun/eyeblow_2_1
   rotate: false
-  xy: 1354, 56
+  xy: 1641, 197
   size: 47, 17
   orig: 47, 17
   offset: 0, 0
   index: -1
 magic/eyeblow_2_1
   rotate: false
-  xy: 1354, 56
+  xy: 1641, 197
   size: 47, 17
   orig: 47, 17
   offset: 0, 0
   index: -1
 marine/eyeblow_2_1
   rotate: false
-  xy: 1354, 56
+  xy: 1641, 197
   size: 47, 17
   orig: 47, 17
   offset: 0, 0
   index: -1
 nobility/eyeblow_2_1
   rotate: false
-  xy: 1354, 56
+  xy: 1641, 197
   size: 47, 17
   orig: 47, 17
   offset: 0, 0
   index: -1
 pirate/eyeblow_2_1
   rotate: false
-  xy: 1354, 56
+  xy: 1641, 197
   size: 47, 17
   orig: 47, 17
   offset: 0, 0
   index: -1
 strawberry/eyeblow_2_1
   rotate: false
-  xy: 1354, 56
+  xy: 1641, 197
   size: 47, 17
   orig: 47, 17
   offset: 0, 0
   index: -1
 uniform/eyeblow_2_1
   rotate: false
-  xy: 1354, 56
+  xy: 1641, 197
   size: 47, 17
   orig: 47, 17
   offset: 0, 0
   index: -1
 wedding/eyeblow_2_1
   rotate: false
-  xy: 1354, 56
+  xy: 1641, 197
   size: 47, 17
   orig: 47, 17
   offset: 0, 0
   index: -1
 alice/face_1
   rotate: false
-  xy: 904, 336
+  xy: 430, 65
   size: 147, 56
   orig: 147, 56
   offset: 0, 0
   index: -1
 cat/face_1
   rotate: false
-  xy: 904, 336
+  xy: 430, 65
   size: 147, 56
   orig: 147, 56
   offset: 0, 0
   index: -1
 doll/face_1
   rotate: false
-  xy: 904, 336
+  xy: 430, 65
   size: 147, 56
   orig: 147, 56
   offset: 0, 0
   index: -1
 dress_B/face_1
   rotate: false
-  xy: 904, 336
+  xy: 430, 65
   size: 147, 56
   orig: 147, 56
   offset: 0, 0
   index: -1
 dress_R/face_1
   rotate: false
-  xy: 904, 336
+  xy: 430, 65
   size: 147, 56
   orig: 147, 56
   offset: 0, 0
   index: -1
 fairy/face_1
   rotate: false
-  xy: 904, 336
+  xy: 430, 65
   size: 147, 56
   orig: 147, 56
   offset: 0, 0
   index: -1
 idol/face_1
   rotate: false
-  xy: 904, 336
+  xy: 430, 65
   size: 147, 56
   orig: 147, 56
   offset: 0, 0
   index: -1
 knight_gold/face_1
   rotate: false
-  xy: 904, 336
+  xy: 430, 65
   size: 147, 56
   orig: 147, 56
   offset: 0, 0
   index: -1
 knight_holy/face_1
   rotate: false
-  xy: 904, 336
+  xy: 430, 65
   size: 147, 56
   orig: 147, 56
   offset: 0, 0
   index: -1
 knight_nomal/face_1
   rotate: false
-  xy: 904, 336
+  xy: 430, 65
   size: 147, 56
   orig: 147, 56
   offset: 0, 0
   index: -1
 knight_royal/face_1
   rotate: false
-  xy: 904, 336
+  xy: 430, 65
   size: 147, 56
   orig: 147, 56
   offset: 0, 0
   index: -1
 knight_sun/face_1
   rotate: false
-  xy: 904, 336
+  xy: 430, 65
   size: 147, 56
   orig: 147, 56
   offset: 0, 0
   index: -1
 marine/face_1
   rotate: false
-  xy: 904, 336
+  xy: 430, 65
   size: 147, 56
   orig: 147, 56
   offset: 0, 0
   index: -1
 nobility/face_1
   rotate: false
-  xy: 904, 336
+  xy: 430, 65
   size: 147, 56
   orig: 147, 56
   offset: 0, 0
   index: -1
 strawberry/face_1
   rotate: false
-  xy: 904, 336
+  xy: 430, 65
   size: 147, 56
   orig: 147, 56
   offset: 0, 0
   index: -1
 uniform/face_1
   rotate: false
-  xy: 904, 336
+  xy: 430, 65
   size: 147, 56
   orig: 147, 56
   offset: 0, 0
   index: -1
 alice/face_2
   rotate: false
-  xy: 967, 731
+  xy: 641, 696
   size: 147, 54
   orig: 147, 54
   offset: 0, 0
   index: -1
 cat/face_2
   rotate: false
-  xy: 967, 731
+  xy: 641, 696
   size: 147, 54
   orig: 147, 54
   offset: 0, 0
   index: -1
 doll/face_2
   rotate: false
-  xy: 967, 731
+  xy: 641, 696
   size: 147, 54
   orig: 147, 54
   offset: 0, 0
   index: -1
 dress_B/face_2
   rotate: false
-  xy: 967, 731
+  xy: 641, 696
   size: 147, 54
   orig: 147, 54
   offset: 0, 0
   index: -1
 dress_R/face_2
   rotate: false
-  xy: 967, 731
+  xy: 641, 696
   size: 147, 54
   orig: 147, 54
   offset: 0, 0
   index: -1
 fairy/face_2
   rotate: false
-  xy: 967, 731
+  xy: 641, 696
   size: 147, 54
   orig: 147, 54
   offset: 0, 0
   index: -1
 idol/face_2
   rotate: false
-  xy: 967, 731
+  xy: 641, 696
   size: 147, 54
   orig: 147, 54
   offset: 0, 0
   index: -1
 knight_gold/face_2
   rotate: false
-  xy: 967, 731
+  xy: 641, 696
   size: 147, 54
   orig: 147, 54
   offset: 0, 0
   index: -1
 knight_holy/face_2
   rotate: false
-  xy: 967, 731
+  xy: 641, 696
   size: 147, 54
   orig: 147, 54
   offset: 0, 0
   index: -1
 knight_nomal/face_2
   rotate: false
-  xy: 967, 731
+  xy: 641, 696
   size: 147, 54
   orig: 147, 54
   offset: 0, 0
   index: -1
 knight_royal/face_2
   rotate: false
-  xy: 967, 731
+  xy: 641, 696
   size: 147, 54
   orig: 147, 54
   offset: 0, 0
   index: -1
 knight_sun/face_2
   rotate: false
-  xy: 967, 731
+  xy: 641, 696
   size: 147, 54
   orig: 147, 54
   offset: 0, 0
   index: -1
 marine/face_2
   rotate: false
-  xy: 967, 731
+  xy: 641, 696
   size: 147, 54
   orig: 147, 54
   offset: 0, 0
   index: -1
 nobility/face_2
   rotate: false
-  xy: 967, 731
+  xy: 641, 696
   size: 147, 54
   orig: 147, 54
   offset: 0, 0
   index: -1
 strawberry/face_2
   rotate: false
-  xy: 967, 731
+  xy: 641, 696
   size: 147, 54
   orig: 147, 54
   offset: 0, 0
   index: -1
 uniform/face_2
   rotate: false
-  xy: 967, 731
+  xy: 641, 696
   size: 147, 54
   orig: 147, 54
   offset: 0, 0
   index: -1
 alice/face_3
   rotate: false
-  xy: 592, 292
+  xy: 1247, 735
   size: 147, 46
   orig: 147, 46
   offset: 0, 0
   index: -1
 cat/face_3
   rotate: false
-  xy: 592, 292
+  xy: 1247, 735
   size: 147, 46
   orig: 147, 46
   offset: 0, 0
   index: -1
 doll/face_3
   rotate: false
-  xy: 592, 292
+  xy: 1247, 735
   size: 147, 46
   orig: 147, 46
   offset: 0, 0
   index: -1
 dress_B/face_3
   rotate: false
-  xy: 592, 292
+  xy: 1247, 735
   size: 147, 46
   orig: 147, 46
   offset: 0, 0
   index: -1
 dress_R/face_3
   rotate: false
-  xy: 592, 292
+  xy: 1247, 735
   size: 147, 46
   orig: 147, 46
   offset: 0, 0
   index: -1
 idol/face_3
   rotate: false
-  xy: 592, 292
+  xy: 1247, 735
   size: 147, 46
   orig: 147, 46
   offset: 0, 0
   index: -1
 knight_gold/face_3
   rotate: false
-  xy: 592, 292
+  xy: 1247, 735
   size: 147, 46
   orig: 147, 46
   offset: 0, 0
   index: -1
 knight_holy/face_3
   rotate: false
-  xy: 592, 292
+  xy: 1247, 735
   size: 147, 46
   orig: 147, 46
   offset: 0, 0
   index: -1
 knight_nomal/face_3
   rotate: false
-  xy: 592, 292
+  xy: 1247, 735
   size: 147, 46
   orig: 147, 46
   offset: 0, 0
   index: -1
 knight_royal/face_3
   rotate: false
-  xy: 592, 292
+  xy: 1247, 735
   size: 147, 46
   orig: 147, 46
   offset: 0, 0
   index: -1
 knight_sun/face_3
   rotate: false
-  xy: 592, 292
+  xy: 1247, 735
   size: 147, 46
   orig: 147, 46
   offset: 0, 0
   index: -1
 marine/face_3
   rotate: false
-  xy: 592, 292
+  xy: 1247, 735
   size: 147, 46
   orig: 147, 46
   offset: 0, 0
   index: -1
 nobility/face_3
   rotate: false
-  xy: 592, 292
+  xy: 1247, 735
   size: 147, 46
   orig: 147, 46
   offset: 0, 0
   index: -1
 strawberry/face_3
   rotate: false
-  xy: 592, 292
+  xy: 1247, 735
   size: 147, 46
   orig: 147, 46
   offset: 0, 0
   index: -1
 uniform/face_3
   rotate: false
-  xy: 592, 292
+  xy: 1247, 735
   size: 147, 46
   orig: 147, 46
   offset: 0, 0
   index: -1
 alice/face_4
   rotate: false
-  xy: 229, 322
+  xy: 805, 401
   size: 127, 52
   orig: 127, 52
   offset: 0, 0
   index: -1
 armor/face_4
   rotate: false
-  xy: 229, 322
+  xy: 805, 401
   size: 127, 52
   orig: 127, 52
   offset: 0, 0
   index: -1
 bikini/face_4
   rotate: false
-  xy: 229, 322
+  xy: 805, 401
   size: 127, 52
   orig: 127, 52
   offset: 0, 0
   index: -1
 cat/face_4
   rotate: false
-  xy: 229, 322
+  xy: 805, 401
   size: 127, 52
   orig: 127, 52
   offset: 0, 0
   index: -1
 doll/face_4
   rotate: false
-  xy: 229, 322
+  xy: 805, 401
   size: 127, 52
   orig: 127, 52
   offset: 0, 0
   index: -1
 dress_B/face_4
   rotate: false
-  xy: 229, 322
+  xy: 805, 401
   size: 127, 52
   orig: 127, 52
   offset: 0, 0
   index: -1
 dress_R/face_4
   rotate: false
-  xy: 229, 322
+  xy: 805, 401
   size: 127, 52
   orig: 127, 52
   offset: 0, 0
   index: -1
 elf/face_4
   rotate: false
-  xy: 229, 322
+  xy: 805, 401
   size: 127, 52
   orig: 127, 52
   offset: 0, 0
   index: -1
 fairy/face_4
   rotate: false
-  xy: 229, 322
+  xy: 805, 401
   size: 127, 52
   orig: 127, 52
   offset: 0, 0
   index: -1
 idol/face_4
   rotate: false
-  xy: 229, 322
+  xy: 805, 401
   size: 127, 52
   orig: 127, 52
   offset: 0, 0
   index: -1
 knight_gold/face_4
   rotate: false
-  xy: 229, 322
+  xy: 805, 401
   size: 127, 52
   orig: 127, 52
   offset: 0, 0
   index: -1
 knight_holy/face_4
   rotate: false
-  xy: 229, 322
+  xy: 805, 401
   size: 127, 52
   orig: 127, 52
   offset: 0, 0
   index: -1
 knight_nomal/face_4
   rotate: false
-  xy: 229, 322
+  xy: 805, 401
   size: 127, 52
   orig: 127, 52
   offset: 0, 0
   index: -1
 knight_royal/face_4
   rotate: false
-  xy: 229, 322
+  xy: 805, 401
   size: 127, 52
   orig: 127, 52
   offset: 0, 0
   index: -1
 knight_sun/face_4
   rotate: false
-  xy: 229, 322
+  xy: 805, 401
   size: 127, 52
   orig: 127, 52
   offset: 0, 0
   index: -1
 magic/face_4
   rotate: false
-  xy: 229, 322
+  xy: 805, 401
   size: 127, 52
   orig: 127, 52
   offset: 0, 0
   index: -1
 marine/face_4
   rotate: false
-  xy: 229, 322
+  xy: 805, 401
   size: 127, 52
   orig: 127, 52
   offset: 0, 0
   index: -1
 nobility/face_4
   rotate: false
-  xy: 229, 322
+  xy: 805, 401
   size: 127, 52
   orig: 127, 52
   offset: 0, 0
   index: -1
 pirate/face_4
   rotate: false
-  xy: 229, 322
+  xy: 805, 401
   size: 127, 52
   orig: 127, 52
   offset: 0, 0
   index: -1
 strawberry/face_4
   rotate: false
-  xy: 229, 322
+  xy: 805, 401
   size: 127, 52
   orig: 127, 52
   offset: 0, 0
   index: -1
 uniform/face_4
   rotate: false
-  xy: 229, 322
+  xy: 805, 401
   size: 127, 52
   orig: 127, 52
   offset: 0, 0
   index: -1
 wedding/face_4
   rotate: false
-  xy: 229, 322
+  xy: 805, 401
   size: 127, 52
   orig: 127, 52
   offset: 0, 0
   index: -1
 alice/face_5
   rotate: false
-  xy: 1564, 554
+  xy: 1600, 734
   size: 132, 52
   orig: 132, 52
   offset: 0, 0
   index: -1
 armor/face_5
   rotate: false
-  xy: 1564, 554
+  xy: 1600, 734
   size: 132, 52
   orig: 132, 52
   offset: 0, 0
   index: -1
 bikini/face_5
   rotate: false
-  xy: 1564, 554
+  xy: 1600, 734
   size: 132, 52
   orig: 132, 52
   offset: 0, 0
   index: -1
 cat/face_5
   rotate: false
-  xy: 1564, 554
+  xy: 1600, 734
   size: 132, 52
   orig: 132, 52
   offset: 0, 0
   index: -1
 doll/face_5
   rotate: false
-  xy: 1564, 554
+  xy: 1600, 734
   size: 132, 52
   orig: 132, 52
   offset: 0, 0
   index: -1
 dress_B/face_5
   rotate: false
-  xy: 1564, 554
+  xy: 1600, 734
   size: 132, 52
   orig: 132, 52
   offset: 0, 0
   index: -1
 dress_R/face_5
   rotate: false
-  xy: 1564, 554
+  xy: 1600, 734
   size: 132, 52
   orig: 132, 52
   offset: 0, 0
   index: -1
 elf/face_5
   rotate: false
-  xy: 1564, 554
+  xy: 1600, 734
   size: 132, 52
   orig: 132, 52
   offset: 0, 0
   index: -1
 fairy/face_5
   rotate: false
-  xy: 1564, 554
+  xy: 1600, 734
   size: 132, 52
   orig: 132, 52
   offset: 0, 0
   index: -1
 idol/face_5
   rotate: false
-  xy: 1564, 554
+  xy: 1600, 734
   size: 132, 52
   orig: 132, 52
   offset: 0, 0
   index: -1
 knight_gold/face_5
   rotate: false
-  xy: 1564, 554
+  xy: 1600, 734
   size: 132, 52
   orig: 132, 52
   offset: 0, 0
   index: -1
 knight_holy/face_5
   rotate: false
-  xy: 1564, 554
+  xy: 1600, 734
   size: 132, 52
   orig: 132, 52
   offset: 0, 0
   index: -1
 knight_nomal/face_5
   rotate: false
-  xy: 1564, 554
+  xy: 1600, 734
   size: 132, 52
   orig: 132, 52
   offset: 0, 0
   index: -1
 knight_royal/face_5
   rotate: false
-  xy: 1564, 554
+  xy: 1600, 734
   size: 132, 52
   orig: 132, 52
   offset: 0, 0
   index: -1
 knight_sun/face_5
   rotate: false
-  xy: 1564, 554
+  xy: 1600, 734
   size: 132, 52
   orig: 132, 52
   offset: 0, 0
   index: -1
 magic/face_5
   rotate: false
-  xy: 1564, 554
+  xy: 1600, 734
   size: 132, 52
   orig: 132, 52
   offset: 0, 0
   index: -1
 marine/face_5
   rotate: false
-  xy: 1564, 554
+  xy: 1600, 734
   size: 132, 52
   orig: 132, 52
   offset: 0, 0
   index: -1
 nobility/face_5
   rotate: false
-  xy: 1564, 554
+  xy: 1600, 734
   size: 132, 52
   orig: 132, 52
   offset: 0, 0
   index: -1
 pirate/face_5
   rotate: false
-  xy: 1564, 554
+  xy: 1600, 734
   size: 132, 52
   orig: 132, 52
   offset: 0, 0
   index: -1
 strawberry/face_5
   rotate: false
-  xy: 1564, 554
+  xy: 1600, 734
   size: 132, 52
   orig: 132, 52
   offset: 0, 0
   index: -1
 uniform/face_5
   rotate: false
-  xy: 1564, 554
+  xy: 1600, 734
   size: 132, 52
   orig: 132, 52
   offset: 0, 0
   index: -1
 wedding/face_5
   rotate: false
-  xy: 1564, 554
+  xy: 1600, 734
   size: 132, 52
   orig: 132, 52
   offset: 0, 0
   index: -1
 alice/hat_front
   rotate: false
-  xy: 1562, 71
+  xy: 1715, 3
   size: 29, 26
   orig: 29, 26
   offset: 0, 0
   index: -1
 alice/hat_front_ribbon_1
   rotate: false
-  xy: 499, 232
+  xy: 1820, 1147
   size: 83, 102
   orig: 83, 102
   offset: 0, 0
   index: -1
 alice/hat_front_ribbon_2
   rotate: false
-  xy: 994, 189
+  xy: 1172, 574
   size: 69, 97
   orig: 69, 97
   offset: 0, 0
   index: -1
 alice/head
   rotate: false
-  xy: 3, 108
+  xy: 3, 261
   size: 221, 213
   orig: 221, 213
   offset: 0, 0
   index: -1
 alice/head_long
   rotate: false
-  xy: 1766, 1328
+  xy: 1522, 1598
   size: 230, 193
   orig: 230, 193
   offset: 0, 0
   index: -1
 alice/head_side_1
   rotate: false
-  xy: 1676, 415
+  xy: 1906, 1243
   size: 51, 136
   orig: 51, 136
   offset: 0, 0
   index: -1
 armor/head_side_1
   rotate: false
-  xy: 1676, 415
+  xy: 1906, 1243
   size: 51, 136
   orig: 51, 136
   offset: 0, 0
   index: -1
 bikini/head_side_1
   rotate: false
-  xy: 1676, 415
+  xy: 1906, 1243
   size: 51, 136
   orig: 51, 136
   offset: 0, 0
   index: -1
 cat/head_side_1
   rotate: false
-  xy: 1676, 415
+  xy: 1906, 1243
   size: 51, 136
   orig: 51, 136
   offset: 0, 0
   index: -1
 dress_B/head_side_1
   rotate: false
-  xy: 1676, 415
+  xy: 1906, 1243
   size: 51, 136
   orig: 51, 136
   offset: 0, 0
   index: -1
 dress_R/head_side_1
   rotate: false
-  xy: 1676, 415
+  xy: 1906, 1243
   size: 51, 136
   orig: 51, 136
   offset: 0, 0
   index: -1
 elf/head_side_1
   rotate: false
-  xy: 1676, 415
+  xy: 1906, 1243
   size: 51, 136
   orig: 51, 136
   offset: 0, 0
   index: -1
 fairy/head_side_1
   rotate: false
-  xy: 1676, 415
+  xy: 1906, 1243
   size: 51, 136
   orig: 51, 136
   offset: 0, 0
   index: -1
 idol/head_side_1
   rotate: false
-  xy: 1676, 415
+  xy: 1906, 1243
   size: 51, 136
   orig: 51, 136
   offset: 0, 0
   index: -1
 knight_gold/head_side_1
   rotate: false
-  xy: 1676, 415
+  xy: 1906, 1243
   size: 51, 136
   orig: 51, 136
   offset: 0, 0
   index: -1
 knight_holy/head_side_1
   rotate: false
-  xy: 1676, 415
+  xy: 1906, 1243
   size: 51, 136
   orig: 51, 136
   offset: 0, 0
   index: -1
 knight_nomal/head_side_1
   rotate: false
-  xy: 1676, 415
+  xy: 1906, 1243
   size: 51, 136
   orig: 51, 136
   offset: 0, 0
   index: -1
 knight_royal/head_side_1
   rotate: false
-  xy: 1676, 415
+  xy: 1906, 1243
   size: 51, 136
   orig: 51, 136
   offset: 0, 0
   index: -1
 knight_sun/head_side_1
   rotate: false
-  xy: 1676, 415
+  xy: 1906, 1243
   size: 51, 136
   orig: 51, 136
   offset: 0, 0
   index: -1
 magic/head_side_1
   rotate: false
-  xy: 1676, 415
+  xy: 1906, 1243
   size: 51, 136
   orig: 51, 136
   offset: 0, 0
   index: -1
 marine/head_side_1
   rotate: false
-  xy: 1676, 415
+  xy: 1906, 1243
   size: 51, 136
   orig: 51, 136
   offset: 0, 0
   index: -1
 nobility/head_side_1
   rotate: false
-  xy: 1676, 415
+  xy: 1906, 1243
   size: 51, 136
   orig: 51, 136
   offset: 0, 0
   index: -1
 pirate/head_side_1
   rotate: false
-  xy: 1676, 415
+  xy: 1906, 1243
   size: 51, 136
   orig: 51, 136
   offset: 0, 0
   index: -1
 strawberry/head_side_1
   rotate: false
-  xy: 1676, 415
+  xy: 1906, 1243
   size: 51, 136
   orig: 51, 136
   offset: 0, 0
   index: -1
 uniform/head_side_1
   rotate: false
-  xy: 1676, 415
+  xy: 1906, 1243
   size: 51, 136
   orig: 51, 136
   offset: 0, 0
   index: -1
 wedding/head_side_1
   rotate: false
-  xy: 1676, 415
+  xy: 1906, 1243
   size: 51, 136
   orig: 51, 136
   offset: 0, 0
   index: -1
 alice/head_side_2
   rotate: false
-  xy: 1713, 1212
+  xy: 1397, 760
   size: 50, 139
   orig: 50, 139
   offset: 0, 0
   index: -1
 armor/head_side_2
   rotate: false
-  xy: 1713, 1212
+  xy: 1397, 760
   size: 50, 139
   orig: 50, 139
   offset: 0, 0
   index: -1
 bikini/head_side_2
   rotate: false
-  xy: 1713, 1212
+  xy: 1397, 760
   size: 50, 139
   orig: 50, 139
   offset: 0, 0
   index: -1
 cat/head_side_2
   rotate: false
-  xy: 1713, 1212
+  xy: 1397, 760
   size: 50, 139
   orig: 50, 139
   offset: 0, 0
   index: -1
 doll/head_side_2
   rotate: false
-  xy: 1713, 1212
+  xy: 1397, 760
   size: 50, 139
   orig: 50, 139
   offset: 0, 0
   index: -1
 dress_B/head_side_2
   rotate: false
-  xy: 1713, 1212
+  xy: 1397, 760
   size: 50, 139
   orig: 50, 139
   offset: 0, 0
   index: -1
 dress_R/head_side_2
   rotate: false
-  xy: 1713, 1212
+  xy: 1397, 760
   size: 50, 139
   orig: 50, 139
   offset: 0, 0
   index: -1
 elf/head_side_2
   rotate: false
-  xy: 1713, 1212
+  xy: 1397, 760
   size: 50, 139
   orig: 50, 139
   offset: 0, 0
   index: -1
 fairy/head_side_2
   rotate: false
-  xy: 1713, 1212
+  xy: 1397, 760
   size: 50, 139
   orig: 50, 139
   offset: 0, 0
   index: -1
 idol/head_side_2
   rotate: false
-  xy: 1713, 1212
+  xy: 1397, 760
   size: 50, 139
   orig: 50, 139
   offset: 0, 0
   index: -1
 knight_gold/head_side_2
   rotate: false
-  xy: 1713, 1212
+  xy: 1397, 760
   size: 50, 139
   orig: 50, 139
   offset: 0, 0
   index: -1
 knight_holy/head_side_2
   rotate: false
-  xy: 1713, 1212
+  xy: 1397, 760
   size: 50, 139
   orig: 50, 139
   offset: 0, 0
   index: -1
 knight_nomal/head_side_2
   rotate: false
-  xy: 1713, 1212
+  xy: 1397, 760
   size: 50, 139
   orig: 50, 139
   offset: 0, 0
   index: -1
 knight_royal/head_side_2
   rotate: false
-  xy: 1713, 1212
+  xy: 1397, 760
   size: 50, 139
   orig: 50, 139
   offset: 0, 0
   index: -1
 knight_sun/head_side_2
   rotate: false
-  xy: 1713, 1212
+  xy: 1397, 760
   size: 50, 139
   orig: 50, 139
   offset: 0, 0
   index: -1
 magic/head_side_2
   rotate: false
-  xy: 1713, 1212
+  xy: 1397, 760
   size: 50, 139
   orig: 50, 139
   offset: 0, 0
   index: -1
 marine/head_side_2
   rotate: false
-  xy: 1713, 1212
+  xy: 1397, 760
   size: 50, 139
   orig: 50, 139
   offset: 0, 0
   index: -1
 nobility/head_side_2
   rotate: false
-  xy: 1713, 1212
+  xy: 1397, 760
   size: 50, 139
   orig: 50, 139
   offset: 0, 0
   index: -1
 pirate/head_side_2
   rotate: false
-  xy: 1713, 1212
+  xy: 1397, 760
   size: 50, 139
   orig: 50, 139
   offset: 0, 0
   index: -1
 strawberry/head_side_2
   rotate: false
-  xy: 1713, 1212
+  xy: 1397, 760
   size: 50, 139
   orig: 50, 139
   offset: 0, 0
   index: -1
 uniform/head_side_2
   rotate: false
-  xy: 1713, 1212
+  xy: 1397, 760
   size: 50, 139
   orig: 50, 139
   offset: 0, 0
   index: -1
 alice/mouth_1
   rotate: false
-  xy: 1144, 3
+  xy: 1702, 396
   size: 29, 15
   orig: 29, 15
   offset: 0, 0
   index: -1
 doll/mouth_1
   rotate: false
-  xy: 1144, 3
+  xy: 1702, 396
   size: 29, 15
   orig: 29, 15
   offset: 0, 0
   index: -1
 idol/mouth_1
   rotate: false
-  xy: 1144, 3
+  xy: 1702, 396
   size: 29, 15
   orig: 29, 15
   offset: 0, 0
   index: -1
 uniform/mouth_1
   rotate: false
-  xy: 1144, 3
+  xy: 1702, 396
   size: 29, 15
   orig: 29, 15
   offset: 0, 0
   index: -1
 wedding/mouth_1
   rotate: false
-  xy: 1144, 3
+  xy: 1702, 396
   size: 29, 15
   orig: 29, 15
   offset: 0, 0
   index: -1
 alice/mouth_2
   rotate: false
-  xy: 1964, 197
+  xy: 1247, 902
   size: 30, 24
   orig: 30, 24
   offset: 0, 0
   index: -1
 cat/mouth_2
   rotate: false
-  xy: 1964, 197
+  xy: 1247, 902
   size: 30, 24
   orig: 30, 24
   offset: 0, 0
   index: -1
 doll/mouth_2
   rotate: false
-  xy: 1964, 197
+  xy: 1247, 902
   size: 30, 24
   orig: 30, 24
   offset: 0, 0
   index: -1
 dress_B/mouth_2
   rotate: false
-  xy: 1964, 197
+  xy: 1247, 902
   size: 30, 24
   orig: 30, 24
   offset: 0, 0
   index: -1
 dress_R/mouth_2
   rotate: false
-  xy: 1964, 197
+  xy: 1247, 902
   size: 30, 24
   orig: 30, 24
   offset: 0, 0
   index: -1
 elf/mouth_2
   rotate: false
-  xy: 1964, 197
+  xy: 1247, 902
   size: 30, 24
   orig: 30, 24
   offset: 0, 0
   index: -1
 fairy/mouth_2
   rotate: false
-  xy: 1964, 197
+  xy: 1247, 902
   size: 30, 24
   orig: 30, 24
   offset: 0, 0
   index: -1
 idol/mouth_2
   rotate: false
-  xy: 1964, 197
+  xy: 1247, 902
   size: 30, 24
   orig: 30, 24
   offset: 0, 0
   index: -1
 knight_gold/mouth_2
   rotate: false
-  xy: 1964, 197
+  xy: 1247, 902
   size: 30, 24
   orig: 30, 24
   offset: 0, 0
   index: -1
 knight_holy/mouth_2
   rotate: false
-  xy: 1964, 197
+  xy: 1247, 902
   size: 30, 24
   orig: 30, 24
   offset: 0, 0
   index: -1
 knight_nomal/mouth_2
   rotate: false
-  xy: 1964, 197
+  xy: 1247, 902
   size: 30, 24
   orig: 30, 24
   offset: 0, 0
   index: -1
 knight_royal/mouth_2
   rotate: false
-  xy: 1964, 197
+  xy: 1247, 902
   size: 30, 24
   orig: 30, 24
   offset: 0, 0
   index: -1
 knight_sun/mouth_2
   rotate: false
-  xy: 1964, 197
+  xy: 1247, 902
   size: 30, 24
   orig: 30, 24
   offset: 0, 0
   index: -1
 marine/mouth_2
   rotate: false
-  xy: 1964, 197
+  xy: 1247, 902
   size: 30, 24
   orig: 30, 24
   offset: 0, 0
   index: -1
 nobility/mouth_2
   rotate: false
-  xy: 1964, 197
+  xy: 1247, 902
   size: 30, 24
   orig: 30, 24
   offset: 0, 0
   index: -1
 strawberry/mouth_2
   rotate: false
-  xy: 1964, 197
+  xy: 1247, 902
   size: 30, 24
   orig: 30, 24
   offset: 0, 0
   index: -1
 uniform/mouth_2
   rotate: false
-  xy: 1964, 197
+  xy: 1247, 902
   size: 30, 24
   orig: 30, 24
   offset: 0, 0
   index: -1
 alice/mouth_3
   rotate: false
-  xy: 1517, 413
+  xy: 1948, 421
   size: 44, 32
   orig: 44, 32
   offset: 0, 0
   index: -1
 armor/mouth_3
   rotate: false
-  xy: 1517, 413
+  xy: 1948, 421
   size: 44, 32
   orig: 44, 32
   offset: 0, 0
   index: -1
 bikini/mouth_3
   rotate: false
-  xy: 1517, 413
+  xy: 1948, 421
   size: 44, 32
   orig: 44, 32
   offset: 0, 0
   index: -1
 cat/mouth_3
   rotate: false
-  xy: 1517, 413
+  xy: 1948, 421
   size: 44, 32
   orig: 44, 32
   offset: 0, 0
   index: -1
 doll/mouth_3
   rotate: false
-  xy: 1517, 413
+  xy: 1948, 421
   size: 44, 32
   orig: 44, 32
   offset: 0, 0
   index: -1
 dress_B/mouth_3
   rotate: false
-  xy: 1517, 413
+  xy: 1948, 421
   size: 44, 32
   orig: 44, 32
   offset: 0, 0
   index: -1
 dress_R/mouth_3
   rotate: false
-  xy: 1517, 413
+  xy: 1948, 421
   size: 44, 32
   orig: 44, 32
   offset: 0, 0
   index: -1
 elf/mouth_3
   rotate: false
-  xy: 1517, 413
+  xy: 1948, 421
   size: 44, 32
   orig: 44, 32
   offset: 0, 0
   index: -1
 fairy/mouth_3
   rotate: false
-  xy: 1517, 413
+  xy: 1948, 421
   size: 44, 32
   orig: 44, 32
   offset: 0, 0
   index: -1
 idol/mouth_3
   rotate: false
-  xy: 1517, 413
+  xy: 1948, 421
   size: 44, 32
   orig: 44, 32
   offset: 0, 0
   index: -1
 knight_gold/mouth_3
   rotate: false
-  xy: 1517, 413
+  xy: 1948, 421
   size: 44, 32
   orig: 44, 32
   offset: 0, 0
   index: -1
 knight_holy/mouth_3
   rotate: false
-  xy: 1517, 413
+  xy: 1948, 421
   size: 44, 32
   orig: 44, 32
   offset: 0, 0
   index: -1
 knight_nomal/mouth_3
   rotate: false
-  xy: 1517, 413
+  xy: 1948, 421
   size: 44, 32
   orig: 44, 32
   offset: 0, 0
   index: -1
 knight_royal/mouth_3
   rotate: false
-  xy: 1517, 413
+  xy: 1948, 421
   size: 44, 32
   orig: 44, 32
   offset: 0, 0
   index: -1
 knight_sun/mouth_3
   rotate: false
-  xy: 1517, 413
+  xy: 1948, 421
   size: 44, 32
   orig: 44, 32
   offset: 0, 0
   index: -1
 magic/mouth_3
   rotate: false
-  xy: 1517, 413
+  xy: 1948, 421
   size: 44, 32
   orig: 44, 32
   offset: 0, 0
   index: -1
 marine/mouth_3
   rotate: false
-  xy: 1517, 413
+  xy: 1948, 421
   size: 44, 32
   orig: 44, 32
   offset: 0, 0
   index: -1
 nobility/mouth_3
   rotate: false
-  xy: 1517, 413
+  xy: 1948, 421
   size: 44, 32
   orig: 44, 32
   offset: 0, 0
   index: -1
 pirate/mouth_3
   rotate: false
-  xy: 1517, 413
+  xy: 1948, 421
   size: 44, 32
   orig: 44, 32
   offset: 0, 0
   index: -1
 strawberry/mouth_3
   rotate: false
-  xy: 1517, 413
+  xy: 1948, 421
   size: 44, 32
   orig: 44, 32
   offset: 0, 0
   index: -1
 uniform/mouth_3
   rotate: false
-  xy: 1517, 413
+  xy: 1948, 421
   size: 44, 32
   orig: 44, 32
   offset: 0, 0
   index: -1
 wedding/mouth_3
   rotate: false
-  xy: 1517, 413
+  xy: 1948, 421
   size: 44, 32
   orig: 44, 32
   offset: 0, 0
   index: -1
 armor/L_arm_1
   rotate: false
-  xy: 1517, 355
+  xy: 967, 210
   size: 44, 55
   orig: 44, 55
   offset: 0, 0
   index: -1
 armor/L_arm_2
   rotate: false
-  xy: 1414, 329
+  xy: 1837, 366
   size: 33, 40
   orig: 33, 40
   offset: 0, 0
   index: -1
 armor/L_hand
   rotate: false
-  xy: 1999, 1491
+  xy: 1873, 378
   size: 31, 30
   orig: 31, 30
   offset: 0, 0
   index: -1
 armor/L_leg_1
   rotate: false
-  xy: 1702, 185
+  xy: 1014, 210
   size: 39, 55
   orig: 39, 55
   offset: 0, 0
   index: -1
 armor/L_leg_2
   rotate: false
-  xy: 1883, 688
+  xy: 780, 276
   size: 40, 57
   orig: 40, 57
   offset: 0, 0
   index: -1
 armor/R_arm_1
   rotate: false
-  xy: 1056, 72
+  xy: 1555, 708
   size: 42, 52
   orig: 42, 52
   offset: 0, 0
   index: -1
 armor/R_arm_2
   rotate: false
-  xy: 1686, 305
+  xy: 1907, 426
   size: 38, 47
   orig: 38, 47
   offset: 0, 0
   index: -1
 armor/R_hand
   rotate: false
-  xy: 1612, 357
+  xy: 1482, 1529
   size: 25, 26
   orig: 25, 26
   offset: 0, 0
   index: -1
 armor/R_leg_1
   rotate: false
-  xy: 1611, 127
+  xy: 1765, 845
   size: 37, 59
   orig: 37, 59
   offset: 0, 0
   index: -1
 armor/R_leg_2
   rotate: false
-  xy: 1614, 191
+  xy: 853, 212
   size: 38, 59
   orig: 38, 59
   offset: 0, 0
   index: -1
 armor/body_1
   rotate: false
-  xy: 601, 3
+  xy: 894, 268
   size: 64, 67
   orig: 64, 67
   offset: 0, 0
   index: -1
 armor/body_2
   rotate: false
-  xy: 1699, 559
+  xy: 784, 198
   size: 66, 73
   orig: 66, 73
   offset: 0, 0
   index: -1
 armor/body_3
   rotate: false
-  xy: 1249, 441
+  xy: 802, 968
   size: 130, 78
   orig: 130, 78
   offset: 0, 0
   index: -1
 armor/crown
   rotate: false
-  xy: 1688, 635
+  xy: 1165, 489
   size: 76, 82
   orig: 76, 82
   offset: 0, 0
   index: -1
 bikini/crown
   rotate: false
-  xy: 1688, 635
+  xy: 1165, 489
   size: 76, 82
   orig: 76, 82
   offset: 0, 0
   index: -1
 armor/face_1
   rotate: false
-  xy: 814, 665
+  xy: 666, 1131
   size: 153, 62
   orig: 153, 62
   offset: 0, 0
   index: -1
 bikini/face_1
   rotate: false
-  xy: 814, 665
+  xy: 666, 1131
   size: 153, 62
   orig: 153, 62
   offset: 0, 0
   index: -1
 pirate/face_1
   rotate: false
-  xy: 814, 665
+  xy: 666, 1131
   size: 153, 62
   orig: 153, 62
   offset: 0, 0
   index: -1
 armor/face_2
   rotate: false
-  xy: 602, 513
+  xy: 649, 403
   size: 153, 60
   orig: 153, 60
   offset: 0, 0
   index: -1
 bikini/face_2
   rotate: false
-  xy: 602, 513
+  xy: 649, 403
   size: 153, 60
   orig: 153, 60
   offset: 0, 0
   index: -1
 pirate/face_2
   rotate: false
-  xy: 602, 513
+  xy: 649, 403
   size: 153, 60
   orig: 153, 60
   offset: 0, 0
   index: -1
 armor/face_3
   rotate: false
-  xy: 592, 393
+  xy: 935, 844
   size: 153, 52
   orig: 153, 52
   offset: 0, 0
   index: -1
 bikini/face_3
   rotate: false
-  xy: 592, 393
+  xy: 935, 844
   size: 153, 52
   orig: 153, 52
   offset: 0, 0
   index: -1
 elf/face_3
   rotate: false
-  xy: 592, 393
+  xy: 935, 844
   size: 153, 52
   orig: 153, 52
   offset: 0, 0
   index: -1
 fairy/face_3
   rotate: false
-  xy: 592, 393
+  xy: 935, 844
   size: 153, 52
   orig: 153, 52
   offset: 0, 0
   index: -1
 magic/face_3
   rotate: false
-  xy: 592, 393
+  xy: 935, 844
   size: 153, 52
   orig: 153, 52
   offset: 0, 0
   index: -1
 pirate/face_3
   rotate: false
-  xy: 592, 393
+  xy: 935, 844
   size: 153, 52
   orig: 153, 52
   offset: 0, 0
   index: -1
 wedding/face_3
   rotate: false
-  xy: 592, 393
+  xy: 935, 844
   size: 153, 52
   orig: 153, 52
   offset: 0, 0
   index: -1
 armor/head_feeler
   rotate: false
-  xy: 1473, 197
+  xy: 1056, 210
   size: 41, 55
   orig: 41, 55
   offset: 0, 0
   index: -1
 bikini/head_feeler
   rotate: false
-  xy: 1473, 197
+  xy: 1056, 210
   size: 41, 55
   orig: 41, 55
   offset: 0, 0
   index: -1
 dress_B/head_feeler
   rotate: false
-  xy: 1473, 197
+  xy: 1056, 210
   size: 41, 55
   orig: 41, 55
   offset: 0, 0
   index: -1
 dress_R/head_feeler
   rotate: false
-  xy: 1473, 197
+  xy: 1056, 210
   size: 41, 55
   orig: 41, 55
   offset: 0, 0
   index: -1
 elf/head_feeler
   rotate: false
-  xy: 1473, 197
+  xy: 1056, 210
   size: 41, 55
   orig: 41, 55
   offset: 0, 0
   index: -1
 fairy/head_feeler
   rotate: false
-  xy: 1473, 197
+  xy: 1056, 210
   size: 41, 55
   orig: 41, 55
   offset: 0, 0
   index: -1
 idol/head_feeler
   rotate: false
-  xy: 1473, 197
+  xy: 1056, 210
   size: 41, 55
   orig: 41, 55
   offset: 0, 0
   index: -1
 knight_gold/head_feeler
   rotate: false
-  xy: 1473, 197
+  xy: 1056, 210
   size: 41, 55
   orig: 41, 55
   offset: 0, 0
   index: -1
 knight_holy/head_feeler
   rotate: false
-  xy: 1473, 197
+  xy: 1056, 210
   size: 41, 55
   orig: 41, 55
   offset: 0, 0
   index: -1
 knight_royal/head_feeler
   rotate: false
-  xy: 1473, 197
+  xy: 1056, 210
   size: 41, 55
   orig: 41, 55
   offset: 0, 0
   index: -1
 knight_sun/head_feeler
   rotate: false
-  xy: 1473, 197
+  xy: 1056, 210
   size: 41, 55
   orig: 41, 55
   offset: 0, 0
   index: -1
 marine/head_feeler
   rotate: false
-  xy: 1473, 197
+  xy: 1056, 210
   size: 41, 55
   orig: 41, 55
   offset: 0, 0
   index: -1
 nobility/head_feeler
   rotate: false
-  xy: 1473, 197
+  xy: 1056, 210
   size: 41, 55
   orig: 41, 55
   offset: 0, 0
   index: -1
 pirate/head_feeler
   rotate: false
-  xy: 1473, 197
+  xy: 1056, 210
   size: 41, 55
   orig: 41, 55
   offset: 0, 0
   index: -1
 uniform/head_feeler
   rotate: false
-  xy: 1473, 197
+  xy: 1056, 210
   size: 41, 55
   orig: 41, 55
   offset: 0, 0
   index: -1
 wedding/head_feeler
   rotate: false
-  xy: 1473, 197
+  xy: 1056, 210
   size: 41, 55
   orig: 41, 55
   offset: 0, 0
   index: -1
 armor/head_tail
   rotate: false
-  xy: 690, 789
+  xy: 680, 1295
   size: 133, 223
   orig: 133, 223
   offset: 0, 0
   index: -1
 bikini/head_tail
   rotate: false
-  xy: 690, 789
+  xy: 680, 1295
   size: 133, 223
   orig: 133, 223
   offset: 0, 0
   index: -1
 dress_R/head_tail
   rotate: false
-  xy: 690, 789
+  xy: 680, 1295
   size: 133, 223
   orig: 133, 223
   offset: 0, 0
   index: -1
 elf/head_tail
   rotate: false
-  xy: 690, 789
+  xy: 680, 1295
   size: 133, 223
   orig: 133, 223
   offset: 0, 0
   index: -1
 fairy/head_tail
   rotate: false
-  xy: 690, 789
+  xy: 680, 1295
   size: 133, 223
   orig: 133, 223
   offset: 0, 0
   index: -1
 idol/head_tail
   rotate: false
-  xy: 690, 789
+  xy: 680, 1295
   size: 133, 223
   orig: 133, 223
   offset: 0, 0
   index: -1
 knight_gold/head_tail
   rotate: false
-  xy: 690, 789
+  xy: 680, 1295
   size: 133, 223
   orig: 133, 223
   offset: 0, 0
   index: -1
 knight_holy/head_tail
   rotate: false
-  xy: 690, 789
+  xy: 680, 1295
   size: 133, 223
   orig: 133, 223
   offset: 0, 0
   index: -1
 knight_nomal/head_tail
   rotate: false
-  xy: 690, 789
+  xy: 680, 1295
   size: 133, 223
   orig: 133, 223
   offset: 0, 0
   index: -1
 knight_royal/head_tail
   rotate: false
-  xy: 690, 789
+  xy: 680, 1295
   size: 133, 223
   orig: 133, 223
   offset: 0, 0
   index: -1
 knight_sun/head_tail
   rotate: false
-  xy: 690, 789
+  xy: 680, 1295
   size: 133, 223
   orig: 133, 223
   offset: 0, 0
   index: -1
 marine/head_tail
   rotate: false
-  xy: 690, 789
+  xy: 680, 1295
   size: 133, 223
   orig: 133, 223
   offset: 0, 0
   index: -1
 nobility/head_tail
   rotate: false
-  xy: 690, 789
+  xy: 680, 1295
   size: 133, 223
   orig: 133, 223
   offset: 0, 0
   index: -1
 pirate/head_tail
   rotate: false
-  xy: 690, 789
+  xy: 680, 1295
   size: 133, 223
   orig: 133, 223
   offset: 0, 0
   index: -1
 strawberry/head_tail
   rotate: false
-  xy: 690, 789
+  xy: 680, 1295
   size: 133, 223
   orig: 133, 223
   offset: 0, 0
   index: -1
 wedding/head_tail
   rotate: false
-  xy: 690, 789
+  xy: 680, 1295
   size: 133, 223
   orig: 133, 223
   offset: 0, 0
   index: -1
 armor/mouth_1
   rotate: false
-  xy: 1108, 3
+  xy: 1666, 396
   size: 33, 15
   orig: 33, 15
   offset: 0, 0
   index: -1
 bikini/mouth_1
   rotate: false
-  xy: 1108, 3
+  xy: 1666, 396
   size: 33, 15
   orig: 33, 15
   offset: 0, 0
   index: -1
 armor/mouth_2
   rotate: false
-  xy: 1879, 128
+  xy: 1826, 36
   size: 36, 30
   orig: 36, 30
   offset: 0, 0
   index: -1
 bikini/mouth_2
   rotate: false
-  xy: 1879, 128
+  xy: 1826, 36
   size: 36, 30
   orig: 36, 30
   offset: 0, 0
   index: -1
 pirate/mouth_2
   rotate: false
-  xy: 1879, 128
+  xy: 1826, 36
   size: 36, 30
   orig: 36, 30
   offset: 0, 0
   index: -1
 armor/ribbon
   rotate: false
-  xy: 229, 530
+  xy: 430, 267
   size: 93, 176
   orig: 93, 176
   offset: 0, 0
   index: -1
 bikini/ribbon
   rotate: false
-  xy: 229, 530
+  xy: 430, 267
   size: 93, 176
   orig: 93, 176
   offset: 0, 0
   index: -1
 bikini/L_arm_1
   rotate: false
-  xy: 1517, 298
+  xy: 1498, 133
   size: 45, 54
   orig: 45, 54
   offset: 0, 0
   index: -1
 wedding/L_arm_1
   rotate: false
-  xy: 1517, 298
+  xy: 1498, 133
   size: 45, 54
   orig: 45, 54
   offset: 0, 0
   index: -1
 bikini/L_arm_2
   rotate: false
-  xy: 1442, 180
+  xy: 1966, 227
   size: 28, 36
   orig: 28, 36
   offset: 0, 0
   index: -1
 elf/L_arm_2
   rotate: false
-  xy: 1442, 180
+  xy: 1966, 227
   size: 28, 36
   orig: 28, 36
   offset: 0, 0
   index: -1
 fairy/L_arm_2
   rotate: false
-  xy: 1442, 180
+  xy: 1966, 227
   size: 28, 36
   orig: 28, 36
   offset: 0, 0
   index: -1
 idol/L_arm_2
   rotate: false
-  xy: 1442, 180
+  xy: 1966, 227
   size: 28, 36
   orig: 28, 36
   offset: 0, 0
   index: -1
 marine/L_arm_2
   rotate: false
-  xy: 1442, 180
+  xy: 1966, 227
   size: 28, 36
   orig: 28, 36
   offset: 0, 0
   index: -1
 strawberry/L_arm_2
   rotate: false
-  xy: 1442, 180
+  xy: 1966, 227
   size: 28, 36
   orig: 28, 36
   offset: 0, 0
   index: -1
 wedding/L_arm_2
   rotate: false
-  xy: 1442, 180
+  xy: 1966, 227
   size: 28, 36
   orig: 28, 36
   offset: 0, 0
   index: -1
 bikini/L_hand
   rotate: false
-  xy: 1630, 96
+  xy: 1930, 64
   size: 28, 28
   orig: 28, 28
   offset: 0, 0
   index: -1
 bikini/L_leg_1
   rotate: false
-  xy: 1710, 1135
+  xy: 1747, 672
   size: 53, 74
   orig: 53, 74
   offset: 0, 0
   index: -1
 bikini/L_leg_2
   rotate: false
-  xy: 1234, 326
+  xy: 1100, 210
   size: 38, 57
   orig: 38, 57
   offset: 0, 0
   index: -1
 bikini/R_arm_1
   rotate: false
-  xy: 1918, 142
+  xy: 1628, 72
   size: 42, 51
   orig: 42, 51
   offset: 0, 0
   index: -1
 wedding/R_arm_1
   rotate: false
-  xy: 1918, 142
+  xy: 1628, 72
   size: 42, 51
   orig: 42, 51
   offset: 0, 0
   index: -1
 bikini/R_arm_2
   rotate: false
-  xy: 1056, 289
+  xy: 1823, 143
   size: 37, 45
   orig: 37, 45
   offset: 0, 0
   index: -1
 wedding/R_arm_2
   rotate: false
-  xy: 1056, 289
+  xy: 1823, 143
   size: 37, 45
   orig: 37, 45
   offset: 0, 0
   index: -1
 bikini/R_hand
   rotate: false
-  xy: 1963, 27
+  xy: 1859, 3
   size: 30, 30
   orig: 30, 30
   offset: 0, 0
   index: -1
 doll/R_hand
   rotate: false
-  xy: 1963, 27
+  xy: 1859, 3
   size: 30, 30
   orig: 30, 30
   offset: 0, 0
   index: -1
 dress_B/R_hand
   rotate: false
-  xy: 1963, 27
+  xy: 1859, 3
   size: 30, 30
   orig: 30, 30
   offset: 0, 0
   index: -1
 dress_R/R_hand
   rotate: false
-  xy: 1963, 27
+  xy: 1859, 3
   size: 30, 30
   orig: 30, 30
   offset: 0, 0
   index: -1
 elf/R_hand
   rotate: false
-  xy: 1963, 27
+  xy: 1859, 3
   size: 30, 30
   orig: 30, 30
   offset: 0, 0
   index: -1
 fairy/R_hand
   rotate: false
-  xy: 1963, 27
+  xy: 1859, 3
   size: 30, 30
   orig: 30, 30
   offset: 0, 0
   index: -1
 idol/R_hand
   rotate: false
-  xy: 1963, 27
+  xy: 1859, 3
   size: 30, 30
   orig: 30, 30
   offset: 0, 0
   index: -1
 marine/R_hand
   rotate: false
-  xy: 1963, 27
+  xy: 1859, 3
   size: 30, 30
   orig: 30, 30
   offset: 0, 0
   index: -1
 strawberry/R_hand
   rotate: false
-  xy: 1963, 27
+  xy: 1859, 3
   size: 30, 30
   orig: 30, 30
   offset: 0, 0
   index: -1
 uniform/R_hand
   rotate: false
-  xy: 1963, 27
+  xy: 1859, 3
   size: 30, 30
   orig: 30, 30
   offset: 0, 0
   index: -1
 wedding/R_hand
   rotate: false
-  xy: 1963, 27
+  xy: 1859, 3
   size: 30, 30
   orig: 30, 30
   offset: 0, 0
   index: -1
 bikini/R_leg_1
   rotate: false
-  xy: 1835, 510
+  xy: 975, 137
   size: 42, 70
   orig: 42, 70
   offset: 0, 0
   index: -1
 bikini/R_leg_2
   rotate: false
-  xy: 756, 1153
+  xy: 1461, 133
   size: 34, 61
   orig: 34, 61
   offset: 0, 0
   index: -1
 bikini/body_1
   rotate: false
-  xy: 1871, 367
+  xy: 1236, 247
   size: 65, 42
   orig: 65, 42
   offset: 0, 0
   index: -1
 bikini/body_2
   rotate: false
-  xy: 1972, 499
+  xy: 162, 3
   size: 55, 39
   orig: 55, 39
   offset: 0, 0
   index: -1
 bikini/body_3
   rotate: false
-  xy: 1595, 1046
+  xy: 1669, 585
   size: 76, 63
   orig: 76, 63
   offset: 0, 0
   index: -1
 bikini/body_3a
   rotate: false
-  xy: 1902, 802
+  xy: 347, 679
   size: 76, 24
   orig: 76, 24
   offset: 0, 0
   index: -1
 bikini/head
   rotate: false
-  xy: 3, 540
+  xy: 3, 693
   size: 223, 213
   orig: 223, 213
   offset: 0, 0
   index: -1
 armor/head
   rotate: false
-  xy: 3, 540
+  xy: 3, 693
   size: 223, 213
   orig: 223, 213
   offset: 0, 0
   index: -1
 carnival/L_arm_1
   rotate: false
-  xy: 1744, 809
+  xy: 949, 338
   size: 50, 60
   orig: 50, 60
   offset: 0, 0
   index: -1
 carnival/L_arm_2
   rotate: false
-  xy: 1996, 28
+  xy: 1800, 424
   size: 34, 41
   orig: 34, 41
   offset: 0, 0
   index: -1
 carnival/L_hand
   rotate: false
-  xy: 1404, 38
+  xy: 1784, 97
   size: 35, 38
   orig: 35, 38
   offset: 0, 0
   index: -1
 carnival/L_leg_1
   rotate: false
-  xy: 1797, 798
+  xy: 1748, 598
   size: 50, 71
   orig: 50, 71
   offset: 0, 0
   index: -1
 carnival/L_leg_2
   rotate: false
-  xy: 1020, 5
+  xy: 1189, 336
   size: 44, 64
   orig: 44, 64
   offset: 0, 0
   index: -1
 carnival/R_arm_1
   rotate: false
-  xy: 1872, 309
+  xy: 1668, 527
   size: 47, 55
   orig: 47, 55
   offset: 0, 0
   index: -1
 carnival/R_arm_2
   rotate: false
-  xy: 1839, 583
+  xy: 1948, 480
   size: 42, 52
   orig: 42, 52
   offset: 0, 0
   index: -1
 carnival/R_hand
   rotate: false
-  xy: 1311, 154
+  xy: 1927, 228
   size: 36, 35
   orig: 36, 35
   offset: 0, 0
   index: -1
 carnival/R_leg_1
   rotate: false
-  xy: 1850, 813
+  xy: 764, 1551
   size: 49, 70
   orig: 49, 70
   offset: 0, 0
   index: -1
 carnival/R_leg_2
   rotate: false
-  xy: 1067, 4
+  xy: 1960, 1321
   size: 38, 65
   orig: 38, 65
   offset: 0, 0
   index: -1
 carnival/body_1
   rotate: false
-  xy: 994, 127
+  xy: 485, 3
   size: 74, 59
   orig: 74, 59
   offset: 0, 0
   index: -1
 carnival/body_2
   rotate: false
-  xy: 1855, 463
+  xy: 1498, 190
   size: 66, 44
   orig: 66, 44
   offset: 0, 0
   index: -1
 carnival/body_2_sub
   rotate: false
-  xy: 228, 65
+  xy: 580, 48
   size: 104, 82
   orig: 104, 82
   offset: 0, 0
   index: -1
 carnival/body_3
   rotate: false
-  xy: 1943, 1049
+  xy: 1880, 604
   size: 78, 53
   orig: 78, 53
   offset: 0, 0
   index: -1
 carnival/dark
   rotate: false
-  xy: 1598, 96
+  xy: 1961, 67
   size: 29, 28
   orig: 29, 28
   offset: 0, 0
   index: -1
 carnival/eyeblow_1
   rotate: false
-  xy: 1149, 237
+  xy: 1354, 206
   size: 61, 18
   orig: 61, 18
   offset: 0, 0
   index: -1
 carnival/eyeblow_1_1
   rotate: false
-  xy: 1101, 434
+  xy: 1099, 495
   size: 63, 25
   orig: 63, 25
   offset: 0, 0
   index: -1
 carnival/eyeblow_2
   rotate: false
-  xy: 1925, 781
+  xy: 1484, 3
   size: 53, 18
   orig: 53, 18
   offset: 0, 0
   index: -1
 carnival/eyeblow_2_1
   rotate: false
-  xy: 217, 1220
+  xy: 753, 1525
   size: 53, 23
   orig: 53, 23
   offset: 0, 0
   index: -1
 carnival/face_1
   rotate: false
-  xy: 592, 448
+  xy: 1335, 1146
   size: 153, 62
   orig: 153, 62
   offset: 0, 0
   index: -1
 carnival/face_2
   rotate: false
-  xy: 748, 445
+  xy: 935, 899
   size: 153, 60
   orig: 153, 60
   offset: 0, 0
   index: -1
 carnival/face_3
   rotate: false
-  xy: 748, 390
+  xy: 1091, 817
   size: 153, 52
   orig: 153, 52
   offset: 0, 0
   index: -1
 carnival/face_4
   rotate: false
-  xy: 734, 230
+  xy: 1345, 1262
   size: 133, 58
   orig: 133, 58
   offset: 0, 0
   index: -1
 carnival/face_5
   rotate: false
-  xy: 826, 730
+  xy: 791, 696
   size: 138, 58
   orig: 138, 58
   offset: 0, 0
   index: -1
 carnival/head
   rotate: false
-  xy: 3, 756
+  xy: 3, 909
   size: 227, 219
   orig: 227, 219
   offset: 0, 0
   index: -1
 carnival/head_feeler
   rotate: false
-  xy: 1981, 776
+  xy: 1000, 456
   size: 47, 61
   orig: 47, 61
   offset: 0, 0
   index: -1
 carnival/head_side_1
   rotate: false
-  xy: 542, 543
+  xy: 1550, 563
   size: 57, 142
   orig: 57, 142
   offset: 0, 0
   index: -1
 carnival/head_side_2
   rotate: false
-  xy: 445, 397
+  xy: 1610, 586
   size: 56, 145
   orig: 56, 145
   offset: 0, 0
   index: -1
 wedding/head_side_2
   rotate: false
-  xy: 445, 397
+  xy: 1610, 586
   size: 56, 145
   orig: 56, 145
   offset: 0, 0
   index: -1
 carnival/head_tail
   rotate: false
-  xy: 826, 791
+  xy: 816, 1392
   size: 139, 229
   orig: 139, 229
   offset: 0, 0
   index: -1
 carnival/mask
   rotate: false
-  xy: 756, 1023
+  xy: 1685, 1252
   size: 218, 127
   orig: 218, 127
   offset: 0, 0
   index: -1
 carnival/mask_sub
   rotate: false
-  xy: 1544, 786
+  xy: 687, 56
   size: 101, 107
   orig: 101, 107
   offset: 0, 0
   index: -1
 carnival/mouth_1
   rotate: false
-  xy: 753, 670
+  xy: 623, 409
   size: 23, 11
   orig: 23, 11
   offset: 0, 0
   index: -1
 knight_gold/mouth_1
   rotate: false
-  xy: 753, 670
+  xy: 623, 409
   size: 23, 11
   orig: 23, 11
   offset: 0, 0
   index: -1
 marine/mouth_1
   rotate: false
-  xy: 753, 670
+  xy: 623, 409
   size: 23, 11
   orig: 23, 11
   offset: 0, 0
   index: -1
 carnival/mouth_2
   rotate: false
-  xy: 1190, 14
+  xy: 1820, 3
   size: 36, 30
   orig: 36, 30
   offset: 0, 0
   index: -1
 carnival/mouth_3
   rotate: false
-  xy: 1096, 291
+  xy: 1261, 206
   size: 50, 38
   orig: 50, 38
   offset: 0, 0
   index: -1
 cat/L_arm_1
   rotate: false
-  xy: 1792, 196
+  xy: 1546, 133
   size: 44, 54
   orig: 44, 54
   offset: 0, 0
   index: -1
 cat/L_arm_2
   rotate: false
-  xy: 1324, 657
+  xy: 1793, 341
   size: 36, 40
   orig: 36, 40
   offset: 0, 0
   index: -1
 cat/L_hand
   rotate: false
-  xy: 1692, 97
+  xy: 1931, 33
   size: 28, 28
   orig: 28, 28
   offset: 0, 0
   index: -1
 nobility/L_hand
   rotate: false
-  xy: 1692, 97
+  xy: 1931, 33
   size: 28, 28
   orig: 28, 28
   offset: 0, 0
   index: -1
 pirate/L_hand
   rotate: false
-  xy: 1692, 97
+  xy: 1931, 33
   size: 28, 28
   orig: 28, 28
   offset: 0, 0
   index: -1
 cat/L_leg_1
   rotate: false
-  xy: 1986, 930
+  xy: 1063, 142
   size: 44, 65
   orig: 44, 65
   offset: 0, 0
   index: -1
 cat/L_leg_2
   rotate: false
-  xy: 1701, 243
+  xy: 1959, 1389
   size: 39, 59
   orig: 39, 59
   offset: 0, 0
   index: -1
 cat/R_arm_1
   rotate: false
-  xy: 1473, 145
+  xy: 1743, 356
   size: 41, 49
   orig: 41, 49
   offset: 0, 0
   index: -1
 cat/R_arm_2
   rotate: false
-  xy: 1879, 79
+  xy: 1443, 84
   size: 38, 46
   orig: 38, 46
   offset: 0, 0
   index: -1
 cat/R_hand
   rotate: false
-  xy: 1484, 78
+  xy: 1932, 195
   size: 30, 30
   orig: 30, 30
   offset: 0, 0
   index: -1
 knight_holy/R_hand
   rotate: false
-  xy: 1484, 78
+  xy: 1932, 195
   size: 30, 30
   orig: 30, 30
   offset: 0, 0
   index: -1
 knight_nomal/R_hand
   rotate: false
-  xy: 1484, 78
+  xy: 1932, 195
   size: 30, 30
   orig: 30, 30
   offset: 0, 0
   index: -1
 nobility/R_hand
   rotate: false
-  xy: 1484, 78
+  xy: 1932, 195
   size: 30, 30
   orig: 30, 30
   offset: 0, 0
   index: -1
 pirate/R_hand
   rotate: false
-  xy: 1484, 78
+  xy: 1932, 195
   size: 30, 30
   orig: 30, 30
   offset: 0, 0
   index: -1
 cat/R_leg_1
   rotate: false
-  xy: 1243, 259
+  xy: 1856, 534
   size: 43, 64
   orig: 43, 64
   offset: 0, 0
   index: -1
 cat/R_leg_2
   rotate: false
-  xy: 1839, 207
+  xy: 1593, 128
   size: 32, 59
   orig: 32, 59
   offset: 0, 0
   index: -1
 cat/body_1
   rotate: false
-  xy: 1801, 408
+  xy: 935, 401
   size: 66, 52
   orig: 66, 52
   offset: 0, 0
   index: -1
 cat/body_2
   rotate: false
-  xy: 1101, 389
+  xy: 1610, 541
   size: 55, 42
   orig: 55, 42
   offset: 0, 0
   index: -1
 cat/body_3
   rotate: false
-  xy: 1766, 1193
+  xy: 1805, 887
   size: 97, 50
   orig: 97, 50
   offset: 0, 0
   index: -1
 cat/body_3_tail
   rotate: false
-  xy: 1245, 522
+  xy: 804, 821
   size: 128, 63
   orig: 128, 63
   offset: 0, 0
   index: -1
 cat/hat_front_1
   rotate: false
-  xy: 1766, 1246
+  xy: 1910, 1110
   size: 88, 79
   orig: 88, 79
   offset: 0, 0
   index: -1
 cat/hat_front_2
   rotate: false
-  xy: 1666, 720
+  xy: 1805, 798
   size: 97, 86
   orig: 97, 86
   offset: 0, 0
   index: -1
 cat/head
   rotate: false
-  xy: 217, 985
+  xy: 3, 45
   size: 221, 213
   orig: 221, 213
   offset: 0, 0
   index: -1
 doll/head
   rotate: false
-  xy: 217, 985
+  xy: 3, 45
   size: 221, 213
   orig: 221, 213
   offset: 0, 0
   index: -1
 dress_R/head
   rotate: false
-  xy: 217, 985
+  xy: 3, 45
   size: 221, 213
   orig: 221, 213
   offset: 0, 0
   index: -1
 idol/head
   rotate: false
-  xy: 217, 985
+  xy: 3, 45
   size: 221, 213
   orig: 221, 213
   offset: 0, 0
   index: -1
 knight_holy/head
   rotate: false
-  xy: 217, 985
+  xy: 3, 45
   size: 221, 213
   orig: 221, 213
   offset: 0, 0
   index: -1
 knight_nomal/head
   rotate: false
-  xy: 217, 985
+  xy: 3, 45
   size: 221, 213
   orig: 221, 213
   offset: 0, 0
   index: -1
 knight_royal/head
   rotate: false
-  xy: 217, 985
+  xy: 3, 45
   size: 221, 213
   orig: 221, 213
   offset: 0, 0
   index: -1
 knight_sun/head
   rotate: false
-  xy: 217, 985
+  xy: 3, 45
   size: 221, 213
   orig: 221, 213
   offset: 0, 0
   index: -1
 marine/head
   rotate: false
-  xy: 217, 985
+  xy: 3, 45
   size: 221, 213
   orig: 221, 213
   offset: 0, 0
   index: -1
 nobility/head
   rotate: false
-  xy: 217, 985
+  xy: 3, 45
   size: 221, 213
   orig: 221, 213
   offset: 0, 0
   index: -1
 pirate/head
   rotate: false
-  xy: 217, 985
+  xy: 3, 45
   size: 221, 213
   orig: 221, 213
   offset: 0, 0
   index: -1
 uniform/head
   rotate: false
-  xy: 217, 985
+  xy: 3, 45
   size: 221, 213
   orig: 221, 213
   offset: 0, 0
   index: -1
 cat/head_tail_ribbon
   rotate: false
-  xy: 325, 396
+  xy: 430, 124
   size: 117, 140
   orig: 117, 140
   offset: 0, 0
   index: -1
 cat/head_tail_twin
   rotate: false
-  xy: 665, 1015
+  xy: 550, 707
   size: 88, 199
   orig: 88, 199
   offset: 0, 0
   index: -1
 cat/mouth_1
   rotate: false
-  xy: 1478, 1179
+  xy: 1608, 922
   size: 29, 12
   orig: 29, 12
   offset: 0, 0
   index: -1
 fairy/mouth_1
   rotate: false
-  xy: 1478, 1179
+  xy: 1608, 922
   size: 29, 12
   orig: 29, 12
   offset: 0, 0
   index: -1
 magic/mouth_1
   rotate: false
-  xy: 1478, 1179
+  xy: 1608, 922
   size: 29, 12
   orig: 29, 12
   offset: 0, 0
   index: -1
 strawberry/mouth_1
   rotate: false
-  xy: 1478, 1179
+  xy: 1608, 922
   size: 29, 12
   orig: 29, 12
   offset: 0, 0
   index: -1
 doll/L_arm_1
   rotate: false
-  xy: 1976, 581
+  xy: 1307, 304
   size: 46, 56
   orig: 46, 56
   offset: 0, 0
   index: -1
 doll/L_arm_2
   rotate: false
-  xy: 1839, 269
+  xy: 1756, 3
   size: 30, 39
   orig: 30, 39
   offset: 0, 0
   index: -1
 doll/L_hand
   rotate: false
-  xy: 1661, 96
+  xy: 1960, 98
   size: 28, 29
   orig: 28, 29
   offset: 0, 0
   index: -1
 dress_B/L_hand
   rotate: false
-  xy: 1661, 96
+  xy: 1960, 98
   size: 28, 29
   orig: 28, 29
   offset: 0, 0
   index: -1
 dress_R/L_hand
   rotate: false
-  xy: 1661, 96
+  xy: 1960, 98
   size: 28, 29
   orig: 28, 29
   offset: 0, 0
   index: -1
 idol/L_hand
   rotate: false
-  xy: 1661, 96
+  xy: 1960, 98
   size: 28, 29
   orig: 28, 29
   offset: 0, 0
   index: -1
 marine/L_hand
   rotate: false
-  xy: 1661, 96
+  xy: 1960, 98
   size: 28, 29
   orig: 28, 29
   offset: 0, 0
   index: -1
 strawberry/L_hand
   rotate: false
-  xy: 1661, 96
+  xy: 1960, 98
   size: 28, 29
   orig: 28, 29
   offset: 0, 0
   index: -1
 uniform/L_hand
   rotate: false
-  xy: 1661, 96
+  xy: 1960, 98
   size: 28, 29
   orig: 28, 29
   offset: 0, 0
   index: -1
 doll/L_leg_1
   rotate: false
-  xy: 1986, 862
+  xy: 1071, 74
   size: 44, 65
   orig: 44, 65
   offset: 0, 0
   index: -1
 doll/L_leg_2
   rotate: false
-  xy: 1933, 581
+  xy: 1590, 451
   size: 40, 58
   orig: 40, 58
   offset: 0, 0
   index: -1
 doll/R_arm_1
   rotate: false
-  xy: 1918, 196
+  xy: 1582, 72
   size: 43, 53
   orig: 43, 53
   offset: 0, 0
   index: -1
 doll/R_arm_2
   rotate: false
-  xy: 1882, 748
+  xy: 1772, 187
   size: 40, 47
   orig: 40, 47
   offset: 0, 0
   index: -1
 doll/R_leg_1
   rotate: false
-  xy: 1289, 259
+  xy: 1157, 143
   size: 43, 64
   orig: 43, 64
   offset: 0, 0
   index: -1
 doll/R_leg_2
   rotate: false
-  xy: 1733, 123
+  xy: 1610, 278
   size: 32, 59
   orig: 32, 59
   offset: 0, 0
   index: -1
 doll/body_1
   rotate: false
-  xy: 985, 72
+  xy: 1499, 348
   size: 68, 52
   orig: 68, 52
   offset: 0, 0
   index: -1
 doll/body_2
   rotate: false
-  xy: 1960, 1270
+  xy: 894, 210
   size: 70, 55
   orig: 70, 55
   offset: 0, 0
   index: -1
 doll/body_3
   rotate: false
-  xy: 712, 79
+  xy: 1244, 564
   size: 111, 73
   orig: 111, 73
   offset: 0, 0
   index: -1
 doll/hat_front
   rotate: false
-  xy: 1244, 1342
+  xy: 492, 1612
   size: 269, 179
   orig: 269, 179
   offset: 0, 0
   index: -1
 doll/head_long
   rotate: false
-  xy: 457, 789
+  xy: 1755, 1598
   size: 230, 193
   orig: 230, 193
   offset: 0, 0
   index: -1
 dress_B/head_long
   rotate: false
-  xy: 457, 789
+  xy: 1755, 1598
   size: 230, 193
   orig: 230, 193
   offset: 0, 0
   index: -1
 dress_B/L_arm_1
   rotate: false
-  xy: 1275, 326
+  xy: 883, 3
   size: 45, 57
   orig: 45, 57
   offset: 0, 0
   index: -1
 dress_B/L_arm_2
   rotate: false
-  xy: 1967, 266
+  xy: 1789, 3
   size: 28, 39
   orig: 28, 39
   offset: 0, 0
   index: -1
 dress_B/L_leg_1
   rotate: false
-  xy: 1929, 642
+  xy: 1072, 6
   size: 44, 65
   orig: 44, 65
   offset: 0, 0
   index: -1
 dress_R/L_leg_1
   rotate: false
-  xy: 1929, 642
+  xy: 1072, 6
   size: 44, 65
   orig: 44, 65
   offset: 0, 0
   index: -1
 dress_B/L_leg_2
   rotate: false
-  xy: 1803, 73
+  xy: 1608, 217
   size: 38, 58
   orig: 38, 58
   offset: 0, 0
   index: -1
 dress_B/R_arm_1
   rotate: false
-  xy: 1837, 743
+  xy: 1621, 396
   size: 42, 52
   orig: 42, 52
   offset: 0, 0
   index: -1
 dress_B/R_arm_2
   rotate: false
-  xy: 1886, 638
+  xy: 1801, 291
   size: 40, 47
   orig: 40, 47
   offset: 0, 0
   index: -1
 dress_B/R_leg_1
   rotate: false
-  xy: 1335, 261
+  xy: 1165, 76
   size: 43, 64
   orig: 43, 64
   offset: 0, 0
   index: -1
 dress_R/R_leg_1
   rotate: false
-  xy: 1335, 261
+  xy: 1165, 76
   size: 43, 64
   orig: 43, 64
   offset: 0, 0
   index: -1
 dress_B/R_leg_2
   rotate: false
-  xy: 1768, 133
+  xy: 1802, 468
   size: 32, 59
   orig: 32, 59
   offset: 0, 0
   index: -1
 dress_B/body_1
   rotate: false
-  xy: 1844, 886
+  xy: 1356, 324
   size: 68, 52
   orig: 68, 52
   offset: 0, 0
   index: -1
 dress_B/body_2
   rotate: false
-  xy: 1785, 1097
+  xy: 562, 3
   size: 73, 42
   orig: 73, 42
   offset: 0, 0
   index: -1
 dress_B/body_3
   rotate: false
-  xy: 713, 155
+  xy: 822, 1125
   size: 121, 72
   orig: 121, 72
   offset: 0, 0
   index: -1
 dress_B/head
   rotate: false
-  xy: 233, 769
+  xy: 1735, 1382
   size: 221, 213
   orig: 221, 213
   offset: 0, 0
   index: -1
 dress_B/head_long_sub
   rotate: false
-  xy: 504, 434
+  xy: 1819, 940
   size: 85, 106
   orig: 85, 106
   offset: 0, 0
   index: -1
 dress_B/mouth_1
   rotate: false
-  xy: 1229, 448
+  xy: 1114, 991
   size: 17, 11
   orig: 17, 11
   offset: 0, 0
   index: -1
 dress_R/mouth_1
   rotate: false
-  xy: 1229, 448
+  xy: 1114, 991
   size: 17, 11
   orig: 17, 11
   offset: 0, 0
   index: -1
 knight_holy/mouth_1
   rotate: false
-  xy: 1229, 448
+  xy: 1114, 991
   size: 17, 11
   orig: 17, 11
   offset: 0, 0
   index: -1
 nobility/mouth_1
   rotate: false
-  xy: 1229, 448
+  xy: 1114, 991
   size: 17, 11
   orig: 17, 11
   offset: 0, 0
   index: -1
 pirate/mouth_1
   rotate: false
-  xy: 1229, 448
+  xy: 1114, 991
   size: 17, 11
   orig: 17, 11
   offset: 0, 0
   index: -1
 dress_R/L_arm_1
   rotate: false
-  xy: 1517, 238
+  xy: 931, 3
   size: 45, 57
   orig: 45, 57
   offset: 0, 0
   index: -1
 dress_R/L_arm_2
   rotate: false
-  xy: 1967, 224
+  xy: 1967, 273
   size: 28, 39
   orig: 28, 39
   offset: 0, 0
   index: -1
 dress_R/L_leg_2
   rotate: false
-  xy: 1108, 21
+  xy: 1907, 476
   size: 38, 58
   orig: 38, 58
   offset: 0, 0
   index: -1
 dress_R/R_arm_1
   rotate: false
-  xy: 1838, 688
+  xy: 1654, 341
   size: 42, 52
   orig: 42, 52
   offset: 0, 0
   index: -1
 dress_R/R_arm_2
   rotate: false
-  xy: 1920, 31
+  xy: 1810, 241
   size: 40, 47
   orig: 40, 47
   offset: 0, 0
   index: -1
 dress_R/R_leg_2
   rotate: false
-  xy: 1844, 145
+  xy: 1837, 471
   size: 32, 59
   orig: 32, 59
   offset: 0, 0
   index: -1
 dress_R/body_1
   rotate: false
-  xy: 1915, 885
+  xy: 1427, 307
   size: 68, 52
   orig: 68, 52
   offset: 0, 0
   index: -1
 dress_R/body_2
   rotate: false
-  xy: 1785, 1052
+  xy: 976, 520
   size: 73, 42
   orig: 73, 42
   offset: 0, 0
   index: -1
 dress_R/body_3
   rotate: false
-  xy: 870, 214
+  xy: 804, 544
   size: 121, 72
   orig: 121, 72
   offset: 0, 0
   index: -1
 dress_R/head_ribbon
   rotate: false
-  xy: 1204, 932
+  xy: 446, 960
   size: 189, 107
   orig: 189, 107
   offset: 0, 0
   index: -1
 elf/L_arm_1
   rotate: false
-  xy: 1517, 181
+  xy: 1534, 76
   size: 45, 54
   orig: 45, 54
   offset: 0, 0
   index: -1
 elf/L_hand
   rotate: false
-  xy: 1723, 92
+  xy: 1962, 36
   size: 28, 28
   orig: 28, 28
   offset: 0, 0
   index: -1
 fairy/L_hand
   rotate: false
-  xy: 1723, 92
+  xy: 1962, 36
   size: 28, 28
   orig: 28, 28
   offset: 0, 0
   index: -1
 wedding/L_hand
   rotate: false
-  xy: 1723, 92
+  xy: 1962, 36
   size: 28, 28
   orig: 28, 28
   offset: 0, 0
   index: -1
 elf/L_leg_1
   rotate: false
-  xy: 1108, 223
+  xy: 1960, 1253
   size: 38, 65
   orig: 38, 65
   offset: 0, 0
   index: -1
 elf/L_leg_2
   rotate: false
-  xy: 1920, 81
+  xy: 1759, 469
   size: 40, 58
   orig: 40, 58
   offset: 0, 0
   index: -1
 elf/R_arm_1
   rotate: false
-  xy: 1440, 88
+  xy: 1757, 289
   size: 41, 49
   orig: 41, 49
   offset: 0, 0
   index: -1
 elf/R_arm_2
   rotate: false
-  xy: 1347, 7
+  xy: 1784, 138
   size: 36, 46
   orig: 36, 46
   offset: 0, 0
   index: -1
 fairy/R_arm_2
   rotate: false
-  xy: 1347, 7
+  xy: 1784, 138
   size: 36, 46
   orig: 36, 46
   offset: 0, 0
   index: -1
 idol/R_arm_2
   rotate: false
-  xy: 1347, 7
+  xy: 1784, 138
   size: 36, 46
   orig: 36, 46
   offset: 0, 0
   index: -1
 marine/R_arm_2
   rotate: false
-  xy: 1347, 7
+  xy: 1784, 138
   size: 36, 46
   orig: 36, 46
   offset: 0, 0
   index: -1
 strawberry/R_arm_2
   rotate: false
-  xy: 1347, 7
+  xy: 1784, 138
   size: 36, 46
   orig: 36, 46
   offset: 0, 0
   index: -1
 elf/R_leg_1
   rotate: false
-  xy: 1381, 262
+  xy: 1166, 9
   size: 43, 64
   orig: 43, 64
   offset: 0, 0
   index: -1
 elf/R_leg_2
   rotate: false
-  xy: 1674, 1070
+  xy: 1320, 425
   size: 33, 59
   orig: 33, 59
   offset: 0, 0
   index: -1
 elf/body_1
   rotate: false
-  xy: 1710, 1076
+  xy: 1515, 453
   size: 72, 56
   orig: 72, 56
   offset: 0, 0
   index: -1
 elf/body_2
   rotate: false
-  xy: 601, 73
+  xy: 1444, 515
   size: 74, 52
   orig: 74, 52
   offset: 0, 0
   index: -1
 elf/body_3
   rotate: false
-  xy: 718, 19
+  xy: 1805, 738
   size: 95, 57
   orig: 95, 57
   offset: 0, 0
   index: -1
 elf/ear
   rotate: false
-  xy: 1999, 1427
+  xy: 1628, 126
   size: 30, 61
   orig: 30, 61
   offset: 0, 0
   index: -1
 elf/face_1
   rotate: false
-  xy: 349, 233
+  xy: 1247, 843
   size: 147, 56
   orig: 147, 56
   offset: 0, 0
   index: -1
 wedding/face_1
   rotate: false
-  xy: 349, 233
+  xy: 1247, 843
   size: 147, 56
   orig: 147, 56
   offset: 0, 0
   index: -1
 elf/face_2
   rotate: false
-  xy: 347, 117
+  xy: 1450, 763
   size: 147, 54
   orig: 147, 54
   offset: 0, 0
   index: -1
 wedding/face_2
   rotate: false
-  xy: 347, 117
+  xy: 1450, 763
   size: 147, 54
   orig: 147, 54
   offset: 0, 0
   index: -1
 elf/head
   rotate: false
-  xy: 523, 1308
+  xy: 3, 1347
   size: 240, 213
   orig: 240, 213
   offset: 0, 0
   index: -1
 elf/head_ribbon
   rotate: false
-  xy: 1365, 588
+  xy: 670, 166
   size: 111, 107
   orig: 111, 107
   offset: 0, 0
   index: -1
 elf/mouth_1
   rotate: false
-  xy: 1534, 698
+  xy: 1873, 366
   size: 27, 9
   orig: 27, 9
   offset: 0, 0
   index: -1
 knight_nomal/mouth_1
   rotate: false
-  xy: 1534, 698
+  xy: 1873, 366
   size: 27, 9
   orig: 27, 9
   offset: 0, 0
   index: -1
 fairy/L_arm_1
   rotate: false
-  xy: 1101, 332
+  xy: 1307, 247
   size: 46, 54
   orig: 46, 54
   offset: 0, 0
   index: -1
 fairy/L_leg_1
   rotate: false
-  xy: 1925, 513
+  xy: 1099, 270
   size: 44, 65
   orig: 44, 65
   offset: 0, 0
   index: -1
 fairy/L_leg_2
   rotate: false
-  xy: 1141, 94
+  xy: 1649, 217
   size: 38, 58
   orig: 38, 58
   offset: 0, 0
   index: -1
 fairy/R_arm_1
   rotate: false
-  xy: 1939, 411
+  xy: 1766, 237
   size: 41, 49
   orig: 41, 49
   offset: 0, 0
   index: -1
 idol/R_arm_1
   rotate: false
-  xy: 1939, 411
+  xy: 1766, 237
   size: 41, 49
   orig: 41, 49
   offset: 0, 0
   index: -1
 fairy/R_leg_1
   rotate: false
-  xy: 1427, 262
+  xy: 1203, 143
   size: 43, 64
   orig: 43, 64
   offset: 0, 0
   index: -1
 strawberry/R_leg_1
   rotate: false
-  xy: 1427, 262
+  xy: 1203, 143
   size: 43, 64
   orig: 43, 64
   offset: 0, 0
   index: -1
 fairy/R_leg_2
   rotate: false
-  xy: 1844, 83
+  xy: 1872, 472
   size: 32, 59
   orig: 32, 59
   offset: 0, 0
   index: -1
 fairy/body_1
   rotate: false
-  xy: 1773, 872
+  xy: 1498, 293
   size: 68, 52
   orig: 68, 52
   offset: 0, 0
   index: -1
 fairy/body_2
   rotate: false
-  xy: 1861, 1120
+  xy: 1905, 761
   size: 83, 61
   orig: 83, 61
   offset: 0, 0
   index: -1
 fairy/body_3
   rotate: false
-  xy: 1400, 732
+  xy: 788, 757
   size: 138, 61
   orig: 138, 61
   offset: 0, 0
   index: -1
 fairy/ear
   rotate: false
-  xy: 1742, 1004
+  xy: 1020, 138
   size: 40, 69
   orig: 40, 69
   offset: 0, 0
   index: -1
 knight_gold/ear
   rotate: false
-  xy: 1742, 1004
+  xy: 1020, 138
   size: 40, 69
   orig: 40, 69
   offset: 0, 0
   index: -1
 fairy/hat_front
   rotate: false
-  xy: 273, 1201
+  xy: 1014, 1554
   size: 257, 89
   orig: 257, 89
   offset: 0, 0
   index: -1
 fairy/head
   rotate: false
-  xy: 766, 1308
+  xy: 253, 1578
   size: 236, 213
   orig: 236, 213
   offset: 0, 0
   index: -1
 fairy/wing
   rotate: false
-  xy: 1543, 896
+  xy: 1903, 660
   size: 94, 98
   orig: 94, 98
   offset: 0, 0
   index: -1
 idol/L_arm_1
   rotate: false
-  xy: 1517, 123
+  xy: 1395, 84
   size: 45, 55
   orig: 45, 55
   offset: 0, 0
   index: -1
 idol/L_leg_1
   rotate: false
-  xy: 1149, 258
+  xy: 1189, 268
   size: 44, 65
   orig: 44, 65
   offset: 0, 0
   index: -1
 idol/L_leg_2
   rotate: false
-  xy: 1149, 33
+  xy: 1674, 12
   size: 38, 58
   orig: 38, 58
   offset: 0, 0
   index: -1
 idol/R_leg_1
   rotate: false
-  xy: 1565, 252
+  xy: 1211, 76
   size: 43, 64
   orig: 43, 64
   offset: 0, 0
   index: -1
 idol/R_leg_2
   rotate: false
-  xy: 1768, 71
+  xy: 1645, 278
   size: 32, 59
   orig: 32, 59
   offset: 0, 0
   index: -1
 idol/body_1
   rotate: false
-  xy: 1844, 941
+  xy: 791, 63
   size: 68, 56
   orig: 68, 56
   offset: 0, 0
   index: -1
 idol/body_2
   rotate: false
-  xy: 1972, 541
+  xy: 1174, 403
   size: 58, 37
   orig: 58, 37
   offset: 0, 0
   index: -1
 idol/body_3
   rotate: false
-  xy: 1785, 1001
+  xy: 1438, 464
   size: 74, 48
   orig: 74, 48
   offset: 0, 0
   index: -1
 idol/hat_front
   rotate: false
-  xy: 1396, 895
+  xy: 641, 753
   size: 144, 99
   orig: 144, 99
   offset: 0, 0
   index: -1
 knight_gold/L_arm_1
   rotate: false
-  xy: 1278, 387
+  xy: 1949, 535
   size: 46, 51
   orig: 46, 51
   offset: 0, 0
   index: -1
 knight_gold/L_arm_2
   rotate: false
-  xy: 1482, 39
+  xy: 1895, 73
   size: 28, 36
   orig: 28, 36
   offset: 0, 0
   index: -1
 knight_gold/L_hand
   rotate: false
-  xy: 1599, 65
+  xy: 1962, 5
   size: 28, 28
   orig: 28, 28
   offset: 0, 0
   index: -1
 knight_gold/L_leg_1
   rotate: false
-  xy: 1196, 258
+  xy: 1110, 142
   size: 44, 65
   orig: 44, 65
   offset: 0, 0
   index: -1
 knight_gold/L_leg_1_knee
   rotate: false
-  xy: 1386, 4
+  xy: 1892, 3
   size: 36, 31
   orig: 36, 31
   offset: 0, 0
   index: -1
 knight_gold/L_leg_2
   rotate: false
-  xy: 1182, 108
+  xy: 1715, 32
   size: 38, 58
   orig: 38, 58
   offset: 0, 0
   index: -1
 knight_gold/R_arm_1
   rotate: false
-  xy: 1840, 638
+  xy: 1815, 191
   size: 43, 47
   orig: 43, 47
   offset: 0, 0
   index: -1
 knight_gold/R_arm_2
   rotate: false
-  xy: 1442, 39
+  xy: 1927, 266
   size: 37, 46
   orig: 37, 46
   offset: 0, 0
   index: -1
 knight_gold/R_hand
   rotate: false
-  xy: 1484, 111
+  xy: 1899, 194
   size: 30, 31
   orig: 30, 31
   offset: 0, 0
   index: -1
 knight_gold/R_leg_1
   rotate: false
-  xy: 1212, 170
+  xy: 1212, 9
   size: 43, 64
   orig: 43, 64
   offset: 0, 0
   index: -1
 knight_gold/R_leg_1_knee
   rotate: false
-  xy: 1299, 117
+  xy: 1222, 210
   size: 36, 34
   orig: 36, 34
   offset: 0, 0
   index: -1
 knight_gold/R_leg_2
   rotate: false
-  xy: 1963, 134
+  xy: 1661, 135
   size: 32, 59
   orig: 32, 59
   offset: 0, 0
   index: -1
 knight_gold/body_1
   rotate: false
-  xy: 1870, 412
+  xy: 1002, 338
   size: 66, 48
   orig: 66, 48
   offset: 0, 0
   index: -1
 knight_gold/body_2
   rotate: false
-  xy: 1117, 731
+  xy: 1801, 601
   size: 76, 56
   orig: 76, 56
   offset: 0, 0
   index: -1
 knight_gold/body_3
   rotate: false
-  xy: 228, 3
+  xy: 382, 3
   size: 100, 59
   orig: 100, 59
   offset: 0, 0
   index: -1
 knight_gold/crown
   rotate: false
-  xy: 1866, 1184
+  xy: 1669, 651
   size: 75, 80
   orig: 75, 80
   offset: 0, 0
   index: -1
 knight_gold/head
   rotate: false
-  xy: 1005, 1308
+  xy: 3, 1131
   size: 236, 213
   orig: 236, 213
   offset: 0, 0
   index: -1
 knight_holy/L_arm_1
   rotate: false
-  xy: 1150, 326
+  xy: 979, 3
   size: 46, 59
   orig: 46, 59
   offset: 0, 0
   index: -1
 knight_holy/L_arm_2
   rotate: false
-  xy: 1963, 94
+  xy: 1863, 151
   size: 30, 37
   orig: 30, 37
   offset: 0, 0
   index: -1
 knight_holy/L_hand
   rotate: false
-  xy: 1425, 5
+  xy: 1965, 194
   size: 29, 30
   orig: 29, 30
   offset: 0, 0
   index: -1
 knight_nomal/L_hand
   rotate: false
-  xy: 1425, 5
+  xy: 1965, 194
   size: 29, 30
   orig: 29, 30
   offset: 0, 0
   index: -1
 knight_holy/L_leg_1
   rotate: false
-  xy: 1071, 144
+  xy: 1118, 74
   size: 44, 65
   orig: 44, 65
   offset: 0, 0
   index: -1
 knight_holy/L_leg_2
   rotate: false
-  xy: 1190, 47
+  xy: 1907, 365
   size: 38, 58
   orig: 38, 58
   offset: 0, 0
   index: -1
 knight_holy/R_arm_1
   rotate: false
-  xy: 1565, 127
+  xy: 1349, 82
   size: 43, 59
   orig: 43, 59
   offset: 0, 0
   index: -1
 knight_holy/R_arm_2
   rotate: false
-  xy: 1925, 463
+  xy: 1844, 316
   size: 40, 47
   orig: 40, 47
   offset: 0, 0
   index: -1
 knight_holy/R_leg_1
   rotate: false
-  xy: 1258, 192
+  xy: 1257, 76
   size: 43, 64
   orig: 43, 64
   offset: 0, 0
   index: -1
 knight_holy/R_leg_2
   rotate: false
-  xy: 1998, 437
+  xy: 1673, 73
   size: 32, 59
   orig: 32, 59
   offset: 0, 0
   index: -1
 knight_holy/body_1
   rotate: false
-  xy: 1766, 743
+  xy: 1236, 292
   size: 68, 52
   orig: 68, 52
   offset: 0, 0
   index: -1
 knight_holy/body_2
   rotate: false
-  xy: 1167, 425
+  xy: 1099, 458
   size: 59, 34
   orig: 59, 34
   offset: 0, 0
   index: -1
 knight_holy/body_2_sub
   rotate: false
-  xy: 227, 234
+  xy: 805, 456
   size: 119, 85
   orig: 119, 85
   offset: 0, 0
   index: -1
 knight_holy/body_3
   rotate: false
-  xy: 949, 8
+  xy: 823, 274
   size: 68, 61
   orig: 68, 61
   offset: 0, 0
   index: -1
 knight_holy/hat_front
   rotate: false
-  xy: 1730, 463
+  xy: 1750, 749
   size: 52, 93
   orig: 52, 93
   offset: 0, 0
   index: -1
 knight_nomal/L_arm_1
   rotate: false
-  xy: 1327, 379
+  xy: 1307, 363
   size: 46, 59
   orig: 46, 59
   offset: 0, 0
   index: -1
 knight_nomal/L_arm_2
   rotate: false
-  xy: 1223, 130
+  xy: 1864, 72
   size: 28, 37
   orig: 28, 37
   offset: 0, 0
   index: -1
 knight_nomal/L_leg_1
   rotate: false
-  xy: 1976, 708
+  xy: 1050, 389
   size: 47, 65
   orig: 47, 65
   offset: 0, 0
   index: -1
 knight_nomal/L_leg_1_knee
   rotate: false
-  xy: 431, 746
+  xy: 623, 423
   size: 23, 20
   orig: 23, 20
   offset: 0, 0
   index: -1
 knight_nomal/L_leg_2
   rotate: false
-  xy: 1231, 56
+  xy: 1759, 408
   size: 38, 58
   orig: 38, 58
   offset: 0, 0
   index: -1
 knight_nomal/R_arm_1
   rotate: false
-  xy: 1655, 243
+  xy: 1350, 20
   size: 43, 59
   orig: 43, 59
   offset: 0, 0
   index: -1
 knight_nomal/R_arm_2
   rotate: false
-  xy: 1513, 21
+  xy: 1887, 315
   size: 40, 47
   orig: 40, 47
   offset: 0, 0
   index: -1
 knight_nomal/R_leg_1
   rotate: false
-  xy: 1565, 319
+  xy: 1902, 537
   size: 44, 64
   orig: 44, 64
   offset: 0, 0
   index: -1
 knight_nomal/R_leg_1_knee
   rotate: false
-  xy: 665, 992
+  xy: 1372, 712
   size: 22, 20
   orig: 22, 20
   offset: 0, 0
   index: -1
 knight_nomal/R_leg_2
   rotate: false
-  xy: 1640, 369
+  xy: 1680, 279
   size: 33, 59
   orig: 33, 59
   offset: 0, 0
   index: -1
 knight_nomal/body_1
   rotate: false
-  xy: 1604, 997
+  xy: 1356, 275
   size: 68, 46
   orig: 68, 46
   offset: 0, 0
   index: -1
 knight_nomal/body_2
   rotate: false
-  xy: 1159, 388
+  xy: 1235, 405
   size: 59, 34
   orig: 59, 34
   offset: 0, 0
   index: -1
 knight_nomal/body_2_sub
   rotate: false
-  xy: 1766, 1142
+  xy: 1906, 1192
   size: 92, 48
   orig: 92, 48
   offset: 0, 0
   index: -1
 knight_nomal/body_3
   rotate: false
-  xy: 1767, 638
+  xy: 927, 456
   size: 70, 47
   orig: 70, 47
   offset: 0, 0
   index: -1
 knight_nomal/hat_front
   rotate: false
-  xy: 1516, 1354
+  xy: 764, 1624
   size: 247, 167
   orig: 247, 167
   offset: 0, 0
   index: -1
 knight_royal/L_arm_1
   rotate: false
-  xy: 1376, 376
+  xy: 1173, 210
   size: 46, 55
   orig: 46, 55
   offset: 0, 0
   index: -1
 knight_royal/L_arm_2
   rotate: false
-  xy: 569, 89
+  xy: 1863, 112
   size: 29, 36
   orig: 29, 36
   offset: 0, 0
   index: -1
 knight_royal/L_hand
   rotate: false
-  xy: 1999, 1328
+  xy: 1895, 112
   size: 29, 36
   orig: 29, 36
   offset: 0, 0
   index: -1
 knight_royal/L_leg_1
   rotate: false
-  xy: 816, 3
+  xy: 1008, 268
   size: 44, 67
   orig: 44, 67
   offset: 0, 0
   index: -1
 knight_royal/L_leg_1_knee
   rotate: false
-  xy: 977, 1117
+  xy: 1861, 191
   size: 35, 33
   orig: 35, 33
   offset: 0, 0
   index: -1
 knight_royal/L_leg_2
   rotate: false
-  xy: 1803, 134
+  xy: 1569, 278
   size: 38, 59
   orig: 38, 59
   offset: 0, 0
   index: -1
 knight_royal/R_arm_1
   rotate: false
-  xy: 1350, 137
+  xy: 1714, 467
   size: 42, 54
   orig: 42, 54
   offset: 0, 0
   index: -1
 knight_royal/R_arm_2
   rotate: false
-  xy: 1254, 117
+  xy: 1071, 338
   size: 42, 48
   orig: 42, 48
   offset: 0, 0
   index: -1
 knight_royal/R_hand
   rotate: false
-  xy: 1844, 51
+  xy: 1956, 162
   size: 30, 29
   orig: 30, 29
   offset: 0, 0
   index: -1
 knight_royal/R_leg_1
   rotate: false
-  xy: 1304, 192
+  xy: 1258, 9
   size: 43, 64
   orig: 43, 64
   offset: 0, 0
   index: -1
 knight_royal/R_leg_1_knee
   rotate: false
-  xy: 1148, 700
+  xy: 1823, 112
   size: 37, 28
   orig: 37, 28
   offset: 0, 0
   index: -1
 knight_royal/R_leg_2
   rotate: false
-  xy: 1651, 128
+  xy: 1293, 143
   size: 32, 60
   orig: 32, 60
   offset: 0, 0
   index: -1
 knight_royal/body_1
   rotate: false
-  xy: 497, 79
+  xy: 1356, 428
   size: 69, 52
   orig: 69, 52
   offset: 0, 0
   index: -1
 knight_royal/body_2
   rotate: false
-  xy: 1960, 1212
+  xy: 1116, 341
   size: 70, 55
   orig: 70, 55
   offset: 0, 0
   index: -1
 knight_royal/body_3
   rotate: false
-  xy: 837, 140
+  xy: 932, 626
   size: 117, 71
   orig: 117, 71
   offset: 0, 0
   index: -1
 knight_royal/crown
   rotate: false
-  xy: 1648, 809
+  xy: 1905, 825
   size: 93, 87
   orig: 93, 87
   offset: 0, 0
   index: -1
 knight_royal/mouth_1
   rotate: false
-  xy: 1490, 25
+  xy: 976, 506
   size: 20, 11
   orig: 20, 11
   offset: 0, 0
   index: -1
 knight_sun/mouth_1
   rotate: false
-  xy: 1490, 25
+  xy: 976, 506
   size: 20, 11
   orig: 20, 11
   offset: 0, 0
   index: -1
 knight_sun/L_arm_1
   rotate: false
-  xy: 1425, 372
+  xy: 1363, 144
   size: 46, 59
   orig: 46, 59
   offset: 0, 0
   index: -1
 knight_sun/L_arm_2
   rotate: false
-  xy: 1436, 140
+  xy: 1800, 384
   size: 34, 37
   orig: 34, 37
   offset: 0, 0
   index: -1
 knight_sun/L_hand
   rotate: false
-  xy: 1229, 3
+  xy: 1865, 37
   size: 29, 32
   orig: 29, 32
   offset: 0, 0
   index: -1
 knight_sun/L_leg_1
   rotate: false
-  xy: 1729, 919
+  xy: 931, 132
   size: 41, 75
   orig: 41, 75
   offset: 0, 0
   index: -1
 knight_sun/L_leg_2
   rotate: false
-  xy: 1996, 72
+  xy: 1617, 340
   size: 34, 53
   orig: 34, 53
   offset: 0, 0
   index: -1
 knight_sun/R_arm_1
   rotate: false
-  xy: 1565, 189
+  xy: 1050, 457
   size: 46, 60
   orig: 46, 60
   offset: 0, 0
   index: -1
 knight_sun/R_arm_2
   rotate: false
-  xy: 1556, 21
+  xy: 1930, 315
   size: 40, 47
   orig: 40, 47
   offset: 0, 0
   index: -1
 knight_sun/R_hand
   rotate: false
-  xy: 1877, 47
+  xy: 1927, 95
   size: 30, 29
   orig: 30, 29
   offset: 0, 0
   index: -1
 knight_sun/R_leg_1
   rotate: false
-  xy: 1066, 212
+  xy: 1959, 1521
   size: 39, 74
   orig: 39, 74
   offset: 0, 0
   index: -1
 knight_sun/R_leg_2
   rotate: false
-  xy: 1999, 1367
+  xy: 1141, 210
   size: 29, 57
   orig: 29, 57
   offset: 0, 0
   index: -1
 knight_sun/body_1
   rotate: false
-  xy: 1767, 688
+  xy: 1427, 252
   size: 68, 52
   orig: 68, 52
   offset: 0, 0
   index: -1
 knight_sun/body_2
   rotate: false
-  xy: 1675, 997
+  xy: 862, 63
   size: 64, 70
   orig: 64, 70
   offset: 0, 0
   index: -1
 knight_sun/body_3
   rotate: false
-  xy: 1241, 588
+  xy: 1244, 640
   size: 121, 64
   orig: 121, 64
   offset: 0, 0
   index: -1
 knight_sun/hat_front
   rotate: false
-  xy: 1242, 1113
+  xy: 1274, 1558
   size: 233, 78
   orig: 233, 78
   offset: 0, 0
   index: -1
 magic/L_arm_1
   rotate: false
-  xy: 1676, 355
+  xy: 832, 3
   size: 48, 57
   orig: 48, 57
   offset: 0, 0
   index: -1
 magic/L_arm_2
   rotate: false
-  xy: 1442, 219
+  xy: 1795, 54
   size: 28, 40
   orig: 28, 40
   offset: 0, 0
   index: -1
 magic/L_hand
   rotate: false
-  xy: 1744, 885
+  xy: 1927, 160
   size: 26, 31
   orig: 26, 31
   offset: 0, 0
   index: -1
 magic/L_leg_1
   rotate: false
-  xy: 907, 3
+  xy: 1959, 1451
   size: 39, 67
   orig: 39, 67
   offset: 0, 0
   index: -1
 magic/L_leg_2
   rotate: false
-  xy: 1474, 371
+  xy: 1146, 278
   size: 40, 60
   orig: 40, 60
   offset: 0, 0
   index: -1
 magic/R_arm_1
   rotate: false
-  xy: 1884, 583
+  xy: 1412, 142
   size: 46, 52
   orig: 46, 52
   offset: 0, 0
   index: -1
 magic/R_arm_2
   rotate: false
-  xy: 1524, 518
+  xy: 1961, 589
   size: 37, 68
   orig: 37, 68
   offset: 0, 0
   index: -1
 magic/R_hand
   rotate: false
-  xy: 1599, 34
+  xy: 1861, 234
   size: 26, 28
   orig: 26, 28
   offset: 0, 0
   index: -1
 magic/R_leg_1
   rotate: false
-  xy: 1880, 511
+  xy: 976, 65
   size: 42, 69
   orig: 42, 69
   offset: 0, 0
   index: -1
 magic/R_leg_2
   rotate: false
-  xy: 1998, 128
+  xy: 1872, 411
   size: 32, 58
   orig: 32, 58
   offset: 0, 0
   index: -1
 magic/body_1
   rotate: false
-  xy: 1915, 940
+  xy: 1236, 347
   size: 68, 55
   orig: 68, 55
   offset: 0, 0
   index: -1
 magic/body_1_ribbon
   rotate: false
-  xy: 1872, 274
+  xy: 638, 13
   size: 45, 32
   orig: 45, 32
   offset: 0, 0
   index: -1
 magic/body_2
   rotate: false
-  xy: 585, 233
+  xy: 1450, 820
   size: 146, 56
   orig: 146, 56
   offset: 0, 0
   index: -1
 magic/body_2_ribbon
   rotate: false
-  xy: 504, 337
+  xy: 1907, 915
   size: 85, 94
   orig: 85, 94
   offset: 0, 0
   index: -1
 magic/face_1
   rotate: false
-  xy: 347, 174
+  xy: 1247, 784
   size: 147, 56
   orig: 147, 56
   offset: 0, 0
   index: -1
 magic/face_2
   rotate: false
-  xy: 335, 15
+  xy: 1600, 789
   size: 147, 54
   orig: 147, 54
   offset: 0, 0
   index: -1
 magic/head
   rotate: false
-  xy: 273, 1293
+  xy: 3, 1563
   size: 247, 228
   orig: 247, 228
   offset: 0, 0
   index: -1
 magic/head_tail_ribbon
   rotate: false
-  xy: 422, 545
+  xy: 550, 133
   size: 117, 140
   orig: 117, 140
   offset: 0, 0
   index: -1
 magic/mouth_2
   rotate: false
-  xy: 1565, 100
+  xy: 1608, 190
   size: 30, 24
   orig: 30, 24
   offset: 0, 0
   index: -1
 marine/L_arm_1
   rotate: false
-  xy: 1743, 253
+  xy: 1396, 26
   size: 45, 55
   orig: 45, 55
   offset: 0, 0
   index: -1
 marine/L_leg_1
   rotate: false
-  xy: 1118, 155
+  xy: 1119, 6
   size: 44, 65
   orig: 44, 65
   offset: 0, 0
   index: -1
 marine/L_leg_2
   rotate: false
-  xy: 1272, 56
+  xy: 1716, 280
   size: 38, 58
   orig: 38, 58
   offset: 0, 0
   index: -1
 marine/R_arm_1
   rotate: false
-  xy: 1517, 71
+  xy: 1714, 415
   size: 42, 49
   orig: 42, 49
   offset: 0, 0
   index: -1
 marine/R_leg_1
   rotate: false
-  xy: 1350, 194
+  xy: 1303, 76
   size: 43, 64
   orig: 43, 64
   offset: 0, 0
   index: -1
 marine/R_leg_2
   rotate: false
-  xy: 1998, 375
+  xy: 1690, 217
   size: 32, 59
   orig: 32, 59
   offset: 0, 0
   index: -1
 marine/body_1
   rotate: false
-  xy: 1773, 927
+  xy: 860, 136
   size: 68, 71
   orig: 68, 71
   offset: 0, 0
   index: -1
 marine/body_2
   rotate: false
-  xy: 1785, 463
+  xy: 1174, 443
   size: 67, 43
   orig: 67, 43
   offset: 0, 0
   index: -1
 marine/body_3
   rotate: false
-  xy: 1857, 1267
+  xy: 949, 565
   size: 100, 58
   orig: 100, 58
   offset: 0, 0
   index: -1
 marine/hat_back
   rotate: false
-  xy: 1564, 609
+  xy: 822, 1200
   size: 121, 98
   orig: 121, 98
   offset: 0, 0
   index: -1
 marine/hat_front
   rotate: false
-  xy: 1382, 434
+  xy: 816, 1301
   size: 132, 88
   orig: 132, 88
   offset: 0, 0
   index: -1
 marine/head_ribbon
   rotate: false
-  xy: 227, 150
+  xy: 1052, 590
   size: 117, 81
   orig: 117, 81
   offset: 0, 0
   index: -1
 nobility/L_arm_1
   rotate: false
-  xy: 1791, 253
+  xy: 1484, 24
   size: 45, 55
   orig: 45, 55
   offset: 0, 0
   index: -1
 nobility/L_arm_2
   rotate: false
-  xy: 1672, 1132
+  xy: 1826, 69
   size: 35, 40
   orig: 35, 40
   offset: 0, 0
   index: -1
 nobility/L_leg_1
   rotate: false
-  xy: 1926, 710
+  xy: 1021, 67
   size: 47, 68
   orig: 47, 68
   offset: 0, 0
   index: -1
 nobility/L_leg_2
   rotate: false
-  xy: 1313, 56
+  xy: 1725, 219
   size: 38, 58
   orig: 38, 58
   offset: 0, 0
   index: -1
 nobility/R_arm_1
   rotate: false
-  xy: 1395, 79
+  xy: 1948, 367
   size: 42, 51
   orig: 42, 51
   offset: 0, 0
   index: -1
 nobility/R_arm_2
   rotate: false
-  xy: 1304, 7
+  xy: 1685, 1382
   size: 40, 46
   orig: 40, 46
   offset: 0, 0
   index: -1
 nobility/R_leg_1
   rotate: false
-  xy: 1976, 640
+  xy: 1759, 530
   size: 47, 65
   orig: 47, 65
   offset: 0, 0
   index: -1
 nobility/R_leg_2
   rotate: false
-  xy: 1998, 313
+  xy: 1696, 155
   size: 32, 59
   orig: 32, 59
   offset: 0, 0
   index: -1
 nobility/body_1
   rotate: false
-  xy: 1902, 829
+  xy: 1498, 237
   size: 68, 53
   orig: 68, 53
   offset: 0, 0
   index: -1
 nobility/body_2
   rotate: false
-  xy: 1947, 1105
+  xy: 1453, 570
   size: 83, 50
   orig: 83, 50
   offset: 0, 0
   index: -1
 nobility/body_3
   rotate: false
-  xy: 1727, 361
+  xy: 1428, 414
   size: 70, 47
   orig: 70, 47
   offset: 0, 0
   index: -1
 nobility/glasses
   rotate: false
-  xy: 532, 3
+  xy: 791, 122
   size: 66, 73
   orig: 66, 73
   offset: 0, 0
   index: -1
 nobility/glasses_sub
   rotate: false
-  xy: 678, 78
+  xy: 1853, 266
   size: 28, 47
   orig: 28, 47
   offset: 0, 0
   index: -1
 nobility/hat_back
   rotate: false
-  xy: 1400, 796
+  xy: 678, 1196
   size: 141, 96
   orig: 141, 96
   offset: 0, 0
   index: -1
 nobility/hat_back_sub
   rotate: false
-  xy: 1479, 589
+  xy: 1368, 598
   size: 82, 106
   orig: 82, 106
   offset: 0, 0
   index: -1
 pirate/L_arm_1
   rotate: false
-  xy: 1744, 195
+  xy: 1579, 14
   size: 45, 55
   orig: 45, 55
   offset: 0, 0
   index: -1
 pirate/L_arm_2
   rotate: false
-  xy: 1939, 370
+  xy: 1569, 237
   size: 36, 38
   orig: 36, 38
   offset: 0, 0
   index: -1
 pirate/L_leg_1
   rotate: false
-  xy: 1785, 509
+  xy: 1685, 1431
   size: 47, 71
   orig: 47, 71
   offset: 0, 0
   index: -1
 pirate/L_leg_2
   rotate: false
-  xy: 1874, 213
+  xy: 1670, 466
   size: 41, 58
   orig: 41, 58
   offset: 0, 0
   index: -1
 pirate/R_arm_1
   rotate: false
-  xy: 1054, 337
+  xy: 1574, 397
   size: 44, 51
   orig: 44, 51
   offset: 0, 0
   index: -1
 pirate/R_arm_2
   rotate: false
-  xy: 1373, 329
+  xy: 1567, 190
   size: 38, 44
   orig: 38, 44
   offset: 0, 0
   index: -1
 pirate/R_leg_1
   rotate: false
-  xy: 668, 3
+  xy: 958, 1554
   size: 47, 67
   orig: 47, 67
   offset: 0, 0
   index: -1
 pirate/R_leg_2
   rotate: false
-  xy: 1101, 82
+  xy: 1444, 22
   size: 37, 59
   orig: 37, 59
   offset: 0, 0
   index: -1
 pirate/body_1
   rotate: false
-  xy: 1800, 360
+  xy: 1356, 227
   size: 68, 45
   orig: 68, 45
   offset: 0, 0
   index: -1
 pirate/body_2
   rotate: false
-  xy: 1947, 1158
+  xy: 1358, 544
   size: 83, 51
   orig: 83, 51
   offset: 0, 0
   index: -1
 pirate/body_3
   rotate: false
-  xy: 1727, 311
+  xy: 1501, 403
   size: 70, 47
   orig: 70, 47
   offset: 0, 0
   index: -1
 pirate/hat_back
   rotate: false
-  xy: 794, 1153
+  xy: 1285, 1639
   size: 234, 152
   orig: 234, 152
   offset: 0, 0
   index: -1
 pirate/hat_back_sub_2
   rotate: false
-  xy: 325, 539
+  xy: 526, 276
   size: 94, 167
   orig: 94, 167
   offset: 0, 0
   index: -1
+shadow
+  rotate: false
+  xy: 1397, 707
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
 slash_1
   rotate: false
-  xy: 3, 1246
-  size: 267, 275
-  orig: 267, 275
+  xy: 477, 1318
+  size: 200, 200
+  orig: 200, 200
   offset: 0, 0
   index: -1
 slash_2
   rotate: false
-  xy: 3, 978
-  size: 211, 265
-  orig: 211, 265
+  xy: 958, 1351
+  size: 200, 200
+  orig: 200, 200
   offset: 0, 0
   index: -1
 slash_3
   rotate: false
-  xy: 229, 377
-  size: 93, 150
-  orig: 93, 150
+  xy: 1161, 1351
+  size: 200, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+slash_4
+  rotate: false
+  xy: 1482, 1302
+  size: 200, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+slash_5
+  rotate: false
+  xy: 229, 471
+  size: 200, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+slash_6
+  rotate: false
+  xy: 227, 268
+  size: 200, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+slash_lightning_1
+  rotate: false
+  xy: 227, 65
+  size: 200, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+slash_lightning_2
+  rotate: false
+  xy: 242, 1067
+  size: 200, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+slash_lightning_3
+  rotate: false
+  xy: 347, 706
+  size: 200, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+slash_lightning_4
+  rotate: false
+  xy: 432, 503
+  size: 200, 200
+  orig: 200, 200
   offset: 0, 0
   index: -1
 strawberry/L_arm_1
   rotate: false
-  xy: 1686, 128
+  xy: 1570, 340
   size: 44, 54
   orig: 44, 54
   offset: 0, 0
   index: -1
 strawberry/L_leg_1
   rotate: false
-  xy: 1165, 169
+  xy: 1809, 533
   size: 44, 65
   orig: 44, 65
   offset: 0, 0
   index: -1
 strawberry/L_leg_2
   rotate: false
-  xy: 1354, 76
+  xy: 1731, 158
   size: 38, 58
   orig: 38, 58
   offset: 0, 0
   index: -1
 strawberry/R_arm_1
   rotate: false
-  xy: 1655, 191
+  xy: 1532, 24
   size: 44, 49
   orig: 44, 49
   offset: 0, 0
   index: -1
 strawberry/R_leg_2
   rotate: false
-  xy: 1998, 251
+  xy: 1837, 409
   size: 32, 59
   orig: 32, 59
   offset: 0, 0
   index: -1
 strawberry/body_1
   rotate: false
-  xy: 1862, 1000
+  xy: 1100, 399
   size: 71, 56
   orig: 71, 56
   offset: 0, 0
   index: -1
 strawberry/body_1_neck
   rotate: false
-  xy: 1564, 431
+  xy: 1450, 717
   size: 102, 43
   orig: 102, 43
   offset: 0, 0
   index: -1
 strawberry/body_2
   rotate: false
-  xy: 1936, 998
+  xy: 1521, 512
   size: 74, 48
   orig: 74, 48
   offset: 0, 0
   index: -1
 strawberry/body_3
   rotate: false
-  xy: 1564, 477
+  xy: 1244, 487
   size: 109, 74
   orig: 109, 74
   offset: 0, 0
   index: -1
 strawberry/hat_front
   rotate: false
-  xy: 1244, 1194
+  xy: 1014, 1646
   size: 268, 145
   orig: 268, 145
   offset: 0, 0
   index: -1
 strawberry/head
   rotate: false
-  xy: 441, 985
+  xy: 253, 1362
   size: 221, 213
   orig: 221, 213
   offset: 0, 0
   index: -1
 sw_arabia_01/weapon
   rotate: false
-  xy: 1148, 655
+  xy: 1481, 1257
   size: 173, 42
   orig: 173, 42
   offset: 0, 0
   index: -1
 sw_arabia_02/weapon
   rotate: false
-  xy: 660, 737
+  xy: 1481, 937
   size: 163, 49
   orig: 163, 49
   offset: 0, 0
   index: -1
 sw_arabia_03/weapon
   rotate: false
-  xy: 758, 508
+  xy: 1491, 1143
   size: 169, 66
   orig: 169, 66
   offset: 0, 0
   index: -1
 sw_arabia_04/weapon
   rotate: false
-  xy: 1088, 462
+  xy: 1328, 994
   size: 158, 51
   orig: 158, 51
   offset: 0, 0
   index: -1
 sw_arabia_05/weapon
   rotate: false
-  xy: 904, 452
+  xy: 1328, 1048
   size: 160, 47
   orig: 160, 47
   offset: 0, 0
   index: -1
 sw_big_01/weapon
   rotate: false
-  xy: 457, 738
+  xy: 428, 909
   size: 200, 48
   orig: 200, 48
   offset: 0, 0
   index: -1
 sw_big_02/weapon
   rotate: false
-  xy: 1204, 850
+  xy: 946, 1209
   size: 189, 79
   orig: 189, 79
   offset: 0, 0
   index: -1
 sw_big_03/weapon
   rotate: false
-  xy: 1204, 787
+  xy: 1149, 1288
   size: 193, 60
   orig: 193, 60
   offset: 0, 0
   index: -1
 sw_big_04/weapon
   rotate: false
-  xy: 970, 664
+  xy: 623, 336
   size: 175, 64
   orig: 175, 64
   offset: 0, 0
   index: -1
 sw_big_05/weapon
   rotate: false
-  xy: 1515, 1233
+  xy: 1138, 1211
   size: 193, 74
   orig: 193, 74
   offset: 0, 0
   index: -1
 sw_default/weapon
   rotate: false
-  xy: 742, 291
+  xy: 1333, 1098
   size: 155, 45
   orig: 155, 45
   offset: 0, 0
   index: -1
 sw_elegance_01/weapon
   rotate: false
-  xy: 977, 1025
+  xy: 246, 1270
   size: 218, 89
   orig: 218, 89
   offset: 0, 0
   index: -1
 sw_elegance_02/weapon
   rotate: false
-  xy: 1031, 1117
+  xy: 467, 1227
   size: 208, 88
   orig: 208, 88
   offset: 0, 0
   index: -1
 sw_elegance_03/weapon
   rotate: false
-  xy: 3, 15
+  xy: 1510, 1505
   size: 222, 90
   orig: 222, 90
   offset: 0, 0
   index: -1
 sw_elegance_04/weapon
   rotate: false
-  xy: 1031, 1208
+  xy: 233, 967
   size: 210, 97
   orig: 210, 97
   offset: 0, 0
   index: -1
 sw_elegance_05/weapon
   rotate: false
-  xy: 1198, 1042
+  xy: 445, 1070
   size: 214, 68
   orig: 214, 68
   offset: 0, 0
   index: -1
 sw_element_01/weapon
   rotate: false
-  xy: 431, 688
+  xy: 946, 1159
   size: 190, 47
   orig: 190, 47
   offset: 0, 0
   index: -1
 sw_element_02/weapon
   rotate: false
-  xy: 1515, 1175
+  xy: 233, 909
   size: 192, 55
   orig: 192, 55
   offset: 0, 0
   index: -1
 sw_element_03/weapon
   rotate: false
-  xy: 1415, 997
+  xy: 945, 1005
   size: 186, 46
   orig: 186, 46
   offset: 0, 0
   index: -1
 sw_element_04/weapon
   rotate: false
-  xy: 233, 709
+  xy: 951, 1291
   size: 195, 57
   orig: 195, 57
   offset: 0, 0
   index: -1
 sw_element_05/weapon
   rotate: false
-  xy: 1478, 1112
+  xy: 1134, 1039
   size: 191, 60
   orig: 191, 60
   offset: 0, 0
   index: -1
 sw_gold_01/weapon
   rotate: false
-  xy: 1516, 1310
+  xy: 1136, 1102
   size: 194, 41
   orig: 194, 41
   offset: 0, 0
   index: -1
 sw_gold_02/weapon
   rotate: false
-  xy: 1196, 700
+  xy: 935, 962
   size: 176, 40
   orig: 176, 40
   offset: 0, 0
   index: -1
 sw_gold_03/weapon
   rotate: false
-  xy: 624, 684
+  xy: 946, 1106
   size: 187, 50
   orig: 187, 50
   offset: 0, 0
   index: -1
 sw_gold_04/weapon
   rotate: false
-  xy: 1196, 743
+  xy: 1114, 929
   size: 176, 41
   orig: 176, 41
   offset: 0, 0
   index: -1
 sw_gold_05/weapon
   rotate: false
-  xy: 1415, 1046
+  xy: 1134, 973
   size: 177, 63
   orig: 177, 63
   offset: 0, 0
   index: -1
 sw_long_01/weapon
   rotate: false
-  xy: 904, 395
+  xy: 1091, 872
   size: 153, 54
   orig: 153, 54
   offset: 0, 0
   index: -1
 sw_long_02/weapon
   rotate: false
-  xy: 1088, 516
+  xy: 1663, 1113
   size: 154, 64
   orig: 154, 64
   offset: 0, 0
   index: -1
 sw_long_03/weapon
   rotate: false
-  xy: 753, 577
+  xy: 638, 963
   size: 161, 85
   orig: 161, 85
   offset: 0, 0
   index: -1
 sw_long_04/weapon
   rotate: false
-  xy: 917, 582
+  xy: 635, 614
   size: 164, 79
   orig: 164, 79
   offset: 0, 0
   index: -1
 sw_long_05/weapon
   rotate: false
-  xy: 900, 289
-  size: 153, 44
-  orig: 153, 44
+  xy: 945, 1054
+  size: 186, 49
+  orig: 186, 49
   offset: 0, 0
   index: -1
 sw_short_01/weapon
   rotate: false
-  xy: 586, 128
+  xy: 1246, 707
   size: 123, 25
   orig: 123, 25
   offset: 0, 0
   index: -1
 sw_short_02/weapon
   rotate: false
-  xy: 359, 292
+  xy: 1334, 1211
   size: 136, 48
   orig: 136, 48
   offset: 0, 0
   index: -1
 sw_short_03/weapon
   rotate: false
-  xy: 592, 341
+  xy: 1091, 718
   size: 152, 49
   orig: 152, 49
   offset: 0, 0
   index: -1
 sw_short_04/weapon
   rotate: false
-  xy: 359, 343
+  xy: 687, 3
   size: 142, 50
   orig: 142, 50
   offset: 0, 0
   index: -1
 sw_short_05/weapon
   rotate: false
-  xy: 1375, 698
+  xy: 3, 11
   size: 156, 31
   orig: 156, 31
   offset: 0, 0
   index: -1
+sw_special_fairy/weapon
+  rotate: false
+  xy: 935, 797
+  size: 153, 44
+  orig: 153, 44
+  offset: 0, 0
+  index: -1
+sw_special_fairy/weapon_effct
+  rotate: false
+  xy: 1803, 660
+  size: 76, 75
+  orig: 76, 75
+  offset: 0, 0
+  index: -1
+sw_special_wedding/weapon
+  rotate: false
+  xy: 445, 1141
+  size: 218, 83
+  orig: 218, 83
+  offset: 0, 0
+  index: -1
+sw_speciel_nobility/weapon
+  rotate: false
+  xy: 1491, 1041
+  size: 165, 49
+  orig: 165, 49
+  offset: 0, 0
+  index: -1
+sw_speciel_nobility/weapon_effct
+  rotate: false
+  xy: 1453, 623
+  size: 94, 91
+  orig: 94, 91
+  offset: 0, 0
+  index: -1
+sw_theme_alice/weapon
+  rotate: false
+  xy: 1491, 1093
+  size: 168, 47
+  orig: 168, 47
+  offset: 0, 0
+  index: -1
+sw_theme_carnival/weapon
+  rotate: false
+  xy: 1089, 674
+  size: 152, 41
+  orig: 152, 41
+  offset: 0, 0
+  index: -1
+sw_theme_cat/weapon
+  rotate: false
+  xy: 1662, 1058
+  size: 156, 52
+  orig: 156, 52
+  offset: 0, 0
+  index: -1
+sw_theme_doll/weapon
+  rotate: false
+  xy: 802, 887
+  size: 130, 78
+  orig: 130, 78
+  offset: 0, 0
+  index: -1
+sw_theme_dress/weapon
+  rotate: false
+  xy: 623, 276
+  size: 154, 57
+  orig: 154, 57
+  offset: 0, 0
+  index: -1
+sw_theme_elf/weapon
+  rotate: false
+  xy: 1091, 770
+  size: 153, 44
+  orig: 153, 44
+  offset: 0, 0
+  index: -1
+sw_theme_fairy/weapon
+  rotate: false
+  xy: 1451, 879
+  size: 154, 55
+  orig: 154, 55
+  offset: 0, 0
+  index: -1
+sw_theme_idol/weapon
+  rotate: false
+  xy: 227, 3
+  size: 152, 59
+  orig: 152, 59
+  offset: 0, 0
+  index: -1
+sw_theme_knight_gold/weapon
+  rotate: false
+  xy: 432, 446
+  size: 214, 54
+  orig: 214, 54
+  offset: 0, 0
+  index: -1
+sw_theme_knight_holy/weapon
+  rotate: false
+  xy: 935, 751
+  size: 153, 43
+  orig: 153, 43
+  offset: 0, 0
+  index: -1
+sw_theme_knight_nomal/weapon
+  rotate: false
+  xy: 1473, 1212
+  size: 173, 42
+  orig: 173, 42
+  offset: 0, 0
+  index: -1
+sw_theme_knight_royal/weapon
+  rotate: false
+  xy: 1139, 1146
+  size: 193, 62
+  orig: 193, 62
+  offset: 0, 0
+  index: -1
+sw_theme_knight_sun/weapon
+  rotate: false
+  xy: 1314, 947
+  size: 164, 44
+  orig: 164, 44
+  offset: 0, 0
+  index: -1
+sw_theme_magic/weapon
+  rotate: false
+  xy: 1608, 846
+  size: 154, 58
+  orig: 154, 58
+  offset: 0, 0
+  index: -1
+sw_theme_marine/weapon
+  rotate: false
+  xy: 1659, 1012
+  size: 157, 43
+  orig: 157, 43
+  offset: 0, 0
+  index: -1
+sw_theme_nobility/weapon
+  rotate: false
+  xy: 1489, 989
+  size: 165, 49
+  orig: 165, 49
+  offset: 0, 0
+  index: -1
+sw_theme_pirate/weapon
+  rotate: false
+  xy: 1657, 958
+  size: 156, 51
+  orig: 156, 51
+  offset: 0, 0
+  index: -1
+sw_theme_strawberry/weapon
+  rotate: false
+  xy: 1647, 907
+  size: 155, 48
+  orig: 155, 48
+  offset: 0, 0
+  index: -1
+sw_theme_uniform/weapon
+  rotate: false
+  xy: 649, 466
+  size: 153, 72
+  orig: 153, 72
+  offset: 0, 0
+  index: -1
+sw_theme_wedding/weapon
+  rotate: false
+  xy: 635, 541
+  size: 166, 70
+  orig: 166, 70
+  offset: 0, 0
+  index: -1
 sw_wand_01/weapon
   rotate: false
-  xy: 335, 72
+  xy: 1293, 902
   size: 155, 42
   orig: 155, 42
   offset: 0, 0
   index: -1
 sw_wand_02/weapon
   rotate: false
-  xy: 1376, 525
+  xy: 801, 338
   size: 145, 60
   orig: 145, 60
   offset: 0, 0
   index: -1
 sw_wand_03/weapon
   rotate: false
-  xy: 747, 339
+  xy: 932, 700
   size: 154, 48
   orig: 154, 48
   offset: 0, 0
   index: -1
 sw_wand_04/weapon
   rotate: false
-  xy: 1084, 583
+  xy: 1663, 1180
   size: 154, 69
   orig: 154, 69
   offset: 0, 0
   index: -1
 sw_wand_05/weapon
   rotate: false
-  xy: 930, 502
+  xy: 662, 1051
   size: 155, 77
   orig: 155, 77
   offset: 0, 0
   index: -1
 uniform/L_arm_1
   rotate: false
-  xy: 1920, 252
+  xy: 1627, 16
   size: 44, 53
   orig: 44, 53
   offset: 0, 0
   index: -1
 uniform/L_arm_2
   rotate: false
-  xy: 1655, 315
+  xy: 1896, 151
   size: 28, 37
   orig: 28, 37
   offset: 0, 0
   index: -1
 uniform/L_leg_1
   rotate: false
-  xy: 485, 3
+  xy: 929, 63
   size: 44, 66
   orig: 44, 66
   offset: 0, 0
   index: -1
 uniform/L_leg_2
   rotate: false
-  xy: 1395, 133
+  xy: 1743, 97
   size: 38, 58
   orig: 38, 58
   offset: 0, 0
   index: -1
 uniform/R_arm_1
   rotate: false
-  xy: 1234, 386
+  xy: 1699, 341
   size: 41, 52
   orig: 41, 52
   offset: 0, 0
   index: -1
 uniform/R_arm_2
   rotate: false
-  xy: 1261, 6
+  xy: 1884, 265
   size: 40, 47
   orig: 40, 47
   offset: 0, 0
   index: -1
 uniform/R_leg_1
   rotate: false
-  xy: 1396, 195
+  xy: 1304, 9
   size: 43, 64
   orig: 43, 64
   offset: 0, 0
   index: -1
 uniform/R_leg_2
   rotate: false
-  xy: 1998, 189
+  xy: 1708, 93
   size: 32, 59
   orig: 32, 59
   offset: 0, 0
   index: -1
 uniform/body_1
   rotate: false
-  xy: 1800, 311
+  xy: 1356, 379
   size: 69, 46
   orig: 69, 46
   offset: 0, 0
   index: -1
 uniform/body_2
   rotate: false
-  xy: 1861, 1059
+  xy: 1356, 483
   size: 79, 58
   orig: 79, 58
   offset: 0, 0
   index: -1
 uniform/body_3
   rotate: false
-  xy: 826, 73
+  xy: 1052, 523
   size: 110, 64
   orig: 110, 64
   offset: 0, 0
   index: -1
 uniform/head_ribbon
   rotate: false
-  xy: 602, 576
+  xy: 641, 855
   size: 148, 105
   orig: 148, 105
   offset: 0, 0
   index: -1
 uniform/head_tail
   rotate: false
-  xy: 968, 788
+  xy: 1364, 1323
   size: 115, 232
   orig: 115, 232
   offset: 0, 0
   index: -1
 wedding/L_hand_bouquet
   rotate: false
-  xy: 1323, 328
+  xy: 1484, 82
   size: 47, 48
   orig: 47, 48
   offset: 0, 0
   index: -1
 wedding/L_leg_1
   rotate: false
-  xy: 1611, 253
+  xy: 1249, 143
   size: 41, 60
   orig: 41, 60
   offset: 0, 0
   index: -1
 wedding/L_leg_2
   rotate: false
-  xy: 1473, 307
+  xy: 1028, 3
   size: 41, 61
   orig: 41, 61
   offset: 0, 0
   index: -1
 wedding/R_leg_1
   rotate: false
-  xy: 863, 3
+  xy: 1055, 268
   size: 41, 67
   orig: 41, 67
   offset: 0, 0
   index: -1
 wedding/R_leg_2
   rotate: false
-  xy: 957, 150
+  xy: 1633, 455
   size: 34, 61
   orig: 34, 61
   offset: 0, 0
   index: -1
 wedding/body_1
   rotate: false
-  xy: 1768, 583
+  xy: 1427, 197
   size: 68, 52
   orig: 68, 52
   offset: 0, 0
   index: -1
 wedding/body_2
   rotate: false
-  xy: 1564, 386
+  xy: 1244, 442
   size: 73, 42
   orig: 73, 42
   offset: 0, 0
   index: -1
 wedding/body_2_ribbon
   rotate: false
-  xy: 1640, 899
+  xy: 1910, 1012
   size: 86, 95
   orig: 86, 95
   offset: 0, 0
   index: -1
 wedding/body_3
   rotate: false
-  xy: 586, 156
+  xy: 802, 619
   size: 124, 74
   orig: 124, 74
   offset: 0, 0
   index: -1
 wedding/hat_front
   rotate: false
-  xy: 533, 1217
+  xy: 492, 1521
   size: 258, 88
   orig: 258, 88
   offset: 0, 0
   index: -1
 wedding/head
   rotate: false
-  xy: 3, 324
+  xy: 3, 477
   size: 223, 213
   orig: 223, 213
   offset: 0, 0
   index: -1
 wedding/mouth_2
   rotate: false
-  xy: 1457, 6
+  xy: 1927, 127
   size: 30, 30
   orig: 30, 30
   offset: 0, 0
   index: -1
 wedding/veil
   rotate: false
-  xy: 1086, 790
+  xy: 229, 674
   size: 115, 232
   orig: 115, 232
   offset: 0, 0

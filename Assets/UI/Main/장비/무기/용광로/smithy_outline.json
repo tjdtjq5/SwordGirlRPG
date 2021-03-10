@@ -1,0 +1,48 @@
+{
+"skeleton": {
+	"hash": "eGsrMlfPW+P+cb8HUtw6Ok+R2lo",
+	"spine": "3.8.99",
+	"x": -235.22,
+	"y": -324.99,
+	"width": 460,
+	"height": 666.18,
+	"images": "./images/",
+	"audio": "E:/작업/대장간"
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "com", "parent": "root" }
+],
+"slots": [
+	{ "name": "outline", "bone": "com", "attachment": "outline" },
+	{ "name": "moru", "bone": "com", "color": "fc818100", "attachment": "moru", "blend": "additive" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"moru": {
+				"moru": { "x": 1.74, "y": -246.99, "width": 229, "height": 156 }
+			},
+			"outline": {
+				"outline": { "x": -5.22, "y": 9.69, "width": 460, "height": 663 }
+			}
+		}
+	}
+],
+"animations": {
+	"wait": {
+		"slots": {
+			"moru": {
+				"color": [
+					{ "color": "fc818180" },
+					{ "time": 0.6667, "color": "fc8181ff" },
+					{ "time": 1.3333, "color": "fc818180" },
+					{ "time": 2, "color": "fc8181ff" },
+					{ "time": 2.6667, "color": "fc818180" }
+				]
+			}
+		}
+	}
+}
+}
