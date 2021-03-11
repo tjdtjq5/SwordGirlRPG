@@ -30,15 +30,19 @@ public class Violet : Enemy
     // 공격 
     int atkCount;
     IEnumerator attackCoroutine;
+    public GameObject atkEffectPrepab;
 
     // 플레이어
     public PlayerController playerController;
+    public Transform player;
 
     // UI
     public Text damage_text;
     public Text level_text;
     public Text reward_text;
     public Image hp_fore;
+    int beforeLevel = 1;
+    public Image lineEffect;
 
     [Header("스크립트")]
     public VioletResult violetResult;
@@ -74,6 +78,7 @@ public class Violet : Enemy
         criticalPercent = 30;
         criticalDamage = 1.4f;
         atkSpeed = 5f;
+        beforeLevel = 1;
 
         // 시간 초기화 
         playTime = 0;
@@ -136,6 +141,11 @@ public class Violet : Enemy
             float atkMultiple = (atkCount + 1) * atkPercent;
             string damage = MyMath.Multiple(atk, atkMultiple);
 
+            yield return new WaitForSeconds(2);
+
+            GameObject effectClone = Instantiate(atkEffectPrepab, player.position, Quaternion.identity, this.transform);
+            effectClone.GetComponent<Animator>().SetTrigger("attack");
+
             yield return new WaitForSeconds(0.5f);
 
             if (criticalPercent < r) // 노말 
@@ -167,6 +177,14 @@ public class Violet : Enemy
 
         float fillAmount = 1 - MyMath.Amount(d,t);
         hp_fore.DOFillAmount(fillAmount, 0.3f);
+
+        if(violetRewardChartInfo.Level != beforeLevel)
+        {
+            lineEffect.DOFade(1, 0.5f).OnComplete(() => { lineEffect.DOFade(0, 0.5f); });
+            lineEffect.transform.DOScale(new Vector2(1.1f, 1.2f), 0.5f).OnComplete(() => { lineEffect.transform.DOScale(new Vector2(1, 1), 0.5f); });
+        }
+
+        beforeLevel = violetRewardChartInfo.Level;
     }
 
     public override void Hit(string damage, bool isCritical)

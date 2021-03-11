@@ -502,31 +502,11 @@ public class UserInfo : MonoBehaviour
     }
 
     // === 유저 공용 정보 === // 
-    public UserPublicInfo userPublicInfo = null;
-    public void SavePublicUserInfo(System.Action callback)
-    {
-        if (userPublicInfo == null)
-        {
-            callback();
-            return;
-        }
-
-        Param param = new Param();
-
-        // 복장
-        List<string> clothData = new List<string>();
-        for (int i = 0; i < userCloths.Count; i++)
-        {
-            clothData.Add(userCloths[i].name + "/" + userCloths[i].upgrade + "/" + userCloths[i].num + "/" + userCloths[i].isEqip);
-        }
-        param.Add("Cloth", clothData);
-
-        BackendGameInfo.instance.PublicTableUpdate("PublicUserInfo", param, () => { callback(); });
-    }
     public void LoadPublicUserInfo(System.Action callback)
     {
         string nickname = "";
         userCloths.Clear();
+        userFrames.Clear();
 
         BackendAsyncClass.BackendAsync(Backend.GameInfo.GetMyPublicContents, "PublicUserInfo", (backendCallback) => {
 
@@ -552,8 +532,11 @@ public class UserInfo : MonoBehaviour
                 PushCloth(clothName);
                 EqipCloth(clothName);
 
-                userPublicInfo = new UserPublicInfo(nickname, userCloths);
-                SavePublicUserInfo(() => { callback(); });
+                string frameName = FrameChart.instance.frameChartInfos[0].SubName;
+                PushFrame(frameName);
+                EqipFrame(frameName);
+
+                callback();
             }
             else
             {
@@ -577,9 +560,19 @@ public class UserInfo : MonoBehaviour
                             userCloths.Add(new UserCloth(data[0], int.Parse(data[1]), int.Parse(data[2]), bool.Parse(data[3])));
                         }
                     }
+
+                    // 프레임
+                    if (jsonData.Keys.Contains("Frame"))
+                    {
+                        JsonData keyData = jsonData["Frame"][0];
+                        for (int j = 0; j < keyData.Count; j++)
+                        {
+                            string[] data = keyData[j][0].ToString().Split('/');
+                            userFrames.Add(new UserFrame(data[0], bool.Parse(data[1])));
+                        }
+                    }
                 }
 
-                userPublicInfo = new UserPublicInfo(nickname, userCloths);
                 callback();
             }
         });
@@ -1634,18 +1627,73 @@ public class UserInfo : MonoBehaviour
             callback();
         });
     }
-}
-public class UserPublicInfo
-{
-    public string nickname;
-    public List<UserCloth> userCloths = new List<UserCloth>(); 
 
-    public UserPublicInfo(string nickname, List<UserCloth> userCloths)
+    // 프레임
+    public List<UserFrame> userFrames = new List<UserFrame>();
+    public bool IsExistFrame(string subName)
     {
-        this.nickname = nickname;
-        this.userCloths = userCloths;
+        for (int i = 0; i < userFrames.Count; i++)
+        {
+            if (userFrames[i].subName == subName)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    public void PushFrame(string subName)
+    {
+        if (IsExistFrame(subName))
+        {
+            Debug.Log("이미 가지고 있음");
+            return;
+        }
+        userFrames.Add(new UserFrame(subName, false));
+    }
+    public UserFrame GetEqipFrame()
+    {
+        for (int i = 0; i < userFrames.Count; i++)
+        {
+            if (userFrames[i].isEqip)
+            {
+                return userFrames[i];
+            }
+        }
+        return null;
+    }
+    public void EqipFrame(string subName)
+    {
+        if (!IsExistFrame(subName))
+        {
+            Debug.Log("해당 프레임이 없음");
+            return;
+        }
+
+        for (int i = 0; i < userFrames.Count; i++)
+        {
+            if (userFrames[i].subName == subName)
+            {
+                userFrames[i].isEqip = true;
+            }
+            else
+            {
+                userFrames[i].isEqip = false;
+            }
+        }
+    }
+    public void SaveUserFrame(System.Action callback)
+    {
+        Param param = new Param();
+        List<string> data = new List<string>();
+        for (int i = 0; i < userFrames.Count; i++)
+        {
+            data.Add(userFrames[i].subName + "/" + userFrames[i].isEqip);
+        }
+        param.Add("Frame", data);
+        BackendGameInfo.instance.PublicTableUpdate("PublicUserInfo", param, () => { callback(); });
     }
 }
+
 public class UserMasicMissile
 {
     public string Name;
@@ -1791,5 +1839,16 @@ public class UserViolet
     {
         this.dateTime = dateTime;
         this.violetRemainCount = violetRemainCount;
+    }
+}
+public class UserFrame
+{
+    public string subName;
+    public bool isEqip;
+
+    public UserFrame(string subName, bool isEqip)
+    {
+        this.subName = subName;
+        this.isEqip = isEqip;
     }
 }

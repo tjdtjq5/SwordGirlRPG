@@ -1,215 +1,243 @@
 
 witch.png
-size: 2048,1024
+size: 2048,2048
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 L_arm_1
   rotate: false
-  xy: 1680, 318
+  xy: 999, 1703
   size: 109, 115
   orig: 112, 118
   offset: 1, 1
   index: -1
 L_arm_2
-  rotate: true
-  xy: 1724, 878
+  rotate: false
+  xy: 893, 1820
   size: 144, 219
   orig: 162, 219
   offset: 0, 0
   index: -1
 L_arm_3
   rotate: true
-  xy: 1282, 32
+  xy: 1086, 1627
   size: 74, 69
   orig: 76, 72
   offset: 1, 2
   index: -1
 L_cloak
   rotate: true
-  xy: 948, 108
+  xy: 171, 49
   size: 269, 465
   orig: 269, 465
   offset: 0, 0
   index: -1
 L_head_ac
-  rotate: true
-  xy: 1457, 7
+  rotate: false
+  xy: 766, 943
   size: 175, 156
   orig: 178, 160
   offset: 1, 2
   index: -1
 L_leg
-  rotate: true
-  xy: 911, 412
+  rotate: false
+  xy: 595, 1698
   size: 153, 341
   orig: 259, 344
   offset: 106, 0
   index: -1
 R_arm_1
-  rotate: false
-  xy: 1415, 184
+  rotate: true
+  xy: 779, 809
   size: 132, 209
   orig: 153, 229
   offset: 20, 20
   index: -1
 R_arm_2
-  rotate: false
-  xy: 1603, 435
+  rotate: true
+  xy: 651, 813
   size: 120, 126
   orig: 122, 128
   offset: 1, 1
   index: -1
 R_arm_3
-  rotate: true
-  xy: 1353, 6
+  rotate: false
+  xy: 171, 2
   size: 100, 45
   orig: 103, 49
   offset: 1, 2
   index: -1
 R_arm_4
-  rotate: true
-  xy: 1724, 740
+  rotate: false
+  xy: 1039, 1823
   size: 136, 216
   orig: 136, 234
   offset: 0, 18
   index: -1
 R_arm_5
   rotate: true
-  xy: 1214, 24
+  xy: 1043, 1255
   size: 82, 66
   orig: 84, 69
   offset: 1, 2
   index: -1
 R_arm_6
   rotate: true
-  xy: 1400, 38
+  xy: 1110, 1753
   size: 68, 55
   orig: 70, 59
   offset: 1, 2
   index: -1
 R_head_ac
-  rotate: false
-  xy: 948, 2
+  rotate: true
+  xy: 893, 1702
   size: 116, 104
   orig: 119, 107
   offset: 2, 2
   index: -1
 R_leg
-  rotate: true
-  xy: 1597, 563
+  rotate: false
+  xy: 638, 5
   size: 106, 345
   orig: 107, 345
   offset: 0, 0
   index: -1
 com
-  rotate: true
-  xy: 1549, 212
+  rotate: false
+  xy: 901, 1111
   size: 181, 129
   orig: 189, 132
   offset: 7, 2
   index: -1
-eye_1
+eff_1
+  rotate: true
+  xy: 2, 805
+  size: 589, 170
+  orig: 632, 233
+  offset: 19, 32
+  index: -1
+eff_2
+  rotate: true
+  xy: 595, 1435
+  size: 261, 254
+  orig: 267, 260
+  offset: 3, 4
+  index: -1
+eff_3
   rotate: false
-  xy: 1046, 661
+  xy: 851, 1454
+  size: 233, 242
+  orig: 237, 248
+  offset: 2, 4
+  index: -1
+eye_1
+  rotate: true
+  xy: 746, 8
   size: 342, 143
   orig: 344, 145
   offset: 1, 1
   index: -1
 eye_2
-  rotate: false
-  xy: 1390, 671
+  rotate: true
+  xy: 766, 1101
   size: 332, 133
   orig: 341, 139
   offset: 5, 1
   index: -1
 eye_3
   rotate: false
-  xy: 1254, 395
+  xy: 302, 809
   size: 347, 121
   orig: 355, 128
   offset: 7, 2
   index: -1
 eye_ex
-  rotate: false
-  xy: 1254, 518
+  rotate: true
+  xy: 750, 1698
   size: 341, 141
   orig: 345, 146
   offset: 3, 2
   index: -1
 hair
-  rotate: false
-  xy: 2, 5
+  rotate: true
+  xy: 392, 935
   size: 459, 372
   orig: 463, 372
   offset: 0, 0
   index: -1
 head
   rotate: false
-  xy: 595, 567
+  xy: 353, 352
   size: 449, 455
   orig: 452, 457
   offset: 1, 1
   index: -1
 hood
   rotate: false
-  xy: 2, 379
+  xy: 2, 1396
   size: 591, 643
   orig: 594, 646
   offset: 2, 2
   index: -1
 hood_back
-  rotate: false
-  xy: 463, 28
+  rotate: true
+  xy: 2, 320
   size: 483, 349
   orig: 485, 351
   offset: 1, 1
   index: -1
+lighteff_1
+  rotate: true
+  xy: 174, 808
+  size: 122, 126
+  orig: 139, 142
+  offset: 8, 8
+  index: -1
 mouth_1
   rotate: false
-  xy: 989, 380
+  xy: 351, 17
   size: 76, 30
   orig: 78, 33
   offset: 1, 1
   index: -1
 mouth_2
   rotate: false
-  xy: 911, 379
+  xy: 273, 16
   size: 76, 31
   orig: 78, 34
   offset: 1, 1
   index: -1
 neck
-  rotate: false
-  xy: 1066, 45
+  rotate: true
+  xy: 943, 963
   size: 146, 61
   orig: 148, 63
   offset: 1, 1
   index: -1
 r_cloak
-  rotate: true
-  xy: 1046, 806
+  rotate: false
+  xy: 174, 932
   size: 216, 462
   orig: 230, 462
   offset: 0, 0
   index: -1
 skirt_back
-  rotate: true
-  xy: 1510, 882
+  rotate: false
+  xy: 901, 1242
   size: 140, 210
   orig: 141, 211
   offset: 0, 1
   index: -1
 upperbody
-  rotate: true
-  xy: 595, 398
+  rotate: false
+  xy: 2, 4
   size: 167, 314
   orig: 171, 316
   offset: 4, 1
   index: -1
 wepom
   rotate: false
-  xy: 1615, 97
+  xy: 1043, 1339
   size: 113, 113
   orig: 115, 115
   offset: 1, 1

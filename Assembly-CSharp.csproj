@@ -152,6 +152,7 @@
     <Compile Include="Assets\Script\Chart\CoinTreeChart.cs" />
     <Compile Include="Assets\Script\Chart\CombatPowerChart.cs" />
     <Compile Include="Assets\Script\Chart\DayByQuestChart.cs" />
+    <Compile Include="Assets\Script\Chart\FrameChart.cs" />
     <Compile Include="Assets\Script\Chart\GachaChart.cs" />
     <Compile Include="Assets\Script\Chart\MasicMissileChart.cs" />
     <Compile Include="Assets\Script\Chart\NomalMonsterChart.cs" />
@@ -205,6 +206,7 @@
     <Compile Include="Assets\Script\TimeManager.cs" />
     <Compile Include="Assets\Script\UserInfo.cs" />
     <Compile Include="Assets\Script\결과\VioletResult.cs" />
+    <Compile Include="Assets\Script\기능\FrameManager.cs" />
     <Compile Include="Assets\Script\기능\Ranking.cs" />
     <Compile Include="Assets\Script\기능\RankingUI.cs" />
     <Compile Include="Assets\Script\알람\OkAlram.cs" />
