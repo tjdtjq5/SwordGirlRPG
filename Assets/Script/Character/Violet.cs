@@ -4,6 +4,7 @@ using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Violet : Enemy
 {
@@ -33,6 +34,12 @@ public class Violet : Enemy
     // 플레이어
     public PlayerController playerController;
 
+    // UI
+    public Text damage_text;
+    public Text level_text;
+    public Text reward_text;
+    public Image hp_fore;
+
     [Header("스크립트")]
     public VioletResult violetResult;
 
@@ -57,7 +64,7 @@ public class Violet : Enemy
         AttackStop();
     }
 
-    void Init() // 능력치 초기화 
+    public void Init() // 능력치 초기화 
     {
         maxHp = "0";
         hp = "0";
@@ -76,6 +83,8 @@ public class Violet : Enemy
 
         // 축적 데미지 
         hitDamage = "0";
+
+        UI_Setting();
     }
 
     void TimePlay()
@@ -144,6 +153,22 @@ public class Violet : Enemy
         }
     }
 
+    void UI_Setting()
+    {
+        damage_text.text = MyMath.ValueToString(hitDamage);
+        VioletRewardChartInfo violetRewardChartInfo = VioletRewardChart.instance.GetVioletReward(hitDamage);
+        int rewardCount = violetRewardChartInfo.MasicStoneCount;
+        reward_text.text = rewardCount.ToString();
+        level_text.text = "Level " + string.Format("{0:D2}", violetRewardChartInfo.Level);
+
+        string beforeD = violetRewardChartInfo.BeforeDamage;
+        string d = MyMath.Sub(hitDamage, beforeD);
+        string t = MyMath.Sub(violetRewardChartInfo.TotalDamage, beforeD);
+
+        float fillAmount = 1 - MyMath.Amount(d,t);
+        hp_fore.DOFillAmount(fillAmount, 0.3f);
+    }
+
     public override void Hit(string damage, bool isCritical)
     {
         if (!playFlag) return;
@@ -151,6 +176,8 @@ public class Violet : Enemy
         base.Hit(damage, isCritical);
 
         hitDamage = MyMath.Add(hitDamage, damage);
+
+        UI_Setting();
     }
     public override void Dead()
     {

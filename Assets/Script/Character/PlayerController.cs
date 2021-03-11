@@ -604,7 +604,6 @@ public class PlayerController : MonoBehaviour
     
     public void Hit(string damage, bool isCritical)
     {
-        return;
         if (isDash) return; // 대쉬중일때는 무적상태 
 
         // 데미지 이펙트 프리팹 

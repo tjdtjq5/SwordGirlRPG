@@ -14,16 +14,18 @@ public class VioletRewardChart : MonoBehaviour
 
     public VioletRewardChartInfo GetVioletReward(string totalDamage)
     {
+        /*
         if (MyMath.CompareValue(violetRewardChartInfo[0].TotalDamage, totalDamage) >= 1)
         {
             return null;
         }
+        */
 
         for (int i = 0; i < violetRewardChartInfo.Length; i++)
         {
             if (MyMath.CompareValue(violetRewardChartInfo[i].TotalDamage, totalDamage) >= 1)
             {
-                return violetRewardChartInfo[i - 1];
+                return violetRewardChartInfo[i];
             }
         }
 
@@ -42,6 +44,9 @@ public class VioletRewardChart : MonoBehaviour
                 violetRewardChartInfo[i] = new VioletRewardChartInfo();
                 JsonData rowData = jsonData[i];
                 violetRewardChartInfo[i].TotalDamage = rowData["TotalDamage"]["S"].ToString();
+                if (i > 0) violetRewardChartInfo[i].BeforeDamage = jsonData[i - 1]["TotalDamage"]["S"].ToString();
+                else violetRewardChartInfo[i].BeforeDamage = "0";
+                violetRewardChartInfo[i].Level = i + 1;
                 violetRewardChartInfo[i].MasicStoneCount = int.Parse(rowData["MasicStoneCount"]["S"].ToString());
                 violetRewardChartInfo[i].GoldCount = rowData["GoldCount"]["S"].ToString();
             }
@@ -54,6 +59,8 @@ public class VioletRewardChart : MonoBehaviour
 public class VioletRewardChartInfo
 {
     public string TotalDamage;
+    public string BeforeDamage;
+    public int Level;
     public int MasicStoneCount;
     public string GoldCount;
 }
