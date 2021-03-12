@@ -26,6 +26,13 @@ public class Profile : MonoBehaviour
 
     public void CombatPower_UI_Setting()
     {
+       
+
+        combatPowerText.text = GetTotalPower();
+    }
+
+    public string GetTotalPower()
+    {
         CombatPowerChartInfo combatPowerChartInfo = CombatPowerChart.instance.combatPowerChartInfo;
         string Atk = MyMath.Multiple(UserInfo.instance.GetAtk(), combatPowerChartInfo.Atk);
         float AtkPercent = UserInfo.instance.GetAtkPercent() * combatPowerChartInfo.AtkPercent;
@@ -48,6 +55,6 @@ public class Profile : MonoBehaviour
         total = MyMath.Add(total, Atk);
         total = MyMath.Add(total, Hp);
 
-        combatPowerText.text = total;
+        return total;
     }
 }

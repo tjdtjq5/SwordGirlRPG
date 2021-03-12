@@ -81284,7 +81284,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1360323716}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1995520497}
+        m_MethodName: Open
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1362994487
 GameObject:
   m_ObjectHideFlags: 0
@@ -121460,6 +121471,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a149791c7c1bd64b876a142918126ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardPrepab: {fileID: 462959412442017084, guid: 07b60ae0ca1d2a340944d4941d0b400d,
+    type: 3}
+  frameObj: {fileID: 832116425}
+  content: {fileID: 1978042918}
+  nicknameText: {fileID: 14961098}
+  powerText: {fileID: 1187421152}
+  buffText: {fileID: 1576317327}
+  profile: {fileID: 2020847740}
 --- !u!1 &1996869335
 GameObject:
   m_ObjectHideFlags: 0
@@ -128324,7 +128343,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2108480132}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1995520497}
+        m_MethodName: Close
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2109737320
 GameObject:
   m_ObjectHideFlags: 0
