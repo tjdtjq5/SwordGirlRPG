@@ -145,6 +145,7 @@
     <Compile Include="Assets\Script\Character\Enemy.cs" />
     <Compile Include="Assets\Script\Character\MasicMissileController.cs" />
     <Compile Include="Assets\Script\Character\PlayerController.cs" />
+    <Compile Include="Assets\Script\Character\Pumpkin.cs" />
     <Compile Include="Assets\Script\Character\Violet.cs" />
     <Compile Include="Assets\Script\Chart\BossMonsterChart.cs" />
     <Compile Include="Assets\Script\Chart\CharacterEnhanceAbilityChart.cs" />
@@ -154,9 +155,11 @@
     <Compile Include="Assets\Script\Chart\DayByQuestChart.cs" />
     <Compile Include="Assets\Script\Chart\FrameChart.cs" />
     <Compile Include="Assets\Script\Chart\GachaChart.cs" />
+    <Compile Include="Assets\Script\Chart\ItemChart.cs" />
     <Compile Include="Assets\Script\Chart\MasicMissileChart.cs" />
     <Compile Include="Assets\Script\Chart\NomalMonsterChart.cs" />
     <Compile Include="Assets\Script\Chart\PassChart.cs" />
+    <Compile Include="Assets\Script\Chart\PumpkinChart.cs" />
     <Compile Include="Assets\Script\Chart\RelicChart.cs" />
     <Compile Include="Assets\Script\Chart\VioletRewardChart.cs" />
     <Compile Include="Assets\Script\Chart\WeaponeChart.cs" />
@@ -164,8 +167,10 @@
     <Compile Include="Assets\Script\Effect\DamageEffect.cs" />
     <Compile Include="Assets\Script\Effect\HitEffect.cs" />
     <Compile Include="Assets\Script\Effect\LineCamEffect.cs" />
+    <Compile Include="Assets\Script\Effect\MoneyTextEffect.cs" />
     <Compile Include="Assets\Script\Effect\ObectDestroy.cs" />
     <Compile Include="Assets\Script\Effect\SwitchConVertical.cs" />
+    <Compile Include="Assets\Script\Effect\TransformSet.cs" />
     <Compile Include="Assets\Script\Enum.cs" />
     <Compile Include="Assets\Script\Function.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
@@ -225,11 +230,11 @@
     <None Include="Assets\GooglePlayGames\Plugins\Android\GooglePlayGamesManifest.plugin\AndroidManifest.xml" />
     <None Include="Assets\UI\Main\장비\무기\용광로\smithy.atlas.txt" />
     <None Include="Assets\UI\이팩트\스크린집중선\line_zoom.atlas.txt" />
+    <None Include="Assets\프리팹\호박마녀\pumpkinwitch.atlas.txt" />
     <None Include="Assets\Effect\Hovl Studio\Epic toon VFX\Shaders\Lit_CenterGlow.shader" />
     <None Include="Assets\Effect\Hovl Studio\Toon Projectiles 2\Demo scene\Readme.txt" />
     <None Include="Assets\Effect\Hovl Studio\Epic toon VFX\Shaders\SmoothSmoke.shader" />
     <None Include="Assets\Effect\Hovl Studio\Toon Projectiles 2\Shaders\DissolveNoise.shader" />
-    <None Include="Assets\Effect\effect_main\spine\hero.atlas.txt" />
     <None Include="Assets\프리팹\택배요정\fairy.atlas.txt" />
     <None Include="Assets\Effect\Hovl Studio\Epic toon VFX\Shaders\Ice.shader" />
     <None Include="Assets\Effect\Hovl Studio\Toon Projectiles 2\Shaders\Distortion.shader" />
@@ -246,6 +251,7 @@
     <None Include="Assets\Effect\Hovl Studio\Epic toon VFX\Shaders\AddTrail.shader" />
     <None Include="Assets\Effect\Hovl Studio\Epic toon VFX\Demo scene\Demo scene hero\Character.txt" />
     <None Include="Assets\프리팹\바이올렛\witch.atlas.txt" />
+    <None Include="Assets\프리팹\마력검기\HIT\hiteff.atlas.txt" />
     <None Include="Assets\Effect\별\star1.atlas.txt" />
     <None Include="Assets\Effect\Hovl Studio\Toon Projectiles 2\Shaders\Add_CenterGlow.shader" />
     <Reference Include="UnityEngine">

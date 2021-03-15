@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class MasicMissileController : MonoBehaviour
 
     Transform target;
     Vector2 targetPos;
+    public GameObject hitPrepab;
 
     float r;
     public void Shot(string damage, bool isCritical, Transform target)
@@ -50,6 +52,11 @@ public class MasicMissileController : MonoBehaviour
                     if (target.tag == "Enemy")
                     {
                         target.GetComponent<Enemy>().Hit(damage, isCritical);
+                        Vector2 targetOffset = target.GetComponent<BoxCollider2D>().size / 3.5F;
+                        float offsetRandomX = UnityEngine.Random.Range(-targetOffset.x, targetOffset.x);
+                        Vector2 prepabPos = new Vector2(this.transform.position.x + offsetRandomX, this.transform.position.y);
+                        GameObject prepab = Instantiate(hitPrepab, prepabPos, Quaternion.identity);
+                        prepab.GetComponent<SkeletonAnimation>().AnimationState.SetAnimation(0,"hiteff",false);
                     }
                     Destroy();
                 }

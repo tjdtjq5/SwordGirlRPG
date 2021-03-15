@@ -61,6 +61,11 @@ public class PlayerController : MonoBehaviour
     public GameObject lineEffect;
     IEnumerator faceCoroutine;
     public ParticleSystem dustParticle;
+    bool dustFlag = false;
+    float dustColltime = 0.08f;
+    public ParticleSystem concentratParticle;
+    bool concentratFlag = false;
+    float concentratColltime = 0.1f;
 
     // 스킨
     public SkeletonMecanim skeletonMecanim;
@@ -193,7 +198,6 @@ public class PlayerController : MonoBehaviour
             StopAngerState();
         });
         StartCoroutine(fillAmountCoroutine);
-
     }
 
     IEnumerator FillAmountCoroutine(float time ,System.Action callback)
@@ -325,7 +329,6 @@ public class PlayerController : MonoBehaviour
             float criticalDamage = UserInfo.instance.GetCriticalDamagePercent();
             damage = MyMath.Multiple(damage, criticalDamage);
             masicMissile.GetComponent<MasicMissileController>().Shot(damage, true, target);
-
         }
         else  // 노말 
         {
@@ -336,7 +339,7 @@ public class PlayerController : MonoBehaviour
 
         FaceAttackAni(0.3f);
 
-      //  dustParticle.Play();
+        Dust();
     }
      
     void Auto_M_Attack(bool flag) // 원거리 자동 공격
@@ -397,6 +400,7 @@ public class PlayerController : MonoBehaviour
             damage = MyMath.Multiple(damage, criticalDamage);
             target.GetComponent<Enemy>().Hit(damage, true);
 
+        
         }
         else  // 노말 
         {
@@ -405,7 +409,13 @@ public class PlayerController : MonoBehaviour
 
         AngerCamEffectPlay();
 
-       // dustParticle.Play();
+        dustParticle.Play();
+
+        // Vector2 targetOffset = target.GetComponent<BoxCollider2D>().offset;
+        //  Vector2 concentrationPos = new Vector2(target.position.x + targetOffset.x, target.position.y + targetOffset.y);
+        Vector2 targetOffset = character.GetComponent<BoxCollider2D>().offset;
+        Vector2 concentrationPos = new Vector2(character.position.x + 1.5f + targetOffset.x, character.position.y + targetOffset.y);
+        Concentration(concentrationPos);
     }
     void Auto_C_Attack(bool flag) // 근거리 자동공격 
     {
@@ -413,13 +423,13 @@ public class PlayerController : MonoBehaviour
         {
             case true:
                 animator.SetTrigger("attack_anger");
-                lineEffect.gameObject.SetActive(true);
+              //  lineEffect.gameObject.SetActive(true);
                 if (auto_C_Attack_Coroutine != null) StopCoroutine(auto_C_Attack_Coroutine);
                 auto_C_Attack_Coroutine = Auto_C_Attack_Coroutine();
                 StartCoroutine(auto_C_Attack_Coroutine);
                 break;
             case false:
-                lineEffect.gameObject.SetActive(false);
+            //    lineEffect.gameObject.SetActive(false);
                 if (auto_C_Attack_Coroutine != null) StopCoroutine(auto_C_Attack_Coroutine);
                 break;
         }
@@ -582,6 +592,41 @@ public class PlayerController : MonoBehaviour
       
     }
 
+    // 먼지 파티클
+    void Dust()
+    {
+        if (!dustFlag)
+        {
+            dustParticle.Play();
+            dustFlag = true;
+            StartCoroutine(DustColltimeCoroutine());
+        }
+    }
+
+    IEnumerator DustColltimeCoroutine()
+    {
+        yield return new WaitForSeconds(dustColltime);
+        dustFlag = false;
+    }
+
+    // 집중 파티클
+    void Concentration(Vector2 pos)
+    {
+        if (!concentratFlag)
+        {
+            concentratParticle.transform.position = pos;
+            concentratParticle.Play();
+            concentratFlag = true;
+            StartCoroutine(ConcentrationColltimeCoroutine());
+        }
+    }
+
+    IEnumerator ConcentrationColltimeCoroutine()
+    {
+        yield return new WaitForSeconds(concentratColltime);
+        concentratFlag = false;
+    }
+
     // 행동 멈춤 
     public void DontPlay()
     {
@@ -594,6 +639,9 @@ public class PlayerController : MonoBehaviour
     }
     public void Play()
     {
+        animator.SetTrigger("idle");
+        animator.SetTrigger("face_flash");
+
         dontPlayFlag = false;
 
         skeletonGhost.enabled = false;
@@ -604,8 +652,8 @@ public class PlayerController : MonoBehaviour
     
     public void Hit(string damage, bool isCritical)
     {
-        return;
         if (isDash) return; // 대쉬중일때는 무적상태 
+        if (angerFlag) return;// 분노중 무적상태 
 
         // 데미지 이펙트 프리팹 
         GameObject damagePrepab = null;
@@ -632,6 +680,8 @@ public class PlayerController : MonoBehaviour
         {
             if (deadDelegate != null)
             {
+                animator.SetTrigger("dead");
+                animator.SetTrigger("face_attack");
                 deadDelegate();
             }
         }

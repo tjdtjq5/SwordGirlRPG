@@ -1,5 +1,7 @@
-﻿using DG.Tweening;
+﻿using BackEnd;
+using DG.Tweening;
 using Function;
+using LitJson;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,11 +37,7 @@ public class RankingUI : MonoBehaviour
     public Text myRankingText;
     public Text myScoreText;
 
-    [Header("페이지")]
-    public Button right;
-    public Button left;
-    public Text page_text;
-    int page;
+    // 랭킹 정보
     RankingInfo myRankingInfo = null;
     List<RankingInfo> rankingInfoList = new List<RankingInfo>();
 
@@ -117,14 +115,8 @@ public class RankingUI : MonoBehaviour
         rankingInfoList.Clear();
         myRankingInfo = null;
 
-        page = 1;
-        page_text.text = "";
-
         myRankingText.text = "";
         myScoreText.text = "";
-
-        right.onClick.RemoveAllListeners();
-        left.onClick.RemoveAllListeners();
 
         CardInit();
 
@@ -132,28 +124,7 @@ public class RankingUI : MonoBehaviour
         ranking.GetVioletRanking(100, 0, () => {
             rankingInfoList = ranking.rankingInfoList;
 
-            Page();
-
-            right.onClick.AddListener(() => {
-
-                int len = content.childCount * page;
-                int rankInfoLen = rankingInfoList.Count;
-
-                if (rankInfoLen > len)
-                {
-                    page++;
-                    Page();
-                }
-
-            });
-
-            left.onClick.AddListener(() => {
-                if (page > 1)
-                {
-                    page--;
-                    Page();
-                }
-            });
+            RankingInfoSetting();
         });
 
         // 내 랭킹 정보 가져오기
@@ -171,24 +142,18 @@ public class RankingUI : MonoBehaviour
     {
         CardInit();
     }
-    void Page()
+    void RankingInfoSetting() // 랭킹 ui정보 셋팅 
     {
         CardInit();
 
-        int len = content.childCount;  // 2
         int rankingInfoCount = rankingInfoList.Count; // 3
-        int maxPage = rankingInfoCount / len;  // 2
-        page_text.text = page  + "/" + maxPage;
+        int len = rankingInfoCount;
+        if (content.childCount < rankingInfoCount) len = content.childCount;
 
-        int min = len * (page - 1); // 0 , 2 , 4
-        int max = min + len; // 2 , 4 , 6
-        if(rankingInfoCount < max) { max = rankingInfoCount; }
-
-        int count = 0; 
-        for (int i = min; i < max; i++)
+        for (int i = 0; i < len; i++)
         {
             RankingInfo rankingInfo = rankingInfoList[i]; 
-            Transform card = content.GetChild(count);
+            Transform card = content.GetChild(i);
 
             // 카드 이미지
             if (UserInfo.instance.nickName == rankingInfo.nickname)
@@ -235,7 +200,84 @@ public class RankingUI : MonoBehaviour
             card.Find("점수").gameObject.SetActive(true);
             card.Find("점수").GetComponent<Text>().text = MyMath.ValueToString(rankingInfo.stringScore);
 
-            count++;
+            StartCoroutine(FrameInfoSetting(card, rankingInfo.nickname));
         }
+    }
+
+    IEnumerator FrameInfoSetting(Transform card, string nickname)
+    {
+        yield return null;
+
+        BackendAsyncClass.BackendAsync(Backend.Social.GetGamerIndateByNickname, nickname, (indateCallback) => {
+            string gamerIndate = indateCallback.Rows()[0]["inDate"]["S"].ToString();
+
+            BackendAsyncClass.BackendAsync(Backend.GameInfo.GetPublicContentsByGamerIndate, "PublicUserInfo", gamerIndate, (publicDataCallback) => {
+                switch (publicDataCallback.GetStatusCode())
+                {
+                    case "200": // 성공 
+                        break;
+                    case "404":
+                        Debug.Log("존재하지 않는 gamerIndate를 입력한 경우 && 존재하지 않는 tableName인 경우");
+                        return;
+                    case "400": 
+                        Debug.Log("public table 아닌 table의 조회를 시도한 경우 && limit이 100이상인 경우");
+                        return;
+                    case "412": 
+                        Debug.Log("비활성화 된 table의 조회를 시도한 경우");
+                        return;
+                    default:
+                        break;
+                }
+
+                card.Find("프레임").gameObject.SetActive(true);
+                card.Find("프레임").Find("Icon").GetComponent<Image>().sprite = ClothChart.instance.clothChartInfos[0].Icon;
+                card.Find("호칭").gameObject.SetActive(true);
+                card.Find("프레임").Find("frame").GetComponent<Image>().sprite = FrameChart.instance.frameChartInfos[0].Image;
+                card.Find("호칭").GetComponent<Text>().text = FrameChart.instance.frameChartInfos[0].SubName;
+
+                if (publicDataCallback.GetReturnValuetoJSON()[0].Count == 0) // 테이블에 해당 유저의 정보가 아무것도 없는 경우
+                {
+                }
+                else
+                {
+                    for (int i = 0; i < publicDataCallback.GetReturnValuetoJSON()[0].Count; i++)
+                    {
+                        JsonData jsonData = publicDataCallback.GetReturnValuetoJSON()[0][i];
+
+                        // 복장
+                        if (jsonData.Keys.Contains("Cloth"))
+                        {
+                            JsonData keyData = jsonData["Cloth"][0];
+                            for (int j = 0; j < keyData.Count; j++)
+                            {
+                                string[] data = keyData[j][0].ToString().Split('/');
+                                if (bool.Parse(data[3]))
+                                {
+                                    card.Find("프레임").Find("Icon").GetComponent<Image>().sprite = ClothChart.instance.GetClothChartInfo(data[0])[0].Icon;
+                                    break;
+                                }
+                            }
+                        }
+
+                        // 프레임
+                        if (jsonData.Keys.Contains("Frame"))
+                        {
+                            JsonData keyData = jsonData["Frame"][0];
+                            for (int j = 0; j < keyData.Count; j++)
+                            {
+                                string[] data = keyData[j][0].ToString().Split('/');
+
+                                if (bool.Parse(data[1]))
+                                {
+                                    card.Find("프레임").Find("frame").GetComponent<Image>().sprite = FrameChart.instance.GetFrameChartInfo(data[0]).Image;
+                                    card.Find("호칭").GetComponent<Text>().text = FrameChart.instance.GetFrameChartInfo(data[0]).SubName;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
     }
 }

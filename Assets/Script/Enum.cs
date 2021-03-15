@@ -64,3 +64,8 @@ public enum GradeType
     별5개,
     별6개
 }
+public enum ItemType
+{
+    재화,
+    프레임,
+}

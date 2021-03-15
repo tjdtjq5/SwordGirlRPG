@@ -40,12 +40,14 @@ public class VioletUI : MonoBehaviour
     public void VioletPlay()
     {
         int remainCount = UserInfo.instance.GetVioletRemainCount();
+        /*
         if(remainCount < 1) // 남은 도전권이 없을 경우 
         {
             OkAlram.instance.Open("남은 도전권이 없습니다\n내일 다시 도전 해주세요");
             return;
         }
- 
+        */
+
         UserInfo.instance.PullVioletRemainCount();
 
         UserInfo.instance.SaveUserViolet(() => {

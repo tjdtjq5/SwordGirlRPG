@@ -19,7 +19,6 @@ public class PassChart : MonoBehaviour
         BackendAsyncClass.BackendAsync(Backend.Chart.GetChartContents, field, (backendCallback) => {
             JsonData jsonData = backendCallback.GetReturnValuetoJSON()["rows"];
             passChartInfos = new PassChartInfo[jsonData.Count];
-
             for (int i = 0; i < jsonData.Count; i++)
             {
                 passChartInfos[i] = new PassChartInfo();
@@ -30,7 +29,6 @@ public class PassChart : MonoBehaviour
                 passChartInfos[i].PassReward = (MoneyType)int.Parse(rowData["PassReward"]["S"].ToString());
                 passChartInfos[i].PassRewardCount = int.Parse(rowData["PassRewardCount"]["S"].ToString());
             }
-
             if (loadAction != null) loadAction();
         });
     }

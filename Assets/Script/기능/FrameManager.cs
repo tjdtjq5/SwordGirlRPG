@@ -15,6 +15,8 @@ public class FrameManager : MonoBehaviour
     public Text nicknameText;
     public Text powerText;
     public Text buffText;
+    public Image myClothIcon;
+    public Image myFrame;
 
     [Header("스크립트")]
     public Profile profile;
@@ -54,6 +56,13 @@ public class FrameManager : MonoBehaviour
     // 유저 프레임 정보 불러오기 - UI 셋팅 
     void UserFrameInfoSetting()
     {
+        string eqipClothName = UserInfo.instance.GetEqipCloth().name;
+        myClothIcon.sprite = ClothChart.instance.GetClothChartInfo(eqipClothName)[0].Icon;
+
+        FrameChartInfo[] frames = FrameChart.instance.frameChartInfos;
+
+        myFrame.sprite = frames[0].Image;
+
         UserFrame userEqipFrame = UserInfo.instance.GetEqipFrame();
         string eqipFrameSubName = "";
 
@@ -61,18 +70,17 @@ public class FrameManager : MonoBehaviour
         if (userEqipFrame != null)
         {
             eqipFrameSubName = userEqipFrame.subName;
-            nicknameText.text = UserInfo.instance.name + "     호칭 : <" + userEqipFrame + ">";
+            nicknameText.text = UserInfo.instance.nickName + "     호칭 : <" + userEqipFrame.subName + ">";
         }
         else // 없을경우
         {
-            nicknameText.text = UserInfo.instance.name;
+            nicknameText.text = UserInfo.instance.nickName;
         }
 
         powerText.text = "전투력 : " + profile.GetTotalPower();
 
         buffText.text = "";
 
-        FrameChartInfo[] frames = FrameChart.instance.frameChartInfos;
         for (int i = 0; i < frames.Length; i++)
         {
             Transform card = content.GetChild(i);
@@ -83,6 +91,7 @@ public class FrameManager : MonoBehaviour
             if (eqipFrameSubName == frames[i].SubName)
             {
                 card.Find("EqipCheckBOX").gameObject.SetActive(true);
+                myFrame.sprite = frames[i].Image;
             }
             else // 아닐경우
             {

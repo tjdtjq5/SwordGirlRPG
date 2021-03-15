@@ -37,12 +37,15 @@ public class Violet : Enemy
     public Transform player;
 
     // UI
+    [Header("UI")]
+    public GameObject violet_UI;
     public Text damage_text;
     public Text level_text;
+    public Image reward_icon;
     public Text reward_text;
     public Image hp_fore;
     int beforeLevel = 1;
-    public Image lineEffect;
+    public Animator lineEffectAni;
 
     [Header("스크립트")]
     public VioletResult violetResult;
@@ -59,6 +62,24 @@ public class Violet : Enemy
 
         // 공격 코르틴 시작 
         AttackPlay();
+
+        // ui셋팅
+        UI_Setting();
+    }
+
+    public void UI_Setting()
+    {
+        violet_UI.SetActive(true);
+
+        hp_fore.fillAmount = 0;
+        damage_text.text = "0";
+        level_text.text = "Level 00";
+        reward_text.text = "0";
+
+        violet_UI.transform.localPosition = new Vector2(0, 289);
+        violet_UI.transform.DOLocalMoveY(-12, 0.5f).OnComplete(()=> {
+            Hp_Setting();
+        });
     }
 
     public void Stop()
@@ -88,8 +109,6 @@ public class Violet : Enemy
 
         // 축적 데미지 
         hitDamage = "0";
-
-        UI_Setting();
     }
 
     void TimePlay()
@@ -163,7 +182,7 @@ public class Violet : Enemy
         }
     }
 
-    void UI_Setting()
+    void Hp_Setting()
     {
         damage_text.text = MyMath.ValueToString(hitDamage);
         VioletRewardChartInfo violetRewardChartInfo = VioletRewardChart.instance.GetVioletReward(hitDamage);
@@ -175,17 +194,39 @@ public class Violet : Enemy
         string d = MyMath.Sub(hitDamage, beforeD);
         string t = MyMath.Sub(violetRewardChartInfo.TotalDamage, beforeD);
 
-        float fillAmount = 1 - MyMath.Amount(d,t);
-        hp_fore.DOFillAmount(fillAmount, 0.3f);
 
         if(violetRewardChartInfo.Level != beforeLevel)
         {
-            lineEffect.DOFade(1, 0.5f).OnComplete(() => { lineEffect.DOFade(0, 0.5f); });
-            lineEffect.transform.DOScale(new Vector2(1.1f, 1.2f), 0.5f).OnComplete(() => { lineEffect.transform.DOScale(new Vector2(1, 1), 0.5f); });
+            hp_fore.fillAmount = 0;
+
+            LineEffect();
+
+            reward_text.transform.localPosition = new Vector2(-117.5f, -0.5f);
+            reward_text.transform.DOShakePosition(0.1f,5,30);
+            reward_text.transform.localScale = new Vector2(1, 1);
+            reward_text.transform.DOScale(new Vector2(1.3f, 1.3f), 0.05f).OnComplete(()=> {
+                reward_text.transform.DOScale(new Vector2(1, 1), 0.05f);
+            });
+
+            reward_icon.transform.localPosition = new Vector2(-107, -0.5f);
+            reward_icon.transform.DOShakePosition(0.1f, 5, 30);
+            reward_icon.transform.localScale = new Vector2(1, 1);
+            reward_icon.transform.DOScale(new Vector2(1.3f, 1.3f), 0.05f).OnComplete(() => {
+                reward_icon.transform.DOScale(new Vector2(1, 1), 0.05f);
+            });
         }
+
+        float fillAmount = 1 - MyMath.Amount(d, t);
+        hp_fore.DOFillAmount(fillAmount, 0.3f);
 
         beforeLevel = violetRewardChartInfo.Level;
     }
+
+    void LineEffect()
+    {
+        lineEffectAni.SetTrigger("play");
+    }
+
 
     public override void Hit(string damage, bool isCritical)
     {
@@ -195,7 +236,7 @@ public class Violet : Enemy
 
         hitDamage = MyMath.Add(hitDamage, damage);
 
-        UI_Setting();
+        Hp_Setting();
     }
     public override void Dead()
     {

@@ -108,6 +108,13 @@ namespace Function
             return BigInteger.Divide(intA, intB).ToString();
         }
 
+        public static string Divide(string A, int B)
+        {
+            BigInteger intA = BigInteger.Parse(A);
+
+            return (intA / B).ToString();
+        }
+
         public static float Amount(string small, string big)
         {
             BigInteger intA = BigInteger.Parse(small) * 100;

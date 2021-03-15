@@ -2449,6 +2449,8 @@ GameObject:
   - component: {fileID: 504887258}
   - component: {fileID: 504887259}
   - component: {fileID: 504887260}
+  - component: {fileID: 504887261}
+  - component: {fileID: 504887262}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2968,10 +2970,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5c183e14bdaf3a48837d3ca9ce6d50b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  field: 15888
+  field: 16542
   clothSpriteAtlas: {fileID: 4343727234628468602, guid: 18519f389d6b1e049ba6becb189fa04e,
     type: 2}
-  clothIconSpriteAtlas: {fileID: 4343727234628468602, guid: e1a1b9501c714e649bcc8614d66d8df0,
+  clothIconSpriteAtlas: {fileID: 4343727234628468602, guid: 3b19395cb61c4c244976c370ed15c142,
     type: 2}
   clothChartInfos: []
 --- !u!114 &504887251
@@ -3113,8 +3115,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   field: 16455
+  frameChartInfos: []
   frameSpriteAtlas: {fileID: 4343727234628468602, guid: 7e78e0b1ae6815949a3dac18456a2092,
     type: 2}
+--- !u!114 &504887261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504887240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19a521e239dea3e4485e1c1d28736c47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  field: 16546
+  itemChartInfos: []
+  moneySpriteAtlas: {fileID: 4343727234628468602, guid: bf651fce04819494d87c260d7513f941,
+    type: 2}
+  frameSpriteAtlas: {fileID: 4343727234628468602, guid: 7e78e0b1ae6815949a3dac18456a2092,
+    type: 2}
+--- !u!114 &504887262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504887240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8663f6853cc82a45bcbfae6653624d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  field: 16547
+  pumpkinChartInfos: []
 --- !u!1 &543599476
 GameObject:
   m_ObjectHideFlags: 0
@@ -6668,7 +6703,7 @@ MonoBehaviour:
   nickname: {fileID: 2128914485}
   usePolish: {fileID: 2128914486}
   loading: {fileID: 2128914487}
-  ID: tjdtjq02
+  ID: tjdtjq1
   password: a1905843
 --- !u!114 &2128914485
 MonoBehaviour:

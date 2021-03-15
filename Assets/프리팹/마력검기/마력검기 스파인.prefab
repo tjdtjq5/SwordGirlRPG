@@ -115,7 +115,7 @@ MonoBehaviour:
     materialsInsideMask: []
     materialsOutsideMask: []
   disableRenderingOnOverride: 1
-  _animationName: tan_3
+  _animationName: tan_1
   loop: 1
   timeScale: 1
 --- !u!114 &3376473704598222306
@@ -130,3 +130,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a9ffa8ca4c4f846a02502a1b1a777a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitPrepab: {fileID: 9028734088123478094, guid: f06cf82db0e549e4998e2bd358db24b3,
+    type: 3}

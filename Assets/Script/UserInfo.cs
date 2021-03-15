@@ -66,8 +66,10 @@ public class UserInfo : MonoBehaviour
     [ContextMenu("테스트2")]
     public void Test2()
     {
-        string damage = MyMath.Multiple("99999", 1.5F);
-        Debug.Log(damage);
+        string frameName = FrameChart.instance.frameChartInfos[3].SubName;
+        PushFrame(frameName);
+        EqipFrame(frameName);
+        SaveUserFrame(() => { });
     }
 
     /// === 능력치 === ///
@@ -507,7 +509,6 @@ public class UserInfo : MonoBehaviour
         string nickname = "";
         userCloths.Clear();
         userFrames.Clear();
-
         BackendAsyncClass.BackendAsync(Backend.GameInfo.GetMyPublicContents, "PublicUserInfo", (backendCallback) => {
 
             switch (backendCallback.GetStatusCode())
@@ -516,13 +517,13 @@ public class UserInfo : MonoBehaviour
                     break;
                 case "404": // 존재하지 않는 tableName인 경우 
                     Debug.Log("존재하지 않는 tableName인 경우 ");
-                    break;
+                    return;
                 case "400": // private table 아닌 tableName을 입력한 경우 또는 limit이 100이상인 경우
                     Debug.Log("public table 아닌 tableName 을 입력한 경우 또는 limit이 100이상인 경우");
-                    break;
+                    return;
                 case "412": // 비활성화 된 tableName인 경우 
                     Debug.Log("비활성화 된 tableName인 경우 ");
-                    break;
+                    return;
                 default:
                     break;
             }
@@ -536,7 +537,10 @@ public class UserInfo : MonoBehaviour
                 PushFrame(frameName);
                 EqipFrame(frameName);
 
-                callback();
+                SaveCloth(() => {
+                    SaveUserFrame(() => { callback(); });
+                });
+               
             }
             else
             {
@@ -576,6 +580,40 @@ public class UserInfo : MonoBehaviour
                 callback();
             }
         });
+    }
+
+    // === 아이템 얻기 === // 
+    public void PushItem(ItemType itemType, string itemName, int itemCount)
+    {
+        switch (itemType)
+        {
+            case ItemType.재화:
+                switch (itemName)
+                {
+                    case "골드":
+                        gold = MyMath.Add(gold, itemCount.ToString());
+                        break;
+                    case "크리스탈":
+                        crystal += itemCount;
+                        break;
+                    case "마력수정":
+                        masicStone += itemCount;
+                        break;
+                    case "강화석":
+                        enhanceStone += itemCount;
+                        break;
+                    case "초월석":
+                        transStone += itemCount;
+                        break;
+                    case "토벌권":
+                        punishTiket += itemCount;
+                        break;
+                }
+                break;
+            case ItemType.프레임:
+                PushFrame(itemName);
+                break;
+        }
     }
 
     // === 유저 재화 === // 
@@ -1016,7 +1054,8 @@ public class UserInfo : MonoBehaviour
                 return userCloths[i];
             }
         }
-        return null;
+        string defaultName = ClothChart.instance.clothChartInfos[0].Name;
+        return new UserCloth(defaultName, 1,1,true);
     }
     public void SaveCloth(System.Action callback)
     {

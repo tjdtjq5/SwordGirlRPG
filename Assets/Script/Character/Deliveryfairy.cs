@@ -9,6 +9,9 @@ public class Deliveryfairy : MonoBehaviour
     public Transform fairy;
     public SkeletonData skeletonData;
     public SkeletonAnimation ani;
+    public GameObject exParticlePrepab;
+    public Transform exPos;
+    public Transform trash;
 
     [Header("설정")]
     public float moveSpeed;
@@ -90,6 +93,8 @@ public class Deliveryfairy : MonoBehaviour
         StartCoroutine(touchCoroutine);
 
         ani.AnimationState.SetAnimation(0, "click", false);
+
+        Instantiate(exParticlePrepab, exPos.position, Quaternion.identity, trash);
 
         touchFlag = true;
     }

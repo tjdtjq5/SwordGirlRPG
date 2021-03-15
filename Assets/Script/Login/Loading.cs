@@ -56,19 +56,24 @@ public class Loading : MonoBehaviour
                                     BossMonsterChart.instance.LoadChart(() => {
                                         DayByQuestChart.instance.LoadChart(() => {
                                             WeekQuestChart.instance.LoadChart(() => {
-                                                UserInfo.instance.Load(() => {
-                                                    PassChart.instance.LoadChart(() => {
-                                                        CoinTreeChart.instance.LoadChart(() => {
-                                                            CombatPowerChart.instance.LoadChart(() => {
-                                                                VioletRewardChart.instance.LoadChart(() => {
-                                                                    FrameChart.instance.LoadChart(() => {
-                                                                        callback();
+                                                PassChart.instance.LoadChart(() => {
+                                                    CoinTreeChart.instance.LoadChart(() => {
+                                                        CombatPowerChart.instance.LoadChart(() => {
+                                                            VioletRewardChart.instance.LoadChart(() => {
+                                                                FrameChart.instance.LoadChart(() => {
+                                                                    ItemChart.instance.LoadChart(() => {
+                                                                        PumpkinChart.instance.LoadChart(() => {
+                                                                            UserInfo.instance.Load(() => {
+                                                                                callback();
+                                                                            });
+                                                                        });
                                                                     });
                                                                 });
                                                             });
                                                         });
                                                     });
                                                 });
+                                              
                                             });
                                         });
                                     });

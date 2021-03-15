@@ -1,0 +1,321 @@
+
+pumpkinwitch.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+L_arm_1
+  rotate: true
+  xy: 836, 794
+  size: 37, 65
+  orig: 62, 67
+  offset: 1, 1
+  index: -1
+L_arm_2
+  rotate: false
+  xy: 94, 3
+  size: 59, 31
+  orig: 59, 31
+  offset: 0, 0
+  index: -1
+back_hat
+  rotate: true
+  xy: 619, 190
+  size: 263, 193
+  orig: 583, 299
+  offset: 320, 32
+  index: -1
+back_vine_1
+  rotate: false
+  xy: 502, 90
+  size: 79, 79
+  orig: 81, 82
+  offset: 1, 2
+  index: -1
+back_vine_2
+  rotate: true
+  xy: 867, 108
+  size: 99, 119
+  orig: 101, 121
+  offset: 1, 1
+  index: -1
+back_vine_3
+  rotate: true
+  xy: 532, 12
+  size: 76, 100
+  orig: 78, 103
+  offset: 1, 2
+  index: -1
+back_vine_4
+  rotate: false
+  xy: 824, 18
+  size: 66, 73
+  orig: 69, 75
+  offset: 1, 1
+  index: -1
+back_vine_5
+  rotate: true
+  xy: 903, 796
+  size: 35, 41
+  orig: 38, 43
+  offset: 1, 1
+  index: -1
+back_vine_6
+  rotate: true
+  xy: 429, 89
+  size: 80, 71
+  orig: 82, 75
+  offset: 1, 2
+  index: -1
+back_vine_7
+  rotate: true
+  xy: 298, 9
+  size: 25, 38
+  orig: 27, 40
+  offset: 1, 1
+  index: -1
+back_vine_8
+  rotate: false
+  xy: 303, 443
+  size: 88, 55
+  orig: 90, 58
+  offset: 1, 2
+  index: -1
+back_wheel
+  rotate: false
+  xy: 950, 338
+  size: 139, 143
+  orig: 141, 145
+  offset: 1, 1
+  index: -1
+front_wheel_1
+  rotate: false
+  xy: 950, 338
+  size: 139, 143
+  orig: 141, 145
+  offset: 1, 1
+  index: -1
+backhair
+  rotate: false
+  xy: 2, 36
+  size: 360, 405
+  orig: 362, 407
+  offset: 1, 1
+  index: -1
+bocy
+  rotate: true
+  xy: 814, 209
+  size: 66, 151
+  orig: 66, 151
+  offset: 0, 0
+  index: -1
+car_aface
+  rotate: true
+  xy: 429, 171
+  size: 276, 188
+  orig: 280, 192
+  offset: 2, 3
+  index: -1
+car_body
+  rotate: true
+  xy: 303, 500
+  size: 522, 346
+  orig: 524, 348
+  offset: 1, 1
+  index: -1
+com
+  rotate: true
+  xy: 803, 93
+  size: 95, 62
+  orig: 98, 93
+  offset: 2, 29
+  index: -1
+earring
+  rotate: true
+  xy: 2, 2
+  size: 32, 50
+  orig: 34, 52
+  offset: 1, 1
+  index: -1
+eff_1
+  rotate: false
+  xy: 967, 210
+  size: 122, 126
+  orig: 139, 142
+  offset: 8, 8
+  index: -1
+front_wheel_2
+  rotate: false
+  xy: 836, 833
+  size: 182, 189
+  orig: 184, 192
+  offset: 1, 2
+  index: -1
+hair_1
+  rotate: true
+  xy: 651, 566
+  size: 226, 139
+  orig: 227, 139
+  offset: 0, 0
+  index: -1
+hair_2
+  rotate: true
+  xy: 237, 5
+  size: 29, 59
+  orig: 31, 63
+  offset: 1, 2
+  index: -1
+hair_3
+  rotate: false
+  xy: 364, 89
+  size: 63, 352
+  orig: 63, 352
+  offset: 0, 0
+  index: -1
+hat
+  rotate: true
+  xy: 2, 443
+  size: 579, 299
+  orig: 579, 299
+  offset: 0, 0
+  index: -1
+head
+  rotate: true
+  xy: 651, 794
+  size: 228, 183
+  orig: 231, 186
+  offset: 1, 2
+  index: -1
+hiteff
+  rotate: false
+  xy: 467, 7
+  size: 63, 80
+  orig: 65, 82
+  offset: 1, 1
+  index: -1
+l_leg
+  rotate: true
+  xy: 566, 455
+  size: 43, 95
+  orig: 45, 97
+  offset: 1, 1
+  index: -1
+lamplight_1
+  rotate: true
+  xy: 653, 93
+  size: 95, 148
+  orig: 97, 150
+  offset: 1, 1
+  index: -1
+lamplight_2
+  rotate: true
+  xy: 833, 483
+  size: 91, 142
+  orig: 93, 144
+  offset: 1, 1
+  index: -1
+lamplight_3
+  rotate: true
+  xy: 663, 456
+  size: 108, 168
+  orig: 111, 171
+  offset: 1, 1
+  index: -1
+lamplight_4
+  rotate: true
+  xy: 663, 456
+  size: 108, 168
+  orig: 111, 171
+  offset: 1, 1
+  index: -1
+r_arm_1
+  rotate: true
+  xy: 155, 3
+  size: 31, 54
+  orig: 34, 57
+  offset: 1, 1
+  index: -1
+r_arm_2
+  rotate: false
+  xy: 338, 9
+  size: 24, 25
+  orig: 27, 28
+  offset: 1, 2
+  index: -1
+r_arm_3
+  rotate: false
+  xy: 211, 4
+  size: 24, 30
+  orig: 26, 32
+  offset: 1, 1
+  index: -1
+r_hand
+  rotate: false
+  xy: 583, 93
+  size: 68, 76
+  orig: 70, 78
+  offset: 1, 1
+  index: -1
+r_leg
+  rotate: false
+  xy: 954, 11
+  size: 59, 95
+  orig: 59, 95
+  offset: 0, 0
+  index: -1
+vine_head
+  rotate: false
+  xy: 393, 449
+  size: 69, 49
+  orig: 71, 51
+  offset: 1, 1
+  index: -1
+wait_1_1
+  rotate: false
+  xy: 634, 3
+  size: 188, 88
+  orig: 191, 99
+  offset: 2, 9
+  index: -1
+wait_1_2
+  rotate: false
+  xy: 54, 2
+  size: 38, 32
+  orig: 40, 35
+  offset: 1, 1
+  index: -1
+wait_damage
+  rotate: true
+  xy: 814, 277
+  size: 177, 134
+  orig: 179, 137
+  offset: 1, 1
+  index: -1
+wait_run
+  rotate: true
+  xy: 792, 576
+  size: 216, 136
+  orig: 220, 153
+  offset: 2, 15
+  index: -1
+waiteff_1
+  rotate: true
+  xy: 364, 2
+  size: 85, 101
+  orig: 87, 103
+  offset: 1, 1
+  index: -1
+waiteff_2
+  rotate: false
+  xy: 892, 7
+  size: 60, 99
+  orig: 62, 101
+  offset: 1, 1
+  index: -1
+waiteff_3
+  rotate: true
+  xy: 464, 455
+  size: 43, 100
+  orig: 45, 102
+  offset: 1, 1
+  index: -1

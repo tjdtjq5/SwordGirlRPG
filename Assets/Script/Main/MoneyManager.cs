@@ -8,6 +8,8 @@ public class MoneyManager : MonoBehaviour
 {
     public static MoneyManager instance;
 
+    public GameObject moneyTextPrepab;
+
     private void Awake()
     {
         instance = this;
@@ -34,6 +36,10 @@ public class MoneyManager : MonoBehaviour
         UserInfo.instance.gold = MyMath.Add(UserInfo.instance.gold, money);
         GoldInit();
         abilityManager.CheckRedIcon();
+
+        Vector2 prepabPos = new Vector2(gold.GetChild(0).GetChild(2).position.x, gold.GetChild(0).GetChild(2).position.y - 0.2f);
+        GameObject prepab = Instantiate(moneyTextPrepab, prepabPos, Quaternion.identity, this.transform);
+        prepab.GetComponent<MoneyTextEffect>().Set("+" + MyMath.ValueToString(money), Color.green);
     }
     public void GoldSub(string money)
     {

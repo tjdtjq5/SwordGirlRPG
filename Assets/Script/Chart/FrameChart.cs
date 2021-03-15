@@ -13,6 +13,18 @@ public class FrameChart : MonoBehaviour
     public FrameChartInfo[] frameChartInfos;
     public SpriteAtlas frameSpriteAtlas;
 
+    public FrameChartInfo GetFrameChartInfo(string subName)
+    {
+        for (int i = 0; i < frameChartInfos.Length; i++)
+        {
+            if (frameChartInfos[i].SubName == subName)
+            {
+                return frameChartInfos[i];
+            }
+        }
+        return null;
+    }
+
     [System.Obsolete]
     public void LoadChart(System.Action loadAction)
     {

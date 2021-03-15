@@ -122,6 +122,9 @@ public class VioletResult : MonoBehaviour
             return;
         }
 
+        playerController.Play();
+        playerController.DontPlay();
+
         resultObj.SetActive(false);
         dungeonManager.VioletPlay();
     }

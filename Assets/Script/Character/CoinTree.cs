@@ -27,6 +27,9 @@ public class CoinTree : Enemy
     public Button levelUp_Btn;
     public Image timeGage_fore;
 
+    [Header("스크립트")]
+    public MoneyManager moneyManager;
+
     public void OnEnable()
     {
         initialCoroutine = InitialCoroutine();
@@ -142,6 +145,8 @@ public class CoinTree : Enemy
     public override void Hit(string damage, bool isCritical) 
     {
         base.Hit(damage, isCritical);
+
+        moneyManager.GoldAdd(MyMath.Divide(damage, 3));
 
         float hpAmount = MyMath.Amount(hp, maxHp);
 
